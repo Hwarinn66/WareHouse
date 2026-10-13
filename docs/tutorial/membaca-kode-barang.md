@@ -12,15 +12,14 @@ kata_kunci: [tutorial, kode barang, spesifikasi, label, bearing, 6205-2RS, ident
 
 # Membaca Kode & Spesifikasi
 
-<p class="lead">Dalam tutorial ini Anda belajar membaca label barang dan memastikan barang fisik benar-benar sama dengan yang tertulis.</p>
+<p class="lead">Di latihan ini kamu belajar membaca label barang dan memastikan barang fisik benar-benar sama dengan yang tertulis.</p>
 
-| | |
-| --- | --- |
-| **Tujuan belajar** | Mampu menguraikan kode, nama, dan spesifikasi pada label, lalu mencocokkannya dengan barang |
-| **Tingkat** | Pemula |
-| **Waktu** | Sekitar 20 menit |
-| **Prasyarat** | Sudah membaca [Kode & Identifikasi Barang](/divisi/kode-barang) dan [Jenis Material](/divisi/jenis-material) |
-| **Yang dibutuhkan** | Akses ke master material (minta ke pembimbing), satu barang berlabel di gudang |
+::: tip Sebelum mulai
+- **Setelah latihan ini, kamu bisa** menguraikan kode, nama, dan spesifikasi pada label, lalu mencocokkannya dengan barang.
+- **Tingkat:** Pemula, sekitar 20 menit.
+- **Baca dulu:** [Kode Barang](/divisi/kode-barang) dan [Jenis Material](/divisi/jenis-material).
+- **Siapkan:** akses ke database barang (minta ke pembimbing), satu barang berlabel di gudang.
+:::
 
 ## Langkah
 
@@ -69,4 +68,4 @@ BRG-MEC-001  –  Bearing 6205-2RS  –  25 × 52 × 15 mm
 
 ## Hasil yang diharapkan
 
-Anda bisa menjelaskan arti setiap bagian label dan menemukan setidaknya satu contoh barang yang kode, nama, dan spesifikasinya cocok di label, master material, dan barang fisik.
+Kamu bisa menjelaskan arti setiap bagian label dan menemukan setidaknya satu contoh barang yang kode, nama, dan spesifikasinya cocok di label, master material, dan barang fisik.

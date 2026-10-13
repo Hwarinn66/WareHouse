@@ -1,7 +1,7 @@
 ---
-title: Manajemen Inventory
+title: Manajemen Stok
 description: Stock dan non-stock item, fast dan slow moving, critical stock, serta penyebab dead stock.
-status: draf
+status: ditinjau
 dasar: materi presentasi Gudang Teknik (slide 8–10)
 diperbarui: 2026-10-13
 kategori: Gudang Teknik
@@ -9,7 +9,7 @@ sumber: [ppt-gudang-teknik]
 kata_kunci: [inventory, persediaan, stock item, non-stock item, fast moving, slow moving, cycle counting, critical stock, critical spare part, dead stock, ROP, stok minimum, stok maksimum, FIFO, overstock]
 ---
 
-# Manajemen Inventory
+# Manajemen Stok
 
 <p class="lead">Tidak semua material diperlakukan sama. Ada yang harus selalu tersedia, ada yang dibeli hanya saat dibutuhkan, dan ada yang jarang dipakai tetapi tidak boleh kosong.</p>
 

@@ -13,11 +13,11 @@ defineProps<{ contoh?: string[] }>()
         <circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2" />
         <path d="M20 20l-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
       </svg>
-      <span class="teks">Cari material, istilah, atau prosedur</span>
+      <span class="teks">Cari topik, istilah, atau nama barang</span>
       <kbd class="pintas">Ctrl K</kbd>
     </button>
     <p v-if="contoh?.length" class="contoh">
-      <span>Contoh:</span>
+      <span>Coba cari:</span>
       <button v-for="c in contoh" :key="c" type="button" @click="bukaPencarian(c)">{{ c }}</button>
     </p>
   </div>
@@ -30,10 +30,10 @@ defineProps<{ contoh?: string[] }>()
   gap: 12px;
   width: 100%;
   max-width: 560px;
-  min-height: 52px;
-  padding: 10px 14px;
-  border: 1.5px solid var(--vp-c-text-3);
-  border-radius: 6px;
+  min-height: 54px;
+  padding: 10px 16px;
+  border: 1.5px solid var(--vp-c-divider);
+  border-radius: 14px;
   background: var(--vp-c-bg);
   color: var(--vp-c-text-2);
   font-size: 1rem;
@@ -56,7 +56,7 @@ defineProps<{ contoh?: string[] }>()
   font-size: 0.8rem;
   padding: 2px 6px;
   border: 1px solid var(--vp-c-divider);
-  border-radius: 4px;
+  border-radius: 6px;
   color: var(--vp-c-text-2);
 }
 .contoh {
@@ -69,12 +69,18 @@ defineProps<{ contoh?: string[] }>()
   color: var(--vp-c-text-2);
 }
 .contoh button {
-  min-height: 36px;
-  padding: 2px 8px;
+  min-height: 34px;
+  padding: 2px 12px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 999px;
+  background: var(--vp-c-bg);
   color: var(--vp-c-brand-1);
-  text-decoration: underline;
-  text-underline-offset: 3px;
+  font-weight: 500;
   cursor: pointer;
+}
+.contoh button:hover {
+  background: var(--vp-c-brand-3);
+  color: #fff;
 }
 @media (max-width: 480px) {
   .pintas {

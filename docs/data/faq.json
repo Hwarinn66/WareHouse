@@ -2,54 +2,54 @@
   "_catatan": [
     "Daftar FAQ. Tambahkan pertanyaan baru di dalam kategori yang sesuai.",
     "id: huruf kecil dan tanda hubung, unik (dipakai sebagai tautan langsung, mis. /faq#apa-itu-gudang-teknik).",
-    "status: 'terjawab' = jawaban dari isi handbook; 'menunggu-pembimbing' = belum ada jawaban resmi, 'jawaban' boleh kosong.",
-    "jawaban boleh berisi Markdown sederhana: **tebal**, `kode`, dan [tautan](/halaman)."
+    "status: 'terjawab' = tampil di website; 'menunggu-pembimbing' = belum tampil sampai jawabannya diisi dan statusnya diubah.",
+    "jawab boleh berisi Markdown sederhana: **tebal**, *miring*, `kode`, dan [tautan](/halaman)."
   ],
   "kategori": [
     {
       "id": "perusahaan",
-      "nama": "Informasi perusahaan",
+      "nama": "Tentang perusahaan",
       "pertanyaan": [
         {
           "id": "bpi-bergerak-di-bidang-apa",
           "tanya": "PT Bakrie Pipe Industries bergerak di bidang apa?",
-          "jawab": "BPI adalah produsen pipa baja dan merupakan anak usaha PT Bakrie & Brothers Tbk. Pabriknya berada di Bekasi, Jawa Barat. Rincian beserta sumbernya ada di [Profil Perusahaan](/perusahaan/).",
+          "jawab": "BPI adalah produsen pipa baja dan merupakan anak usaha PT Bakrie & Brothers Tbk. Pabriknya ada di Bekasi, Jawa Barat. Selengkapnya ada di [Profil Perusahaan](/perusahaan/).",
           "status": "terjawab"
         },
         {
           "id": "visi-misi-perusahaan",
-          "tanya": "Di mana saya bisa membaca visi dan misi perusahaan?",
-          "jawab": "Visi dan misi resmi belum ditemukan dari sumber yang bisa diverifikasi, sehingga belum ditampilkan di handbook. Tanyakan dokumen resminya kepada pembimbing.",
+          "tanya": "Apa visi dan misi perusahaan?",
+          "jawab": "",
           "status": "menunggu-pembimbing"
         }
       ]
     },
     {
       "id": "divisi",
-      "nama": "Gudang Teknik",
+      "nama": "Tentang Gudang Teknik",
       "pertanyaan": [
         {
           "id": "apa-itu-gudang-teknik",
           "tanya": "Apa tugas utama Gudang Teknik?",
-          "jawab": "Menerima, menyimpan, mengelola, memelihara, dan mendistribusikan barang teknik untuk mendukung operasional perusahaan. Tiga fungsi utamanya adalah **penyimpanan**, **pengendalian**, dan **pelayanan**. Baca [Pengenalan Gudang Teknik](/divisi/).",
+          "jawab": "Menerima, menyimpan, merawat, dan menyalurkan barang teknik untuk mendukung operasional perusahaan. Fungsinya ada tiga: **penyimpanan**, **pengendalian**, dan **pelayanan**. Baca [Kenali Gudang Teknik](/divisi/).",
           "status": "terjawab"
         },
         {
           "id": "barang-apa-saja",
-          "tanya": "Barang apa saja yang dikelola Gudang Teknik?",
-          "jawab": "Ada sepuluh kelompok, antara lain mechanical parts, electrical parts, piping & fitting, fasteners, tools, consumable, welding material, APD, instrumentasi, dan spare part mesin. Lihat [Jenis Material](/divisi/jenis-material).",
+          "tanya": "Barang apa saja yang ada di Gudang Teknik?",
+          "jawab": "Ada sepuluh kelompok, misalnya spare part mesin, komponen listrik, pipa dan fitting, baut dan mur, alat kerja, bahan habis pakai, bahan las, APD, dan alat ukur. Lihat [Jenis Material](/divisi/jenis-material).",
           "status": "terjawab"
         },
         {
           "id": "beda-stock-non-stock",
           "tanya": "Apa beda stock item dan non-stock item?",
-          "jawab": "Stock item adalah material yang rutin dipakai, sehingga stoknya dijaga. Non-stock item hanya dipakai sesekali, jadi tidak disimpan sebagai stok dan baru dibeli saat dibutuhkan user. Lihat [Manajemen Inventory](/divisi/manajemen-inventory).",
+          "jawab": "Stock item dipakai rutin, jadi stoknya selalu dijaga. Non-stock item hanya dipakai sesekali, jadi tidak disimpan sebagai stok dan baru dibeli saat dibutuhkan. Lihat [Manajemen Stok](/divisi/manajemen-inventory).",
           "status": "terjawab"
         },
         {
           "id": "arti-fifo",
-          "tanya": "Apa itu FIFO dan mengapa penting?",
-          "jawab": "FIFO (*First In, First Out*) berarti barang yang masuk lebih dulu dikeluarkan lebih dulu. Tujuannya mencegah barang terlalu lama tersimpan, turun mutu, atau kedaluwarsa. FIFO yang tidak dijalankan dengan benar adalah salah satu penyebab dead stock. Lihat [SOP Penyimpanan](/sop/penyimpanan-barang).",
+          "tanya": "Apa itu FIFO?",
+          "jawab": "FIFO (*First In, First Out*) artinya barang yang masuk lebih dulu dikeluarkan lebih dulu. Tujuannya supaya tidak ada barang yang terlalu lama disimpan sampai rusak atau kedaluwarsa. Lihat [SOP Penyimpanan](/sop/penyimpanan-barang).",
           "status": "terjawab"
         }
       ]
@@ -60,21 +60,39 @@
       "pertanyaan": [
         {
           "id": "barang-datang-tidak-sesuai",
-          "tanya": "Apa yang dilakukan jika barang yang datang tidak sesuai dokumen?",
-          "jawab": "Jangan langsung disimpan. Catat ketidaksesuaiannya (jumlah, spesifikasi, atau kondisi), pisahkan barangnya, lalu laporkan ke pembimbing atau atasan gudang. Langkah umumnya ada di [SOP Penerimaan Barang](/sop/penerimaan-barang). Ikuti arahan pembimbing jika prosedur resmi berbeda.",
+          "tanya": "Bagaimana kalau barang dari vendor tidak sesuai pesanan?",
+          "jawab": "Barang **dikembalikan ke vendor**. Ini juga berlaku kalau kondisinya buruk atau jumlahnya kurang dari pesanan. Lihat [Alur Barang Masuk](/alur-kerja/barang-masuk).",
           "status": "terjawab"
         },
         {
-          "id": "stok-habis-saat-diminta",
-          "tanya": "Bagaimana jika user meminta barang yang stoknya kosong?",
-          "jawab": "Sampaikan ke user bahwa stok kosong dan laporkan ke pembimbing. Untuk stock item, stok kosong berarti titik pemesanan ulang (ROP) terlewat dan perlu ditindaklanjuti. Untuk non-stock item, barang memang dibeli saat dibutuhkan. Lihat [Alur Barang Keluar](/alur-kerja/barang-keluar).",
+          "id": "setelah-barang-diterima",
+          "tanya": "Setelah barang diterima, apa saja yang harus dicatat?",
+          "jawab": "Berikan surat tanda terima ke vendor, input data ke database (jumlah, jenis, tipe, tanggal masuk), kirim laporan ke divisi OS/PPIC, lalu simpan barang di rak dan catat di catatan manual rak.",
+          "status": "terjawab"
+        },
+        {
+          "id": "cara-divisi-meminta-barang",
+          "tanya": "Bagaimana divisi lain meminta barang ke gudang?",
+          "jawab": "Lewat **ERP perusahaan**. Permintaannya muncul sebagai notifikasi di ERP Warehouse Teknik. Lihat [Alur Barang Keluar](/alur-kerja/barang-keluar).",
           "status": "terjawab"
         },
         {
           "id": "siapa-menyetujui-permintaan",
-          "tanya": "Siapa yang berwenang menyetujui permintaan barang keluar?",
-          "jawab": "",
-          "status": "menunggu-pembimbing"
+          "tanya": "Siapa yang menyetujui permintaan barang keluar?",
+          "jawab": "Staff Warehouse Teknik menyetujui permintaan di ERP. Setelah disetujui, laporan barang keluar langsung tercatat di ERP.",
+          "status": "terjawab"
+        },
+        {
+          "id": "apa-itu-rak-reservasi",
+          "tanya": "Apa itu rak reservasi?",
+          "jawab": "Rak khusus untuk barang yang sudah disiapkan untuk divisi pemesan. Barang menunggu di sana sampai karyawan divisi itu datang mengambilnya.",
+          "status": "terjawab"
+        },
+        {
+          "id": "barang-salah-saat-diambil",
+          "tanya": "Bagaimana kalau karyawan bilang barangnya tidak sesuai orderan?",
+          "jawab": "Barang dikembalikan dan ditukar dengan barang yang sesuai orderan, lalu diserahkan lagi.",
+          "status": "terjawab"
         }
       ]
     },
@@ -83,58 +101,58 @@
       "nama": "Dokumen dan aplikasi",
       "pertanyaan": [
         {
-          "id": "data-apa-dicatat",
-          "tanya": "Data apa saja yang wajib dicatat di gudang?",
-          "jawab": "Master material (kode, nama, spesifikasi, satuan, lokasi), barang masuk (tanggal, supplier, jumlah, dokumen), barang keluar (user, jumlah, tujuan, tanggal), hasil stock opname, dan laporan stok. Lihat [Administrasi & Kontrol Stok](/divisi/administrasi-stok).",
+          "id": "aplikasi-pencatatan",
+          "tanya": "Aplikasi apa yang dipakai untuk mencatat stok?",
+          "jawab": "**ERP perusahaan** dan database barang. Selain itu, setiap rak punya **catatan manual** yang diisi saat barang ditaruh atau diambil.",
           "status": "terjawab"
         },
         {
-          "id": "aplikasi-pencatatan",
-          "tanya": "Aplikasi atau sistem apa yang dipakai untuk mencatat stok?",
-          "jawab": "",
-          "status": "menunggu-pembimbing"
+          "id": "kenapa-catatan-manual",
+          "tanya": "Kenapa masih ada catatan manual di rak kalau sudah ada ERP?",
+          "jawab": "Catatan manual membantu mengecek isi rak langsung di tempat. Jumlah di catatan manual, di ERP, dan di rak harus selalu sama. Kalau berbeda, laporkan ke pembimbing.",
+          "status": "terjawab"
         },
         {
-          "id": "nama-formulir",
-          "tanya": "Formulir apa yang dipakai untuk permintaan dan penerimaan barang?",
-          "jawab": "",
-          "status": "menunggu-pembimbing"
+          "id": "laporan-os-ppic",
+          "tanya": "Kenapa barang masuk dilaporkan ke OS/PPIC?",
+          "jawab": "Supaya divisi OS/PPIC tahu barang yang dipesan sudah masuk dan sesuai. PPIC (*Production Planning and Inventory Control*) adalah bagian yang merencanakan produksi dan persediaan.",
+          "status": "terjawab"
         }
       ]
     },
     {
       "id": "kendala",
-      "nama": "Kendala umum",
+      "nama": "Kalau ada kendala",
       "pertanyaan": [
         {
           "id": "barang-tidak-ketemu",
-          "tanya": "Saya tidak menemukan barang di lokasi yang tercatat. Apa yang harus dilakukan?",
-          "jawab": "Cek ulang kode barang dan lokasi di catatan, lalu periksa rak di sekitarnya. Jika tetap tidak ada, laporkan ke pembimbing sebagai selisih. Jangan mengubah catatan stok sendiri. Selisih seperti ini biasanya ditelusuri melalui [stock opname](/alur-kerja/stock-opname).",
+          "tanya": "Barang tidak ada di lokasi yang tercatat. Harus bagaimana?",
+          "jawab": "Cek lagi kode barang dan lokasinya di database, lalu lihat rak di sekitarnya. Kalau tetap tidak ada, laporkan ke pembimbing. Jangan mengubah catatan stok sendiri.",
           "status": "terjawab"
         },
         {
           "id": "kode-barang-tidak-ada",
           "tanya": "Barang tidak punya label atau kode. Bagaimana?",
-          "jawab": "Pisahkan barangnya dan jangan menebak kodenya. Laporkan ke pembimbing agar barang diidentifikasi dari spesifikasinya dan diberi label yang benar. Lihat [Kode & Identifikasi Barang](/divisi/kode-barang).",
+          "jawab": "Pisahkan barangnya dan jangan menebak kodenya. Laporkan ke pembimbing supaya barang dikenali dari spesifikasinya lalu diberi label yang benar.",
           "status": "terjawab"
         }
       ]
     },
     {
       "id": "etika",
-      "nama": "Etika dan komunikasi kerja",
+      "nama": "Sikap kerja",
       "pertanyaan": [
+        {
+          "id": "bertanya-ke-siapa",
+          "tanya": "Kalau ragu, saya bertanya ke siapa?",
+          "jawab": "Ke pembimbing magang. Kalau ragu soal keselamatan, berhenti dulu, baru bertanya.",
+          "status": "terjawab"
+        },
         {
           "id": "apd-wajib",
           "tanya": "APD apa yang wajib dipakai di area gudang?",
           "jawab": "",
           "status": "menunggu-pembimbing"
-        },
-        {
-          "id": "bertanya-ke-siapa",
-          "tanya": "Kepada siapa saya bertanya jika ragu?",
-          "jawab": "Tanyakan ke pembimbing magang. Jika ragu tentang keselamatan, hentikan pekerjaan lebih dulu, baru bertanya.",
-          "status": "terjawab"
         },
         {
           "id": "jam-kerja",
@@ -146,12 +164,12 @@
     },
     {
       "id": "bantuan",
-      "nama": "Bantuan lebih lanjut",
+      "nama": "Tentang handbook ini",
       "pertanyaan": [
         {
           "id": "menemukan-kesalahan",
-          "tanya": "Saya menemukan informasi yang salah di handbook ini. Apa yang harus dilakukan?",
-          "jawab": "Catat halaman dan bagian yang salah, lalu sampaikan ke pembimbing atau pengelola handbook. Cara memperbarui isi ada di [Cara Memperbarui Handbook](/tentang-handbook/cara-memperbarui).",
+          "tanya": "Saya menemukan informasi yang salah. Apa yang harus dilakukan?",
+          "jawab": "Catat halaman dan bagian yang salah, lalu sampaikan ke pembimbing atau pengelola handbook.",
           "status": "terjawab"
         }
       ]

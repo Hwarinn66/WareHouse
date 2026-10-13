@@ -1,39 +1,42 @@
 /* =========================================================================
    Tema visual Handbook Gudang Teknik
    -------------------------------------------------------------------------
-   Semua warna utama ada di blok :root di bawah. Jika pembimbing memberikan
-   kode warna resmi perusahaan (brand guideline), cukup ganti nilai
+   Semua warna utama ada di blok :root (mode terang) dan .dark (mode gelap).
+   Jika pembimbing memberikan kode warna resmi perusahaan, cukup ganti nilai
    --bpi-* di sini. Jangan menyebar kode warna ke file lain.
    ========================================================================= */
 
 :root {
-  /* Warna dasar (mode terang) — GANTI dengan kode warna resmi jika tersedia */
-  --bpi-steel: #1b4b7a;        /* biru baja: tautan, tombol, aksen utama */
-  --bpi-steel-hover: #153c62;
-  --bpi-steel-solid: #1b4b7a;  /* latar tombol */
-  --bpi-ink: #172433;          /* teks judul */
-  --bpi-concrete: #f3f5f7;     /* latar area sekunder (lantai gudang) */
-  --bpi-rule: #d6dde4;         /* garis pemisah */
-  --bpi-safety: #f2b705;       /* kuning marka lantai — hanya untuk garis/penanda, bukan teks */
-  --bpi-safety-pale: #fdf3cf;
-  --bpi-safety-ink: #5c4400;   /* teks di atas latar kuning pucat */
+  /* Warna dasar — GANTI dengan kode warna resmi jika tersedia */
+  --bpi-steel: #1f5fa8;        /* biru utama: tautan, tombol */
+  --bpi-steel-hover: #174a85;
+  --bpi-steel-solid: #1f5fa8;
+  --bpi-steel-pale: #eaf2fc;   /* latar kartu/ikon biru muda */
+  --bpi-ink: #1b2a3a;          /* teks judul */
+  --bpi-concrete: #f4f7fb;     /* latar area sekunder */
+  --bpi-rule: #dde4ec;         /* garis pemisah */
+  --bpi-safety: #f5b301;       /* kuning marka lantai gudang (aksen, bukan teks) */
+  --bpi-safety-pale: #fff6d9;
+  --bpi-safety-ink: #5c4400;
   --bpi-ok: #1d6b45;
-  --bpi-ok-pale: #e3f2ea;
+  --bpi-ok-pale: #e4f4ea;
+  --bpi-no: #a8322a;
+  --bpi-no-pale: #fdeceb;
+  --bpi-radius: 14px;
 
   --vp-c-brand-1: var(--bpi-steel);
   --vp-c-brand-2: var(--bpi-steel-hover);
   --vp-c-brand-3: var(--bpi-steel-solid);
-  --vp-c-brand-soft: rgba(27, 75, 122, 0.1);
+  --vp-c-brand-soft: rgba(31, 95, 168, 0.1);
 
   --vp-c-bg-alt: var(--bpi-concrete);
   --vp-c-divider: var(--bpi-rule);
-  --vp-c-text-1: #1c2733;
+  --vp-c-text-1: #1f2d3b;
 
-  --vp-font-family-base: 'Barlow', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
-  --bpi-font-display: 'Barlow Condensed', 'Barlow', ui-sans-serif, system-ui, sans-serif;
+  --vp-font-family-base: 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  --bpi-font-display: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
   --vp-font-family-mono: ui-monospace, 'SFMono-Regular', 'Cascadia Mono', Menlo, Consolas, monospace;
 
-  --vp-home-hero-name-color: var(--bpi-ink);
   --vp-button-brand-bg: var(--bpi-steel-solid);
   --vp-button-brand-hover-bg: var(--bpi-steel-hover);
   --vp-local-search-highlight-bg: var(--bpi-safety-pale);
@@ -41,82 +44,84 @@
 }
 
 .dark {
-  --bpi-steel: #8fbbe9;
-  --bpi-steel-hover: #b0d0f2;
-  --bpi-steel-solid: #2c6aa8;
-  --bpi-ink: #e8eef5;
-  --bpi-concrete: #1a2129;
-  --bpi-rule: #2f3943;
-  --bpi-safety: #f2b705;
+  --bpi-steel: #8ebcf0;
+  --bpi-steel-hover: #b3d2f5;
+  --bpi-steel-solid: #2f6fb8;
+  --bpi-steel-pale: #1b2a3d;
+  --bpi-ink: #e9eff6;
+  --bpi-concrete: #19212a;
+  --bpi-rule: #2e3944;
+  --bpi-safety: #f5b301;
   --bpi-safety-pale: #3a2f0c;
   --bpi-safety-ink: #f6d77a;
   --bpi-ok: #7fd1a6;
-  --bpi-ok-pale: #163326;
+  --bpi-ok-pale: #15301f;
+  --bpi-no: #f2998f;
+  --bpi-no-pale: #3a1a17;
 
-  --vp-c-brand-soft: rgba(143, 187, 233, 0.14);
-  --vp-c-bg: #151b22;
-  --vp-c-bg-alt: #1a2129;
-  --vp-c-bg-soft: #1f2730;
-  --vp-c-bg-elv: #1c232b;
+  --vp-c-brand-soft: rgba(142, 188, 240, 0.14);
+  --vp-c-bg: #141a21;
+  --vp-c-bg-alt: #19212a;
+  --vp-c-bg-soft: #1e2731;
+  --vp-c-bg-elv: #1b232c;
   --vp-c-text-1: #e6ebf0;
-  --vp-c-text-2: #a9b4bf;
-  --vp-button-brand-hover-bg: #3a7bbd;
+  --vp-c-text-2: #aab5c0;
+  --vp-button-brand-hover-bg: #3c7fc7;
 }
 
 /* ---------- Tipografi ---------- */
 
 .vp-doc {
-  font-size: 17px;
+  font-size: 16.5px;
 }
 
 .vp-doc p,
 .vp-doc li {
-  line-height: 1.7;
-}
-
-.vp-doc h1,
-.vp-doc h2,
-.VPNavBarTitle .title {
-  font-family: var(--bpi-font-display);
-  letter-spacing: 0;
+  line-height: 1.75;
 }
 
 .vp-doc h1 {
-  font-size: 2.5rem;
-  line-height: 1.1;
-  font-weight: 600;
+  font-size: 2.2rem;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -0.01em;
   color: var(--bpi-ink);
 }
 
 .vp-doc h2 {
-  font-size: 1.75rem;
-  line-height: 1.2;
-  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 1.3;
+  font-weight: 700;
+  letter-spacing: -0.005em;
   color: var(--bpi-ink);
+  border-top: 0;
+  padding-top: 8px;
+  margin-top: 44px;
 }
 
 .vp-doc h3 {
-  font-size: 1.2rem;
-  font-weight: 600;
+  font-size: 1.15rem;
+  font-weight: 700;
 }
 
 .VPNavBarTitle .title {
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
 }
 
 @media (max-width: 640px) {
   .vp-doc h1 {
-    font-size: 2rem;
+    font-size: 1.85rem;
   }
   .vp-doc h2 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 }
 
-/* Paragraf pembuka halaman (dipakai dengan <p class="lead">) */
+/* Paragraf pembuka halaman (<p class="lead">) */
 .vp-doc .lead {
-  font-size: 1.15rem;
+  font-size: 1.12rem;
   color: var(--vp-c-text-2);
   margin-top: 8px;
 }
@@ -126,14 +131,14 @@
 :where(a, button, summary, [tabindex], input, select, textarea):focus-visible {
   outline: 3px solid var(--bpi-steel);
   outline-offset: 2px;
-  border-radius: 4px;
+  border-radius: 6px;
 }
 
 /* ---------- Gambar ---------- */
 
 .vp-doc img {
   border: 1px solid var(--vp-c-divider);
-  border-radius: 6px;
+  border-radius: var(--bpi-radius);
   background: var(--vp-c-bg-alt);
 }
 
@@ -147,8 +152,13 @@
   margin-top: 8px;
 }
 
-/* ---------- Tabel: bertumpuk seperti kartu di layar kecil ---------- */
+/* ---------- Tabel ---------- */
 
+.vp-doc table {
+  border-radius: 10px;
+}
+
+/* Di layar kecil, tabel ditampilkan bertumpuk seperti kartu */
 @media (max-width: 640px) {
   .vp-doc table.tabel-tumpuk {
     display: block;
@@ -170,7 +180,7 @@
   }
   .vp-doc table.tabel-tumpuk tr {
     border: 1px solid var(--vp-c-divider);
-    border-radius: 6px;
+    border-radius: 12px;
     margin-bottom: 12px;
     background: var(--vp-c-bg);
   }
@@ -195,7 +205,16 @@
   }
 }
 
-/* ---------- Blok peringatan & langkah ---------- */
+/* Tabel tanpa judul kolom */
+.vp-doc table.tanpa-kepala thead {
+  display: none;
+}
+
+/* ---------- Kotak info / peringatan ---------- */
+
+.vp-doc .custom-block {
+  border-radius: 12px;
+}
 
 .vp-doc .custom-block.warning {
   border-left: 4px solid var(--bpi-safety);
@@ -205,7 +224,7 @@
   border-left: 4px solid var(--vp-c-danger-1);
 }
 
-/* Daftar periksa (checklist) di SOP: tulis dengan "- [ ]" */
+/* Daftar periksa: tulis item list dengan "[ ] " di depannya */
 .vp-doc ul.daftar-periksa {
   list-style: none;
   padding-left: 0;
@@ -213,18 +232,19 @@
 
 .vp-doc ul.daftar-periksa li {
   position: relative;
-  padding-left: 32px;
+  padding-left: 34px;
 }
 
 .vp-doc ul.daftar-periksa li::before {
   content: '';
   position: absolute;
   left: 2px;
-  top: 0.35em;
-  width: 18px;
-  height: 18px;
+  top: 0.32em;
+  width: 20px;
+  height: 20px;
   border: 2px solid var(--bpi-steel);
-  border-radius: 3px;
+  border-radius: 6px;
+  background: var(--vp-c-bg);
 }
 
 /* ---------- Gerak dikurangi ---------- */
@@ -241,9 +261,9 @@
 }
 
 /* ---------- Navigasi atas di layar tablet ----------
-   Menu atas memiliki banyak item. Di bawah 1200px, menu dipindah ke tombol
-   hamburger agar header tidak melebar keluar layar. */
-@media (min-width: 768px) and (max-width: 1199px) {
+   Di bawah 1024px, menu atas dipindah ke tombol hamburger agar header
+   tidak melebar keluar layar. */
+@media (min-width: 768px) and (max-width: 1023px) {
   .VPNavBar .VPNavBarMenu,
   .VPNavBar .VPNavBarExtra {
     display: none !important;
@@ -257,15 +277,10 @@
 }
 
 /* ---------- Diagram Mermaid ----------
-   Gaya paragraf artikel (.vp-doc p) tidak boleh ikut ke label diagram,
+   Gaya paragraf artikel tidak boleh ikut ke label diagram,
    karena ukuran kotak diagram dihitung tanpa gaya tersebut. */
 svg[id^='diagram-'] foreignObject p,
 svg[id^='diagram-'] foreignObject div {
   margin: 0 !important;
-  line-height: 1.5 !important;
-}
-
-/* Tabel dua kolom tanpa judul kolom (mis. "Ringkasan proses") */
-.vp-doc table.tanpa-kepala thead {
-  display: none;
+  line-height: 1.45 !important;
 }

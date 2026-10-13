@@ -11,7 +11,7 @@ kata_kunci: [layout, denah, lokasi, rak, zona, bin, penyimpanan, jalur evakuasi]
 
 # Layout Gudang
 
-<p class="lead">Denah gudang membantu Anda menemukan lokasi barang dan memahami pembagian area. Halaman ini menunggu gambar denah resmi.</p>
+<p class="lead">Denah gudang membantu kamu menemukan lokasi barang dan memahami pembagian area. Halaman ini menunggu gambar denah resmi.</p>
 
 <figure>
 

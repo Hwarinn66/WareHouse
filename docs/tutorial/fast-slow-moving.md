@@ -12,15 +12,14 @@ kata_kunci: [tutorial, fast moving, slow moving, klasifikasi, frekuensi perminta
 
 # Menentukan Fast & Slow Moving
 
-<p class="lead">Anda akan mengelompokkan material berdasarkan seberapa sering material itu diminta dalam satu bulan.</p>
+<p class="lead">Kamu akan mengelompokkan material berdasarkan seberapa sering material itu diminta dalam satu bulan.</p>
 
-| | |
-| --- | --- |
-| **Tujuan belajar** | Mampu menghitung frekuensi permintaan dan menerapkan kriteria fast/slow moving |
-| **Tingkat** | Pemula |
-| **Waktu** | Sekitar 30 menit |
-| **Prasyarat** | Sudah membaca [Manajemen Inventory](/divisi/manajemen-inventory) |
-| **Yang dibutuhkan** | Catatan barang keluar selama satu bulan (untuk praktik nyata, minta ke pembimbing) |
+::: tip Sebelum mulai
+- **Setelah latihan ini, kamu bisa** menghitung frekuensi permintaan dan menerapkan kriteria fast/slow moving.
+- **Tingkat:** Pemula, sekitar 30 menit.
+- **Baca dulu:** [Manajemen Stok](/divisi/manajemen-inventory).
+- **Siapkan:** catatan barang keluar selama satu bulan (untuk praktik nyata, minta ke pembimbing).
+:::
 
 ## Kriteria
 

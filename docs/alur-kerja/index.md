@@ -1,45 +1,66 @@
 ---
-title: Ringkasan Alur Kerja
-description: Gambaran tiga alur kerja utama Gudang Teknik dan status setiap diagramnya.
-status: draf
-dasar: materi presentasi Gudang Teknik dan praktik umum pergudangan
-catatan_status: Gambar alur di presentasi Gudang Teknik (slide 5 dan 6) belum terbaca. Diagram di bagian ini adalah draf praktik umum yang perlu dicocokkan dengan alur resmi.
+title: Alur Warehouse
+description: Gambaran besar alur kerja Gudang Teknik, dari barang datang sampai barang diambil divisi pemesan.
+status: ditinjau
+dasar: diagram presentasi Gudang Teknik dan catatan alur proses dari peserta magang
 diperbarui: 2026-10-13
 kategori: Alur Kerja
-sumber: [ppt-gudang-teknik]
-kata_kunci: [alur kerja, proses, diagram, flowchart, barang masuk, barang keluar, stock opname, layout]
+sumber: [ppt-gudang-teknik, catatan-alur]
+kata_kunci: [alur warehouse, alur kerja, flowchart, diagram, proses gudang, barang masuk, barang keluar, ERP, rak reservasi]
 ---
 
-# Ringkasan Alur Kerja
+# Alur Warehouse
 
-<p class="lead">Tiga alur ini adalah inti pekerjaan Gudang Teknik. Setiap halaman memuat diagram, langkah tertulis, titik keputusan, dan kesalahan yang perlu dihindari.</p>
+<p class="lead">Pekerjaan Gudang Teknik terdiri dari dua alur utama: <strong>barang masuk</strong> dari vendor dan <strong>barang keluar</strong> ke divisi yang membutuhkan. Keduanya bertemu di stok gudang.</p>
+
+## Flowchart lengkap
 
 ```mermaid
-flowchart LR
-  accTitle: Siklus material di Gudang Teknik
-  accDescr: Barang masuk menambah stok. Barang keluar mengurangi stok. Stock opname memeriksa kecocokan stok dengan catatan. Stok yang menyentuh titik pemesanan ulang memicu pembelian, yang kembali menjadi barang masuk.
-  BM[Barang masuk] --> ST[(Stok di gudang)]
-  ST --> BK[Barang keluar]
-  ST <--> SO[Stock opname]
-  BK -- stok mencapai ROP --> PB[Pemesanan ulang]
-  PB --> BM
+flowchart TD
+  accTitle: Flowchart alur warehouse Gudang Teknik
+  accDescr: Barang masuk dari vendor dicek, diterima, dicatat di database, dilaporkan ke OS/PPIC, lalu disimpan di rak sebagai stok. Barang keluar dimulai dari permintaan divisi lewat ERP, disetujui staff, diambil dari stok, ditaruh di rak reservasi, lalu diserahkan dan dicek oleh karyawan divisi pemesan.
+  subgraph MASUK["Barang masuk"]
+    direction TB
+    M1(["Vendor mengantar barang"]):::vendor --> M2{"Sesuai pesanan?"}:::cek
+    M2 -- Tidak --> MR["Dikembalikan ke vendor"]:::tolak
+    M2 -- Ya --> M3["Bawa masuk dan terima barang"]:::staff
+    M3 --> M4{"Kondisi baik dan jumlah sesuai?"}:::cek
+    M4 -- Tidak --> MR
+    M4 -- Ya --> M5[/"Surat tanda terima ke vendor"/]:::dokumen
+    M5 --> M6[("Input database barang")]:::sistem
+    M6 --> M7[/"Laporan ke divisi OS/PPIC"/]:::dokumen
+    M7 --> M8["Simpan di rak dan catat di catatan manual"]:::staff
+  end
+  M8 --> S[("Stok Gudang Teknik")]:::sistem
+  subgraph KELUAR["Barang keluar"]
+    direction TB
+    K1(["Divisi memesan lewat ERP"]):::divisi --> K2["Staff menyetujui, laporan keluar tercatat di ERP"]:::staff
+    K2 --> K3["Cari dan ambil barang, catat di catatan manual"]:::staff
+    K3 --> K4["Taruh di rak reservasi"]:::staff
+    K4 --> K5["Serahkan ke karyawan divisi pemesan"]:::staff
+    K5 --> K6{"Sesuai orderan?"}:::cek
+    K6 -- Tidak --> K7["Tukar dengan barang yang sesuai"]:::tolak
+    K7 --> K5
+    K6 -- Ya --> K8(["Barang dibawa divisi pemesan"]):::selesai
+  end
+  S -- "siap dipesan" --> K1
 ```
 
-| Alur | Dipicu oleh | Hasil akhir | Status diagram |
-| --- | --- | --- | --- |
-| [Barang masuk](./barang-masuk) | Barang tiba dari supplier | Barang tersimpan dan tercatat | Draf, perlu dicocokkan dengan slide 5 |
-| [Barang keluar](./barang-keluar) | Permintaan dari user | Barang diserahkan dan tercatat | Draf, perlu dicocokkan dengan slide 6 |
-| [Stock opname](./stock-opname) | Jadwal penghitungan | Selisih teridentifikasi dan dilaporkan | Draf |
-| [Layout gudang](./layout-gudang) | — | Denah lokasi penyimpanan | Menunggu gambar slide 7 |
+<LegendaAlur />
 
-::: warning Diagram masih draf
-Urutan langkah di bagian ini disusun dari praktik umum pergudangan dan data yang disebut di materi Gudang Teknik (misalnya tanggal, supplier, jumlah, dan dokumen untuk barang masuk). Sebelum dipakai sebagai pegangan, cocokkan dengan gambar alur di presentasi asli dan minta persetujuan pembimbing.
-:::
+## Pelajari per bagian
 
-## Cara membaca diagram
+<DaftarKartu :items="[
+  { judul: 'Alur barang masuk', ket: 'Dari vendor datang sampai barang tersimpan di rak.', link: '/alur-kerja/barang-masuk', ikon: 'masuk' },
+  { judul: 'Alur barang keluar', ket: 'Dari permintaan di ERP sampai barang diambil divisi.', link: '/alur-kerja/barang-keluar', ikon: 'keluar' },
+  { judul: 'Stock opname', ket: 'Menghitung stok fisik dan mencocokkannya dengan catatan.', link: '/alur-kerja/stock-opname', ikon: 'opname' },
+  { judul: 'Layout gudang', ket: 'Denah area dan rak penyimpanan.', link: '/alur-kerja/layout-gudang', ikon: 'denah' }
+]" />
 
-- **Kotak** adalah langkah kerja.
-- **Belah ketupat** adalah titik keputusan. Ikuti panah "Ya" atau "Tidak".
-- **Silinder** adalah tempat data disimpan, misalnya catatan stok.
-- Di layar kecil, ketuk **Perbesar diagram** untuk melihat diagram dalam ukuran penuh, lalu geser untuk membaca.
-- Setiap diagram punya versi tertulis di bawahnya. Versi tertulis itulah yang dipakai jika diagram sulit dibaca.
+## Tiga hal yang selalu dicatat
+
+Setiap barang yang bergerak meninggalkan jejak di tiga tempat. Ketiganya harus selalu cocok.
+
+1. **Database / ERP.** Barang masuk diinput ke database, dan barang keluar tercatat di ERP saat staff menyetujui permintaan.
+2. **Catatan manual di rak.** Setiap barang yang ditaruh atau diambil dari rak dicatat di catatan yang ada di rak itu.
+3. **Laporan.** Laporan barang masuk dikirim ke divisi OS/PPIC, sedangkan laporan barang keluar tersimpan di ERP.

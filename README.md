@@ -2,7 +2,7 @@
 
 Website dokumentasi statis untuk peserta magang/PKL di Gudang Teknik (Warehouse) PT Bakrie Pipe Industries. Isinya: profil perusahaan (dengan sumber), pengenalan Gudang Teknik, alur kerja, tutorial, SOP draf, FAQ, glosarium, dan referensi.
 
-> **Status: v0.1.0 — draf untuk ditinjau pembimbing.** Isinya belum disetujui pembimbing.
+> **Status: v0.2.0, sedang ditinjau pembimbing.** Alur barang masuk dan keluar sudah mengikuti alur asli Gudang Teknik. SOP selain penerimaan dan pengeluaran masih berupa panduan umum.
 >
 > **Versi online:** https://hwarinn66.github.io/WareHouse/ (GitHub Pages, diperbarui otomatis setiap ada push ke branch `main`). Situs memakai tag `noindex` agar tidak diindeks mesin pencari, tetapi tetap bisa dibuka siapa saja yang punya tautannya.
 
@@ -29,7 +29,7 @@ Website dokumentasi statis untuk peserta magang/PKL di Gudang Teknik (Warehouse)
 | Framework | [VitePress](https://vitepress.dev) 1.6 | Dibuat khusus untuk dokumentasi berbasis Markdown. Sidebar, daftar isi, navigasi sebelumnya/berikutnya, mode gelap, dan pencarian lokal sudah tersedia, sehingga isi mudah diedit oleh orang non-developer. Docusaurus juga cocok, tetapi lebih berat (React + MDX) untuk kebutuhan satu divisi. |
 | Diagram | [Mermaid](https://mermaid.js.org) 12, dari paket lokal | Diagram ditulis sebagai teks di Markdown, sehingga mudah diubah tanpa aplikasi gambar. |
 | Pencarian | Pencarian lokal VitePress (MiniSearch) | Indeks dibuat saat build. Tidak butuh server atau layanan luar. |
-| Font | Barlow & Barlow Condensed (`@fontsource`) | Disimpan lokal di hasil build, tidak memanggil Google Fonts. |
+| Font | Plus Jakarta Sans (`@fontsource`) | Font yang ramah dan mudah dibaca. Disimpan lokal di hasil build, tidak memanggil Google Fonts. |
 | Data | File JSON di `docs/data/` | FAQ, profil perusahaan, sumber, material, navigasi, dan isi beranda terpisah dari komponen tampilan. |
 
 Tidak ada backend, database, login, API server, atau analitik.
@@ -88,6 +88,7 @@ division-handbook/
 │   │   ├── company-profile.json   ← profil perusahaan + status verifikasi + sumber
 │   │   ├── sumber.json            ← daftar referensi
 │   │   ├── faq.json               ← FAQ
+│   │   ├── alur.json              ← langkah alur barang masuk & keluar
 │   │   ├── material.json          ← kelompok material
 │   │   └── status.json            ← arti label status halaman
 │   ├── public/                    ← file yang disalin apa adanya ke hasil build
@@ -126,14 +127,14 @@ Panduan lengkap dengan contoh juga tersedia di dalam website: **Tentang Handbook
    ---
    ```
 
-   Untuk SOP, tambahkan `nomor_dokumen`, `versi`, `berlaku_sejak`, `pemilik`, `pengesah`, lalu tulis `<IdentitasDokumen />` di bawah judul.
+   Untuk SOP, isi juga `nomor_dokumen`, `versi`, `pemilik`, dan `pengesah` (untuk catatan pengelola, tidak ditampilkan).
 3. Daftarkan di `docs/data/navigasi.json` (tanpa `.md`), misalnya `{ "text": "Pengembalian Barang", "link": "/sop/pengembalian-barang" }`.
 
 Build akan **gagal** jika ada tautan internal di Markdown yang rusak. Ini disengaja agar tautan mati ketahuan sebelum dipublikasikan.
 
 ### Memperbarui FAQ dan metadata
 
-- FAQ: `docs/data/faq.json`. Setiap pertanyaan berisi `id`, `tanya`, `jawab`, dan `status` (`terjawab` atau `menunggu-pembimbing`). Jawaban boleh memakai `**tebal**`, `*miring*`, `` `kode` ``, dan `[tautan](/halaman)`. FAQ otomatis terindeks pencarian dan bisa ditautkan langsung (`/faq#id`).
+- FAQ: `docs/data/faq.json`. Setiap pertanyaan berisi `id`, `tanya`, `jawab`, dan `status` (`terjawab` atau `menunggu-pembimbing`). Jawaban boleh memakai `**tebal**`, `*miring*`, `` `kode` ``, dan `[tautan](/halaman)`. Hanya pertanyaan berstatus `terjawab` yang tampil di website. FAQ yang tampil otomatis terindeks pencarian dan bisa ditautkan langsung (`/faq#id`).
 - Metadata halaman: frontmatter di setiap file `.md` (lihat di atas). `kata_kunci` muncul sebagai tombol pencarian di bawah artikel dan ikut terindeks.
 
 ### Memperbarui profil perusahaan beserta sumbernya
@@ -153,6 +154,10 @@ Nomor rujukan `[1]`, `[2]`, … mengikuti urutan entri di `sumber.json`.
 
 > ⚠️ Semua file di `docs/public/` ikut ter-deploy dan bisa dibuka siapa saja yang tahu alamatnya, walaupun tidak ditautkan. Jangan menaruh dokumen internal, screenshot sistem, atau data pribadi di sana tanpa izin.
 
+### Mengubah alur barang masuk / keluar
+
+Alur ditampilkan sebagai flowchart (blok `mermaid` di `docs/alur-kerja/*.md`) dan sebagai daftar langkah (`docs/data/alur.json`). Jika urutan alur berubah, ubah keduanya. Warna kotak flowchart mengikuti pelakunya: tambahkan `:::vendor`, `:::staff`, `:::divisi`, `:::sistem`, `:::dokumen`, `:::cek`, `:::tolak`, atau `:::selesai` di belakang kotak. Warnanya diatur di `docs/.vitepress/theme/warnaAlur.ts`.
+
 ### Menambah diagram
 
 ````md
@@ -171,7 +176,7 @@ Gunakan `flowchart TD` agar terbaca di ponsel, selalu isi `accTitle`/`accDescr`,
 
 ## Status halaman dan verifikasi
 
-Setiap halaman punya `status` di frontmatter yang ditampilkan sebagai label di atas judul:
+Setiap halaman punya `status` di frontmatter. Hanya `draf` dan `perlu-verifikasi` yang memunculkan catatan kecil di atas judul. Isi `catatan:` di frontmatter untuk mengganti teksnya, atau `catatan: false` untuk menyembunyikannya.
 
 | Status | Arti | Dianggap siap publikasi? |
 | --- | --- | --- |
@@ -196,7 +201,7 @@ Daftar lengkap ada di `docs/tentang-handbook/perlu-verifikasi.md`. Ringkasnya:
 
 **Perusahaan:** visi & misi resmi · tahun berdiri & sejarah · apakah *Passion, Respect, Integrity, Discipline, Excellent* nilai resmi perusahaan atau moto unit · jenis/ukuran/standar produk · struktur organisasi · sertifikasi yang berlaku · alamat situs resmi.
 
-**Gudang Teknik:** gambar slide 5–7 presentasi (alur barang masuk, alur barang keluar, layout gudang) · nama resmi unit kerja terkait · siapa yang menyetujui pengeluaran barang dan penyesuaian stok · nama formulir · aplikasi pencatatan stok · aturan pengodean barang · parameter stok min/maks/ROP · kategori material tanpa permintaan · jadwal stock opname.
+**Gudang Teknik:** denah layout gudang (slide 7) · kepanjangan "OS" pada OS/PPIC · format surat tanda terima dan laporan ke OS/PPIC · bagian ERP yang boleh diakses peserta magang · aturan pengodean barang · parameter stok min/maks/ROP · kategori material tanpa permintaan · jadwal stock opname · siapa yang memesan barang ke vendor.
 
 **SOP & K3:** SOP resmi yang ada · APD wajib · area terbatas · nomor darurat, APAR, P3K, jalur evakuasi, titik kumpul · aturan limbah consumable.
 
@@ -217,27 +222,26 @@ Lalu, hanya jika memang boleh tampil di mesin pencari, hapus meta `robots: noind
 
 ## Ringkasan pengujian
 
-Pengujian yang **benar-benar dijalankan** pada versi ini (13 Oktober 2026), menggunakan Chromium headless (Playwright) terhadap hasil `npm run build` yang disajikan `vitepress preview`:
+Pengujian yang **benar-benar dijalankan** pada versi 0.2.0 (13 Oktober 2026), menggunakan Chromium headless (Playwright) terhadap hasil `npm run build` yang disajikan `vitepress preview`:
 
 | Pengujian | Hasil |
 | --- | --- |
 | `npm run build` | Berhasil tanpa error, 33 halaman HTML |
-| Pemeriksaan tautan internal pada semua HTML hasil build (termasuk tautan dari data JSON dan anchor `#`) | 0 tautan rusak, 0 anchor hilang |
-| Semua halaman sidebar + halaman 404 pada lebar 1440, 1024, 768, dan 375 px (132 kombinasi) | Tidak ada scroll horizontal, gambar gagal, error console, request gagal, atau diagram gagal. Setiap halaman punya tepat satu `<h1>` |
-| Pencarian lokal | "bearing" 14 hasil. "formulir" menemukan entri FAQ (`/faq#nama-formulir`). "gearbox" menemukan data material. Kata acak menampilkan pesan "Tidak ada hasil" beserta saran kata kunci |
-| Tombol contoh pencarian di Beranda | Membuka pencarian dengan kata kunci terisi ("FIFO", 15 hasil) |
-| Breadcrumb, daftar isi kanan, tombol Sebelumnya/Berikutnya | Tampil dan berfungsi |
-| FAQ | Buka/tutup dengan klik dan tombol Enter, filter status, Buka semua, buka otomatis dari tautan `#id` |
-| Diagram | Semua diagram dirender (mode terang & gelap). Tombol Perbesar membuka dialog, zoom berfungsi, Esc menutup |
-| Ponsel 375 px | Sidebar terbuka lewat tombol Menu, pencarian terbuka, tabel tampil bertumpuk seperti kartu |
-| Tablet 768–1199 px | Menu atas pindah ke tombol hamburger dan bisa dibuka |
-| Fokus keyboard | Elemen yang terfokus menampilkan outline |
-| `npm run cek-publikasi` | Berjalan. Melaporkan 30 dari 32 halaman belum berstatus siap publikasi (sesuai harapan untuk versi draf) |
+| Pemeriksaan tautan internal dan anchor `#` di semua HTML hasil build | 1.596 tautan, 0 rusak, 0 anchor hilang |
+| Semua halaman sidebar + halaman 404 di lebar 1440, 1024, 768, dan 375 px (132 kombinasi) | Tidak ada scroll horizontal, gambar gagal, error console, request gagal, atau flowchart gagal. Setiap halaman punya tepat satu `<h1>` |
+| Flowchart (alur warehouse, barang masuk, barang keluar, dll.) | Semua tampil di mode terang dan gelap. Tombol "Lihat ukuran besar" membuka dan menutup (Esc) |
+| Daftar langkah alur | Barang masuk 9 langkah, barang keluar 9 langkah, dengan kotak Ya/Tidak pada langkah pengecekan |
+| Pencarian lokal | "rak reservasi", "ERP", "surat tanda terima", dan "bearing" menemukan hasil yang relevan. Kata acak menampilkan pesan "Belum ketemu" beserta saran kata |
+| Beranda | Tombol "Coba cari" mengisi kata kunci, kartu topik membuka halaman tujuan |
+| FAQ | 18 pertanyaan tampil, yang belum terjawab tersembunyi. Buka/tutup dengan klik dan Enter, terbuka otomatis dari tautan `#id` |
+| Profil perusahaan | Data yang belum terverifikasi tidak tampil |
+| Tablet 768–1023 px | Menu atas pindah ke tombol hamburger. Di 1024 px ke atas, menu tampil normal |
+| Ponsel 375 px | Sidebar terbuka lewat tombol Menu, pencarian terbuka |
 
 **Belum diuji / kendala yang tersisa**
 
 - Belum diuji di Safari/iOS, Firefox, dan perangkat fisik. Pengujian hanya memakai Chromium.
-- Belum ada audit aksesibilitas otomatis (mis. axe/Lighthouse) maupun uji dengan pembaca layar. Kontras warna dipilih dengan target WCAG AA, tetapi belum diukur dengan alat.
-- Diagram alur barang masuk/keluar adalah **draf praktik umum** karena gambar slide 5–6 tidak ikut terbaca. Diagram ini harus dicocokkan dengan materi asli.
-- Logo dan warna resmi belum diterapkan karena file logo dan kode warna resmi belum tersedia, dan situs resmi perusahaan tidak bisa diakses otomatis saat riset.
-- Library Mermaid cukup besar. Halaman yang memiliki diagram memuat sekitar 2,7 MB (sebelum kompresi server), sedangkan halaman tanpa diagram sekitar 0,3 MB. Mermaid hanya dimuat di halaman yang memiliki diagram.
+- Belum ada audit aksesibilitas otomatis (axe/Lighthouse) maupun uji dengan pembaca layar.
+- Logo dan warna resmi perusahaan belum diterapkan karena file logo dan kode warnanya belum tersedia.
+- Denah layout gudang masih placeholder.
+- Library Mermaid cukup besar. Halaman yang memiliki flowchart memuat sekitar 2,7 MB (sebelum kompresi server). Mermaid hanya dimuat di halaman yang memiliki flowchart.

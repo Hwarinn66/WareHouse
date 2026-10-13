@@ -1,23 +1,24 @@
 ---
-title: Daftar Tutorial
-description: Latihan langkah demi langkah untuk peserta magang Gudang Teknik.
+title: Latihan
+description: Latihan singkat langkah demi langkah untuk peserta magang Gudang Teknik.
 status: draf
 dasar: materi presentasi Gudang Teknik
 diperbarui: 2026-10-13
-kategori: Tutorial
+kategori: Latihan
 kata_kunci: [tutorial, latihan, panduan langkah, belajar]
 ---
 
-# Daftar Tutorial
+# Latihan
 
-<p class="lead">Tutorial berisi latihan praktis dengan contoh. Kerjakan secara berurutan, karena tutorial berikutnya memakai konsep dari tutorial sebelumnya.</p>
+<p class="lead">Latihan singkat untuk menguji pemahamanmu. Kerjakan berurutan, karena latihan berikutnya memakai konsep dari latihan sebelumnya.</p>
 
-<TabelStatus awalan="/tutorial/" kolom="tutorial" />
+<DaftarKartu :kolom="1" :items="[
+  { judul: '1. Membaca kode barang', ket: 'Pemula · sekitar 20 menit', link: '/tutorial/membaca-kode-barang', ikon: 'kode' },
+  { judul: '2. Fast & slow moving', ket: 'Pemula · sekitar 30 menit', link: '/tutorial/fast-slow-moving', ikon: 'grafik' },
+  { judul: '3. Menghitung min, maks & ROP', ket: 'Menengah · sekitar 30 menit', link: '/tutorial/min-max-rop', ikon: 'latihan' },
+  { judul: '4. Mencatat hitung fisik', ket: 'Pemula · sekitar 25 menit', link: '/tutorial/hitung-fisik', ikon: 'opname' }
+]" />
 
 ::: info Tentang data latihan
-Angka dan kode barang di tutorial adalah **data latihan**, bukan data stok Gudang Teknik. Kode latihan selalu diawali `CTH-` agar tidak tertukar dengan kode asli.
+Angka dan kode barang di latihan ini **bukan** data asli Gudang Teknik. Kode latihan selalu diawali `CTH-` supaya tidak tertukar dengan kode asli.
 :::
-
-## Format setiap tutorial
-
-Setiap tutorial memuat tujuan belajar, tingkat kesulitan, prasyarat, alat yang dibutuhkan, langkah bernomor, tips, kesalahan umum, dan hasil akhir yang diharapkan. Format ini juga dipakai saat menambah tutorial baru. Lihat [Cara Memperbarui Handbook](/tentang-handbook/cara-memperbarui).

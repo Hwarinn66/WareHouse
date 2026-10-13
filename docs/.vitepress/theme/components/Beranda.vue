@@ -1,16 +1,17 @@
 <script setup lang="ts">
-// Beranda sebagai dasbor dokumentasi. Semua teks diambil dari docs/data/beranda.json.
+// Beranda. Semua teks diambil dari docs/data/beranda.json.
 import { withBase } from 'vitepress'
 import data from '../../../data/beranda.json'
 import TombolCari from './TombolCari.vue'
+import DaftarKartu from './DaftarKartu.vue'
 </script>
 
 <template>
   <div class="beranda">
-    <header class="kepala">
-      <div class="judul-blok">
-        <h1>Division Handbook</h1>
-        <p class="unit">Gudang Teknik, PT Bakrie Pipe Industries</p>
+    <header class="sambut">
+      <div class="teks">
+        <p class="sapaan">{{ data.sapaan }}</p>
+        <h1>{{ data.judul }}</h1>
         <p class="pengantar">{{ data.pengantar }}</p>
         <TombolCari :contoh="data.contohPencarian" />
       </div>
@@ -22,262 +23,181 @@ import TombolCari from './TombolCari.vue'
       </figure>
     </header>
 
-    <aside v-if="data.pengumuman?.aktif" class="pengumuman" role="note">
-      <p class="pengumuman-judul">{{ data.pengumuman.judul }}</p>
-      <p>{{ data.pengumuman.isi }}</p>
-    </aside>
+    <section class="blok" aria-labelledby="topik-judul">
+      <h2 id="topik-judul">Mau belajar apa hari ini?</h2>
+      <DaftarKartu :items="data.topik" :kolom="3" />
+    </section>
 
-    <section class="blok" aria-labelledby="mulai-judul">
-      <h2 id="mulai-judul">Mulai dari sini</h2>
-      <p class="blok-ket">Urutan belajar yang disarankan untuk minggu pertama magang.</p>
-      <ol class="alur">
-        <li v-for="(l, i) in data.alurBelajar" :key="l.link">
-          <span class="nomor" aria-hidden="true">{{ i + 1 }}</span>
-          <a :href="withBase(l.link)" class="alur-judul">{{ l.judul }}</a>
-          <p>{{ l.ket }}</p>
+    <section class="blok" aria-labelledby="awal-judul">
+      <h2 id="awal-judul">Baru pertama kali? Mulai dari sini</h2>
+      <ol class="awal">
+        <li v-for="(l, i) in data.langkahAwal" :key="l.link">
+          <a :href="withBase(l.link)">
+            <span class="nomor" aria-hidden="true">{{ i + 1 }}</span>
+            <span class="judul">{{ l.judul }}</span>
+            <span class="ket">{{ l.ket }}</span>
+          </a>
         </li>
       </ol>
     </section>
 
-    <section class="blok" aria-labelledby="isi-judul">
-      <h2 id="isi-judul">Isi handbook</h2>
-      <ul class="indeks">
-        <li v-for="b in data.bagian" :key="b.link">
-          <a :href="withBase(b.link)">{{ b.judul }}</a>
-          <p>{{ b.ket }}</p>
-        </li>
-      </ul>
-    </section>
-
-    <section class="blok" aria-labelledby="saran-judul">
-      <h2 id="saran-judul">Bacaan yang disarankan</h2>
-      <ul class="saran">
-        <li v-for="r in data.rekomendasi" :key="r.link">
-          <a :href="withBase(r.link)">{{ r.judul }}</a>
-          <span>{{ r.ket }}</span>
-        </li>
-      </ul>
-    </section>
+    <p class="penutup">{{ data.penutup }}</p>
   </div>
 </template>
 
 <style scoped>
 .beranda {
-  max-width: 1152px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 48px 24px 96px;
+  padding: 32px 24px 80px;
 }
 
-/* ---------- Kepala ---------- */
-.kepala {
+/* ---------- Sambutan ---------- */
+.sambut {
   display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
-  gap: 48px;
-  align-items: end;
-  padding-bottom: 40px;
-  border-bottom: 1px solid var(--vp-c-divider);
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 40px;
+  align-items: center;
+  padding: 36px 40px;
+  border-radius: 24px;
+  background: var(--bpi-steel-pale);
+}
+.sapaan {
+  margin: 0;
+  font-weight: 600;
+  color: var(--vp-c-brand-1);
 }
 h1 {
-  margin: 0;
-  font-family: var(--bpi-font-display);
-  font-weight: 700;
-  font-size: clamp(2.6rem, 6vw, 4rem);
-  line-height: 1;
+  margin: 6px 0 0;
+  font-weight: 800;
+  font-size: clamp(2rem, 4.5vw, 2.9rem);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
   color: var(--bpi-ink);
 }
-.unit {
-  margin: 10px 0 0;
-  font-size: 1.25rem;
-  font-weight: 500;
-  color: var(--vp-c-text-1);
-}
 .pengantar {
-  margin: 20px 0 28px;
-  max-width: 34em;
+  margin: 14px 0 24px;
+  max-width: 36em;
   font-size: 1.05rem;
   line-height: 1.65;
   color: var(--vp-c-text-2);
 }
+.sambut :deep(.kolom) {
+  background: var(--vp-c-bg);
+  border-color: transparent;
+  box-shadow: 0 2px 10px rgba(20, 50, 90, 0.08);
+}
 
-/* Moto: elemen yang paling menonjol, dengan garis kuning marka lantai gudang. */
+/* Moto dengan garis kuning seperti marka lantai gudang */
 .moto {
   margin: 0;
-  padding: 4px 0 4px 28px;
-  border-left: 10px solid var(--bpi-safety);
+  padding: 6px 0 6px 22px;
+  border-left: 8px solid var(--bpi-safety);
 }
 .moto blockquote {
   margin: 0;
 }
 .moto p {
   margin: 0;
-  font-family: var(--bpi-font-display);
-  font-weight: 600;
-  font-size: clamp(1.9rem, 3.6vw, 2.75rem);
-  line-height: 1.08;
+  font-weight: 800;
+  font-size: clamp(1.4rem, 2.6vw, 1.9rem);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
   color: var(--bpi-ink);
   text-wrap: balance;
 }
 .moto figcaption {
-  margin-top: 14px;
-  font-size: 0.95rem;
+  margin-top: 10px;
+  font-size: 0.9rem;
   color: var(--vp-c-text-2);
-}
-
-/* ---------- Pengumuman ---------- */
-.pengumuman {
-  margin: 32px 0 0;
-  padding: 14px 18px;
-  border-radius: 6px;
-  background: var(--bpi-safety-pale);
-  color: var(--bpi-safety-ink);
-  max-width: 760px;
-}
-.pengumuman p {
-  margin: 0;
-  line-height: 1.55;
-}
-.pengumuman-judul {
-  font-weight: 700;
-  margin-bottom: 2px !important;
 }
 
 /* ---------- Blok ---------- */
 .blok {
-  margin-top: 56px;
+  margin-top: 48px;
 }
 .blok h2 {
   margin: 0;
-  font-family: var(--bpi-font-display);
-  font-weight: 600;
-  font-size: 1.85rem;
+  font-weight: 800;
+  font-size: 1.45rem;
+  letter-spacing: -0.01em;
   color: var(--bpi-ink);
 }
-.blok-ket {
-  margin: 4px 0 0;
-  color: var(--vp-c-text-2);
-}
 
-/* Alur belajar: urutan nyata, jadi memakai nomor. */
-.alur {
+/* Tiga langkah awal (urutan nyata, jadi bernomor) */
+.awal {
+  list-style: none;
+  margin: 18px 0 0;
+  padding: 0;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0 32px;
-  list-style: none;
-  margin: 20px 0 0;
-  padding: 0;
-  counter-reset: none;
+  gap: 12px;
 }
-.alur li {
+.awal a {
   display: grid;
-  grid-template-columns: 40px 1fr;
+  grid-template-columns: 36px 1fr;
   grid-template-rows: auto auto;
   column-gap: 12px;
-  padding: 18px 0;
-  border-top: 2px solid var(--bpi-ink);
+  height: 100%;
+  padding: 16px;
+  border-radius: 14px;
+  border: 1px solid var(--vp-c-divider);
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-1);
+  text-decoration: none;
+}
+.awal a:hover {
+  border-color: var(--vp-c-brand-1);
 }
 .nomor {
   grid-row: span 2;
-  font-family: var(--bpi-font-display);
-  font-weight: 700;
-  font-size: 2.2rem;
-  line-height: 1;
-  color: var(--vp-c-brand-1);
-}
-.alur-judul {
-  font-weight: 600;
-  font-size: 1.1rem;
-  color: var(--vp-c-text-1);
-  text-decoration: underline;
-  text-decoration-color: var(--vp-c-divider);
-  text-underline-offset: 4px;
-}
-.alur-judul:hover {
-  color: var(--vp-c-brand-1);
-  text-decoration-color: currentColor;
-}
-.alur p {
-  margin: 4px 0 0;
-  font-size: 0.95rem;
-  line-height: 1.5;
-  color: var(--vp-c-text-2);
-}
-
-/* Indeks isi */
-.indeks {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0 32px;
-  list-style: none;
-  margin: 20px 0 0;
-  padding: 0;
+  place-items: center;
+  background: var(--bpi-safety);
+  color: #2b2100;
+  font-weight: 800;
 }
-.indeks li {
-  padding: 14px 0;
-  border-bottom: 1px solid var(--vp-c-divider);
+.awal .judul {
+  font-weight: 700;
+  color: var(--bpi-ink);
 }
-.indeks a {
-  font-weight: 600;
-  font-size: 1.1rem;
-  color: var(--vp-c-brand-1);
-}
-.indeks a:hover {
-  text-decoration: underline;
-  text-underline-offset: 4px;
-}
-.indeks p {
-  margin: 2px 0 0;
-  font-size: 0.95rem;
+.awal .ket {
+  margin-top: 2px;
+  font-size: 0.9rem;
+  line-height: 1.45;
   color: var(--vp-c-text-2);
 }
 
-.saran {
-  list-style: none;
-  margin: 16px 0 0;
-  padding: 0;
-}
-.saran li {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2px 12px;
-  padding: 10px 0;
-  border-bottom: 1px solid var(--vp-c-divider);
-}
-.saran a {
-  font-weight: 600;
-  color: var(--vp-c-brand-1);
-}
-.saran a:hover {
-  text-decoration: underline;
-  text-underline-offset: 4px;
-}
-.saran span {
+.penutup {
+  margin: 40px 0 0;
+  padding: 14px 18px;
+  border-radius: 14px;
+  background: var(--vp-c-bg-alt);
   color: var(--vp-c-text-2);
+  text-align: center;
 }
 
 /* ---------- Responsif ---------- */
-@media (max-width: 960px) {
-  .kepala {
+@media (max-width: 900px) {
+  .sambut {
     grid-template-columns: 1fr;
-    gap: 36px;
+    gap: 28px;
+    padding: 28px 24px;
   }
-  .alur {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .awal {
+    grid-template-columns: 1fr;
   }
 }
 @media (max-width: 640px) {
   .beranda {
-    padding: 28px 16px 64px;
+    padding: 16px 16px 56px;
   }
-  .moto {
-    padding-left: 18px;
-    border-left-width: 8px;
-  }
-  .alur,
-  .indeks {
-    grid-template-columns: 1fr;
-  }
-  .alur li {
-    border-top-width: 1px;
+  .sambut {
+    padding: 24px 18px;
+    border-radius: 20px;
   }
 }
 </style>

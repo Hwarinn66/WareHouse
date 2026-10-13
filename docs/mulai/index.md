@@ -1,42 +1,40 @@
 ---
-title: Mulai dari Sini
-description: Panduan minggu pertama untuk peserta magang baru di Gudang Teknik.
-status: draf
-dasar: isi handbook dan materi presentasi Gudang Teknik
+title: Panduan Magang Baru
+description: Apa yang perlu dibaca dan disiapkan di minggu pertama magang di Gudang Teknik.
+status: ditinjau
 diperbarui: 2026-10-13
 kategori: Mulai
-kata_kunci: [peserta baru, minggu pertama, orientasi, alur belajar, onboarding]
+kata_kunci: [peserta baru, minggu pertama, orientasi, alur belajar, onboarding, magang, PKL]
 ---
 
-# Mulai dari Sini
+# Panduan Magang Baru
 
-<p class="lead">Baru bergabung di Gudang Teknik? Ikuti urutan ini. Setiap langkah membangun pemahaman untuk langkah berikutnya.</p>
+<p class="lead">Selamat bergabung! Ikuti urutan bacaan ini di minggu pertama. Tidak perlu hafal semuanya, cukup pahami gambaran besarnya dulu.</p>
 
-## Alur belajar yang disarankan
+## Urutan bacaan
 
-1. **[Kenali perusahaan](/perusahaan/).** Apa yang diproduksi PT Bakrie Pipe Industries dan mengapa gudang penting bagi produksi.
-2. **[Kenali Gudang Teknik](/divisi/).** Tiga fungsi gudang (penyimpanan, pengendalian, pelayanan) dan prinsip *4 right*.
-3. **[Pelajari jenis material](/divisi/jenis-material).** Sepuluh kelompok barang teknik. Coba temukan contoh tiap kelompok di gudang bersama pembimbing.
-4. **[Pahami kode dan spesifikasi barang](/divisi/kode-barang).** Dasar agar Anda tidak salah ambil barang.
-5. **[Ikuti alur barang masuk dan keluar](/alur-kerja/).** Urutan kerja dari barang datang sampai diserahkan ke user.
-6. **[Baca SOP dan aturan K3](/sop/).** Wajib sebelum menangani barang sendiri.
-7. **[Kerjakan tutorial](/tutorial/).** Latihan membaca kode, mengklasifikasikan material, dan menghitung stok.
+<DaftarKartu :kolom="1" :items="[
+  { judul: '1. Kenali perusahaan', ket: 'Apa yang diproduksi BPI dan kenapa gudang penting.', link: '/perusahaan/', ikon: 'gedung' },
+  { judul: '2. Kenali Gudang Teknik', ket: 'Fungsi gudang dan prinsip 4 right.', link: '/divisi/', ikon: 'gudang' },
+  { judul: '3. Pahami alur warehouse', ket: 'Flowchart barang masuk dan barang keluar.', link: '/alur-kerja/', ikon: 'alur' },
+  { judul: '4. Kenali jenis barang dan kodenya', ket: 'Supaya tidak salah ambil barang.', link: '/divisi/jenis-material', ikon: 'kode' },
+  { judul: '5. Baca aturan keselamatan', ket: 'Wajib sebelum menangani barang sendiri.', link: '/sop/k3-gudang', ikon: 'perisai' }
+]" />
 
-## Sebelum turun ke area gudang
+## Sebelum mulai bekerja di gudang
 
-- [ ] Sudah berkenalan dengan pembimbing dan tahu cara menghubunginya.
-- [ ] Sudah membaca [K3 di Gudang](/sop/k3-gudang) dan memakai APD yang diminta pembimbing.
+- [ ] Sudah kenalan dengan pembimbing dan tahu cara menghubunginya.
+- [ ] Sudah membaca [Keselamatan Kerja (K3)](/sop/k3-gudang) dan memakai APD yang diminta pembimbing.
 - [ ] Tahu area mana yang boleh dan tidak boleh dimasuki peserta magang.
-- [ ] Tahu siapa yang boleh menyetujui pengeluaran barang.
-- [ ] Tahu di mana catatan stok disimpan dan siapa yang boleh mengubahnya.
+- [ ] Tahu cara membuka ERP Warehouse Teknik, atau siapa yang membukanya.
+- [ ] Tahu letak rak reservasi dan catatan manual di rak.
 
-::: warning Jika ragu, tanyakan dulu
-Jangan mengambil, memindahkan, atau mengubah catatan barang tanpa arahan. Satu kesalahan catat bisa menyebabkan selisih stok yang sulit ditelusuri.
+::: tip Kalau ragu, tanya dulu
+Jangan mengambil, memindahkan, atau mengubah catatan barang tanpa arahan. Satu kesalahan catat bisa membuat stok di ERP dan di rak tidak cocok.
 :::
 
 ## Cara memakai handbook ini
 
-- **Pencarian.** Tekan <kbd>Ctrl</kbd> + <kbd>K</kbd> (atau <kbd>/</kbd>) di komputer, atau ketuk ikon kaca pembesar di ponsel. Pencarian bekerja tanpa internet setelah halaman dimuat.
-- **Status halaman.** Label di atas judul menunjukkan apakah isi halaman sudah disetujui, masih draf, atau perlu verifikasi. Untuk halaman berstatus draf, arahan pembimbing tetap yang utama.
-- **Istilah asing.** Buka [Glosarium](/divisi/glosarium).
-- **Pertanyaan umum.** Buka [FAQ](/faq).
+- **Cari cepat.** Ketuk ikon kaca pembesar di atas, atau tekan <kbd>Ctrl</kbd> + <kbd>K</kbd> di komputer.
+- **Istilah asing.** Buka [Kamus Istilah](/divisi/glosarium).
+- **Pertanyaan umum.** Buka [Tanya Jawab](/faq).

@@ -1,7 +1,7 @@
 ---
-title: Glosarium
+title: Kamus Istilah
 description: Arti istilah pergudangan dan teknik yang sering dipakai di Gudang Teknik.
-status: draf
+status: ditinjau
 dasar: materi presentasi Gudang Teknik dan istilah umum pergudangan
 diperbarui: 2026-10-13
 kategori: Gudang Teknik
@@ -10,9 +10,9 @@ outline: 2
 kata_kunci: [glosarium, istilah, kamus, definisi, singkatan]
 ---
 
-# Glosarium
+# Kamus Istilah
 
-<p class="lead">Istilah yang sering Anda dengar di Gudang Teknik, dijelaskan dengan bahasa sederhana. Gunakan pencarian (<kbd>Ctrl</kbd> + <kbd>K</kbd>) untuk langsung menuju istilah tertentu.</p>
+<p class="lead">Istilah yang sering kamu dengar di Gudang Teknik, dijelaskan dengan bahasa sederhana. Gunakan pencarian (<kbd>Ctrl</kbd> + <kbd>K</kbd>) untuk langsung menuju istilah tertentu.</p>
 
 ## Umum
 
@@ -22,8 +22,23 @@ Tempat menerima, menyimpan, mengelola, memelihara, dan menyalurkan barang teknik
 ### User
 Orang atau bagian yang meminta dan memakai material dari gudang, misalnya teknisi perawatan.
 
-### Supplier
-Pihak luar yang mengirim atau menjual material ke perusahaan.
+### Vendor / supplier
+Pihak luar yang menjual dan mengantar barang ke perusahaan.
+
+### ERP
+*Enterprise Resource Planning*, yaitu sistem komputer perusahaan yang menghubungkan data antardivisi. Di Gudang Teknik, ERP dipakai untuk menerima permintaan barang dari divisi lain dan mencatat laporan barang keluar.
+
+### OS/PPIC
+Divisi yang menerima laporan bahwa barang sudah masuk dan sesuai. PPIC (*Production Planning and Inventory Control*) adalah bagian yang merencanakan produksi dan persediaan.
+
+### Surat tanda terima
+Surat yang ditandatangani staff gudang dan diberikan ke vendor sebagai bukti barang sudah diterima dalam kondisi dan jumlah yang sesuai.
+
+### Rak reservasi
+Rak khusus tempat barang yang sudah disiapkan untuk divisi pemesan, sampai karyawan divisi itu datang mengambilnya.
+
+### Catatan manual rak
+Catatan tertulis yang ada di setiap rak. Diisi setiap kali barang ditaruh atau diambil dari rak tersebut.
 
 ### APD (alat pelindung diri) / PPE
 Perlengkapan untuk melindungi tubuh saat bekerja, seperti helm, sarung tangan, safety shoes, dan goggles. PPE adalah singkatan bahasa Inggrisnya (*personal protective equipment*).

@@ -114,16 +114,7 @@ export default defineConfig({
     logo: fileLogo ? { src: `/images/${fileLogo}`, alt: 'Logo PT Bakrie Pipe Industries' } : undefined,
     siteTitle: 'Handbook Gudang Teknik',
 
-    nav: [
-      ...(navigasi.nav as DefaultTheme.NavItem[]),
-      {
-        text: `v${pkg.version}`,
-        items: [
-          { text: 'Riwayat versi', link: '/tentang-handbook/riwayat-versi' },
-          { text: 'Checklist publikasi', link: '/tentang-handbook/checklist-publikasi' }
-        ]
-      }
-    ],
+    nav: navigasi.nav as DefaultTheme.NavItem[],
 
     sidebar: navigasi.sidebar as DefaultTheme.SidebarItem[],
 
@@ -145,8 +136,8 @@ export default defineConfig({
     },
 
     footer: {
-      message: 'Dokumen internal Gudang Teknik · PT Bakrie Pipe Industries. Status: draf, belum disetujui untuk publikasi umum.',
-      copyright: `Handbook v${pkg.version}`
+      message: 'Handbook Gudang Teknik, PT Bakrie Pipe Industries. Masih ditinjau pembimbing.',
+      copyright: `Versi ${pkg.version}`
     },
 
     search: {
@@ -157,12 +148,12 @@ export default defineConfig({
           searchOptions: { fuzzy: 0.2, prefix: true, boost: { title: 4, text: 2, titles: 1 } }
         },
         translations: {
-          button: { buttonText: 'Cari dokumentasi', buttonAriaLabel: 'Cari dokumentasi' },
+          button: { buttonText: 'Cari', buttonAriaLabel: 'Cari di handbook' },
           modal: {
             displayDetails: 'Tampilkan cuplikan',
             resetButtonTitle: 'Hapus pencarian',
             backButtonTitle: 'Tutup pencarian',
-            noResultsText: 'Tidak ada hasil. Coba kata lain, misalnya bearing, FIFO, opname, atau ROP. Kata yang dicari:',
+            noResultsText: 'Belum ketemu. Coba kata lain, misalnya bearing, ERP, opname, atau rak reservasi. Kata yang dicari:',
             footer: {
               selectText: 'pilih',
               selectKeyAriaLabel: 'enter',

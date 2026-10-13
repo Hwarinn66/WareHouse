@@ -4,6 +4,7 @@
 import faq from '../data/faq.json'
 import profil from '../data/company-profile.json'
 import material from '../data/material.json'
+import alur from '../data/alur.json'
 
 type MarkdownIt = { render: (src: string, env?: any) => string; utils: { escapeHtml: (s: string) => string } }
 
@@ -14,12 +15,12 @@ function bagianFaq(md: MarkdownIt): string {
   const esc = md.utils.escapeHtml
   let html = ''
   for (const kat of faq.kategori) {
+    // Hanya pertanyaan yang sudah terjawab (yang lain tidak tampil di halaman FAQ).
+    const terjawab = kat.pertanyaan.filter((q) => q.status === 'terjawab' && q.jawab?.trim())
+    if (!terjawab.length) continue
     html += judul(2, kat.id, kat.nama, esc) + `<p>${esc(kat.nama)}</p>`
-    for (const q of kat.pertanyaan) {
-      const jawab = q.jawab?.trim()
-        ? md.render(q.jawab)
-        : '<p>Jawaban resmi sedang dilengkapi pembimbing.</p>'
-      html += judul(3, q.id, q.tanya, esc) + jawab
+    for (const q of terjawab) {
+      html += judul(3, q.id, q.tanya, esc) + md.render(q.jawab)
     }
   }
   return html
@@ -48,6 +49,16 @@ function bagianMaterial(md: MarkdownIt): string {
   return html
 }
 
+function bagianAlur(kunci: 'barang-masuk' | 'barang-keluar', md: MarkdownIt): string {
+  const esc = md.utils.escapeHtml
+  return (alur[kunci] as any[])
+    .map((l, i) => {
+      const cek = l.cek ? ` ${l.cek.tanya} Ya: ${l.cek.ya} Tidak: ${l.cek.tidak}` : ''
+      return `<p>${i + 1}. ${esc(l.judul)}. ${esc(l.teks)}${esc(cek)}</p>`
+    })
+    .join('')
+}
+
 export function tambahanIndeksPencarian(
   relativePath: string,
   frontmatter: Record<string, any>,
@@ -57,6 +68,8 @@ export function tambahanIndeksPencarian(
   if (relativePath === 'faq.md') tambahan += bagianFaq(md)
   if (relativePath === 'perusahaan/index.md') tambahan += bagianProfil(md)
   if (relativePath === 'divisi/jenis-material.md') tambahan += bagianMaterial(md)
+  if (relativePath === 'alur-kerja/barang-masuk.md') tambahan += bagianAlur('barang-masuk', md)
+  if (relativePath === 'alur-kerja/barang-keluar.md') tambahan += bagianAlur('barang-keluar', md)
 
   const kk = frontmatter.kata_kunci
   if (Array.isArray(kk) && kk.length) {

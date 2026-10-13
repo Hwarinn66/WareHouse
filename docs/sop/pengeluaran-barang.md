@@ -1,73 +1,56 @@
 ---
 title: SOP Pengeluaran Barang
-description: Langkah melayani permintaan user, menyerahkan barang, mencatat, dan memeriksa ROP.
-status: draf
-dasar: praktik umum pergudangan
+description: Langkah melayani permintaan barang dari divisi lain lewat ERP sampai barang diambil.
+status: ditinjau
+dasar: alur barang keluar Gudang Teknik
 nomor_dokumen: null
-versi: 0.1
-berlaku_sejak: null
+versi: 0.2
 pemilik: Gudang Teknik
 pengesah: null
 diperbarui: 2026-10-13
 kategori: SOP
-sumber: [ppt-gudang-teknik]
-kata_kunci: [SOP, pengeluaran barang, barang keluar, permintaan, user, serah terima, FIFO, ROP]
+sumber: [ppt-gudang-teknik, catatan-alur]
+kata_kunci: [SOP, pengeluaran barang, barang keluar, permintaan, ERP, persetujuan, laporan barang keluar, rak reservasi, catatan manual, FIFO, tukar barang]
 ---
 
 # SOP Pengeluaran Barang
 
-<IdentitasDokumen />
+<p class="lead">Dipakai setiap kali ada permintaan barang dari divisi lain melalui ERP.</p>
 
 ## Tujuan
 
-Memenuhi permintaan user dengan barang yang tepat jenis, jumlah, kondisi, dan waktunya, serta mencatat setiap pengeluaran.
+Memastikan divisi pemesan menerima barang yang benar, dalam jumlah dan kondisi yang tepat, dan setiap pengeluaran tercatat di ERP dan di rak.
 
-## Ruang lingkup
+## Yang perlu disiapkan
 
-Berlaku untuk semua pengeluaran material dari Gudang Teknik kepada user.
+- Akses ke ERP Warehouse Teknik.
+- Data lokasi barang di database.
+- APD sesuai arahan pembimbing.
 
-## Prasyarat
+## Langkah-langkah
 
-- Permintaan dibuat oleh user dan disetujui oleh pihak yang berwenang. Pihak yang berwenang perlu dikonfirmasi ke pembimbing.
-- Petugas sudah memahami [Kode & Identifikasi Barang](/divisi/kode-barang).
+1. **Buka notifikasi permintaan** di ERP Warehouse Teknik.
+2. **Setujui permintaan** dan buat laporan barang keluar. Laporan ini langsung tercatat di ERP.
+3. **Cari barang** sesuai orderan. Cocokkan kode dan spesifikasinya.
+4. **Ambil barang** dari rak. Dahulukan barang yang masuk lebih dulu (FIFO).
+5. **Isi catatan manual di rak** untuk barang yang diambil.
+6. **Taruh barang di rak reservasi** sampai diambil.
+7. **Serahkan barang** saat karyawan divisi pemesan datang.
+8. **Minta karyawan mengecek barang.** Kalau tidak sesuai orderan, terima kembali barangnya dan tukar dengan yang sesuai.
 
-## Peralatan dan dokumen
+Flowchart-nya ada di [Alur Barang Keluar](/alur-kerja/barang-keluar).
 
-- Dokumen atau formulir permintaan barang. Nama formulir resmi perlu dikonfirmasi.
-- Catatan stok dan master material.
-- Bukti serah terima.
+## Cek sebelum selesai
 
-## Langkah prosedur
+- [ ] Permintaan sudah disetujui di ERP dan laporan barang keluar tercatat.
+- [ ] Kode dan spesifikasi barang sesuai orderan.
+- [ ] Catatan manual di rak sudah diisi.
+- [ ] Barang sudah dicek karyawan dan dinyatakan sesuai.
 
-1. Terima permintaan dan periksa kelengkapannya: user, kode atau nama barang, jumlah, tujuan pemakaian, tanggal, dan persetujuan.
-2. Kembalikan permintaan yang belum lengkap atau belum disetujui.
-3. Cek ketersediaan di catatan stok. Jika kosong, informasikan user dan laporkan ke pembimbing.
-4. Ambil barang dari lokasinya dengan prinsip FIFO.
-5. Cocokkan kode, spesifikasi, jumlah, dan kondisi barang dengan permintaan.
-6. Serahkan barang kepada user dan minta tanda tangan pada bukti serah terima.
-7. Catat barang keluar: user, jumlah, tujuan, dan tanggal.
-8. Perbarui saldo stok.
-9. Bandingkan saldo dengan ROP. Jika sudah sama dengan atau di bawah ROP, ajukan pemesanan ulang.
-
-## Daftar periksa
-
-- [ ] Permintaan lengkap dan disetujui.
-- [ ] Barang diambil dengan FIFO.
-- [ ] Kode, spesifikasi, jumlah, dan kondisi sudah dicocokkan.
-- [ ] Bukti serah terima ditandatangani user.
-- [ ] Barang keluar sudah dicatat.
-- [ ] Saldo sudah dibandingkan dengan ROP.
-
-## Peringatan keselamatan
+## Perhatian keselamatan
 
 ::: warning Saat mengambil barang
-- Gunakan tangga atau alat bantu untuk rak tinggi. Jangan memanjat rak.
-- Angkat barang dengan menekuk lutut dan menjaga punggung tetap lurus. Minta bantuan untuk barang berat atau panjang.
-- Pegang barang bersudut tajam, seperti cutting disc atau plat, dengan sarung tangan.
+- Pakai tangga atau alat bantu untuk rak tinggi. Jangan memanjat rak.
+- Angkat barang dengan menekuk lutut dan punggung tetap lurus. Minta bantuan untuk barang berat atau panjang.
+- Pakai sarung tangan untuk barang bersudut tajam.
 :::
-
-## Referensi
-
-- [Alur Barang Keluar](/alur-kerja/barang-keluar)
-- [Menghitung Min, Maks & ROP](/tutorial/min-max-rop)
-- SOP resmi pengeluaran barang perusahaan: *belum tersedia, minta ke pembimbing*.

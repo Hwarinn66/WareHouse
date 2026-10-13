@@ -1,80 +1,60 @@
 ---
 title: SOP Penerimaan Barang
-description: Langkah menerima, memeriksa, mencatat, dan menyerahkan barang ke penyimpanan.
-status: draf
-dasar: praktik umum pergudangan
+description: Langkah menerima barang dari vendor sampai barang tersimpan di rak dan tercatat.
+status: ditinjau
+dasar: alur barang masuk Gudang Teknik
 nomor_dokumen: null
-versi: 0.1
-berlaku_sejak: null
+versi: 0.2
 pemilik: Gudang Teknik
 pengesah: null
 diperbarui: 2026-10-13
 kategori: SOP
-sumber: [ppt-gudang-teknik]
-kata_kunci: [SOP, penerimaan barang, receiving, barang masuk, pemeriksaan, surat jalan, PO, karantina, retur]
+sumber: [ppt-gudang-teknik, catatan-alur]
+kata_kunci: [SOP, penerimaan barang, receiving, barang masuk, vendor, surat tanda terima, database, OS/PPIC, rak, catatan manual, dikembalikan]
 ---
 
 # SOP Penerimaan Barang
 
-<IdentitasDokumen />
+<p class="lead">Dipakai setiap kali vendor atau supplier mengantar barang ke Gudang Teknik.</p>
 
 ## Tujuan
 
-Memastikan setiap barang yang diterima sesuai dengan pesanan dari segi jenis, spesifikasi, jumlah, dan kondisi, lalu tercatat dengan benar sebelum disimpan.
+Memastikan barang yang diterima sesuai pesanan, kondisinya baik, jumlahnya lengkap, lalu tersimpan dan tercatat dengan benar.
 
-## Ruang lingkup
+## Yang perlu disiapkan
 
-Berlaku untuk semua material yang dikirim supplier ke Gudang Teknik. Tidak mencakup pengembalian barang dari user. Prosedur pengembalian barang dari user perlu diatur terpisah.
+- Data pesanan barang yang akan datang.
+- Surat tanda terima.
+- Akses ke database barang.
+- APD sesuai arahan pembimbing.
 
-## Prasyarat
+## Langkah-langkah
 
-- Petugas memakai APD sesuai arahan pembimbing.
-- Data pesanan untuk barang yang datang tersedia.
-- Area penerimaan dan area karantina (barang tidak sesuai) sudah ditentukan.
+1. **Cek kesesuaian pesanan.** Saat barang datang, cocokkan barang dengan pesanan. Kalau tidak sesuai, barang dikembalikan ke vendor.
+2. **Bawa barang masuk** ke dalam gudang, lalu terima barangnya.
+3. **Cek kondisi dan jumlah.** Kalau kondisinya buruk atau jumlahnya kurang dari pesanan, barang dikembalikan ke vendor.
+4. **Berikan surat tanda terima** yang sudah ditandatangani kepada vendor.
+5. **Input ke database**: jumlah, jenis barang, tipe barang, dan tanggal masuk.
+6. **Kirim laporan ke divisi OS/PPIC** bahwa barang sudah masuk dan sesuai.
+7. **Simpan barang di rak** sesuai lokasi yang tercatat di database.
+8. **Isi catatan manual di rak** tempat barang disimpan.
 
-## Peralatan dan dokumen
+Flowchart-nya ada di [Alur Barang Masuk](/alur-kerja/barang-masuk).
 
-- Dokumen pengiriman dari supplier (misalnya surat jalan).
-- Data pesanan (misalnya *purchase order*). Nama dokumen resmi perlu dikonfirmasi.
-- Bukti penerimaan barang.
-- Label kode barang.
-- Alat ukur sederhana jika diperlukan, misalnya meteran atau jangka sorong.
+## Cek sebelum selesai
 
-## Langkah prosedur
+- [ ] Barang sesuai pesanan.
+- [ ] Kondisi baik dan jumlah lengkap.
+- [ ] Surat tanda terima sudah diberikan ke vendor.
+- [ ] Data sudah masuk database.
+- [ ] Laporan sudah dikirim ke OS/PPIC.
+- [ ] Barang ada di rak yang benar.
+- [ ] Catatan manual di rak sudah diisi.
 
-1. Terima barang di area penerimaan. Jangan langsung membawanya ke rak.
-2. Cocokkan dokumen pengiriman dengan data pesanan: nama barang, kode atau spesifikasi, dan jumlah.
-3. Jika dokumen tidak sesuai atau tidak ada, tahan barang dan laporkan ke pembimbing serta bagian pembelian.
-4. Periksa fisik barang: hitung jumlah, cocokkan spesifikasi atau part number, dan periksa kondisi.
-5. Jika ada ketidaksesuaian, catat rinciannya, letakkan barang di area karantina, lalu laporkan. Jangan menyimpannya bersama stok.
-6. Tanda tangani bukti penerimaan hanya untuk barang yang sudah diperiksa dan sesuai.
-7. Pasang label kode barang.
-8. Catat barang masuk: tanggal, supplier, jumlah, dan nomor dokumen.
-9. Simpan barang sesuai [SOP Penyimpanan Barang](./penyimpanan-barang).
-10. Arsipkan dokumen penerimaan.
+## Perhatian keselamatan
 
-## Daftar periksa
-
-- [ ] Dokumen pengiriman cocok dengan data pesanan.
-- [ ] Jumlah fisik sama dengan dokumen.
-- [ ] Spesifikasi dan part number sesuai.
-- [ ] Kondisi barang baik, tidak ada kemasan rusak, karat, atau cacat.
-- [ ] Barang tidak sesuai sudah dipisahkan dan dilaporkan.
-- [ ] Label kode terpasang.
-- [ ] Barang masuk sudah dicatat dengan tanggal, supplier, jumlah, dan dokumen.
-- [ ] Dokumen sudah diarsipkan.
-
-## Peringatan keselamatan
-
-::: warning Perhatikan saat membongkar barang
-- Periksa berat kemasan sebelum mengangkat. Minta bantuan atau gunakan alat angkut untuk barang berat.
-- Alat angkut bermesin hanya dioperasikan oleh orang yang berwenang.
-- Gunakan sarung tangan saat membuka kemasan yang diikat strapping atau berisi benda tajam.
-- Jika kemasan consumable (oli, grease, sealant) bocor, hindari kontak dengan kulit dan laporkan.
+::: warning Saat membongkar dan membawa barang
+- Cek berat barang sebelum mengangkat. Minta bantuan atau pakai alat angkut untuk barang berat.
+- Alat angkut bermesin hanya boleh dipakai oleh orang yang berwenang.
+- Pakai sarung tangan saat membuka kemasan yang tajam atau diikat strapping.
 :::
-
-## Referensi
-
-- [Alur Barang Masuk](/alur-kerja/barang-masuk)
-- [Administrasi & Kontrol Stok](/divisi/administrasi-stok)
-- SOP resmi penerimaan barang perusahaan: *belum tersedia, minta ke pembimbing*.

@@ -5,7 +5,6 @@ status: draf
 dasar: praktik umum pergudangan dan materi Gudang Teknik tentang stock opname
 nomor_dokumen: null
 versi: 0.1
-berlaku_sejak: null
 pemilik: Gudang Teknik
 pengesah: null
 diperbarui: 2026-10-13
@@ -16,29 +15,27 @@ kata_kunci: [SOP, stock opname, hitung fisik, cycle counting, selisih, penyesuai
 
 # SOP Stock Opname
 
-<IdentitasDokumen />
-
 ## Tujuan
 
 Memastikan stok fisik sesuai dengan catatan sistem, menemukan selisih beserta penyebabnya, dan menjaga akurasi stok.
 
-## Ruang lingkup
+## Berlaku untuk
 
 Berlaku untuk penghitungan seluruh gudang maupun penghitungan bergiliran per kelompok material (*cycle counting*). Jadwal resminya perlu dikonfirmasi.
 
-## Prasyarat
+## Sebelum mulai
 
 - Jadwal dan cakupan penghitungan sudah ditentukan dan diumumkan.
 - Semua transaksi sampai waktu batas (*cut-off*) sudah dicatat.
 - Pembagian tugas penghitung dan pemeriksa sudah jelas.
 
-## Peralatan dan dokumen
+## Yang perlu disiapkan
 
 - Daftar barang per lokasi.
 - Lembar hitung (format dari pembimbing).
 - Alat tulis dan kalkulator.
 
-## Langkah prosedur
+## Langkah-langkah
 
 1. Hentikan sementara transaksi di area yang dihitung, atau catat waktu batasnya.
 2. Hitung fisik per lokasi dan tulis hasilnya di lembar hitung, termasuk barang rusak di kolom keterangan.
@@ -49,7 +46,7 @@ Berlaku untuk penghitungan seluruh gudang maupun penghitungan bergiliran per kel
 7. Sesuaikan catatan stok **hanya** setelah ada persetujuan.
 8. Susun laporan opname, termasuk akurasi stok dan temuan lain.
 
-## Daftar periksa
+## Cek sebelum selesai
 
 - [ ] Transaksi sudah dihentikan atau waktu batas sudah dicatat.
 - [ ] Semua lokasi dalam cakupan sudah dihitung, termasuk lokasi cadangan.
@@ -58,14 +55,14 @@ Berlaku untuk penghitungan seluruh gudang maupun penghitungan bergiliran per kel
 - [ ] Penyesuaian stok sudah disetujui sebelum dilakukan.
 - [ ] Laporan opname sudah diserahkan.
 
-## Peringatan keselamatan
+## Perhatian keselamatan
 
 ::: warning Saat menghitung di rak
 - Jangan memanjat rak untuk menghitung barang di atas. Gunakan tangga yang stabil.
 - Kembalikan barang ke posisi semula dengan stabil setelah dihitung.
 :::
 
-## Referensi
+## Baca juga
 
 - [Alur Stock Opname](/alur-kerja/stock-opname)
 - [Mencatat Hasil Hitung Fisik](/tutorial/hitung-fisik)

@@ -1,7 +1,7 @@
 ---
 title: Riwayat Versi
 description: Catatan perubahan handbook dari versi ke versi.
-status: draf
+status: ditinjau
 diperbarui: 2026-10-13
 kategori: Tentang Handbook
 kata_kunci: [versi, riwayat, changelog, perubahan]
@@ -10,6 +10,17 @@ kata_kunci: [versi, riwayat, changelog, perubahan]
 # Riwayat Versi
 
 <p class="lead">Setiap perubahan penting dicatat di sini. Nomor versi juga tercantum di menu atas dan di <code>package.json</code>.</p>
+
+## v0.2.0 (13 Oktober 2026)
+
+Tampilan dibuat lebih sederhana dan ramah, serta alur kerja disesuaikan dengan alur asli Gudang Teknik.
+
+- **Alur barang masuk dan barang keluar** sekarang mengikuti diagram presentasi dan catatan alur proses Gudang Teknik (ERP, rak reservasi, catatan manual rak, surat tanda terima, laporan ke OS/PPIC).
+- **Flowchart baru**: alur warehouse lengkap, barang masuk, dan barang keluar, berwarna sesuai pelaku, ditambah daftar langkah bernomor.
+- **Beranda baru**: kolom pencarian, enam topik utama, dan tiga langkah untuk peserta baru.
+- **Lebih sederhana**: label status, catatan kaki sumber, tombol kata kunci, filter FAQ, tabel identitas SOP, dan menu versi dihapus dari tampilan. Menu atas tinggal empat.
+- **Font Plus Jakarta Sans**, sudut kartu lebih bulat, dan bahasa disapa dengan "kamu".
+- SOP Penerimaan dan Pengeluaran Barang ditulis ulang sesuai alur asli. FAQ dan Kamus Istilah ditambah (ERP, OS/PPIC, rak reservasi, surat tanda terima, catatan manual rak).
 
 ## v0.1.0 (13 Oktober 2026)
 

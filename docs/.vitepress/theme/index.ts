@@ -2,12 +2,11 @@ import DefaultTheme from 'vitepress/theme-without-fonts'
 import type { Theme } from 'vitepress'
 
 // Font disimpan lokal (tidak memanggil layanan eksternal).
-import '@fontsource/barlow/latin-400.css'
-import '@fontsource/barlow/latin-400-italic.css'
-import '@fontsource/barlow/latin-500.css'
-import '@fontsource/barlow/latin-600.css'
-import '@fontsource/barlow-condensed/latin-600.css'
-import '@fontsource/barlow-condensed/latin-700.css'
+import '@fontsource/plus-jakarta-sans/latin-400.css'
+import '@fontsource/plus-jakarta-sans/latin-500.css'
+import '@fontsource/plus-jakarta-sans/latin-600.css'
+import '@fontsource/plus-jakarta-sans/latin-700.css'
+import '@fontsource/plus-jakarta-sans/latin-800.css'
 
 import './custom.css'
 import './components.css'
@@ -22,7 +21,9 @@ import DaftarSumber from './components/DaftarSumber.vue'
 import DaftarMaterial from './components/DaftarMaterial.vue'
 import TombolCari from './components/TombolCari.vue'
 import TabelStatus from './components/TabelStatus.vue'
-import IdentitasDokumen from './components/IdentitasDokumen.vue'
+import LangkahAlur from './components/LangkahAlur.vue'
+import LegendaAlur from './components/LegendaAlur.vue'
+import DaftarKartu from './components/DaftarKartu.vue'
 
 export default {
   extends: DefaultTheme,
@@ -38,6 +39,8 @@ export default {
     app.component('DaftarMaterial', DaftarMaterial)
     app.component('TombolCari', TombolCari)
     app.component('TabelStatus', TabelStatus)
-    app.component('IdentitasDokumen', IdentitasDokumen)
+    app.component('LangkahAlur', LangkahAlur)
+    app.component('LegendaAlur', LegendaAlur)
+    app.component('DaftarKartu', DaftarKartu)
   }
 } satisfies Theme

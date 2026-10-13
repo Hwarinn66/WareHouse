@@ -1,46 +1,44 @@
 <script setup lang="ts">
-// Tabel fakta singkat perusahaan. Field yang belum terverifikasi
-// tidak ditampilkan sebagai fakta; diganti keterangan "sedang dikonfirmasi".
+// Ringkasan fakta perusahaan dari docs/data/company-profile.json.
+// Hanya data yang sudah terverifikasi (atau dari dokumen internal) yang ditampilkan.
 import { computed } from 'vue'
 import { ambilField, bolehTampil } from './profil'
-import RujukanSumber from './RujukanSumber.vue'
 
 const props = defineProps<{ kunci: string[] }>()
 
 const baris = computed(() =>
   props.kunci
     .map((k) => ({ k, f: ambilField(k) }))
-    .filter((x) => x.f)
-    .map(({ k, f }) => ({ k, f: f!, tampil: bolehTampil(f) }))
+    .filter((x) => x.f && bolehTampil(x.f))
+    .map(({ k, f }) => ({ k, label: f!.label, nilai: Array.isArray(f!.nilai) ? f!.nilai.join(', ') : String(f!.nilai) }))
 )
 </script>
 
 <template>
   <dl class="profil">
     <div v-for="b in baris" :key="b.k" class="baris">
-      <dt>{{ b.f.label }}</dt>
-      <dd v-if="b.tampil">
-        <template v-if="Array.isArray(b.f.nilai)">{{ b.f.nilai.join(', ') }}</template>
-        <template v-else>{{ b.f.nilai }}</template>
-        <RujukanSumber :ids="b.f.sumber" />
-        <span v-if="b.f.status === 'dokumen-internal'" class="catatan">Dari dokumen internal.</span>
-      </dd>
-      <dd v-else class="belum">Sedang dikonfirmasi ke pembimbing</dd>
+      <dt>{{ b.label }}</dt>
+      <dd>{{ b.nilai }}</dd>
     </div>
   </dl>
 </template>
 
 <style scoped>
 .profil {
-  margin: 24px 0;
-  border-top: 2px solid var(--bpi-ink);
+  margin: 20px 0;
+  padding: 8px 20px;
+  border-radius: 16px;
+  background: var(--vp-c-bg-alt);
 }
 .baris {
   display: grid;
-  grid-template-columns: minmax(140px, 200px) 1fr;
+  grid-template-columns: minmax(130px, 180px) 1fr;
   gap: 4px 20px;
   padding: 12px 0;
   border-bottom: 1px solid var(--vp-c-divider);
+}
+.baris:last-child {
+  border-bottom: 0;
 }
 dt {
   font-weight: 600;
@@ -48,15 +46,7 @@ dt {
 }
 dd {
   margin: 0;
-}
-.belum {
-  color: var(--vp-c-text-2);
-  font-style: italic;
-}
-.catatan {
-  display: block;
-  font-size: 0.85rem;
-  color: var(--vp-c-text-2);
+  font-weight: 500;
 }
 @media (max-width: 560px) {
   .baris {

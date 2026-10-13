@@ -1,28 +1,28 @@
 {
-  "_catatan": "Arti setiap nilai 'status' di frontmatter halaman. 'nada' menentukan warna: aman (hijau), info (biru), waspada (kuning). Script cek-publikasi menganggap hanya 'disetujui' dan 'terverifikasi' yang siap dipublikasikan.",
+  "_catatan": "Arti setiap nilai 'status' di frontmatter halaman. Hanya status 'draf' dan 'perlu-verifikasi' yang memunculkan catatan kecil di atas judul (teks 'keterangan'). Script cek-publikasi menganggap hanya 'disetujui' dan 'terverifikasi' yang siap dipublikasikan.",
   "disetujui": {
     "label": "Disetujui",
     "nada": "aman",
-    "keterangan": "Isi halaman ini sudah diperiksa dan disetujui pembimbing."
+    "keterangan": "Sudah diperiksa dan disetujui pembimbing."
   },
   "terverifikasi": {
     "label": "Terverifikasi",
     "nada": "aman",
-    "keterangan": "Fakta di halaman ini didukung sumber yang tercantum di bawah. Bagian yang belum terverifikasi diberi keterangan."
+    "keterangan": "Fakta di halaman ini didukung sumber resmi atau sumber publik."
   },
   "ditinjau": {
     "label": "Sedang ditinjau",
     "nada": "info",
-    "keterangan": "Halaman ini sedang diperiksa pembimbing. Isinya bisa berubah."
+    "keterangan": "Isinya sesuai materi Gudang Teknik dan sedang diperiksa pembimbing."
   },
   "draf": {
-    "label": "Draf",
+    "label": "Panduan umum",
     "nada": "waspada",
-    "keterangan": "Belum disahkan. Jika berbeda dengan arahan pembimbing atau dokumen resmi, ikuti arahan pembimbing."
+    "keterangan": "Ini panduan umum pergudangan. Kalau ada yang berbeda dengan arahan pembimbing, ikuti arahan pembimbing."
   },
   "perlu-verifikasi": {
-    "label": "Perlu verifikasi",
+    "label": "Belum lengkap",
     "nada": "waspada",
-    "keterangan": "Sebagian isi halaman ini belum dicocokkan dengan dokumen resmi."
+    "keterangan": "Sebagian isi halaman ini masih menunggu data dari pembimbing."
   }
 }

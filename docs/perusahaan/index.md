@@ -1,75 +1,58 @@
 ---
-title: Profil PT Bakrie Pipe Industries
-description: Bidang usaha, lokasi, grup perusahaan, dan nilai kerja PT Bakrie Pipe Industries, lengkap dengan sumbernya.
+title: Profil Perusahaan
+description: Kenalan singkat dengan PT Bakrie Pipe Industries dan hubungannya dengan Gudang Teknik.
 status: terverifikasi
-catatan_status: Fakta yang tampil di halaman ini didukung sumber bernomor. Bagian yang belum memiliki sumber resmi (visi, misi, sejarah, struktur organisasi) ditandai dan belum ditampilkan.
 diperbarui: 2026-10-13
 kategori: Tentang Perusahaan
 sumber: [bnbr-mp-2020, bnbr-ar-2013, detik-2024, republika-2015, ppt-gudang-teknik]
-kata_kunci: [Bakrie Pipe Industries, BPI, profil perusahaan, pipa baja, ERW, Bakrie & Brothers, BNBR, Bekasi, visi, misi, nilai perusahaan]
+kata_kunci: [Bakrie Pipe Industries, BPI, profil perusahaan, pipa baja, ERW, Bakrie & Brothers, BNBR, Bekasi, nilai perusahaan]
 ---
 
-# Profil PT Bakrie Pipe Industries
+# Profil Perusahaan
 
-<p class="lead">Gambaran singkat perusahaan tempat Anda magang. Setiap fakta diberi nomor sumber, misalnya [1]. Klik nomornya untuk melihat asal informasi tersebut.</p>
+<p class="lead">Kenalan dulu dengan tempat kamu magang: PT Bakrie Pipe Industries, atau biasa disingkat BPI.</p>
 
-## Ringkasan
+<ProfilTabel :kunci="['namaResmi', 'singkatan', 'bidangUsaha', 'lokasiPabrik', 'grup']" />
 
-<ProfilTabel :kunci="['namaResmi', 'singkatan', 'bidangUsaha', 'industri', 'lokasiPabrik', 'grup', 'tahunBerdiri']" />
-
-## Kegiatan usaha
+## Apa yang dikerjakan perusahaan?
 
 <ProfilBagian kunci="kegiatanUsaha" />
 
-### Istilah yang perlu dipahami
+::: details Istilah: pipa ERW dan coating
+**Pipa baja ERW** (*Electric Resistance Welding*) dibuat dari lembaran baja yang digulung jadi tabung. Kedua tepinya dipanaskan dengan arus listrik lalu ditekan sampai menyatu, tanpa kawat las tambahan.
 
-**Pipa baja las ERW** (*Electric Resistance Welding*) dibuat dari lembaran baja yang digulung membentuk tabung. Kedua tepi lembaran lalu dipanaskan dengan arus listrik frekuensi tinggi dan ditekan hingga menyatu, tanpa kawat las tambahan. Hasilnya adalah pipa dengan satu jalur sambungan memanjang.
-
-**Coating** adalah lapisan pelindung pada permukaan pipa, terutama untuk mencegah karat (korosi) saat pipa dipakai di tanah, air, atau lingkungan industri.
-
-**Anak usaha** adalah perusahaan yang sebagian besar sahamnya dimiliki perusahaan lain (induk). Dalam hal ini, induknya adalah PT Bakrie & Brothers Tbk.
-
-## Produk dan layanan
-
-<ProfilBagian kunci="produk" />
-
-## Sejarah
-
-<ProfilBagian kunci="sejarah" />
-
-## Visi dan misi
-
-### Visi
-
-<ProfilBagian kunci="visi" />
-
-### Misi
-
-<ProfilBagian kunci="misi" />
+**Coating** adalah lapisan pelindung di permukaan pipa supaya tidak berkarat.
+:::
 
 ## Nilai kerja
 
 <ProfilBagian kunci="nilaiPerusahaan" bentuk="label" />
 
-## Struktur organisasi
+## Apa hubungannya dengan Gudang Teknik?
 
-<ProfilBagian kunci="strukturOrganisasi" />
-
-## Apa hubungannya dengan kegiatan magang saya?
-
-Pabrik pipa baja bergantung pada mesin. Mesin perlu dirawat dan diperbaiki, dan perawatan itu membutuhkan suku cadang, alat kerja, bahan habis pakai, serta APD. Gudang Teknik adalah tempat semua barang tersebut diterima, disimpan, dicatat, lalu disalurkan ke pengguna yang membutuhkan.
+Pabrik pipa baja butuh mesin yang selalu siap jalan. Mesin perlu dirawat, dan perawatan butuh spare part, alat kerja, bahan habis pakai, serta APD. Semua barang itu disimpan dan disalurkan oleh **Gudang Teknik**.
 
 ```mermaid
 flowchart LR
-  accTitle: Peran Gudang Teknik dalam operasional
-  accDescr: Gudang Teknik menyediakan material ke user di bagian perawatan dan produksi, yang menjaga mesin tetap berjalan sehingga produksi pipa baja berlangsung.
-  G[Gudang Teknik<br/>menyimpan & menyalurkan material] --> U[User<br/>perawatan & produksi]
-  U --> M[Mesin terawat<br/>dan siap pakai]
-  M --> P[Produksi pipa baja]
+  accTitle: Peran Gudang Teknik
+  accDescr: Gudang Teknik menyediakan barang untuk divisi lain, divisi merawat mesin, dan mesin yang terawat menjaga produksi pipa baja tetap berjalan.
+  G["Gudang Teknik menyimpan dan menyalurkan barang"]:::staff --> U["Divisi lain memakai barang"]:::divisi
+  U --> M["Mesin terawat"]:::dokumen
+  M --> P(["Produksi pipa baja berjalan lancar"]):::selesai
 ```
 
-Karena itu, kesalahan kecil di gudang bisa berdampak besar. Contohnya, salah mengambil ukuran bearing, stok yang tercatat ada padahal kosong, atau barang yang lama ditemukan. Semua itu dapat membuat perbaikan mesin tertunda. Prinsip **right material, right quantity, right condition, right time** dari materi Gudang Teknik menjelaskan hal ini. Baca lebih lanjut di [Pengenalan Gudang Teknik](/divisi/).
+Jadi, kesalahan kecil di gudang bisa berdampak besar. Contohnya salah ambil ukuran bearing, atau stok tercatat ada padahal kosong. Kalau itu terjadi, perbaikan mesin bisa tertunda.
 
-::: info Perlu dilengkapi
-Nama bagian atau divisi yang menjadi user utama Gudang Teknik, misalnya bagian perawatan (*maintenance*) atau bagian produksi, belum dikonfirmasi. Mintalah daftar resminya kepada pembimbing.
+::: info Akan dilengkapi
+Visi, misi, dan sejarah perusahaan akan ditambahkan setelah dikonfirmasi pembimbing.
 :::
+
+## Sumber informasi
+
+- [Management Presentation Bakrie & Brothers, September 2020](https://bakrie-brothers.com/wp-content/uploads/2020/12/ENG2020112316061150613466.pdf)
+- [Laporan Tahunan Bakrie & Brothers 2013](https://bakrie-brothers.com/wp-content/uploads/2020/12/ENG2020042015873633067193.pdf)
+- [detikFinance, 25 Januari 2024](https://finance.detik.com/foto-bisnis/d-7160378/wamendag-jerry-sambuaga-kunjungi-pabrik-industri-pipa-nasional)
+- [Republika, 21 Mei 2015](https://ekonomi.republika.co.id/berita/nop4xn/menperin-resmikan-pt-bakrie-pipe-industries)
+- Presentasi internal Gudang Teknik
+
+Daftar lengkapnya ada di [Sumber Informasi](/referensi).

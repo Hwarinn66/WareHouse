@@ -49,7 +49,17 @@
       "url": null,
       "tanggalTerbit": null,
       "tanggalAkses": "2026-10-13",
-      "dipakaiUntuk": "Pengertian dan fungsi Gudang Teknik, jenis material, manajemen inventory, kode barang, administrasi stok, indikator kinerja. Gambar alur (slide 5–7) belum terbaca dan perlu dicocokkan."
+      "dipakaiUntuk": "Pengertian dan fungsi Gudang Teknik, jenis material, manajemen inventory, kode barang, administrasi stok, indikator kinerja, serta diagram alur barang masuk dan keluar."
+    },
+    {
+      "id": "catatan-alur",
+      "judul": "Catatan alur proses barang masuk dan barang keluar",
+      "penerbit": "Peserta magang Gudang Teknik, berdasarkan diagram presentasi Gudang Teknik",
+      "jenis": "internal",
+      "url": null,
+      "tanggalTerbit": "2026-10-13",
+      "tanggalAkses": "2026-10-13",
+      "dipakaiUntuk": "Urutan langkah, pengecekan, dan pencatatan pada alur barang masuk dan barang keluar (ERP, rak reservasi, catatan manual rak, laporan ke OS/PPIC)."
     }
   ]
 }

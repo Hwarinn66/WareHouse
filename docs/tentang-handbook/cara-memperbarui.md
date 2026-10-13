@@ -1,7 +1,7 @@
 ---
 title: Cara Memperbarui Handbook
 description: Panduan mengedit halaman, FAQ, profil perusahaan, gambar, dan diagram tanpa perlu menyentuh kode tampilan.
-status: draf
+status: ditinjau
 dasar: struktur proyek handbook ini
 diperbarui: 2026-10-13
 kategori: Tentang Handbook
@@ -10,7 +10,7 @@ kata_kunci: [memperbarui, edit, mengubah isi, menambah halaman, frontmatter, mar
 
 # Cara Memperbarui Handbook
 
-<p class="lead">Semua isi handbook ada di file teks biasa: Markdown untuk artikel dan JSON untuk data. Anda tidak perlu mengubah kode tampilan untuk memperbarui isi.</p>
+<p class="lead">Semua isi handbook ada di file teks biasa: Markdown untuk artikel dan JSON untuk data. Kamu tidak perlu mengubah kode tampilan untuk memperbarui isi.</p>
 
 ## Di mana isi disimpan
 
@@ -20,6 +20,7 @@ kata_kunci: [memperbarui, edit, mengubah isi, menambah halaman, frontmatter, mar
 | Menu atas dan sidebar | `docs/data/navigasi.json` |
 | Isi Beranda | `docs/data/beranda.json` |
 | FAQ | `docs/data/faq.json` |
+| Langkah alur barang masuk & keluar | `docs/data/alur.json` |
 | Profil perusahaan | `docs/data/company-profile.json` |
 | Daftar sumber | `docs/data/sumber.json` |
 | Kelompok material | `docs/data/material.json` |
@@ -48,7 +49,9 @@ kata_kunci: [pengembalian, retur internal]
 3. Tulis isinya di bawah frontmatter, dimulai dengan satu judul `# ...`.
 4. Daftarkan halaman di `docs/data/navigasi.json` agar muncul di sidebar. Tulis tautan tanpa `.md`, misalnya `/sop/pengembalian-barang`.
 
-Untuk SOP, tambahkan juga `nomor_dokumen`, `versi`, `berlaku_sejak`, `pemilik`, dan `pengesah`, lalu sisipkan `<IdentitasDokumen />` di bawah judul.
+Untuk SOP, isi juga `nomor_dokumen`, `versi`, `pemilik`, dan `pengesah` di frontmatter (tidak ditampilkan, untuk catatan pengelola).
+
+Catatan kecil di atas judul hanya muncul untuk status `draf` dan `perlu-verifikasi`. Tulis `catatan: Teks bebas` di frontmatter untuk mengganti teksnya, atau `catatan: false` untuk menyembunyikannya.
 
 ## Memperbarui FAQ
 
@@ -63,7 +66,7 @@ Buka `docs/data/faq.json`, lalu tambahkan objek di dalam `pertanyaan` pada kateg
 }
 ```
 
-Jika belum ada jawaban resmi, isi `"jawab": ""` dan `"status": "menunggu-pembimbing"`. FAQ otomatis masuk ke pencarian.
+Jika belum ada jawaban resmi, isi `"jawab": ""` dan `"status": "menunggu-pembimbing"`. Pertanyaan seperti itu **tidak tampil** di website sampai jawabannya diisi dan statusnya diubah menjadi `terjawab`. FAQ yang tampil otomatis masuk ke pencarian.
 
 ## Memperbarui profil perusahaan
 
@@ -86,6 +89,15 @@ Bagian berstatus `perlu-verifikasi` tidak akan tampil sebagai fakta, walaupun `n
 File di `docs/public/` ikut terunggah dan bisa dibuka langsung lewat alamatnya, walaupun tidak ditautkan dari halaman mana pun. Jangan menaruh dokumen internal, foto sistem, atau data pribadi di sana tanpa izin.
 :::
 
+## Mengubah alur barang masuk / keluar
+
+Alur ditampilkan dua kali: sebagai **flowchart** dan sebagai **daftar langkah**.
+
+1. **Daftar langkah**: ubah `docs/data/alur.json`. Setiap langkah berisi `aktor` (`vendor`, `staff`, `sistem`, `divisi`, `dokumen`), `judul`, `teks`, dan `cek` jika langkah itu berupa pengecekan Ya/Tidak.
+2. **Flowchart**: ubah blok `mermaid` di `docs/alur-kerja/barang-masuk.md`, `barang-keluar.md`, atau `index.md` (flowchart lengkap).
+
+Pastikan keduanya tetap sama urutannya.
+
 ## Menambah diagram
 
 Tulis diagram Mermaid di dalam blok kode bertanda `mermaid`:
@@ -103,9 +115,13 @@ flowchart TD
 ````
 
 - Gunakan `flowchart TD` (atas ke bawah) agar diagram tetap terbaca di ponsel.
+- Beri warna sesuai pelaku dengan menambahkan kelas di belakang kotak: `:::vendor`, `:::staff`, `:::divisi`, `:::sistem`, `:::dokumen`, `:::cek` (pengecekan), `:::tolak` (dikembalikan), atau `:::selesai`. Contoh: `A["Staff menerima barang"]:::staff`. Warnanya diatur di `docs/.vitepress/theme/warnaAlur.ts`.
+- Tulis teks kotak di dalam tanda kutip, misalnya `B{"Sesuai pesanan?"}`, supaya tanda seperti `/` tidak merusak diagram.
 - Selalu tulis `accTitle` dan `accDescr`.
 - Sertakan juga versi tertulis langkah-langkahnya di bawah diagram.
 
-## Menyetujui halaman
+## Menyetujui halaman dan SOP
 
-Setelah pembimbing memeriksa sebuah halaman, ubah `status` di frontmatter menjadi `disetujui`. Jalankan `npm run cek-publikasi` untuk melihat rekap status semua halaman.
+Setelah pembimbing memeriksa sebuah halaman, ubah `status` di frontmatter menjadi `disetujui`. Untuk SOP, isi juga `nomor_dokumen`, `versi`, dan `pengesah`. Jika perusahaan punya SOP resmi, cantumkan judul dan nomornya di bagian **Baca juga**, tetapi jangan mengunggah file SOP resmi ke folder publik tanpa izin.
+
+Jalankan `npm run cek-publikasi` untuk melihat rekap status semua halaman.

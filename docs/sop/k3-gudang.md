@@ -3,10 +3,10 @@ title: K3 di Gudang
 description: Hal keselamatan dan kesehatan kerja yang perlu diperhatikan peserta magang di area gudang.
 status: draf
 dasar: praktik umum K3 pergudangan
+catatan: false
 catatan_status: Ini ringkasan umum untuk belajar, bukan pengganti peraturan K3 perusahaan. Aturan K3 resmi selalu berlaku dan tidak boleh dikurangi berdasarkan isi halaman ini.
 nomor_dokumen: null
 versi: 0.1
-berlaku_sejak: null
 pemilik: Gudang Teknik
 pengesah: null
 diperbarui: 2026-10-13
@@ -16,8 +16,6 @@ kata_kunci: [K3, keselamatan, APD, PPE, helm, safety shoes, sarung tangan, goggl
 ---
 
 # K3 di Gudang
-
-<IdentitasDokumen />
 
 ::: danger Aturan resmi selalu didahulukan
 Halaman ini adalah ringkasan umum untuk belajar. Peraturan K3 perusahaan, rambu di area kerja, dan instruksi petugas K3 atau pembimbing **selalu berlaku** dan lebih tinggi dari isi handbook ini.

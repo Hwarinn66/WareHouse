@@ -1,7 +1,7 @@
 ---
 title: Checklist Sebelum Publikasi
 description: Pemeriksaan dan persetujuan yang wajib selesai sebelum handbook dibuka untuk umum.
-status: draf
+status: ditinjau
 dasar: ketentuan keamanan informasi proyek handbook
 diperbarui: 2026-10-13
 kategori: Tentang Handbook

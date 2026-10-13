@@ -5,7 +5,6 @@ status: draf
 dasar: praktik umum pergudangan dan moto Gudang Teknik
 nomor_dokumen: null
 versi: 0.1
-berlaku_sejak: null
 pemilik: Gudang Teknik
 pengesah: null
 diperbarui: 2026-10-13
@@ -16,48 +15,49 @@ kata_kunci: [SOP, penyimpanan, penataan, FIFO, rak, lokasi, 5R, housekeeping, ke
 
 # SOP Penyimpanan Barang
 
-<IdentitasDokumen />
-
 ## Tujuan
 
 Menjaga material tetap teratur, aman, mudah ditemukan, dan terlindungi, sesuai moto Gudang Teknik: *a place for everything and everything in its place*.
 
-## Ruang lingkup
+## Berlaku untuk
 
 Berlaku sejak barang selesai diterima sampai barang diambil untuk dikeluarkan, termasuk pemindahan lokasi di dalam gudang.
 
-## Prasyarat
+## Sebelum mulai
 
 - Barang sudah melewati [penerimaan](./penerimaan-barang) dan berlabel kode.
-- Lokasi penyimpanan barang tercatat di master material.
+- Lokasi penyimpanan barang tercatat di database.
 
-## Peralatan dan dokumen
+## Yang perlu disiapkan
 
-- Master material (kode dan lokasi).
+- Database barang (kode dan lokasi).
+- Catatan manual di rak.
 - Label rak atau label lokasi.
 - Alat bantu angkat atau tangga yang sesuai.
 
-## Langkah prosedur
+## Langkah-langkah
 
-1. Cari lokasi barang di master material.
+1. Cari lokasi barang di database.
 2. Bawa barang ke lokasinya. Jika lokasi penuh atau belum ditentukan, tanyakan ke pembimbing. Jangan menaruh barang di sembarang tempat.
 3. Terapkan **FIFO**: letakkan barang baru di belakang atau di bawah barang lama, sehingga barang lama diambil lebih dulu.
 4. Pastikan label menghadap ke luar dan mudah dibaca.
 5. Letakkan barang berat di rak bawah dan barang ringan di rak atas.
 6. Simpan consumable seperti oli dan grease di area yang ditentukan, dalam kemasan tertutup.
-7. Jika barang dipindahkan ke lokasi lain, perbarui lokasinya di catatan pada hari yang sama.
+7. Isi catatan manual di rak setiap kali menaruh barang. Jika barang dipindahkan ke rak lain, perbarui lokasinya di database pada hari yang sama.
 8. Jaga kebersihan dan kerapian area. Kembalikan alat ke tempatnya setelah dipakai.
 
-## Daftar periksa harian
+## Cek setiap hari
 
 - [ ] Tidak ada barang di lantai jalur jalan.
-- [ ] Barang berada di lokasi yang sesuai catatan.
+- [ ] Barang berada di lokasi yang sesuai database.
+- [ ] Catatan manual di rak sudah diisi.
 - [ ] Label rak dan label barang terbaca.
 - [ ] Barang lama berada di depan atau di atas barang baru (FIFO).
 - [ ] Kemasan consumable tertutup rapat dan tidak bocor.
 - [ ] Tidak ada barang rusak yang tercampur dengan stok layak pakai.
+- [ ] Barang di rak reservasi diberi keterangan untuk divisi mana.
 
-## Peringatan keselamatan
+## Perhatian keselamatan
 
 ::: warning Risiko di area penyimpanan
 - Jangan memanjat rak. Gunakan tangga atau alat bantu yang disediakan.
@@ -66,7 +66,7 @@ Berlaku sejak barang selesai diterima sampai barang diambil untuk dikeluarkan, t
 - Bahan mudah terbakar disimpan jauh dari sumber panas atau percikan api.
 :::
 
-## Referensi
+## Baca juga
 
 - [Pengenalan Gudang Teknik](/divisi/)
 - [Layout Gudang](/alur-kerja/layout-gudang)

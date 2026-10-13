@@ -14,13 +14,12 @@ kata_kunci: [tutorial, stock opname, hitung fisik, lembar hitung, selisih, akura
 
 <p class="lead">Latihan mengisi lembar hitung stock opname, menghitung selisih, lalu menghitung akurasi stok.</p>
 
-| | |
-| --- | --- |
-| **Tujuan belajar** | Mampu mencatat hasil hitung, menghitung selisih, dan menghitung akurasi stok |
-| **Tingkat** | Pemula |
-| **Waktu** | Sekitar 25 menit |
-| **Prasyarat** | Sudah membaca [Alur Stock Opname](/alur-kerja/stock-opname) |
-| **Yang dibutuhkan** | Lembar hitung (format dari pembimbing), alat tulis, kalkulator |
+::: tip Sebelum mulai
+- **Setelah latihan ini, kamu bisa** mencatat hasil hitung, menghitung selisih, dan menghitung akurasi stok.
+- **Tingkat:** Pemula, sekitar 25 menit.
+- **Baca dulu:** [Alur Stock Opname](/alur-kerja/stock-opname).
+- **Siapkan:** lembar hitung (format dari pembimbing), alat tulis, kalkulator.
+:::
 
 ## Langkah
 

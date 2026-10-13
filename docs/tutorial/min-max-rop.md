@@ -15,13 +15,12 @@ kata_kunci: [tutorial, ROP, reorder point, stok minimum, stok maksimum, safety s
 
 <p class="lead">Stock item perlu batas bawah, batas atas, dan titik kapan harus dipesan ulang. Tutorial ini memakai rumus umum yang banyak dipakai di pergudangan.</p>
 
-| | |
-| --- | --- |
-| **Tujuan belajar** | Mampu menghitung stok minimum, stok maksimum, dan ROP untuk satu material |
-| **Tingkat** | Menengah |
-| **Waktu** | Sekitar 30 menit |
-| **Prasyarat** | Sudah menyelesaikan [Menentukan Fast & Slow Moving](/tutorial/fast-slow-moving) |
-| **Yang dibutuhkan** | Data pemakaian beberapa bulan terakhir, lead time pemesanan, kalkulator |
+::: tip Sebelum mulai
+- **Setelah latihan ini, kamu bisa** menghitung stok minimum, stok maksimum, dan ROP untuk satu material.
+- **Tingkat:** Menengah, sekitar 30 menit.
+- **Baca dulu:** [Menentukan Fast & Slow Moving](/tutorial/fast-slow-moving).
+- **Siapkan:** data pemakaian beberapa bulan terakhir, lead time pemesanan, kalkulator.
+:::
 
 ## Istilah dan rumus
 
@@ -76,4 +75,4 @@ Saat stok turun ke **30**, gudang memesan **40**. Selama 10 hari menunggu, terpa
 
 ## Hasil yang diharapkan
 
-Anda bisa menghitung d, SS, ROP, stok minimum, dan stok maksimum untuk satu material, serta menjelaskan arti setiap angka kepada pembimbing.
+Kamu bisa menghitung d, SS, ROP, stok minimum, dan stok maksimum untuk satu material, serta menjelaskan arti setiap angka kepada pembimbing.

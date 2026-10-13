@@ -1,14 +1,14 @@
 ---
-title: Informasi yang Perlu Diverifikasi
+title: Yang Perlu Dikonfirmasi
 description: Daftar pertanyaan dan dokumen yang perlu diminta dari pembimbing magang.
-status: draf
+status: ditinjau
 dasar: hasil penyusunan handbook versi awal
 diperbarui: 2026-10-13
 kategori: Tentang Handbook
 kata_kunci: [verifikasi, pertanyaan untuk pembimbing, data yang kurang, belum lengkap, to do]
 ---
 
-# Informasi yang Perlu Diverifikasi
+# Yang Perlu Dikonfirmasi
 
 <p class="lead">Daftar ini bisa dibawa saat bertemu pembimbing. Setelah sebuah poin terjawab, perbarui file terkait dan centang poinnya di versi berikutnya.</p>
 
@@ -24,19 +24,20 @@ kata_kunci: [verifikasi, pertanyaan untuk pembimbing, data yang kurang, belum le
 
 ## Tentang Gudang Teknik
 
-- [ ] **Gambar slide 5, 6, dan 7** presentasi Gudang Teknik (alur barang masuk, alur barang keluar, layout gudang). Bisa berupa file `.pptx` asli atau screenshot.
-- [ ] **Nama resmi unit kerja** yang berhubungan dengan gudang (user, pembelian, dan lainnya).
-- [ ] **Siapa yang berwenang** menyetujui permintaan barang keluar dan penyesuaian stok.
-- [ ] **Nama formulir dan dokumen** yang dipakai: permintaan barang, bukti penerimaan, lembar hitung opname.
-- [ ] **Aplikasi atau sistem pencatatan stok** yang dipakai, dan apa saja yang boleh diakses peserta magang.
+- [ ] **Denah layout gudang** (slide 7 presentasi Gudang Teknik).
+- [ ] **Kepanjangan "OS"** pada divisi OS/PPIC, supaya bisa dijelaskan di Kamus Istilah.
+- [ ] **Format surat tanda terima** dan laporan barang masuk ke OS/PPIC (boleh contoh kosong tanpa data asli).
+- [ ] **Bagian ERP** yang boleh diakses peserta magang.
 - [ ] **Aturan pengodean barang** resmi, misalnya arti setiap bagian `BRG-MEC-001`.
 - [ ] **Parameter stok**: cara gudang menetapkan stok minimum, maksimum, ROP, dan safety stock.
 - [ ] **Kategori material yang tidak diminta** sama sekali dalam sebulan.
 - [ ] **Jadwal stock opname** dan cycle counting.
+- [ ] **Siapa yang memesan barang ke vendor** (alur sebelum barang datang).
 
 ## Tentang SOP dan K3
 
-- [ ] Apakah ada **SOP resmi** untuk penerimaan, penyimpanan, pengeluaran, opname, dan dead stock? Jika ada, judul dan nomornya.
+- [ ] Apakah ada **SOP resmi** untuk penyimpanan, stock opname, dan dead stock? Jika ada, judul dan nomornya.
+- [ ] Persetujuan pembimbing untuk **SOP Penerimaan dan Pengeluaran Barang** yang sudah disesuaikan dengan alur kerja.
 - [ ] **APD wajib** di setiap area gudang.
 - [ ] **Area terbatas** untuk peserta magang.
 - [ ] **Nomor darurat, lokasi APAR dan P3K, jalur evakuasi, dan titik kumpul.**

@@ -1,39 +1,32 @@
 ---
-title: Daftar SOP
-description: Prosedur kerja Gudang Teknik beserta status, nomor dokumen, dan versinya.
-status: draf
-dasar: praktik umum pergudangan
+title: SOP & Keselamatan
+description: Daftar langkah kerja (SOP) Gudang Teknik dan aturan keselamatan kerja.
+status: ditinjau
 diperbarui: 2026-10-13
 kategori: SOP
-kata_kunci: [SOP, prosedur, standar operasional, checklist, daftar periksa]
+kata_kunci: [SOP, prosedur, standar operasional, langkah kerja, checklist, keselamatan]
 ---
 
-# Daftar SOP
+# SOP & Keselamatan
 
-<p class="lead">Prosedur kerja di Gudang Teknik. Setiap SOP memuat tujuan, ruang lingkup, langkah, daftar periksa, dan peringatan keselamatan.</p>
+<p class="lead">SOP berisi langkah kerja yang perlu diikuti, lengkap dengan daftar cek sebelum pekerjaan dianggap selesai.</p>
 
-::: danger Bukan dokumen resmi
-Semua SOP di handbook ini adalah **draf panduan belajar** yang disusun dari praktik umum pergudangan. SOP ini belum memiliki nomor dokumen dan belum disahkan. Jika perusahaan memiliki SOP resmi, **SOP resmi yang berlaku**. Ketentuan keselamatan resmi tidak boleh dikurangi atau disederhanakan berdasarkan isi handbook ini.
+## Pekerjaan utama
+
+<DaftarKartu :items="[
+  { judul: 'Penerimaan barang', ket: 'Menerima barang dari vendor sampai tersimpan di rak.', link: '/sop/penerimaan-barang', ikon: 'masuk' },
+  { judul: 'Pengeluaran barang', ket: 'Melayani permintaan dari ERP sampai barang diambil.', link: '/sop/pengeluaran-barang', ikon: 'keluar' },
+  { judul: 'Penyimpanan barang', ket: 'Menata barang di rak dengan rapi dan FIFO.', link: '/sop/penyimpanan-barang', ikon: 'kotak' },
+  { judul: 'Stock opname', ket: 'Menghitung stok fisik dan mencocokkan dengan catatan.', link: '/sop/stock-opname', ikon: 'opname' }
+]" />
+
+## Lainnya
+
+<DaftarKartu :items="[
+  { judul: 'Keselamatan kerja (K3)', ket: 'Wajib dibaca sebelum menangani barang.', link: '/sop/k3-gudang', ikon: 'perisai' },
+  { judul: 'Barang rusak & dead stock', ket: 'Apa yang dilakukan jika menemukan barang rusak atau tidak terpakai.', link: '/sop/dead-stock', ikon: 'daftar' }
+]" />
+
+::: tip Kalau berbeda dengan arahan pembimbing
+SOP Penerimaan dan Pengeluaran Barang mengikuti alur kerja Gudang Teknik. SOP lainnya adalah panduan umum pergudangan. Kalau ada yang berbeda dengan arahan pembimbing atau aturan resmi perusahaan, ikuti arahan pembimbing.
 :::
-
-<TabelStatus awalan="/sop/" kolom="sop" />
-
-## Struktur setiap SOP
-
-| Bagian | Isi |
-| --- | --- |
-| **Identitas dokumen** | Nomor, versi, tanggal berlaku, pemilik, dan pengesah |
-| **Tujuan dan ruang lingkup** | Untuk apa prosedur ini dan kapan berlaku |
-| **Prasyarat** | Hal yang harus dipenuhi sebelum mulai |
-| **Peralatan dan dokumen** | Yang perlu disiapkan |
-| **Langkah prosedur** | Urutan kerja bernomor |
-| **Daftar periksa** | Poin yang dicek sebelum pekerjaan dianggap selesai |
-| **Peringatan keselamatan** | Risiko dan cara menghindarinya |
-
-## Mengesahkan SOP
-
-Saat pembimbing atau penanggung jawab gudang menyetujui sebuah SOP:
-
-1. Isi `nomor_dokumen`, `versi`, `berlaku_sejak`, dan `pengesah` di frontmatter file SOP.
-2. Ubah `status` menjadi `disetujui`.
-3. Jika ada SOP resmi perusahaan, cantumkan judul dan nomornya di bagian **Referensi**. Jangan mengunggah file SOP resmi ke folder publik tanpa izin.

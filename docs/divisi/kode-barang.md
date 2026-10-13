@@ -1,7 +1,7 @@
 ---
-title: Kode & Identifikasi Barang
+title: Kode Barang
 description: Perbedaan kode barang, spesifikasi, dan identifikasi, dengan contoh bearing 6205-2RS.
-status: draf
+status: ditinjau
 dasar: materi presentasi Gudang Teknik (slide 11)
 catatan_status: Contoh kode di halaman ini berasal dari materi presentasi. Format kode resmi di sistem gudang perlu dikonfirmasi pembimbing.
 diperbarui: 2026-10-13
@@ -10,7 +10,7 @@ sumber: [ppt-gudang-teknik]
 kata_kunci: [kode barang, spesifikasi, identifikasi, label, part number, bearing, 6205-2RS, BRG-MEC-001, salah ambil]
 ---
 
-# Kode & Identifikasi Barang
+# Kode Barang
 
 <p class="lead">Kode barang, spesifikasi, dan identifikasi adalah tiga unsur yang membuat setiap material bisa dikenali, dicatat, disimpan, dan ditemukan dengan cepat. Ketiganya juga mengurangi kesalahan saat barang masuk maupun keluar.</p>
 

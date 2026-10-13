@@ -1,7 +1,7 @@
 ---
 title: Jenis Material
 description: Sepuluh kelompok material di Gudang Teknik beserta contohnya.
-status: draf
+status: ditinjau
 dasar: materi presentasi Gudang Teknik (slide 3–4)
 diperbarui: 2026-10-13
 kategori: Gudang Teknik
@@ -11,7 +11,7 @@ kata_kunci: [jenis material, kelompok barang, mechanical, electrical, piping, fi
 
 # Jenis Material
 
-<p class="lead">Material di Gudang Teknik dikelompokkan berdasarkan fungsinya. Mengenali kelompoknya membantu Anda menebak lokasi penyimpanan dan cara menanganinya.</p>
+<p class="lead">Material di Gudang Teknik dikelompokkan berdasarkan fungsinya. Mengenali kelompoknya membantu kamu menebak lokasi penyimpanan dan cara menanganinya.</p>
 
 <DaftarMaterial />
 

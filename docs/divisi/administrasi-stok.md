@@ -1,62 +1,49 @@
 ---
-title: Administrasi & Kontrol Stok
-description: Lima jenis catatan gudang dan fungsinya, dari master material sampai laporan stok.
-status: draf
-dasar: materi presentasi Gudang Teknik (slide 12–13)
-catatan_status: Nama formulir, aplikasi, dan format laporan yang dipakai di gudang belum dikonfirmasi.
+title: Pencatatan Stok
+description: Di mana saja barang dicatat (database, ERP, catatan manual rak, laporan) dan cara menjaga catatan tetap akurat.
+status: ditinjau
+dasar: materi presentasi Gudang Teknik dan catatan alur proses
 diperbarui: 2026-10-13
 kategori: Gudang Teknik
-sumber: [ppt-gudang-teknik]
-kata_kunci: [administrasi, kontrol stok, master material, barang masuk, barang keluar, stock opname, laporan stok, mutasi, saldo, stock accuracy, akurasi stok, selisih]
+sumber: [ppt-gudang-teknik, catatan-alur]
+kata_kunci: [administrasi, pencatatan stok, kontrol stok, master material, database, ERP, catatan manual rak, laporan OS/PPIC, stock opname, laporan stok, mutasi, saldo, akurasi stok, selisih]
 ---
 
-# Administrasi & Kontrol Stok
+# Pencatatan Stok
 
-<p class="lead">Dokumen dan data harus mendukung kondisi fisik di lapangan. Jika catatan dan barang di rak tidak sama, gudang tidak bisa diandalkan.</p>
+<p class="lead">Catatan harus selalu sama dengan kondisi barang di rak. Kalau catatannya salah, gudang tidak bisa diandalkan.</p>
 
-## Lima catatan utama
+## Di mana saja barang dicatat?
 
-| Catatan | Isi | Hasilnya |
+| Catatan | Isinya | Kapan diisi |
 | --- | --- | --- |
-| **Master material** | Kode, nama, spesifikasi, satuan, lokasi | Identitas material yang konsisten |
-| **Barang masuk** | Tanggal, supplier, jumlah, dokumen | Riwayat penerimaan |
-| **Barang keluar** | User, jumlah, tujuan, tanggal | Riwayat pemakaian |
-| **Stock opname** | Hitungan fisik dibandingkan catatan sistem | Selisih yang teridentifikasi |
-| **Laporan stok** | Saldo, mutasi, stok minimum | Dasar pengambilan keputusan |
+| **Database barang** | Jumlah, jenis barang, tipe barang, tanggal masuk, dan lokasi rak | Saat barang masuk sudah diterima |
+| **ERP perusahaan** | Permintaan dari divisi lain dan laporan barang keluar | Saat staff menyetujui permintaan |
+| **Catatan manual di rak** | Barang yang ditaruh atau diambil dari rak itu | Setiap kali barang ditaruh atau diambil |
+| **Laporan ke OS/PPIC** | Barang sudah masuk dan sesuai | Setelah input database |
+| **Stock opname** | Hasil hitung fisik dibandingkan dengan catatan | Sesuai jadwal penghitungan |
+| **Laporan stok** | Saldo, mutasi, dan stok minimum | Berkala, sebagai dasar keputusan |
 
-## Bagaimana catatan saling terhubung
+Semua data mengacu pada **master material**, yaitu daftar induk berisi kode, nama, spesifikasi, satuan, dan lokasi setiap barang.
 
-```mermaid
-flowchart LR
-  accTitle: Alur data administrasi stok
-  accDescr: Master material menjadi acuan. Catatan barang masuk menambah saldo dan catatan barang keluar mengurangi saldo. Stock opname membandingkan saldo dengan fisik, lalu hasilnya masuk ke laporan stok.
-  MM[(Master material)] -.acuan kode.-> BM[Barang masuk]
-  MM -.acuan kode.-> BK[Barang keluar]
-  BM -- menambah --> SAL[Saldo stok]
-  BK -- mengurangi --> SAL
-  SAL --> SO[Stock opname<br/>fisik vs catatan]
-  SO --> LAP[Laporan stok]
-  SAL --> LAP
-```
+## Rumus dasar stok
 
-Rumus dasarnya:
+> **Stok akhir = stok awal + barang masuk − barang keluar**
 
-> **Saldo akhir = saldo awal + total barang masuk − total barang keluar**
+Kalau hasil hitung di rak berbeda dengan angka di catatan, berarti ada barang yang belum dicatat, salah catat, atau berpindah tanpa catatan.
 
-Jika saldo akhir di catatan berbeda dengan hasil hitung fisik, ada transaksi yang belum tercatat, salah catat, atau barang yang berpindah tanpa catatan.
+## Kebiasaan baik
 
-## Kebiasaan yang menjaga catatan tetap akurat
+- **Catat saat itu juga.** Jangan menunda sampai akhir hari.
+- **Isi catatan manual di rak** setiap kali menaruh atau mengambil barang.
+- **Pakai kode barang, bukan nama.** Nama bisa ditulis berbeda-beda, kode tidak.
+- **Kembalikan barang ke rak yang benar**, sesuai lokasi di database.
+- **Laporkan selisih, jangan mengubah angka sendiri.** Perbaikan catatan harus disetujui.
 
-- **Catat saat itu juga.** Jangan menunda pencatatan sampai akhir hari.
-- **Satu transaksi, satu dokumen.** Setiap barang masuk atau keluar harus punya bukti.
-- **Gunakan kode, bukan nama.** Nama bisa ditulis berbeda-beda, sedangkan kode tidak.
-- **Kembalikan barang ke lokasinya.** Barang yang dipindahkan tanpa catatan sama saja dengan hilang.
-- **Laporkan selisih, jangan mengubah angka sendiri.** Penyesuaian stok harus melalui persetujuan.
+## Mengukur ketepatan stok
 
-## Mengukur akurasi stok
+Salah satu ukuran gudang yang baik adalah **stock accuracy**: seberapa sama jumlah barang di rak dengan catatan.
 
-Salah satu indikator gudang yang baik adalah **stock accuracy**, yaitu kesesuaian stok fisik dengan catatan sistem. Cara umum menghitungnya:
+> **Akurasi stok (%) = jumlah barang yang cocok ÷ jumlah barang yang dihitung × 100**
 
-> **Akurasi stok (%) = jumlah item yang cocok ÷ jumlah item yang dihitung × 100**
-
-Contoh latihannya ada di tutorial [Mencatat Hasil Hitung Fisik](/tutorial/hitung-fisik).
+Latihannya ada di [Mencatat Hitung Fisik](/tutorial/hitung-fisik).
