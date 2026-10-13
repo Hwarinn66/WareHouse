@@ -98,6 +98,23 @@ Alur ditampilkan dua kali: sebagai **flowchart** dan sebagai **daftar langkah**.
 
 Pastikan keduanya tetap sama urutannya.
 
+## Menambahkan foto alur barang masuk dan keluar
+
+Setiap kotak di flowchart barang masuk dan barang keluar punya tempat foto. Sebelum fotonya ada, yang tampil adalah kotak bertuliskan "Foto belum ada".
+
+1. Siapkan foto. Format **.jpg**, **.png**, atau **.webp**, posisi mendatar (landscape) lebih bagus, dan ukurannya sebaiknya di bawah 500 KB.
+2. Beri nama file sesuai daftar di bawah, misalnya `barang-masuk-01.jpg`.
+3. Taruh di folder `docs/public/images/alur/`.
+4. Jalankan `npm run dev` untuk melihat hasilnya, lalu commit dan push. Website online akan ikut terbarui.
+
+Foto tampil di kartu bernomor yang sama dengan nomor kotak di flowchart. Kotak "Tidak" (barang dikembalikan atau ditukar) memakai nama berakhiran `-tidak`.
+
+::: warning Sebelum mengunggah foto
+Pastikan foto boleh dipublikasikan: tidak memperlihatkan wajah orang tanpa izin, data di layar ERP, nomor dokumen, atau informasi rahasia lainnya.
+:::
+
+<DaftarFotoAlur />
+
 ## Menambah diagram
 
 Tulis diagram Mermaid di dalam blok kode bertanda `mermaid`:

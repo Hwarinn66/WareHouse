@@ -11,6 +11,13 @@ kata_kunci: [versi, riwayat, changelog, perubahan]
 
 <p class="lead">Setiap perubahan penting dicatat di sini. Nomor versi juga tercantum di menu atas dan di <code>package.json</code>.</p>
 
+## v0.2.1 (13 Oktober 2026)
+
+- **Tempat foto di setiap kotak flowchart** barang masuk dan barang keluar, termasuk kotak "Tidak". Selama foto belum ada, yang tampil placeholder.
+- Kotak flowchart diberi nomor yang sama dengan kartu langkah. Kotak bernomor bisa diklik untuk melompat ke kartu fotonya.
+- Langkah dipecah agar satu kotak flowchart sama dengan satu kartu: barang masuk 10 langkah, barang keluar 11 langkah.
+- Daftar nama file foto dan statusnya ada di halaman Cara Memperbarui Handbook.
+
 ## v0.2.0 (13 Oktober 2026)
 
 Tampilan dibuat lebih sederhana dan ramah, serta alur kerja disesuaikan dengan alur asli Gudang Teknik.

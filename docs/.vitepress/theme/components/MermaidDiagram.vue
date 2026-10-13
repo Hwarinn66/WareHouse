@@ -14,7 +14,44 @@ const kode = computed(() => decodeURIComponent(props.code))
 const svg = ref('')
 const galat = ref('')
 const dialog = ref<HTMLDialogElement | null>(null)
+const kanvas = ref<HTMLElement | null>(null)
+const layarSvg = ref<HTMLElement | null>(null)
+const adaTautan = ref(false)
 let urutan = 0
+
+// Kotak flowchart ber-id L1, L2, ... (dan T2, T5, ... untuk cabang "Tidak")
+// bisa diklik untuk melompat ke kartu langkah bergambar (#langkah-1, dst.) di halaman yang sama.
+function lompatKe(nomor: string) {
+  const el = document.getElementById(`langkah-${nomor}`)
+  if (!el) return
+  if (dialog.value?.open) dialog.value.close()
+  el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  el.classList.add('sorot')
+  el.focus({ preventScroll: true })
+  setTimeout(() => el.classList.remove('sorot'), 1800)
+}
+
+function pasangTautan(wadah: HTMLElement | null) {
+  if (!wadah) return 0
+  let n = 0
+  wadah.querySelectorAll<SVGGElement>('g.node').forEach((node) => {
+    const m = node.id.match(/-flowchart-[LT](\d+)-\d+$/)
+    if (!m || !document.getElementById(`langkah-${m[1]}`)) return
+    n++
+    node.classList.add('bisa-klik')
+    node.setAttribute('tabindex', '0')
+    node.setAttribute('role', 'link')
+    node.setAttribute('aria-label', `Lihat foto dan penjelasan langkah ${m[1]}`)
+    node.onclick = () => lompatKe(m[1])
+    node.onkeydown = (e: KeyboardEvent) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault()
+        lompatKe(m[1])
+      }
+    }
+  })
+  return n
+}
 
 // Versi untuk layar perbesar: lebar asli diagram, bukan menyesuaikan layar.
 const svgBesar = computed(() => {
@@ -61,6 +98,9 @@ async function render() {
     if (nomor === urutan) {
       svg.value = hasil
       galat.value = ''
+      await nextTick()
+      adaTautan.value = pasangTautan(kanvas.value) > 0
+      pasangTautan(layarSvg.value)
     }
   } catch (e: any) {
     galat.value = e?.message ?? String(e)
@@ -80,13 +120,14 @@ watch(isDark, () => nextTick(render))
 
 <template>
   <figure class="diagram">
-    <div v-if="svg" class="kanvas" v-html="svg" />
+    <div v-if="svg" ref="kanvas" class="kanvas" v-html="svg" />
     <div v-else-if="galat" class="galat" role="alert">
       <p><strong>Flowchart tidak dapat ditampilkan.</strong> Periksa penulisan kode Mermaid di file Markdown.</p>
       <p class="pesan">{{ galat }}</p>
     </div>
     <div v-else class="memuat">Memuat flowchart…</div>
 
+    <p v-if="svg && adaTautan" class="petunjuk">Ketuk kotak bernomor untuk melihat fotonya.</p>
     <button v-if="svg" type="button" class="tombol-besar" @click="perbesar">
       <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
         <path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -100,7 +141,7 @@ watch(isDark, () => nextTick(render))
         <button type="button" class="tutup" @click="tutup">Tutup</button>
       </div>
       <div class="layar-isi">
-        <div class="layar-svg" v-html="svgBesar" />
+        <div ref="layarSvg" class="layar-svg" v-html="svgBesar" />
       </div>
     </dialog>
   </figure>
@@ -124,6 +165,35 @@ watch(isDark, () => nextTick(render))
 .kanvas :deep(svg) {
   height: auto;
   max-width: 100%;
+}
+.diagram :deep(g.node.bisa-klik) {
+  cursor: pointer;
+}
+.diagram :deep(g.node.bisa-klik:hover) > :is(rect, path, polygon, circle, ellipse),
+.diagram :deep(g.node.bisa-klik:focus-visible) > :is(rect, path, polygon, circle, ellipse) {
+  stroke-width: 3px !important;
+  filter: drop-shadow(0 2px 4px rgba(20, 40, 70, 0.25));
+}
+.diagram :deep(g.node.bisa-klik:focus) {
+  outline: none;
+}
+.petunjuk {
+  position: absolute;
+  left: 16px;
+  bottom: 20px;
+  margin: 0;
+  max-width: calc(100% - 220px);
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: var(--vp-c-text-2);
+}
+@media (max-width: 520px) {
+  .petunjuk {
+    position: static;
+    max-width: none;
+    padding: 0 16px 62px;
+    margin-top: -48px;
+  }
 }
 .memuat {
   padding: 40px 16px;

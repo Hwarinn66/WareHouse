@@ -2,7 +2,7 @@
 
 Website dokumentasi statis untuk peserta magang/PKL di Gudang Teknik (Warehouse) PT Bakrie Pipe Industries. Isinya: profil perusahaan (dengan sumber), pengenalan Gudang Teknik, alur kerja, tutorial, SOP draf, FAQ, glosarium, dan referensi.
 
-> **Status: v0.2.0, sedang ditinjau pembimbing.** Alur barang masuk dan keluar sudah mengikuti alur asli Gudang Teknik. SOP selain penerimaan dan pengeluaran masih berupa panduan umum.
+> **Status: v0.2.1, sedang ditinjau pembimbing.** Alur barang masuk dan keluar sudah mengikuti alur asli Gudang Teknik. SOP selain penerimaan dan pengeluaran masih berupa panduan umum.
 >
 > **Versi online:** https://hwarinn66.github.io/WareHouse/ (GitHub Pages, diperbarui otomatis setiap ada push ke branch `main`). Situs memakai tag `noindex` agar tidak diindeks mesin pencari, tetapi tetap bisa dibuka siapa saja yang punya tautannya.
 
@@ -93,6 +93,7 @@ division-handbook/
 │   │   └── status.json            ← arti label status halaman
 │   ├── public/                    ← file yang disalin apa adanya ke hasil build
 │   │   └── images/                ← favicon, placeholder, (logo & gambar resmi nanti)
+│   │       └── alur/              ← FOTO setiap kotak flowchart barang masuk & keluar
 │   └── .vitepress/
 │       ├── config.mts             ← konfigurasi situs (judul, pencarian, base path)
 │       ├── search-extra.ts        ← memasukkan data JSON ke indeks pencarian
@@ -157,6 +158,18 @@ Nomor rujukan `[1]`, `[2]`, … mengikuti urutan entri di `sumber.json`.
 ### Mengubah alur barang masuk / keluar
 
 Alur ditampilkan sebagai flowchart (blok `mermaid` di `docs/alur-kerja/*.md`) dan sebagai daftar langkah (`docs/data/alur.json`). Jika urutan alur berubah, ubah keduanya. Warna kotak flowchart mengikuti pelakunya: tambahkan `:::vendor`, `:::staff`, `:::divisi`, `:::sistem`, `:::dokumen`, `:::cek`, `:::tolak`, atau `:::selesai` di belakang kotak. Warnanya diatur di `docs/.vitepress/theme/warnaAlur.ts`.
+
+### Menambahkan foto alur barang masuk / keluar
+
+Setiap kotak di flowchart barang masuk (10 kotak) dan barang keluar (11 kotak), termasuk kotak "Tidak" (dikembalikan/ditukar), punya tempat foto. Selama fotonya belum ada, yang tampil adalah placeholder "Foto belum ada".
+
+1. Beri nama file: `barang-masuk-01.jpg` sampai `barang-masuk-10.jpg`, `barang-keluar-01.jpg` sampai `barang-keluar-11.jpg`. Untuk cabang "Tidak": `barang-masuk-02-tidak.jpg`, `barang-masuk-05-tidak.jpg`, dan `barang-keluar-11-tidak.jpg`. Format `.jpg`, `.jpeg`, `.png`, atau `.webp` bisa dipakai.
+2. Taruh di `docs/public/images/alur/`.
+3. Jalankan `npm run dev` untuk mengecek, lalu commit dan push. Website online terbarui otomatis.
+
+Daftar lengkap nama file dan status fotonya (sudah ada atau belum) tampil di halaman **Untuk Pengelola → Cara Memperbarui Handbook**. Kotak bernomor di flowchart bisa diklik untuk melompat ke kartu fotonya.
+
+> ⚠️ Pastikan foto boleh dipublikasikan: tidak memperlihatkan wajah orang tanpa izin, layar ERP, nomor dokumen, atau informasi rahasia.
 
 ### Menambah diagram
 
@@ -230,7 +243,7 @@ Pengujian yang **benar-benar dijalankan** pada versi 0.2.0 (13 Oktober 2026), me
 | Pemeriksaan tautan internal dan anchor `#` di semua HTML hasil build | 1.596 tautan, 0 rusak, 0 anchor hilang |
 | Semua halaman sidebar + halaman 404 di lebar 1440, 1024, 768, dan 375 px (132 kombinasi) | Tidak ada scroll horizontal, gambar gagal, error console, request gagal, atau flowchart gagal. Setiap halaman punya tepat satu `<h1>` |
 | Flowchart (alur warehouse, barang masuk, barang keluar, dll.) | Semua tampil di mode terang dan gelap. Tombol "Lihat ukuran besar" membuka dan menutup (Esc) |
-| Daftar langkah alur | Barang masuk 9 langkah, barang keluar 9 langkah, dengan kotak Ya/Tidak pada langkah pengecekan |
+| Flowchart bergambar | Barang masuk 10 kartu dan barang keluar 11 kartu, masing-masing dengan tempat foto. Kotak flowchart bernomor bisa diklik untuk melompat ke kartunya. Foto uji yang ditaruh di `images/alur/` tampil otomatis, lalu dihapus lagi |
 | Pencarian lokal | "rak reservasi", "ERP", "surat tanda terima", dan "bearing" menemukan hasil yang relevan. Kata acak menampilkan pesan "Belum ketemu" beserta saran kata |
 | Beranda | Tombol "Coba cari" mengisi kata kunci, kartu topik membuka halaman tujuan |
 | FAQ | 18 pertanyaan tampil, yang belum terjawab tersembunyi. Buka/tutup dengan klik dan Enter, terbuka otomatis dari tautan `#id` |

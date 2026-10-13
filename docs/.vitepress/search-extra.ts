@@ -51,7 +51,7 @@ function bagianMaterial(md: MarkdownIt): string {
 
 function bagianAlur(kunci: 'barang-masuk' | 'barang-keluar', md: MarkdownIt): string {
   const esc = md.utils.escapeHtml
-  return (alur[kunci] as any[])
+  return ((alur as any)[kunci].langkah as any[])
     .map((l, i) => {
       const cek = l.cek ? ` ${l.cek.tanya} Ya: ${l.cek.ya} Tidak: ${l.cek.tidak}` : ''
       return `<p>${i + 1}. ${esc(l.judul)}. ${esc(l.teks)}${esc(cek)}</p>`

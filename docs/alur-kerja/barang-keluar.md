@@ -18,25 +18,27 @@ kata_kunci: [barang keluar, pengeluaran, permintaan, order, ERP, notifikasi, per
 ```mermaid
 flowchart TD
   accTitle: Flowchart alur barang keluar
-  accDescr: Divisi lain membuat permintaan lewat ERP, notifikasi masuk ke ERP Warehouse Teknik, staff menyetujui sehingga laporan barang keluar tercatat di ERP. Staff mencari dan mengambil barang, mencatat di catatan manual rak, lalu menaruh barang di rak reservasi. Karyawan divisi pemesan datang, menerima barang, dan mengeceknya. Jika tidak sesuai, barang ditukar. Jika sesuai, karyawan membawa barang.
-  A(["Divisi lain membuat permintaan di ERP"]):::divisi --> B["Notifikasi muncul di ERP Warehouse Teknik"]:::sistem
-  B --> C["Staff menyetujui permintaan"]:::staff
-  C --> D[("Laporan barang keluar tercatat di ERP")]:::sistem
-  D --> E["Staff mencari barang sesuai orderan"]:::staff
-  E --> F["Staff mengambil barang dari rak"]:::staff
-  F --> G[/"Catat pengeluaran di catatan manual rak"/]:::dokumen
-  G --> H["Barang ditaruh di rak reservasi"]:::staff
-  H --> I["Karyawan divisi pemesan datang ke warehouse"]:::divisi
-  I --> J["Staff menyerahkan barang ke karyawan"]:::staff
-  J --> K{"Barang sesuai orderan?"}:::cek
-  K -- Tidak --> L["Barang dikembalikan dan ditukar dengan yang sesuai"]:::tolak
-  L --> J
-  K -- Ya --> M(["Selesai: karyawan membawa barang"]):::selesai
+  accDescr: 1 divisi lain membuat permintaan di ERP, 2 notifikasi muncul di ERP Warehouse Teknik, 3 staff menyetujui, 4 laporan barang keluar tercatat di ERP, 5 staff mencari barang, 6 mengambil barang, 7 mencatat di catatan manual rak, 8 menaruh barang di rak reservasi, 9 karyawan divisi pemesan datang, 10 staff menyerahkan barang, 11 karyawan mengecek barang. Jika tidak sesuai, barang ditukar lalu diserahkan lagi. Jika sesuai, karyawan membawa barang.
+  L1(["1. Divisi lain membuat permintaan di ERP"]):::divisi --> L2["2. Notifikasi muncul di ERP Warehouse Teknik"]:::sistem
+  L2 --> L3["3. Staff menyetujui permintaan"]:::staff
+  L3 --> L4[("4. Laporan barang keluar tercatat di ERP")]:::sistem
+  L4 --> L5["5. Staff mencari barang sesuai orderan"]:::staff
+  L5 --> L6["6. Staff mengambil barang dari rak"]:::staff
+  L6 --> L7[/"7. Catat pengeluaran di catatan manual rak"/]:::dokumen
+  L7 --> L8["8. Barang ditaruh di rak reservasi"]:::staff
+  L8 --> L9["9. Karyawan divisi pemesan datang ke warehouse"]:::divisi
+  L9 --> L10["10. Staff menyerahkan barang ke karyawan"]:::staff
+  L10 --> L11{"11. Barang sesuai orderan?"}:::cek
+  L11 -- Tidak --> T11["Barang dikembalikan dan ditukar dengan yang sesuai"]:::tolak
+  T11 --> L10
+  L11 -- Ya --> SELESAI(["Selesai: karyawan membawa barang"]):::selesai
 ```
 
 <LegendaAlur />
 
-## Langkah demi langkah
+## Langkah demi langkah dengan foto
+
+Setiap kotak di flowchart punya kartu bernomor yang sama di bawah ini, lengkap dengan fotonya.
 
 <LangkahAlur alur="barang-keluar" />
 

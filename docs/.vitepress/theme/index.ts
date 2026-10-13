@@ -24,6 +24,7 @@ import TabelStatus from './components/TabelStatus.vue'
 import LangkahAlur from './components/LangkahAlur.vue'
 import LegendaAlur from './components/LegendaAlur.vue'
 import DaftarKartu from './components/DaftarKartu.vue'
+import DaftarFotoAlur from './components/DaftarFotoAlur.vue'
 
 export default {
   extends: DefaultTheme,
@@ -42,5 +43,6 @@ export default {
     app.component('LangkahAlur', LangkahAlur)
     app.component('LegendaAlur', LegendaAlur)
     app.component('DaftarKartu', DaftarKartu)
+    app.component('DaftarFotoAlur', DaftarFotoAlur)
   }
 } satisfies Theme

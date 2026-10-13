@@ -18,24 +18,26 @@ kata_kunci: [barang masuk, penerimaan, receiving, vendor, supplier, surat tanda 
 ```mermaid
 flowchart TD
   accTitle: Flowchart alur barang masuk
-  accDescr: Barang datang dari vendor, dicek kesesuaiannya dengan pesanan, dibawa masuk dan diterima staff, lalu dicek kondisi dan jumlahnya. Jika lolos, surat tanda terima diberikan ke vendor, data diinput ke database, laporan dikirim ke OS/PPIC, barang disimpan di rak dan dicatat di catatan manual rak. Barang yang tidak lolos pengecekan dikembalikan ke vendor.
-  A(["Barang datang dari vendor / supplier"]):::vendor --> B{"Barang sesuai dengan pesanan?"}:::cek
-  B -- Tidak --> R1["Barang dikembalikan ke vendor"]:::tolak
-  B -- Ya --> C["Barang dibawa masuk ke dalam gudang"]:::staff
-  C --> D["Staff menerima barang"]:::staff
-  D --> E{"Kondisi baik dan jumlah sesuai?"}:::cek
-  E -- "Tidak: rusak atau kurang" --> R2["Barang dikembalikan ke vendor"]:::tolak
-  E -- Ya --> F[/"Surat tanda terima diberikan ke vendor"/]:::dokumen
-  F --> G[("Input database barang: jumlah, jenis, tipe, tanggal masuk")]:::sistem
-  G --> H[/"Laporan barang masuk dikirim ke divisi OS/PPIC"/]:::dokumen
-  H --> I["Barang disimpan di rak sesuai lokasi di database"]:::staff
-  I --> J[/"Dicatat di catatan manual rak"/]:::dokumen
-  J --> K(["Selesai: barang tersimpan di gudang"]):::selesai
+  accDescr: 1 barang datang dari vendor, 2 dicek kesesuaiannya dengan pesanan, 3 dibawa masuk ke gudang, 4 diterima staff, 5 dicek kondisi dan jumlahnya, 6 surat tanda terima diberikan ke vendor, 7 data diinput ke database, 8 laporan dikirim ke OS/PPIC, 9 barang disimpan di rak, 10 dicatat di catatan manual rak. Barang yang tidak lolos pengecekan di langkah 2 atau 5 dikembalikan ke vendor.
+  L1(["1. Barang datang dari vendor / supplier"]):::vendor --> L2{"2. Barang sesuai dengan pesanan?"}:::cek
+  L2 -- Tidak --> T2["Barang dikembalikan ke vendor"]:::tolak
+  L2 -- Ya --> L3["3. Barang dibawa masuk ke dalam gudang"]:::staff
+  L3 --> L4["4. Staff menerima barang"]:::staff
+  L4 --> L5{"5. Kondisi baik dan jumlah sesuai?"}:::cek
+  L5 -- "Tidak: rusak atau kurang" --> T5["Barang dikembalikan ke vendor"]:::tolak
+  L5 -- Ya --> L6[/"6. Surat tanda terima diberikan ke vendor"/]:::dokumen
+  L6 --> L7[("7. Input database barang: jumlah, jenis, tipe, tanggal masuk")]:::sistem
+  L7 --> L8[/"8. Laporan barang masuk dikirim ke divisi OS/PPIC"/]:::dokumen
+  L8 --> L9["9. Barang disimpan di rak sesuai lokasi di database"]:::staff
+  L9 --> L10[/"10. Dicatat di catatan manual rak"/]:::dokumen
+  L10 --> SELESAI(["Selesai: barang tersimpan di gudang"]):::selesai
 ```
 
 <LegendaAlur />
 
-## Langkah demi langkah
+## Langkah demi langkah dengan foto
+
+Setiap kotak di flowchart punya kartu bernomor yang sama di bawah ini, lengkap dengan fotonya.
 
 <LangkahAlur alur="barang-masuk" />
 

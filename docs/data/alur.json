@@ -1,8 +1,12 @@
 {
   "_catatan": [
-    "Langkah alur kerja Gudang Teknik. Ditampilkan oleh komponen <LangkahAlur alur='...' />.",
-    "aktor: vendor | staff | sistem | divisi | dokumen (menentukan warna label, sama dengan warna di flowchart).",
+    "Langkah alur kerja Gudang Teknik. Setiap langkah = satu kotak di flowchart (nomornya sama).",
+    "Ditampilkan oleh komponen <LangkahAlur alur='...' /> sebagai flowchart bergambar.",
+    "aktor: vendor | staff | sistem | divisi | dokumen (menentukan warna, sama dengan warna di flowchart).",
     "Jika langkah berupa pengecekan, isi 'cek' dengan pertanyaan, hasil 'ya', dan hasil 'tidak'.",
+    "FOTO: taruh file di docs/public/images/alur/ dengan nama <alur>-<nomor 2 digit>.jpg, misalnya barang-masuk-01.jpg.",
+    "Untuk kotak 'Tidak' (barang dikembalikan/ditukar), namanya <alur>-<nomor>-tidak.jpg, misalnya barang-masuk-02-tidak.jpg.",
+    "Format yang dibaca: .jpg, .jpeg, .png, .webp. Jika file belum ada, yang tampil adalah placeholder.",
     "Sumber: catatan alur proses dari peserta magang (PDF) berdasarkan diagram presentasi Gudang Teknik."
   ],
   "aktor": {
@@ -12,113 +16,134 @@
     "divisi": "Divisi pemesan",
     "dokumen": "Dokumen / catatan"
   },
-  "barang-masuk": [
-    {
-      "aktor": "vendor",
-      "judul": "Barang datang",
-      "teks": "Vendor atau supplier datang mengantarkan barang ke Gudang Teknik."
-    },
-    {
-      "aktor": "staff",
-      "judul": "Cek kesesuaian pesanan",
-      "teks": "Staff mengecek apakah barang yang datang sesuai dengan yang dipesan.",
-      "cek": {
-        "tanya": "Barang sesuai dengan pesanan?",
-        "ya": "Lanjut ke langkah berikutnya.",
-        "tidak": "Barang dikembalikan ke vendor."
+  "barang-masuk": {
+    "selesai": "Selesai: barang tersimpan di gudang",
+    "langkah": [
+      {
+        "aktor": "vendor",
+        "judul": "Barang datang",
+        "teks": "Vendor atau supplier datang mengantarkan barang ke Gudang Teknik."
+      },
+      {
+        "aktor": "staff",
+        "judul": "Cek kesesuaian pesanan",
+        "teks": "Staff mengecek apakah barang yang datang sesuai dengan yang dipesan.",
+        "cek": {
+          "tanya": "Barang sesuai dengan pesanan?",
+          "ya": "Lanjut ke langkah 3.",
+          "tidak": "Barang dikembalikan ke vendor."
+        }
+      },
+      {
+        "aktor": "staff",
+        "judul": "Bawa masuk ke gudang",
+        "teks": "Barang dibawa masuk ke dalam gudang."
+      },
+      {
+        "aktor": "staff",
+        "judul": "Staff menerima barang",
+        "teks": "Staff menerima barang yang sudah dibawa masuk."
+      },
+      {
+        "aktor": "staff",
+        "judul": "Cek kondisi dan jumlah",
+        "teks": "Staff mengecek kembali kondisi barang dan jumlahnya.",
+        "cek": {
+          "tanya": "Kondisi baik dan jumlah sesuai pesanan?",
+          "ya": "Lanjut ke langkah 6.",
+          "tidak": "Jika kondisi buruk atau jumlahnya kurang, barang dikembalikan ke vendor."
+        }
+      },
+      {
+        "aktor": "dokumen",
+        "judul": "Surat tanda terima",
+        "teks": "Staff mengisi dan menandatangani surat tanda terima, lalu memberikannya ke vendor atau supplier."
+      },
+      {
+        "aktor": "sistem",
+        "judul": "Input database barang",
+        "teks": "Staff memasukkan data barang ke database: jumlah, jenis barang, tipe barang, dan tanggal masuk."
+      },
+      {
+        "aktor": "dokumen",
+        "judul": "Laporan ke OS/PPIC",
+        "teks": "Staff membuat laporan dan mengirimkannya ke divisi OS/PPIC bahwa barang sudah masuk dan sesuai."
+      },
+      {
+        "aktor": "staff",
+        "judul": "Simpan di rak",
+        "teks": "Barang dibawa ke area penyimpanan dan diletakkan di lokasi yang sesuai dengan database."
+      },
+      {
+        "aktor": "dokumen",
+        "judul": "Catat di catatan manual rak",
+        "teks": "Staff mencatat barang di catatan manual yang ada di rak tempat barang disimpan."
       }
-    },
-    {
-      "aktor": "staff",
-      "judul": "Bawa masuk ke gudang",
-      "teks": "Barang dibawa masuk ke dalam gudang, lalu staff menerima barang tersebut."
-    },
-    {
-      "aktor": "staff",
-      "judul": "Cek kondisi dan jumlah",
-      "teks": "Staff mengecek kembali kondisi barang dan jumlahnya.",
-      "cek": {
-        "tanya": "Kondisi baik dan jumlah sesuai pesanan?",
-        "ya": "Lanjut ke surat tanda terima.",
-        "tidak": "Jika kondisi buruk atau jumlahnya kurang, barang dikembalikan ke vendor."
+    ]
+  },
+  "barang-keluar": {
+    "selesai": "Selesai: karyawan membawa barang",
+    "langkah": [
+      {
+        "aktor": "divisi",
+        "judul": "Permintaan lewat ERP",
+        "teks": "Divisi lain membuat permintaan (order) barang melalui ERP perusahaan."
+      },
+      {
+        "aktor": "sistem",
+        "judul": "Notifikasi masuk",
+        "teks": "Pemberitahuan permintaan muncul di ERP Warehouse Teknik."
+      },
+      {
+        "aktor": "staff",
+        "judul": "Setujui permintaan",
+        "teks": "Staff menyetujui permintaan di ERP."
+      },
+      {
+        "aktor": "sistem",
+        "judul": "Laporan barang keluar tercatat",
+        "teks": "Staff membuat laporan barang keluar, yang langsung tercatat di ERP perusahaan."
+      },
+      {
+        "aktor": "staff",
+        "judul": "Cari barang",
+        "teks": "Staff mencari barang sesuai orderan."
+      },
+      {
+        "aktor": "staff",
+        "judul": "Ambil barang",
+        "teks": "Staff mengambil barang dari rak."
+      },
+      {
+        "aktor": "dokumen",
+        "judul": "Catat di catatan manual rak",
+        "teks": "Staff membuat catatan pengeluaran barang di catatan manual yang ada di rak."
+      },
+      {
+        "aktor": "staff",
+        "judul": "Taruh di rak reservasi",
+        "teks": "Barang diletakkan di rak reservasi sampai diambil oleh divisi pemesan."
+      },
+      {
+        "aktor": "divisi",
+        "judul": "Karyawan datang mengambil",
+        "teks": "Karyawan dari divisi yang memesan datang ke warehouse untuk mengambil barang."
+      },
+      {
+        "aktor": "staff",
+        "judul": "Serahkan barang",
+        "teks": "Staff memberikan barang kepada karyawan tersebut."
+      },
+      {
+        "aktor": "divisi",
+        "judul": "Karyawan mengecek barang",
+        "teks": "Karyawan mengecek apakah barang sesuai dengan orderan.",
+        "cek": {
+          "tanya": "Barang sesuai orderan?",
+          "ya": "Karyawan membawa barang. Selesai.",
+          "tidak": "Barang dikembalikan dan ditukar dengan barang yang sesuai, lalu diserahkan lagi (kembali ke langkah 10)."
+        }
       }
-    },
-    {
-      "aktor": "dokumen",
-      "judul": "Surat tanda terima",
-      "teks": "Staff mengisi dan menandatangani surat tanda terima, lalu memberikannya ke vendor atau supplier."
-    },
-    {
-      "aktor": "sistem",
-      "judul": "Input database barang",
-      "teks": "Staff memasukkan data barang ke database: jumlah, jenis barang, tipe barang, dan tanggal masuk."
-    },
-    {
-      "aktor": "dokumen",
-      "judul": "Laporan ke OS/PPIC",
-      "teks": "Staff membuat laporan dan mengirimkannya ke divisi OS/PPIC bahwa barang sudah masuk dan sesuai."
-    },
-    {
-      "aktor": "staff",
-      "judul": "Simpan di rak",
-      "teks": "Barang dibawa ke area penyimpanan dan diletakkan di lokasi yang sesuai dengan database."
-    },
-    {
-      "aktor": "dokumen",
-      "judul": "Catat di catatan manual rak",
-      "teks": "Staff mencatat barang di catatan manual yang ada di rak tempat barang disimpan."
-    }
-  ],
-  "barang-keluar": [
-    {
-      "aktor": "divisi",
-      "judul": "Permintaan lewat ERP",
-      "teks": "Divisi lain membuat permintaan (order) barang melalui ERP perusahaan."
-    },
-    {
-      "aktor": "sistem",
-      "judul": "Notifikasi masuk",
-      "teks": "Pemberitahuan permintaan muncul di ERP Warehouse Teknik."
-    },
-    {
-      "aktor": "staff",
-      "judul": "Setujui permintaan",
-      "teks": "Staff menyetujui permintaan dan membuat laporan barang keluar. Laporan ini langsung tercatat di ERP perusahaan."
-    },
-    {
-      "aktor": "staff",
-      "judul": "Cari dan ambil barang",
-      "teks": "Staff mencari barang sesuai orderan, lalu mengambilnya dari rak."
-    },
-    {
-      "aktor": "dokumen",
-      "judul": "Catat di catatan manual rak",
-      "teks": "Staff membuat catatan pengeluaran barang di catatan manual yang ada di rak."
-    },
-    {
-      "aktor": "staff",
-      "judul": "Taruh di rak reservasi",
-      "teks": "Barang diletakkan di rak reservasi sampai diambil oleh divisi pemesan."
-    },
-    {
-      "aktor": "divisi",
-      "judul": "Karyawan datang mengambil",
-      "teks": "Karyawan dari divisi yang memesan datang ke warehouse untuk mengambil barang."
-    },
-    {
-      "aktor": "staff",
-      "judul": "Serahkan barang",
-      "teks": "Staff memberikan barang kepada karyawan tersebut."
-    },
-    {
-      "aktor": "divisi",
-      "judul": "Karyawan mengecek barang",
-      "teks": "Karyawan mengecek apakah barang sesuai dengan orderan.",
-      "cek": {
-        "tanya": "Barang sesuai orderan?",
-        "ya": "Karyawan membawa barang. Selesai.",
-        "tidak": "Barang dikembalikan dan ditukar dengan barang yang sesuai orderan, lalu diserahkan lagi."
-      }
-    }
-  ]
+    ]
+  }
 }
