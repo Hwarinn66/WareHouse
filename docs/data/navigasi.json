@@ -1,0 +1,87 @@
+{
+  "_catatan": "Navigasi atas (nav) dan sidebar website. Urutan di sidebar juga menentukan tombol 'Sebelumnya/Berikutnya' di bawah artikel. 'link' ditulis tanpa .md; folder diakhiri '/'.",
+  "nav": [
+    { "text": "Mulai", "link": "/mulai/" },
+    { "text": "Perusahaan", "link": "/perusahaan/" },
+    { "text": "Gudang Teknik", "link": "/divisi/", "activeMatch": "^/divisi/" },
+    { "text": "Alur Kerja", "link": "/alur-kerja/", "activeMatch": "^/alur-kerja/" },
+    { "text": "Tutorial", "link": "/tutorial/", "activeMatch": "^/tutorial/" },
+    { "text": "SOP", "link": "/sop/", "activeMatch": "^/sop/" },
+    { "text": "FAQ", "link": "/faq" }
+  ],
+  "sidebar": [
+    {
+      "text": "Mulai",
+      "items": [
+        { "text": "Beranda", "link": "/" },
+        { "text": "Mulai dari Sini", "link": "/mulai/" }
+      ]
+    },
+    {
+      "text": "Tentang Perusahaan",
+      "items": [
+        { "text": "Profil PT Bakrie Pipe Industries", "link": "/perusahaan/" }
+      ]
+    },
+    {
+      "text": "Gudang Teknik",
+      "items": [
+        { "text": "Pengenalan Gudang Teknik", "link": "/divisi/" },
+        { "text": "Jenis Material", "link": "/divisi/jenis-material" },
+        { "text": "Kode & Identifikasi Barang", "link": "/divisi/kode-barang" },
+        { "text": "Manajemen Inventory", "link": "/divisi/manajemen-inventory" },
+        { "text": "Administrasi & Kontrol Stok", "link": "/divisi/administrasi-stok" },
+        { "text": "Glosarium", "link": "/divisi/glosarium" }
+      ]
+    },
+    {
+      "text": "Alur Kerja",
+      "items": [
+        { "text": "Ringkasan Alur Kerja", "link": "/alur-kerja/" },
+        { "text": "Barang Masuk", "link": "/alur-kerja/barang-masuk" },
+        { "text": "Barang Keluar", "link": "/alur-kerja/barang-keluar" },
+        { "text": "Stock Opname", "link": "/alur-kerja/stock-opname" },
+        { "text": "Layout Gudang", "link": "/alur-kerja/layout-gudang" }
+      ]
+    },
+    {
+      "text": "Tutorial",
+      "items": [
+        { "text": "Daftar Tutorial", "link": "/tutorial/" },
+        { "text": "Membaca Kode & Spesifikasi", "link": "/tutorial/membaca-kode-barang" },
+        { "text": "Menentukan Fast & Slow Moving", "link": "/tutorial/fast-slow-moving" },
+        { "text": "Menghitung Min, Maks & ROP", "link": "/tutorial/min-max-rop" },
+        { "text": "Mencatat Hasil Hitung Fisik", "link": "/tutorial/hitung-fisik" }
+      ]
+    },
+    {
+      "text": "SOP & Checklist",
+      "items": [
+        { "text": "Daftar SOP", "link": "/sop/" },
+        { "text": "Penerimaan Barang", "link": "/sop/penerimaan-barang" },
+        { "text": "Penyimpanan Barang", "link": "/sop/penyimpanan-barang" },
+        { "text": "Pengeluaran Barang", "link": "/sop/pengeluaran-barang" },
+        { "text": "Stock Opname", "link": "/sop/stock-opname" },
+        { "text": "Dead Stock & Barang Rusak", "link": "/sop/dead-stock" },
+        { "text": "K3 di Gudang", "link": "/sop/k3-gudang" }
+      ]
+    },
+    {
+      "text": "Bantuan",
+      "items": [
+        { "text": "FAQ", "link": "/faq" },
+        { "text": "Referensi & Sumber", "link": "/referensi" }
+      ]
+    },
+    {
+      "text": "Tentang Handbook",
+      "collapsed": true,
+      "items": [
+        { "text": "Cara Memperbarui Handbook", "link": "/tentang-handbook/cara-memperbarui" },
+        { "text": "Informasi yang Perlu Diverifikasi", "link": "/tentang-handbook/perlu-verifikasi" },
+        { "text": "Checklist Sebelum Publikasi", "link": "/tentang-handbook/checklist-publikasi" },
+        { "text": "Riwayat Versi", "link": "/tentang-handbook/riwayat-versi" }
+      ]
+    }
+  ]
+}

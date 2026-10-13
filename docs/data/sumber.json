@@ -1,0 +1,55 @@
+{
+  "_catatan": "Daftar sumber yang dirujuk handbook. 'id' dipakai oleh company-profile.json dan halaman lain. jenis: 'publik' (bisa dibuka siapa saja) atau 'internal' (dokumen perusahaan, jangan diunggah ke folder public/).",
+  "sumber": [
+    {
+      "id": "bnbr-mp-2020",
+      "judul": "Management Presentation — September 2020",
+      "penerbit": "PT Bakrie & Brothers Tbk",
+      "jenis": "publik",
+      "url": "https://bakrie-brothers.com/wp-content/uploads/2020/12/ENG2020112316061150613466.pdf",
+      "tanggalTerbit": "2020-09",
+      "tanggalAkses": "2026-10-13",
+      "dipakaiUntuk": "Status PT Bakrie Pipe Industries sebagai anak usaha Bakrie & Brothers (kepemilikan 99%) di bidang manufaktur pipa baja."
+    },
+    {
+      "id": "bnbr-ar-2013",
+      "judul": "Laporan Tahunan 2013 (bagian segmen manufaktur)",
+      "penerbit": "PT Bakrie & Brothers Tbk",
+      "jenis": "publik",
+      "url": "https://bakrie-brothers.com/wp-content/uploads/2020/12/ENG2020042015873633067193.pdf",
+      "tanggalTerbit": "2014",
+      "tanggalAkses": "2026-10-13",
+      "dipakaiUntuk": "BPI sebagai produsen pipa baja dengan teknologi High Frequency ERW (Electric Resistance Welding)."
+    },
+    {
+      "id": "detik-2024",
+      "judul": "Wamendag Jerry Sambuaga Kunjungi Pabrik Industri Pipa Nasional",
+      "penerbit": "detikFinance",
+      "jenis": "publik",
+      "url": "https://finance.detik.com/foto-bisnis/d-7160378/wamendag-jerry-sambuaga-kunjungi-pabrik-industri-pipa-nasional",
+      "tanggalTerbit": "2024-01-25",
+      "tanggalAkses": "2026-10-13",
+      "dipakaiUntuk": "Lokasi pabrik di Bekasi, Jawa Barat; status anak usaha Bakrie & Brothers; riwayat ekspor."
+    },
+    {
+      "id": "republika-2015",
+      "judul": "Menperin Resmikan PT Bakrie Pipe Industries",
+      "penerbit": "Republika",
+      "jenis": "publik",
+      "url": "https://ekonomi.republika.co.id/berita/nop4xn/menperin-resmikan-pt-bakrie-pipe-industries",
+      "tanggalTerbit": "2015-05-21",
+      "tanggalAkses": "2026-10-13",
+      "dipakaiUntuk": "Peresmian fasilitas pelapisan (coating) pipa dan laboratorium layanan di Bekasi."
+    },
+    {
+      "id": "ppt-gudang-teknik",
+      "judul": "Presentasi “Gudang Teknik — Warehouse”",
+      "penerbit": "Gudang Teknik, PT Bakrie Pipe Industries",
+      "jenis": "internal",
+      "url": null,
+      "tanggalTerbit": null,
+      "tanggalAkses": "2026-10-13",
+      "dipakaiUntuk": "Pengertian dan fungsi Gudang Teknik, jenis material, manajemen inventory, kode barang, administrasi stok, indikator kinerja. Gambar alur (slide 5–7) belum terbaca dan perlu dicocokkan."
+    }
+  ]
+}

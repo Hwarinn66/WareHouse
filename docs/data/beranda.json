@@ -1,0 +1,35 @@
+{
+  "_catatan": "Isi halaman Beranda. 'alurBelajar' adalah urutan belajar yang disarankan. 'bagian' adalah daftar isi handbook. 'rekomendasi' adalah bacaan yang disarankan. 'pengumuman' tampil di atas jika 'aktif': true.",
+  "moto": "A place for everything and everything in its place.",
+  "motoSumber": "Moto Gudang Teknik",
+  "pengantar": "Panduan belajar mandiri untuk peserta magang dan PKL di Gudang Teknik. Di sini Anda bisa mengenal perusahaan, jenis material, alur barang masuk dan keluar, SOP, serta istilah gudang tanpa harus menunggu jawaban pembimbing.",
+  "contohPencarian": ["bearing", "FIFO", "stock opname", "ROP", "dead stock"],
+  "pengumuman": {
+    "aktif": true,
+    "judul": "Handbook ini masih draf",
+    "isi": "Sebagian SOP dan alur kerja disusun dari praktik umum pergudangan dan belum disahkan. Jika berbeda dengan arahan pembimbing atau dokumen resmi, ikuti arahan pembimbing."
+  },
+  "alurBelajar": [
+    { "judul": "Kenali perusahaan", "ket": "Apa yang diproduksi BPI dan di mana posisinya dalam grup.", "link": "/perusahaan/" },
+    { "judul": "Kenali Gudang Teknik", "ket": "Fungsi gudang dan prinsip 4 right.", "link": "/divisi/" },
+    { "judul": "Pelajari jenis material", "ket": "Sepuluh kelompok barang teknik beserta contohnya.", "link": "/divisi/jenis-material" },
+    { "judul": "Pahami kode barang", "ket": "Cara mengenali barang dari kode dan spesifikasinya.", "link": "/divisi/kode-barang" },
+    { "judul": "Ikuti alur barang masuk dan keluar", "ket": "Urutan kerja dari barang datang sampai diserahkan ke user.", "link": "/alur-kerja/" },
+    { "judul": "Baca SOP dan aturan K3", "ket": "Langkah kerja dan keselamatan sebelum turun ke lapangan.", "link": "/sop/" }
+  ],
+  "bagian": [
+    { "judul": "Tentang Perusahaan", "ket": "Profil, bidang usaha, dan grup perusahaan beserta sumbernya.", "link": "/perusahaan/" },
+    { "judul": "Gudang Teknik", "ket": "Fungsi, material, kode barang, inventory, dan administrasi stok.", "link": "/divisi/" },
+    { "judul": "Alur Kerja", "ket": "Diagram barang masuk, barang keluar, dan stock opname.", "link": "/alur-kerja/" },
+    { "judul": "Tutorial", "ket": "Latihan langkah demi langkah dengan contoh perhitungan.", "link": "/tutorial/" },
+    { "judul": "SOP & Checklist", "ket": "Prosedur kerja gudang dan daftar periksanya.", "link": "/sop/" },
+    { "judul": "FAQ", "ket": "Jawaban singkat untuk pertanyaan yang sering muncul.", "link": "/faq" },
+    { "judul": "Glosarium", "ket": "Arti istilah seperti ROP, dead stock, dan cycle counting.", "link": "/divisi/glosarium" },
+    { "judul": "Referensi", "ket": "Daftar sumber yang dipakai di handbook ini.", "link": "/referensi" }
+  ],
+  "rekomendasi": [
+    { "judul": "Manajemen Inventory", "ket": "Stock dan non-stock item, fast dan slow moving, critical stock, dead stock.", "link": "/divisi/manajemen-inventory" },
+    { "judul": "Menghitung Min, Maks & ROP", "ket": "Tutorial dengan contoh angka latihan.", "link": "/tutorial/min-max-rop" },
+    { "judul": "K3 di Gudang", "ket": "Hal yang perlu diperhatikan sebelum bekerja di area gudang.", "link": "/sop/k3-gudang" }
+  ]
+}

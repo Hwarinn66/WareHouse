@@ -1,0 +1,160 @@
+{
+  "_catatan": [
+    "Daftar FAQ. Tambahkan pertanyaan baru di dalam kategori yang sesuai.",
+    "id: huruf kecil dan tanda hubung, unik (dipakai sebagai tautan langsung, mis. /faq#apa-itu-gudang-teknik).",
+    "status: 'terjawab' = jawaban dari isi handbook; 'menunggu-pembimbing' = belum ada jawaban resmi, 'jawaban' boleh kosong.",
+    "jawaban boleh berisi Markdown sederhana: **tebal**, `kode`, dan [tautan](/halaman)."
+  ],
+  "kategori": [
+    {
+      "id": "perusahaan",
+      "nama": "Informasi perusahaan",
+      "pertanyaan": [
+        {
+          "id": "bpi-bergerak-di-bidang-apa",
+          "tanya": "PT Bakrie Pipe Industries bergerak di bidang apa?",
+          "jawab": "BPI adalah produsen pipa baja dan merupakan anak usaha PT Bakrie & Brothers Tbk. Pabriknya berada di Bekasi, Jawa Barat. Rincian beserta sumbernya ada di [Profil Perusahaan](/perusahaan/).",
+          "status": "terjawab"
+        },
+        {
+          "id": "visi-misi-perusahaan",
+          "tanya": "Di mana saya bisa membaca visi dan misi perusahaan?",
+          "jawab": "Visi dan misi resmi belum ditemukan dari sumber yang bisa diverifikasi, sehingga belum ditampilkan di handbook. Tanyakan dokumen resminya kepada pembimbing.",
+          "status": "menunggu-pembimbing"
+        }
+      ]
+    },
+    {
+      "id": "divisi",
+      "nama": "Gudang Teknik",
+      "pertanyaan": [
+        {
+          "id": "apa-itu-gudang-teknik",
+          "tanya": "Apa tugas utama Gudang Teknik?",
+          "jawab": "Menerima, menyimpan, mengelola, memelihara, dan mendistribusikan barang teknik untuk mendukung operasional perusahaan. Tiga fungsi utamanya adalah **penyimpanan**, **pengendalian**, dan **pelayanan**. Baca [Pengenalan Gudang Teknik](/divisi/).",
+          "status": "terjawab"
+        },
+        {
+          "id": "barang-apa-saja",
+          "tanya": "Barang apa saja yang dikelola Gudang Teknik?",
+          "jawab": "Ada sepuluh kelompok, antara lain mechanical parts, electrical parts, piping & fitting, fasteners, tools, consumable, welding material, APD, instrumentasi, dan spare part mesin. Lihat [Jenis Material](/divisi/jenis-material).",
+          "status": "terjawab"
+        },
+        {
+          "id": "beda-stock-non-stock",
+          "tanya": "Apa beda stock item dan non-stock item?",
+          "jawab": "Stock item adalah material yang rutin dipakai, sehingga stoknya dijaga. Non-stock item hanya dipakai sesekali, jadi tidak disimpan sebagai stok dan baru dibeli saat dibutuhkan user. Lihat [Manajemen Inventory](/divisi/manajemen-inventory).",
+          "status": "terjawab"
+        },
+        {
+          "id": "arti-fifo",
+          "tanya": "Apa itu FIFO dan mengapa penting?",
+          "jawab": "FIFO (*First In, First Out*) berarti barang yang masuk lebih dulu dikeluarkan lebih dulu. Tujuannya mencegah barang terlalu lama tersimpan, turun mutu, atau kedaluwarsa. FIFO yang tidak dijalankan dengan benar adalah salah satu penyebab dead stock. Lihat [SOP Penyimpanan](/sop/penyimpanan-barang).",
+          "status": "terjawab"
+        }
+      ]
+    },
+    {
+      "id": "alur-kerja",
+      "nama": "Alur kerja",
+      "pertanyaan": [
+        {
+          "id": "barang-datang-tidak-sesuai",
+          "tanya": "Apa yang dilakukan jika barang yang datang tidak sesuai dokumen?",
+          "jawab": "Jangan langsung disimpan. Catat ketidaksesuaiannya (jumlah, spesifikasi, atau kondisi), pisahkan barangnya, lalu laporkan ke pembimbing atau atasan gudang. Langkah umumnya ada di [SOP Penerimaan Barang](/sop/penerimaan-barang). Ikuti arahan pembimbing jika prosedur resmi berbeda.",
+          "status": "terjawab"
+        },
+        {
+          "id": "stok-habis-saat-diminta",
+          "tanya": "Bagaimana jika user meminta barang yang stoknya kosong?",
+          "jawab": "Sampaikan ke user bahwa stok kosong dan laporkan ke pembimbing. Untuk stock item, stok kosong berarti titik pemesanan ulang (ROP) terlewat dan perlu ditindaklanjuti. Untuk non-stock item, barang memang dibeli saat dibutuhkan. Lihat [Alur Barang Keluar](/alur-kerja/barang-keluar).",
+          "status": "terjawab"
+        },
+        {
+          "id": "siapa-menyetujui-permintaan",
+          "tanya": "Siapa yang berwenang menyetujui permintaan barang keluar?",
+          "jawab": "",
+          "status": "menunggu-pembimbing"
+        }
+      ]
+    },
+    {
+      "id": "dokumen-aplikasi",
+      "nama": "Dokumen dan aplikasi",
+      "pertanyaan": [
+        {
+          "id": "data-apa-dicatat",
+          "tanya": "Data apa saja yang wajib dicatat di gudang?",
+          "jawab": "Master material (kode, nama, spesifikasi, satuan, lokasi), barang masuk (tanggal, supplier, jumlah, dokumen), barang keluar (user, jumlah, tujuan, tanggal), hasil stock opname, dan laporan stok. Lihat [Administrasi & Kontrol Stok](/divisi/administrasi-stok).",
+          "status": "terjawab"
+        },
+        {
+          "id": "aplikasi-pencatatan",
+          "tanya": "Aplikasi atau sistem apa yang dipakai untuk mencatat stok?",
+          "jawab": "",
+          "status": "menunggu-pembimbing"
+        },
+        {
+          "id": "nama-formulir",
+          "tanya": "Formulir apa yang dipakai untuk permintaan dan penerimaan barang?",
+          "jawab": "",
+          "status": "menunggu-pembimbing"
+        }
+      ]
+    },
+    {
+      "id": "kendala",
+      "nama": "Kendala umum",
+      "pertanyaan": [
+        {
+          "id": "barang-tidak-ketemu",
+          "tanya": "Saya tidak menemukan barang di lokasi yang tercatat. Apa yang harus dilakukan?",
+          "jawab": "Cek ulang kode barang dan lokasi di catatan, lalu periksa rak di sekitarnya. Jika tetap tidak ada, laporkan ke pembimbing sebagai selisih. Jangan mengubah catatan stok sendiri. Selisih seperti ini biasanya ditelusuri melalui [stock opname](/alur-kerja/stock-opname).",
+          "status": "terjawab"
+        },
+        {
+          "id": "kode-barang-tidak-ada",
+          "tanya": "Barang tidak punya label atau kode. Bagaimana?",
+          "jawab": "Pisahkan barangnya dan jangan menebak kodenya. Laporkan ke pembimbing agar barang diidentifikasi dari spesifikasinya dan diberi label yang benar. Lihat [Kode & Identifikasi Barang](/divisi/kode-barang).",
+          "status": "terjawab"
+        }
+      ]
+    },
+    {
+      "id": "etika",
+      "nama": "Etika dan komunikasi kerja",
+      "pertanyaan": [
+        {
+          "id": "apd-wajib",
+          "tanya": "APD apa yang wajib dipakai di area gudang?",
+          "jawab": "",
+          "status": "menunggu-pembimbing"
+        },
+        {
+          "id": "bertanya-ke-siapa",
+          "tanya": "Kepada siapa saya bertanya jika ragu?",
+          "jawab": "Tanyakan ke pembimbing magang. Jika ragu tentang keselamatan, hentikan pekerjaan lebih dulu, baru bertanya.",
+          "status": "terjawab"
+        },
+        {
+          "id": "jam-kerja",
+          "tanya": "Bagaimana aturan jam kerja, absensi, dan izin peserta magang?",
+          "jawab": "",
+          "status": "menunggu-pembimbing"
+        }
+      ]
+    },
+    {
+      "id": "bantuan",
+      "nama": "Bantuan lebih lanjut",
+      "pertanyaan": [
+        {
+          "id": "menemukan-kesalahan",
+          "tanya": "Saya menemukan informasi yang salah di handbook ini. Apa yang harus dilakukan?",
+          "jawab": "Catat halaman dan bagian yang salah, lalu sampaikan ke pembimbing atau pengelola handbook. Cara memperbarui isi ada di [Cara Memperbarui Handbook](/tentang-handbook/cara-memperbarui).",
+          "status": "terjawab"
+        }
+      ]
+    }
+  ]
+}

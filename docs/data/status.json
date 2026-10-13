@@ -1,0 +1,28 @@
+{
+  "_catatan": "Arti setiap nilai 'status' di frontmatter halaman. 'nada' menentukan warna: aman (hijau), info (biru), waspada (kuning). Script cek-publikasi menganggap hanya 'disetujui' dan 'terverifikasi' yang siap dipublikasikan.",
+  "disetujui": {
+    "label": "Disetujui",
+    "nada": "aman",
+    "keterangan": "Isi halaman ini sudah diperiksa dan disetujui pembimbing."
+  },
+  "terverifikasi": {
+    "label": "Terverifikasi",
+    "nada": "aman",
+    "keterangan": "Fakta di halaman ini didukung sumber yang tercantum di bawah. Bagian yang belum terverifikasi diberi keterangan."
+  },
+  "ditinjau": {
+    "label": "Sedang ditinjau",
+    "nada": "info",
+    "keterangan": "Halaman ini sedang diperiksa pembimbing. Isinya bisa berubah."
+  },
+  "draf": {
+    "label": "Draf",
+    "nada": "waspada",
+    "keterangan": "Belum disahkan. Jika berbeda dengan arahan pembimbing atau dokumen resmi, ikuti arahan pembimbing."
+  },
+  "perlu-verifikasi": {
+    "label": "Perlu verifikasi",
+    "nada": "waspada",
+    "keterangan": "Sebagian isi halaman ini belum dicocokkan dengan dokumen resmi."
+  }
+}

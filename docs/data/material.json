@@ -1,0 +1,66 @@
+{
+  "_catatan": "Kelompok material di Gudang Teknik. Sumber: presentasi Gudang Teknik slide 3–4. Tambahkan 'catatanPenanganan' jika ada aturan khusus dari pembimbing.",
+  "sumber": "ppt-gudang-teknik",
+  "kelompok": [
+    {
+      "id": "mechanical",
+      "nama": "Mechanical Parts",
+      "arti": "Komponen mekanik mesin",
+      "contoh": ["Bearing", "Seal", "Gasket", "Coupling", "Pulley"]
+    },
+    {
+      "id": "electrical",
+      "nama": "Electrical Parts",
+      "arti": "Komponen kelistrikan",
+      "contoh": ["Kabel", "Fuse", "Relay", "Terminal", "MCB", "Kontaktor"]
+    },
+    {
+      "id": "piping",
+      "nama": "Piping & Fitting",
+      "arti": "Pipa dan sambungannya",
+      "contoh": ["Pipa", "Elbow", "Tee", "Flange", "Valve", "Fitting"]
+    },
+    {
+      "id": "fasteners",
+      "nama": "Fasteners",
+      "arti": "Pengikat atau penyambung",
+      "contoh": ["Baut", "Mur", "Washer", "Screw"]
+    },
+    {
+      "id": "tools",
+      "nama": "Tools / Peralatan",
+      "arti": "Peralatan kerja teknisi",
+      "contoh": ["Kunci pas", "Kunci Inggris", "Tang", "Obeng", "Bor"]
+    },
+    {
+      "id": "consumable",
+      "nama": "Consumable",
+      "arti": "Bahan habis pakai",
+      "contoh": ["Oli", "Grease", "Sealant", "Cutting disc", "Amplas"]
+    },
+    {
+      "id": "welding",
+      "nama": "Welding Material",
+      "arti": "Bahan untuk pengelasan",
+      "contoh": ["Elektroda", "Kawat las", "Batu gerinda"]
+    },
+    {
+      "id": "ppe",
+      "nama": "Safety / PPE",
+      "arti": "Alat pelindung diri (APD)",
+      "contoh": ["Sarung tangan", "Helm", "Safety shoes", "Goggles"]
+    },
+    {
+      "id": "instrumentation",
+      "nama": "Instrumentation",
+      "arti": "Alat ukur dan sensor",
+      "contoh": ["Sensor", "Pressure gauge", "Thermometer", "Transmitter"]
+    },
+    {
+      "id": "spare-parts",
+      "nama": "Spare Parts Mesin",
+      "arti": "Suku cadang mesin produksi",
+      "contoh": ["Motor", "Gearbox", "Impeller", "Chain", "Sprocket"]
+    }
+  ]
+}

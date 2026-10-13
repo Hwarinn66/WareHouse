@@ -1,0 +1,106 @@
+{
+  "_catatan": [
+    "Profil perusahaan. Setiap bagian punya 'nilai', 'status', dan 'sumber' (id dari sumber.json).",
+    "status: 'terverifikasi' = didukung sumber publik/resmi; 'dokumen-internal' = dari dokumen internal yang diberikan, tampil dengan keterangan; 'perlu-verifikasi' = TIDAK ditampilkan sebagai fakta, hanya muncul keterangan 'sedang dikonfirmasi'.",
+    "Jangan isi 'nilai' dengan tebakan. Biarkan null / [] sampai ada sumber."
+  ],
+  "namaResmi": {
+    "label": "Nama perusahaan",
+    "nilai": "PT Bakrie Pipe Industries",
+    "status": "terverifikasi",
+    "sumber": ["bnbr-mp-2020", "detik-2024"]
+  },
+  "singkatan": {
+    "label": "Singkatan",
+    "nilai": "BPI",
+    "status": "terverifikasi",
+    "sumber": ["detik-2024", "bnbr-mp-2020"]
+  },
+  "bidangUsaha": {
+    "label": "Bidang usaha",
+    "nilai": "Manufaktur pipa baja",
+    "status": "terverifikasi",
+    "sumber": ["bnbr-mp-2020", "bnbr-ar-2013", "detik-2024"]
+  },
+  "industri": {
+    "label": "Industri",
+    "nilai": "Industri baja — khususnya pembuatan pipa baja",
+    "status": "terverifikasi",
+    "sumber": ["bnbr-ar-2013"]
+  },
+  "lokasiPabrik": {
+    "label": "Lokasi pabrik",
+    "nilai": "Bekasi, Jawa Barat",
+    "status": "terverifikasi",
+    "sumber": ["detik-2024", "republika-2015"]
+  },
+  "grup": {
+    "label": "Grup perusahaan",
+    "nilai": "Anak usaha PT Bakrie & Brothers Tbk (kode saham BNBR). Presentasi manajemen Bakrie & Brothers per September 2020 mencantumkan kepemilikan 99% di BPI.",
+    "status": "terverifikasi",
+    "sumber": ["bnbr-mp-2020", "detik-2024"]
+  },
+  "kegiatanUsaha": {
+    "label": "Gambaran kegiatan",
+    "nilai": [
+      "Memproduksi pipa baja dengan proses las High Frequency ERW (Electric Resistance Welding).",
+      "Memiliki fasilitas pelapisan (coating) pipa dan laboratorium layanan di Bekasi, diresmikan pada 21 Mei 2015.",
+      "Pernah mengekspor produk ke Australia, Amerika Serikat, Kuwait, dan Iran (diberitakan Januari 2024)."
+    ],
+    "status": "terverifikasi",
+    "sumber": ["bnbr-ar-2013", "republika-2015", "detik-2024"]
+  },
+  "produk": {
+    "label": "Produk dan layanan utama",
+    "nilai": [
+      "Pipa baja las ERW."
+    ],
+    "catatan": "Jenis, ukuran, dan standar produk secara rinci belum diverifikasi. Lengkapi dari katalog atau situs resmi perusahaan.",
+    "status": "terverifikasi",
+    "sumber": ["bnbr-ar-2013"]
+  },
+  "tahunBerdiri": {
+    "label": "Tahun berdiri",
+    "nilai": null,
+    "status": "perlu-verifikasi",
+    "sumber": []
+  },
+  "sejarah": {
+    "label": "Sejarah singkat",
+    "nilai": null,
+    "status": "perlu-verifikasi",
+    "sumber": []
+  },
+  "visi": {
+    "label": "Visi",
+    "nilai": null,
+    "status": "perlu-verifikasi",
+    "sumber": []
+  },
+  "misi": {
+    "label": "Misi",
+    "nilai": [],
+    "status": "perlu-verifikasi",
+    "sumber": []
+  },
+  "nilaiPerusahaan": {
+    "label": "Nilai kerja",
+    "nilai": ["Passion", "Respect", "Integrity", "Discipline", "Excellent"],
+    "catatan": "Tercantum di halaman judul presentasi Gudang Teknik. Belum dikonfirmasi apakah ini nilai resmi tingkat perusahaan atau motto unit.",
+    "status": "dokumen-internal",
+    "sumber": ["ppt-gudang-teknik"]
+  },
+  "strukturOrganisasi": {
+    "label": "Struktur organisasi",
+    "nilai": null,
+    "status": "perlu-verifikasi",
+    "sumber": []
+  },
+  "sertifikasi": {
+    "label": "Sertifikasi",
+    "nilai": null,
+    "catatan": "Laporan Tahunan 2013 menyebut sertifikasi OHSAS 18001:2007. Standar ini sudah digantikan ISO 45001, jadi status terkini perlu dikonfirmasi sebelum ditampilkan.",
+    "status": "perlu-verifikasi",
+    "sumber": ["bnbr-ar-2013"]
+  }
+}
