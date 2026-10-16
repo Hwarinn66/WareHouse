@@ -1,6 +1,7 @@
 <script setup lang="ts">
 // Beranda. Semua teks diambil dari docs/data/beranda.json.
-// Bagian-bagian muncul perlahan saat digulir (dimatikan jika pembaca memilih "kurangi gerak").
+// Bagian-bagian muncul perlahan saat digulir, ditambah animasi bergerak dan efek parallax
+// (gulir dan gerak mouse). Semua gerakan dimatikan jika pembaca memilih "kurangi gerak".
 import { onMounted, onUnmounted, ref } from 'vue'
 import { withBase } from 'vitepress'
 import data from '../../../data/beranda.json'
@@ -8,6 +9,7 @@ import TombolCari from './TombolCari.vue'
 import Ikon from './Ikon.vue'
 
 const akar = ref<HTMLElement | null>(null)
+const sambut = ref<HTMLElement | null>(null)
 const angkaTampil = ref(data.angka.map((a) => a.nilai))
 
 const bagianJudul = (() => {
@@ -17,7 +19,41 @@ const bagianJudul = (() => {
     : { depan: data.judul.slice(0, i), sorot: data.judulSorot, belakang: data.judul.slice(i + data.judulSorot.length) }
 })()
 
+const kataJudul = bagianJudul.depan.trim().split(/\s+/).filter(Boolean)
+
 let pengamat: IntersectionObserver | null = null
+let rafGulir = 0
+const pakaiGerak = () => !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+// Parallax gulir: --gulir (px dari atas) untuk sambutan, --moto-p (-1..1) untuk kotak moto.
+function perbaruiGulir() {
+  rafGulir = 0
+  const el = akar.value
+  if (!el) return
+  el.style.setProperty('--gulir', String(Math.min(window.scrollY, 1200)))
+  const moto = el.querySelector<HTMLElement>('.moto')
+  if (moto) {
+    const r = moto.getBoundingClientRect()
+    const p = (r.top + r.height / 2 - window.innerHeight / 2) / window.innerHeight
+    moto.style.setProperty('--moto-p', Math.max(-1.5, Math.min(1.5, p)).toFixed(3))
+  }
+}
+const saatGulir = () => {
+  if (!rafGulir) rafGulir = requestAnimationFrame(perbaruiGulir)
+}
+
+// Parallax mouse di sambutan: --mx dan --my bernilai -1 sampai 1.
+function saatMouse(e: PointerEvent) {
+  const s = sambut.value
+  if (!s) return
+  const r = s.getBoundingClientRect()
+  s.style.setProperty('--mx', (((e.clientX - r.left) / r.width) * 2 - 1).toFixed(3))
+  s.style.setProperty('--my', (((e.clientY - r.top) / r.height) * 2 - 1).toFixed(3))
+}
+function saatMouseKeluar() {
+  sambut.value?.style.setProperty('--mx', '0')
+  sambut.value?.style.setProperty('--my', '0')
+}
 
 function hitungNaik() {
   const kurangiGerak = window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -48,26 +84,61 @@ onMounted(() => {
     },
     { threshold: 0.15 }
   )
-  el.querySelectorAll('[data-muncul]').forEach((n) => pengamat!.observe(n))
+  el.querySelectorAll('[data-muncul], [data-garis]').forEach((n) => pengamat!.observe(n))
+
+  if (pakaiGerak()) {
+    el.classList.add('bergerak')
+    perbaruiGulir()
+    window.addEventListener('scroll', saatGulir, { passive: true })
+    window.addEventListener('resize', saatGulir, { passive: true })
+    if (window.matchMedia('(pointer: fine)').matches) {
+      sambut.value?.addEventListener('pointermove', saatMouse)
+      sambut.value?.addEventListener('pointerleave', saatMouseKeluar)
+    }
+  }
 })
-onUnmounted(() => pengamat?.disconnect())
+onUnmounted(() => {
+  pengamat?.disconnect()
+  window.removeEventListener('scroll', saatGulir)
+  window.removeEventListener('resize', saatGulir)
+  sambut.value?.removeEventListener('pointermove', saatMouse)
+  sambut.value?.removeEventListener('pointerleave', saatMouseKeluar)
+  if (rafGulir) cancelAnimationFrame(rafGulir)
+})
 </script>
 
 <template>
   <div ref="akar" class="beranda">
     <!-- ================= Sambutan ================= -->
-    <header class="sambut">
+    <header ref="sambut" class="sambut">
       <div class="latar" aria-hidden="true">
         <span class="cincin" />
       </div>
+
+      <!-- Bentuk melayang: penampang pipa dan titik seperti logo BPI -->
+      <div class="bentuk" aria-hidden="true">
+        <span class="b b1" style="--dalam: 14; --cepat: 0.18" />
+        <span class="b b2" style="--dalam: 26; --cepat: -0.1" />
+        <span class="b b3" style="--dalam: 34; --cepat: 0.3" />
+        <span class="b b4" style="--dalam: 20; --cepat: 0.24" />
+        <span class="b b5" style="--dalam: 10; --cepat: 0.12" />
+        <span class="b b6" style="--dalam: 30; --cepat: -0.16" />
+      </div>
+
+      <!-- Garis aliran pipa di dasar sambutan -->
+      <svg class="aliran" viewBox="0 0 1200 80" preserveAspectRatio="none" aria-hidden="true">
+        <path class="aliran-dasar" d="M0 52 C 180 20, 360 76, 600 46 S 1020 18, 1200 50" />
+        <path class="aliran-arus" d="M0 52 C 180 20, 360 76, 600 46 S 1020 18, 1200 50" />
+      </svg>
 
       <div class="teks">
         <p class="sapaan muncul-awal" style="--tunda: 0.05s">
           <img :src="withBase('/images/logo-perusahaan.png')" alt="" width="20" height="25" />
           {{ data.sapaan }}
         </p>
-        <h1 class="muncul-awal" style="--tunda: 0.15s">
-          {{ bagianJudul.depan }}<span class="sorot">{{ bagianJudul.sorot }}</span>{{ bagianJudul.belakang }}
+        <h1>
+          <span v-for="(k, i) in kataJudul" :key="k + i" class="kata-bungkus"><span class="kata" :style="{ '--i': i }">{{ k }}</span>{{ ' ' }}</span>
+          <span class="sorot"><span class="kata" :style="{ '--i': kataJudul.length }">{{ bagianJudul.sorot }}</span></span>{{ bagianJudul.belakang }}
         </h1>
         <p class="pengantar muncul-awal" style="--tunda: 0.25s">{{ data.pengantar }}</p>
         <div class="muncul-awal" style="--tunda: 0.35s">
@@ -129,7 +200,8 @@ onUnmounted(() => pengamat?.disconnect())
         <p class="eyebrow">Gambaran besar</p>
         <h2 id="jalan-judul">Perjalanan sebuah barang di gudang</h2>
       </div>
-      <ol class="jalur">
+      <ol class="jalur" data-garis>
+        <span class="paket" aria-hidden="true" />
         <li v-for="(p, i) in data.perjalanan" :key="p.judul" data-muncul :style="{ '--tunda': `${i * 0.1}s` }">
           <a :href="withBase(p.link)">
             <span class="titik"><Ikon :nama="p.ikon" :ukuran="22" /></span>
@@ -160,6 +232,7 @@ onUnmounted(() => pengamat?.disconnect())
 
     <!-- ================= Moto ================= -->
     <figure class="moto" data-muncul>
+      <span class="pola" aria-hidden="true" />
       <span class="kutip" aria-hidden="true">“</span>
       <blockquote>
         <p>{{ data.moto }}</p>
@@ -278,8 +351,60 @@ h1 {
   color: var(--bpi-putih);
 }
 .sorot {
-  display: block;
+  position: relative;
+  display: table; /* baris sendiri, lebar mengikuti teks (untuk garis bawah) */
   color: #ff8a4c;
+}
+/* Garis oranye yang tergambar di bawah "Gudang Teknik" */
+.sorot::after {
+  content: '';
+  position: absolute;
+  left: 2px;
+  right: 2px;
+  bottom: -2px;
+  height: 6px;
+  border-radius: 6px;
+  background: linear-gradient(90deg, var(--bpi-oranye), #ff8a4c);
+  transform-origin: left;
+}
+.animasi .sorot::after {
+  transform: scaleX(0);
+  animation: gambar-garis 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) 0.9s forwards;
+}
+@keyframes gambar-garis {
+  to {
+    transform: scaleX(1);
+  }
+}
+/* Judul muncul kata demi kata */
+.kata-bungkus,
+.sorot {
+  overflow: hidden;
+  padding-bottom: 0.08em;
+}
+.kata-bungkus {
+  display: inline-block;
+  vertical-align: top;
+}
+.sorot {
+  overflow: visible;
+}
+.kata {
+  display: inline-block;
+}
+.animasi .kata {
+  animation: kata-naik 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  animation-delay: calc(0.15s + var(--i) * 0.12s);
+}
+@keyframes kata-naik {
+  from {
+    opacity: 0;
+    transform: translateY(70%) rotate(3deg);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 .pengantar {
   margin: 20px 0 28px;
@@ -317,7 +442,7 @@ h1 {
   border-radius: 22px;
   border: 5px solid rgba(255, 255, 255, 0.95);
   box-shadow: 0 24px 50px -12px rgba(0, 0, 0, 0.5);
-  transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1), translate 0.35s ease-out;
 }
 .foto.belakang {
   width: 84%;
@@ -575,6 +700,53 @@ h1 {
   right: 10%;
   top: 27px;
   border-top: 2px dashed rgba(30, 53, 100, 0.25);
+  transform-origin: left;
+}
+/* Garis penghubung tergambar dari kiri ke kanan saat terlihat */
+.animasi .jalur::before {
+  transform: scaleX(0);
+  transition: transform 1.4s cubic-bezier(0.2, 0.7, 0.2, 1) 0.3s;
+}
+.animasi .jalur.tampil::before {
+  transform: scaleX(1);
+}
+/* Paket kecil yang berjalan melewati kelima tahap */
+.paket {
+  display: none;
+}
+.bergerak .jalur.tampil .paket {
+  display: block;
+  position: absolute;
+  z-index: 0;
+  top: 21px;
+  left: 10%;
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  background: var(--bpi-oranye);
+  box-shadow: 0 0 0 4px rgba(235, 78, 0, 0.18), 0 6px 14px -4px rgba(235, 78, 0, 0.7);
+  animation: paket-jalan 7s cubic-bezier(0.45, 0, 0.55, 1) 1.6s infinite;
+  opacity: 0;
+}
+@keyframes paket-jalan {
+  0% {
+    left: 10%;
+    opacity: 0;
+  }
+  6% {
+    opacity: 1;
+  }
+  94% {
+    opacity: 1;
+  }
+  100% {
+    left: calc(90% - 14px);
+    opacity: 0;
+  }
+}
+.jalur li {
+  position: relative;
+  z-index: 1;
 }
 .jalur a {
   position: relative;
@@ -783,13 +955,178 @@ h1 {
   border-color: var(--bpi-navy);
 }
 
+/* ---------- Motion graphics & parallax di sambutan ----------
+   --gulir  : posisi gulir halaman (px), diisi skrip
+   --mx/--my: posisi mouse di sambutan (-1..1), diisi skrip
+   --dalam  : seberapa jauh lapisan bergeser mengikuti mouse
+   --cepat  : seberapa cepat lapisan bergeser saat digulir */
+.sambut {
+  --mx: 0;
+  --my: 0;
+}
+.bentuk {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+.b {
+  position: absolute;
+  border-radius: 50%;
+  translate: calc(var(--mx) * var(--dalam) * 1px) calc(var(--my) * var(--dalam) * 1px + var(--gulir, 0) * var(--cepat) * 1px);
+  transition: translate 0.4s ease-out;
+  animation: melayang-pelan 9s ease-in-out infinite alternate;
+}
+/* penampang pipa (cincin) */
+.b1 {
+  width: 150px;
+  height: 150px;
+  left: 44%;
+  top: -40px;
+  border: 14px solid rgba(255, 255, 255, 0.06);
+}
+.b2 {
+  width: 64px;
+  height: 64px;
+  right: 3%;
+  bottom: 16%;
+  border: 6px solid rgba(235, 78, 0, 0.55);
+  animation-duration: 7s;
+}
+.b5 {
+  width: 40px;
+  height: 40px;
+  left: 4%;
+  top: 58%;
+  border: 3px solid rgba(255, 255, 255, 0.18);
+  animation-duration: 11s;
+}
+/* titik seperti logo BPI */
+.b3 {
+  width: 12px;
+  height: 12px;
+  left: 41%;
+  bottom: 24%;
+  background: var(--bpi-oranye);
+  animation-duration: 6s;
+}
+.b4 {
+  width: 9px;
+  height: 9px;
+  right: 42%;
+  top: 14%;
+  background: rgba(255, 255, 255, 0.7);
+  animation-duration: 8s;
+}
+.b6 {
+  width: 18px;
+  height: 18px;
+  right: 30%;
+  bottom: 8%;
+  background: rgba(255, 255, 255, 0.16);
+  animation-duration: 10s;
+}
+@keyframes melayang-pelan {
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+  to {
+    transform: translate(10px, -16px) scale(1.06);
+  }
+}
+
+/* Garis aliran pipa */
+.aliran {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 36px;
+  width: 100%;
+  height: 70px;
+  z-index: -1;
+  pointer-events: none;
+}
+.aliran path {
+  fill: none;
+  vector-effect: non-scaling-stroke;
+}
+.aliran-dasar {
+  stroke: rgba(255, 255, 255, 0.1);
+  stroke-width: 2;
+  stroke-dasharray: 2 10;
+  stroke-linecap: round;
+  animation: alir 3s linear infinite;
+}
+.aliran-arus {
+  stroke: rgba(235, 78, 0, 0.75);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 90 1400;
+  animation: alir-arus 6s linear infinite;
+}
+@keyframes alir {
+  to {
+    stroke-dashoffset: -48;
+  }
+}
+@keyframes alir-arus {
+  from {
+    stroke-dashoffset: 1490;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Lapisan parallax: teks, foto, dan label bergerak dengan kecepatan berbeda */
+.bergerak .teks {
+  translate: 0 calc(var(--gulir, 0) * 0.1px);
+}
+.bergerak .foto.belakang {
+  translate: calc(var(--mx) * -10px) calc(var(--my) * -8px + var(--gulir, 0) * -0.06px);
+}
+.bergerak .foto.depan {
+  translate: calc(var(--mx) * 16px) calc(var(--my) * 12px + var(--gulir, 0) * -0.14px);
+}
+.bergerak .chip {
+  transition: translate 0.35s ease-out;
+}
+.bergerak .chip-catat {
+  translate: calc(var(--mx) * 24px) calc(var(--my) * 18px + var(--gulir, 0) * -0.2px);
+}
+.bergerak .chip-lokasi {
+  translate: calc(var(--mx) * 30px) calc(var(--my) * 22px + var(--gulir, 0) * -0.24px);
+}
+
+/* Garis kecil di atas judul bagian memanjang saat muncul */
+.animasi .kepala .eyebrow::before {
+  width: 0;
+  transition: width 0.6s ease 0.25s;
+}
+.animasi .kepala.tampil .eyebrow::before {
+  width: 22px;
+}
+
+/* Pola di kotak moto bergeser saat digulir */
+.pola {
+  position: absolute;
+  inset: -80px -40px;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1.2px, transparent 1.6px);
+  background-size: 26px 26px;
+}
+.bergerak .pola {
+  translate: 0 calc(var(--moto-p, 0) * 50px);
+}
+
 /* ---------- Responsif ---------- */
 @media (max-width: 1100px) {
   .jalur {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     row-gap: 28px;
   }
-  .jalur::before {
+  .jalur::before,
+  .bergerak .jalur.tampil .paket {
     display: none;
   }
 }
