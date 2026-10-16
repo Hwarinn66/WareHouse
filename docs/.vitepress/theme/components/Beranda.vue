@@ -58,7 +58,6 @@ onUnmounted(() => pengamat?.disconnect())
     <!-- ================= Sambutan ================= -->
     <header class="sambut">
       <div class="latar" aria-hidden="true">
-        <span class="cahaya" />
         <span class="cincin" />
       </div>
 
@@ -243,16 +242,6 @@ onUnmounted(() => pengamat?.disconnect())
   background-size: 22px 22px;
   mask-image: linear-gradient(120deg, transparent 10%, #000 60%);
 }
-.cahaya {
-  position: absolute;
-  right: -140px;
-  top: -160px;
-  width: 520px;
-  height: 520px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(235, 78, 0, 0.45) 0%, rgba(235, 78, 0, 0) 65%);
-  animation: denyut 8s ease-in-out infinite alternate;
-}
 .cincin {
   position: absolute;
   left: -180px;
@@ -261,16 +250,6 @@ onUnmounted(() => pengamat?.disconnect())
   height: 560px;
   border-radius: 50%;
   background: repeating-radial-gradient(circle, transparent 0 38px, rgba(255, 255, 255, 0.06) 38px 40px);
-}
-@keyframes denyut {
-  from {
-    transform: scale(1);
-    opacity: 0.85;
-  }
-  to {
-    transform: scale(1.12);
-    opacity: 1;
-  }
 }
 
 .sapaan {

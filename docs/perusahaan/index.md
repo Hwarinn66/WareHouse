@@ -2,7 +2,7 @@
 title: Profil Perusahaan
 description: Kenalan dengan PT Bakrie Pipe Industries, mulai dari sejarah, produk, mutu, sampai nilai kerjanya.
 status: terverifikasi
-diperbarui: 2026-10-15
+diperbarui: 2026-10-16
 kategori: Tentang Perusahaan
 kata_kunci: [Bakrie Pipe Industries, BPI, SEAPI, profil perusahaan, pipa baja, ERW, HFW, LSAW, HSAW, Bakrie & Brothers, Bekasi, Talang Tirta, PRIDE, nilai perusahaan]
 ---
@@ -12,6 +12,13 @@ kata_kunci: [Bakrie Pipe Industries, BPI, SEAPI, profil perusahaan, pipa baja, E
 <p class="lead">Kenalan dulu dengan tempat kamu magang: PT Bakrie Pipe Industries, atau biasa disingkat BPI.</p>
 
 PT Bakrie Pipe Industries adalah produsen pipa baja las dengan pengalaman lebih dari enam dekade. BPI dikenal karena ragam produknya yang luas, pilihan ukuran yang lengkap, serta layanan proses lanjutan seperti pelapisan dan galvanisasi untuk berbagai kebutuhan infrastruktur.
+
+<figure>
+
+![Lima orang berbaju batik berbincang dan tertawa di depan dinding hitam bertuliskan logo Bakrie Pipe Industries](/images/perusahaan/logo-bpi.jpg)
+
+<figcaption>Suasana di depan dinding logo PT Bakrie Pipe Industries.</figcaption>
+</figure>
 
 | | |
 |---|---|
@@ -50,6 +57,13 @@ Saat ini kegiatan perusahaan terbagi di tiga tempat:
 
 BPI dan SEAPI membuat pipa baja las dengan tiga metode pengelasan. Metode yang dipakai bergantung pada diameter, ketebalan, panjang, dan spesifikasi pipa yang dibutuhkan proyek.
 
+<figure>
+
+![Pekerja berhelm dan berpelindung wajah memotong ujung pipa baja hingga memercikkan bunga api di area produksi](/images/perusahaan/produksi-pipa.jpg)
+
+<figcaption>Pemotongan pipa baja di area produksi, dengan APD lengkap: helm, pelindung wajah, dan sarung tangan.</figcaption>
+</figure>
+
 | Metode | Penjelasan singkat | Diameter luar | Tebal dinding | Panjang |
 |---|---|---|---|---|
 | **HFW / ERW** | Lini utama BPI untuk pipa umum, struktur, dan energi. | ½–24 inci | 1,3–17,5 mm | 6–12 m |
@@ -70,6 +84,13 @@ Pipa-pipa ini dibuat mengikuti standar nasional dan internasional, misalnya API 
 
 Produk BPI dipakai di banyak sektor: **minyak dan gas**, **petrokimia**, **distribusi air dan proteksi kebakaran**, **tiang pancang dan struktur** (termasuk pipa kotak RHS/SHS), **kelistrikan dan telekomunikasi** (tiang listrik, tiang telepon, tiang penerangan jalan), serta **panas bumi**.
 
+<figure>
+
+![Fasilitas industri dengan menara, cerobong, dan jaringan pipa di bawah langit biru](/images/perusahaan/industri-energi.jpg)
+
+<figcaption>Fasilitas industri minyak, gas, dan petrokimia seperti ini termasuk sektor pengguna pipa baja.</figcaption>
+</figure>
+
 ### Layanan pendukung
 
 Selain membuat pipa, perusahaan juga menyediakan proses lanjutan:
@@ -89,6 +110,13 @@ Perusahaan menerapkan sistem manajemen mutu **ISO 9001:2015**, lingkungan **ISO 
 Untuk produk, perusahaan memegang monogram **API 5L, API 5CT, dan API 2B**, sertifikasi **SNI**, **SPLN** dari PLN, dan **STEL** Telkom Indonesia.
 
 Setiap pipa melewati berbagai pengujian, antara lain uji tarik dan uji pipih, uji hidrostatik (tekanan air), uji ultrasonik dan radiografi untuk memeriksa sambungan las, serta pengujian daya lekat dan ketahanan coating.
+
+<figure>
+
+![Beberapa orang berhelm keselamatan memeriksa tumpukan pipa baja sambil membawa dokumen di area penyimpanan pabrik](/images/perusahaan/pemeriksaan-pipa.jpg)
+
+<figcaption>Pemeriksaan tumpukan pipa baja di area penyimpanan pabrik BPI.</figcaption>
+</figure>
 
 ## Nilai kerja: PRIDE
 
