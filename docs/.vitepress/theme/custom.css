@@ -87,8 +87,50 @@
   --vp-local-search-highlight-bg: var(--bpi-oranye-pucat);
   --vp-local-search-highlight-text: var(--bpi-oranye-teks);
 
-  /* Ukuran teks artikel; diubah oleh tombol A− / A+ (lihat InfoBaca.vue) */
+  /* Ukuran dasar teks artikel (ikut membesar di monitor lebar, lihat bagian
+     "Monitor lebar"). Tombol A− / A+ mengalikannya dengan --bpi-skala. */
   --bpi-teks: 17px;
+  --bpi-skala: 1;
+
+  /* Tata letak memenuhi lebar layar: menu selalu di pojok kiri,
+     berapa pun lebar monitornya (bawaan VitePress dibatasi 1440px). */
+  --vp-layout-max-width: 100vw;
+}
+
+/* ---------- Monitor lebar ----------
+   Sidebar, area baca, dan teks ikut membesar sedikit agar halaman
+   tidak terlihat kecil dan kosong di layar besar. */
+@media (min-width: 1600px) {
+  :root {
+    --vp-sidebar-width: 300px;
+    --bpi-teks: 17.5px;
+  }
+  .VPDoc .content-container {
+    max-width: 760px !important;
+  }
+}
+
+@media (min-width: 1920px) {
+  :root {
+    --vp-sidebar-width: 320px;
+    --bpi-teks: 18px;
+  }
+  .VPDoc .content-container {
+    max-width: 800px !important;
+  }
+  .VPDoc .aside {
+    max-width: 300px;
+  }
+}
+
+@media (min-width: 2400px) {
+  :root {
+    --vp-sidebar-width: 340px;
+    --bpi-teks: 19px;
+  }
+  .VPDoc .content-container {
+    max-width: 860px !important;
+  }
 }
 
 /* ---------- Header navy (warna dominan) ---------- */
@@ -134,15 +176,10 @@
   display: none;
 }
 
-/* Logo teks di header diberi titik oranye */
-.VPNavBarTitle .title::before {
-  content: '';
-  width: 10px;
-  height: 10px;
+/* Simbol BPI di depan judul (file: docs/public/images/logo-perusahaan.png) */
+.VPNavBarTitle .logo {
+  height: 34px;
   margin-right: 10px;
-  border-radius: 3px;
-  background: var(--bpi-oranye);
-  flex: none;
 }
 
 /* Sidebar navy terang agar terpisah dari latar putih halaman.
@@ -167,6 +204,28 @@
   transform: translateX(6px);
 }
 
+/* Menu halaman yang sedang dibuka: tulisan oranye tebal dan garis oranye di kiri,
+   agar pembaca tahu sedang berada di halaman mana. */
+.VPSidebar .VPSidebarItem.is-active > .item .link > .text {
+  color: var(--bpi-oranye) !important;
+  font-weight: 700;
+}
+
+.VPSidebar .VPSidebarItem.is-active > .item {
+  position: relative;
+}
+
+.VPSidebar .VPSidebarItem.is-active > .item::before {
+  content: '';
+  position: absolute;
+  left: -14px;
+  top: 6px;
+  bottom: 6px;
+  width: 3px;
+  border-radius: 3px;
+  background: var(--bpi-oranye);
+}
+
 .VPSidebarItem.level-0 > .item .text {
   color: var(--bpi-navy);
 }
@@ -184,7 +243,7 @@ body {
 }
 
 .vp-doc {
-  font-size: var(--bpi-teks);
+  font-size: calc(var(--bpi-teks) * var(--bpi-skala));
 }
 
 /* Panjang baris dibatasi ±70 karakter agar mata tidak cepat lelah */

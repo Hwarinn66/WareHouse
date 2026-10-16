@@ -1,23 +1,149 @@
 {
-  "_catatan": "Isi halaman Beranda. 'topik' = kartu besar 'Mau belajar apa?'. 'langkahAwal' = 3 langkah untuk peserta baru (berurutan). 'ikon' memakai nama dari komponen Ikon.vue: gudang, masuk, keluar, kotak, kode, grafik, daftar, opname, denah, perisai, tanya, buku, gedung, alur, latihan.",
+  "_catatan": "Isi halaman Beranda. 'topik' = kartu besar 'Mau belajar apa?'. 'langkahAwal' = 3 langkah untuk peserta baru (berurutan). 'ikon' memakai nama dari komponen Ikon.vue: gudang, masuk, keluar, kotak, kode, grafik, daftar, opname, denah, perisai, tanya, buku, gedung, alur, latihan. 'judulSorot' = bagian judul yang diberi warna oranye. 'angka' = deretan fakta singkat (hitung: true = angka dianimasikan naik saat terlihat). 'perjalanan' = 5 tahap perjalanan barang di gudang. 'fotoSambut' = dua foto landscape (4:3) di sisi kanan sambutan, dari docs/public/images/beranda/. 'lokasiSambut' = teks pada label lokasi (ikon pin) yang melayang di atas foto.",
   "sapaan": "Selamat datang di Gudang Teknik",
   "judul": "Handbook Gudang Teknik",
+  "judulSorot": "Gudang Teknik",
   "pengantar": "Panduan singkat untuk peserta magang dan PKL di PT Bakrie Pipe Industries. Cari jawaban cepat di kolom pencarian, atau pilih topik di bawah.",
-  "contohPencarian": ["barang masuk", "ERP", "rak reservasi", "bearing", "FIFO"],
+  "contohPencarian": [
+    "barang masuk",
+    "ERP",
+    "rak reservasi",
+    "bearing",
+    "FIFO"
+  ],
   "moto": "A place for everything and everything in its place.",
   "motoSumber": "Moto Gudang Teknik",
+  "fotoSambut": [
+    {
+      "src": "/images/beranda/gudang-dalam.jpg",
+      "alt": "Bagian dalam Gudang Teknik dengan rak-rak oranye dan jalur hijau"
+    },
+    {
+      "src": "/images/beranda/gudang-atas.jpg",
+      "alt": "Rak penyimpanan Gudang Teknik dilihat dari atas, dengan papan lokasi B.05.05"
+    }
+  ],
+  "angka": [
+    {
+      "nilai": 1959,
+      "awalan": "Sejak",
+      "label": "BPI berawal dari pabrik pipa Talang Tirta",
+      "hitung": false
+    },
+    {
+      "nilai": 13,
+      "label": "Area penyimpanan berkode di Blok A dan Blok B",
+      "hitung": true
+    },
+    {
+      "nilai": 21,
+      "label": "Langkah alur barang masuk dan keluar, lengkap dengan foto",
+      "hitung": true
+    },
+    {
+      "nilai": 6,
+      "label": "SOP kerja gudang, dari penerimaan sampai K3",
+      "hitung": true
+    }
+  ],
   "topik": [
-    { "judul": "Kenali Gudang Teknik", "ket": "Apa yang dikerjakan gudang dan barang apa saja yang dikelola.", "link": "/divisi/", "ikon": "gudang" },
-    { "judul": "Alur Warehouse", "ket": "Flowchart lengkap barang masuk dan barang keluar.", "link": "/alur-kerja/", "ikon": "alur" },
-    { "judul": "Barang Masuk", "ket": "Dari vendor datang sampai barang tersimpan di rak.", "link": "/alur-kerja/barang-masuk", "ikon": "masuk" },
-    { "judul": "Barang Keluar", "ket": "Dari permintaan di ERP sampai barang diambil divisi.", "link": "/alur-kerja/barang-keluar", "ikon": "keluar" },
-    { "judul": "SOP & Keselamatan", "ket": "Langkah kerja dan aturan aman di area gudang.", "link": "/sop/", "ikon": "perisai" },
-    { "judul": "Tanya Jawab", "ket": "Jawaban singkat untuk pertanyaan yang sering muncul.", "link": "/faq", "ikon": "tanya" }
+    {
+      "judul": "Kenali Gudang Teknik",
+      "ket": "Apa yang dikerjakan gudang dan barang apa saja yang dikelola.",
+      "link": "/divisi/",
+      "ikon": "gudang"
+    },
+    {
+      "judul": "Alur Warehouse",
+      "ket": "Flowchart lengkap barang masuk dan barang keluar.",
+      "link": "/alur-kerja/",
+      "ikon": "alur"
+    },
+    {
+      "judul": "Barang Masuk",
+      "ket": "Dari vendor datang sampai barang tersimpan di rak.",
+      "link": "/alur-kerja/barang-masuk",
+      "ikon": "masuk"
+    },
+    {
+      "judul": "Barang Keluar",
+      "ket": "Dari permintaan di ERP sampai barang diambil divisi.",
+      "link": "/alur-kerja/barang-keluar",
+      "ikon": "keluar"
+    },
+    {
+      "judul": "SOP & Keselamatan",
+      "ket": "Langkah kerja dan aturan aman di area gudang.",
+      "link": "/sop/",
+      "ikon": "perisai"
+    },
+    {
+      "judul": "Tanya Jawab",
+      "ket": "Jawaban singkat untuk pertanyaan yang sering muncul.",
+      "link": "/faq",
+      "ikon": "tanya"
+    }
+  ],
+  "perjalanan": [
+    {
+      "judul": "Barang datang",
+      "ket": "Vendor mengantar barang ke gudang.",
+      "ikon": "masuk",
+      "link": "/alur-kerja/barang-masuk"
+    },
+    {
+      "judul": "Dicek dan dicatat",
+      "ket": "Kondisi, jumlah, dan datanya diperiksa.",
+      "ikon": "opname",
+      "link": "/alur-kerja/barang-masuk"
+    },
+    {
+      "judul": "Disimpan di rak",
+      "ket": "Ditaruh di lokasi berkode, misalnya B.09.02.",
+      "ikon": "denah",
+      "link": "/alur-kerja/layout-gudang"
+    },
+    {
+      "judul": "Diminta lewat ERP",
+      "ket": "Divisi mengajukan permintaan barang.",
+      "ikon": "daftar",
+      "link": "/alur-kerja/barang-keluar"
+    },
+    {
+      "judul": "Diserahkan",
+      "ket": "Barang diambil dan dicek oleh karyawan.",
+      "ikon": "keluar",
+      "link": "/alur-kerja/barang-keluar"
+    }
   ],
   "langkahAwal": [
-    { "judul": "Kenali tempatnya", "ket": "Baca profil perusahaan dan pengenalan Gudang Teknik.", "link": "/mulai/" },
-    { "judul": "Pahami alurnya", "ket": "Pelajari flowchart barang masuk dan barang keluar.", "link": "/alur-kerja/" },
-    { "judul": "Kerja dengan aman", "ket": "Baca SOP dan aturan keselamatan sebelum menangani barang.", "link": "/sop/k3-gudang" }
+    {
+      "judul": "Kenali tempatnya",
+      "ket": "Baca profil perusahaan dan pengenalan Gudang Teknik.",
+      "link": "/mulai/"
+    },
+    {
+      "judul": "Pahami alurnya",
+      "ket": "Pelajari flowchart barang masuk dan barang keluar.",
+      "link": "/alur-kerja/"
+    },
+    {
+      "judul": "Kerja dengan aman",
+      "ket": "Baca SOP dan aturan keselamatan sebelum menangani barang.",
+      "link": "/sop/k3-gudang"
+    }
   ],
-  "penutup": "Ada yang belum jelas? Tanyakan ke pembimbing magang, atau buka halaman Tanya Jawab."
+  "penutup": "Ada yang belum jelas? Tanyakan ke pembimbing magang, atau buka halaman Tanya Jawab.",
+  "tautanPenutup": [
+    {
+      "teks": "Buka Tanya Jawab",
+      "link": "/faq",
+      "utama": true
+    },
+    {
+      "teks": "Kamus Istilah",
+      "link": "/divisi/glosarium"
+    }
+  ],
+  "lokasiSambut": "WareHouse Teknik"
 }

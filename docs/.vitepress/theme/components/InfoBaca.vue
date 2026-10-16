@@ -8,7 +8,8 @@ import { useData, useRoute } from 'vitepress'
 const { frontmatter } = useData()
 const route = useRoute()
 
-const UKURAN = [15.5, 17, 18.5] // px
+// Pengali ukuran teks dasar (--bpi-teks), yang sendiri sudah menyesuaikan lebar layar.
+const UKURAN = [0.92, 1, 1.1]
 const KUNCI = 'bpi-ukuran-teks'
 const BULAN = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember']
 
@@ -28,7 +29,8 @@ function hitungWaktuBaca() {
 }
 
 function terapkan() {
-  document.documentElement.style.setProperty('--bpi-teks', `${UKURAN[tingkat.value]}px`)
+  document.documentElement.style.removeProperty('--bpi-teks')
+  document.documentElement.style.setProperty('--bpi-skala', String(UKURAN[tingkat.value]))
 }
 
 function ubah(arah: number) {

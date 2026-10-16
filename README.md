@@ -150,7 +150,7 @@ Nomor rujukan `[1]`, `[2]`, … mengikuti urutan entri di `sumber.json`.
 
 - Simpan gambar di `docs/public/images/` (huruf kecil, tanpa spasi, idealnya < 300 KB), lalu panggil dengan `![Deskripsi jelas](/images/nama-file.jpg)`.
 - Placeholder yang perlu diganti ada di `docs/public/images/placeholder/` dan dipakai di halaman Layout Gudang serta dua tutorial.
-- **Logo perusahaan:** simpan file logo resmi sebagai `docs/public/images/logo-perusahaan.svg` (atau `.png`/`.webp`). Logo muncul otomatis di header setelah `npm run dev`/`build` dijalankan ulang. Logo **belum** disertakan karena file resmi dan izinnya belum tersedia.
+- **Logo perusahaan:** simpan file logo resmi sebagai `docs/public/images/logo-perusahaan.svg` (atau `.png`/`.webp`). Logo muncul otomatis di header setelah `npm run dev`/`build` dijalankan ulang. Saat ini dipakai simbol oranye BPI saja (tanpa tulisan), karena tulisan hitam pada logo lengkap tidak terbaca di header navy.
 - **Warna perusahaan:** ganti nilai `--bpi-navy`, `--bpi-oranye`, dan `--bpi-putih` di bagian `:root` pada `docs/.vitepress/theme/custom.css`. Warna saat ini: navy `#1E3564` (dominan), oranye `#EB4E00` (ikon dan logo), dan putih `#FFFFFF` (latar). Mode gelap dimatikan lewat `appearance: false` di `config.mts`.
 
 ### Mengubah alur barang masuk / keluar
