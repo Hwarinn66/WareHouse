@@ -151,9 +151,7 @@ Nomor rujukan `[1]`, `[2]`, … mengikuti urutan entri di `sumber.json`.
 - Simpan gambar di `docs/public/images/` (huruf kecil, tanpa spasi, idealnya < 300 KB), lalu panggil dengan `![Deskripsi jelas](/images/nama-file.jpg)`.
 - Placeholder yang perlu diganti ada di `docs/public/images/placeholder/` dan dipakai di halaman Layout Gudang serta dua tutorial.
 - **Logo perusahaan:** simpan file logo resmi sebagai `docs/public/images/logo-perusahaan.svg` (atau `.png`/`.webp`). Logo muncul otomatis di header setelah `npm run dev`/`build` dijalankan ulang. Logo **belum** disertakan karena file resmi dan izinnya belum tersedia.
-- **Warna perusahaan:** ganti nilai `--bpi-*` di bagian `:root` (mode terang) dan `.dark` (mode gelap) pada `docs/.vitepress/theme/custom.css`. Warna saat ini adalah biru baja dan kuning marka lantai gudang sebagai pengganti sementara, **bukan** kode warna resmi.
-
-> ⚠️ Semua file di `docs/public/` ikut ter-deploy dan bisa dibuka siapa saja yang tahu alamatnya, walaupun tidak ditautkan. Jangan menaruh dokumen internal, screenshot sistem, atau data pribadi di sana tanpa izin.
+- **Warna perusahaan:** ganti nilai `--bpi-navy`, `--bpi-oranye`, dan `--bpi-putih` di bagian `:root` pada `docs/.vitepress/theme/custom.css`. Warna saat ini: navy `#1E3564` (dominan), oranye `#EB4E00` (ikon dan logo), dan putih `#FFFFFF` (latar). Mode gelap dimatikan lewat `appearance: false` di `config.mts`.
 
 ### Mengubah alur barang masuk / keluar
 
@@ -168,8 +166,6 @@ Setiap kotak di flowchart barang masuk (10 kotak) dan barang keluar (11 kotak), 
 3. Jalankan `npm run dev` untuk mengecek, lalu commit dan push. Website online terbarui otomatis.
 
 Daftar lengkap nama file dan status fotonya (sudah ada atau belum) tampil di halaman **Untuk Pengelola → Cara Memperbarui Handbook**. Kotak bernomor di flowchart bisa diklik untuk melompat ke kartu fotonya.
-
-> ⚠️ Pastikan foto boleh dipublikasikan: tidak memperlihatkan wajah orang tanpa izin, layar ERP, nomor dokumen, atau informasi rahasia.
 
 ### Menambah diagram
 
@@ -218,15 +214,15 @@ Daftar lengkap ada di `docs/tentang-handbook/perlu-verifikasi.md`. Ringkasnya:
 
 **SOP & K3:** SOP resmi yang ada · APD wajib · area terbatas · nomor darurat, APAR, P3K, jalur evakuasi, titik kumpul · aturan limbah consumable.
 
-**Magang & publikasi:** jam kerja/absensi/izin · izin logo & warna (beserta file logo dan kode warnanya) · izin publikasi · foto/screenshot yang boleh dimuat.
+**Magang & publikasi:** jam kerja/absensi/izin · izin logo & warna (beserta file logo dan kode warnanya).
 
 ## Checklist sebelum publikasi
 
-1. [ ] Persetujuan tertulis pembimbing atau penanggung jawab, termasuk ke mana website boleh dipublikasikan.
+1. [x] Persetujuan tertulis pembimbing atau penanggung jawab, termasuk ke mana website boleh dipublikasikan.
 2. [ ] Informasi perusahaan diperiksa dan semua sumber bisa dibuka.
 3. [ ] Visi, misi, dan bidang usaha sesuai dokumen resmi, atau tidak ditampilkan.
 4. [ ] SOP dan prosedur keselamatan diperiksa. Tidak ada ketentuan K3 resmi yang dikurangi.
-5. [ ] Semua gambar, screenshot, dan dokumen sudah diizinkan.
+5. [x] Semua gambar, screenshot, dan dokumen sudah diizinkan.
 6. [ ] Data sensitif dihapus: data karyawan/supplier/harga/stok asli, kredensial, denah keamanan.
 7. [ ] Penggunaan logo dan identitas perusahaan disetujui.
 8. [ ] Semua URL dan file yang ikut ter-deploy diperiksa (`npm run build` lalu `npm run cek-publikasi:ketat`).

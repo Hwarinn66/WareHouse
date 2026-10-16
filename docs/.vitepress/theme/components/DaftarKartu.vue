@@ -67,8 +67,8 @@ defineProps<{ items: { judul: string; ket?: string; link: string; ikon?: string 
   width: 46px;
   height: 46px;
   border-radius: 12px;
-  background: var(--bpi-steel-pale);
-  color: var(--vp-c-brand-1);
+  background: var(--bpi-oranye-pucat);
+  color: var(--bpi-oranye);
 }
 .kartu a:hover .tile {
   background: var(--vp-c-bg);

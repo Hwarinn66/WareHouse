@@ -35,7 +35,7 @@ export default defineConfig({
 
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: `${base}images/favicon.svg` }],
-    ['meta', { name: 'theme-color', content: '#1b4b7a' }],
+    ['meta', { name: 'theme-color', content: '#1e3564' }],
     // Handbook internal: minta mesin pencari tidak mengindeks selama belum disetujui publik.
     ['meta', { name: 'robots', content: 'noindex, nofollow' }]
   ],
@@ -109,6 +109,9 @@ export default defineConfig({
       }
     }
   },
+
+  // Mode gelap dimatikan: website selalu tampil dengan latar putih.
+  appearance: false,
 
   themeConfig: {
     logo: fileLogo ? { src: `/images/${fileLogo}`, alt: 'Logo PT Bakrie Pipe Industries' } : undefined,

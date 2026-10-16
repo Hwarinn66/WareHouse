@@ -1,8 +1,8 @@
 ---
-title: SOP Dead Stock & Barang Rusak
-description: Mengenali, memisahkan, dan melaporkan dead stock serta barang rusak atau kedaluwarsa.
+title: SOP Write Off & Barang Rusak
+description: Mengenali, memisahkan, dan melaporkan barang write off serta barang rusak atau kedaluwarsa.
 status: draf
-dasar: penyebab dead stock dari materi Gudang Teknik dan praktik umum pergudangan
+dasar: penyebab barang write off dari materi Gudang Teknik dan praktik umum pergudangan
 nomor_dokumen: null
 versi: 0.1
 pemilik: Gudang Teknik
@@ -10,10 +10,10 @@ pengesah: null
 diperbarui: 2026-10-13
 kategori: SOP
 sumber: [ppt-gudang-teknik]
-kata_kunci: [SOP, dead stock, barang rusak, kedaluwarsa, expired, overstock, karantina, penghapusan]
+kata_kunci: [SOP, write off, dead stock, barang rusak, kedaluwarsa, expired, overstock, karantina, penghapusan]
 ---
 
-# SOP Dead Stock & Barang Rusak
+# SOP Write Off & Barang Rusak
 
 ## Tujuan
 
@@ -25,7 +25,7 @@ Berlaku untuk barang yang ditemukan rusak, kedaluwarsa, tidak sesuai spesifikasi
 
 ## Sebelum mulai
 
-- Memahami penyebab dead stock di [Manajemen Inventory](/divisi/manajemen-inventory#dead-stock).
+- Memahami penyebab barang write off di [Manajemen Inventory](/divisi/manajemen-inventory#write-off).
 
 ## Langkah-langkah
 

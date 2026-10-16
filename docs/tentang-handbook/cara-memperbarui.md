@@ -85,10 +85,6 @@ Bagian berstatus `perlu-verifikasi` tidak akan tampil sebagai fakta, walaupun `n
 
 **Logo perusahaan:** simpan file logo resmi sebagai `docs/public/images/logo-perusahaan.svg` (atau `.png`). Logo akan muncul otomatis di header setelah build ulang.
 
-::: warning Semua file di folder public bisa diakses siapa saja
-File di `docs/public/` ikut terunggah dan bisa dibuka langsung lewat alamatnya, walaupun tidak ditautkan dari halaman mana pun. Jangan menaruh dokumen internal, foto sistem, atau data pribadi di sana tanpa izin.
-:::
-
 ## Mengubah alur barang masuk / keluar
 
 Alur ditampilkan dua kali: sebagai **flowchart** dan sebagai **daftar langkah**.
@@ -108,10 +104,6 @@ Setiap kotak di flowchart barang masuk dan barang keluar punya tempat foto. Sebe
 4. Jalankan `npm run dev` untuk melihat hasilnya, lalu commit dan push. Website online akan ikut terbarui.
 
 Foto tampil di kartu bernomor yang sama dengan nomor kotak di flowchart. Kotak "Tidak" (barang dikembalikan atau ditukar) memakai nama berakhiran `-tidak`.
-
-::: warning Sebelum mengunggah foto
-Pastikan foto boleh dipublikasikan: tidak memperlihatkan wajah orang tanpa izin, data di layar ERP, nomor dokumen, atau informasi rahasia lainnya.
-:::
 
 <DaftarFotoAlur />
 

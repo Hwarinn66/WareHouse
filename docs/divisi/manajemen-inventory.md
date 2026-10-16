@@ -1,12 +1,12 @@
 ---
 title: Manajemen Stok
-description: Stock dan non-stock item, fast dan slow moving, critical stock, serta penyebab dead stock.
+description: Stock dan non-stock item, fast dan slow moving, critical stock, serta penyebab barang write off.
 status: ditinjau
 dasar: materi presentasi Gudang Teknik (slide 8–10)
 diperbarui: 2026-10-13
 kategori: Gudang Teknik
 sumber: [ppt-gudang-teknik]
-kata_kunci: [inventory, persediaan, stock item, non-stock item, fast moving, slow moving, cycle counting, critical stock, critical spare part, dead stock, ROP, stok minimum, stok maksimum, FIFO, overstock]
+kata_kunci: [inventory, persediaan, stock item, non-stock item, fast moving, slow moving, cycle counting, critical stock, critical spare part, write off, dead stock, ROP, stok minimum, stok maksimum, FIFO, overstock]
 ---
 
 # Manajemen Stok
@@ -51,7 +51,7 @@ Di gudang yang berada di dalam pabrik (*manufacturing plant warehouse*), kecepat
 | **Slow moving** | Jarang dipakai, perputarannya lambat | Diminta atau direservasi **1 kali** dalam sebulan |
 
 ::: info Belum tercakup
-Materi presentasi belum menjelaskan kategori untuk material yang tidak diminta sama sekali dalam sebulan. Tanyakan ke pembimbing apakah material seperti itu dihitung slow moving, atau diperiksa sebagai calon dead stock.
+Materi presentasi belum menjelaskan kategori untuk material yang tidak diminta sama sekali dalam sebulan. Tanyakan ke pembimbing apakah material seperti itu dihitung slow moving, atau diperiksa sebagai calon write off.
 :::
 
 Latihan mengklasifikasikan material ada di tutorial [Menentukan Fast & Slow Moving](/tutorial/fast-slow-moving).
@@ -62,7 +62,7 @@ Latihan mengklasifikasikan material ada di tutorial [Menentukan Fast & Slow Movi
 
 Material yang termasuk *slow moving*, tetapi **harus ada** jika sewaktu-waktu dibutuhkan user. Stok minimumnya **1 unit** untuk menutup permintaan mendadak. Contoh umumnya adalah suku cadang mesin yang jarang rusak, tetapi jika rusak dan tidak tersedia, mesin akan berhenti lama.
 
-### Dead stock
+### Write off
 
 Persediaan yang **sudah tidak dipakai lagi**. Penyebabnya antara lain:
 
@@ -77,4 +77,4 @@ Persediaan yang **sudah tidak dipakai lagi**. Penyebabnya antara lain:
    - *Overstock*: terlalu lama disimpan sehingga mutunya turun.
    - Sistem FIFO belum diterapkan dengan benar.
 
-Cara umum menangani dead stock dibahas di [SOP Dead Stock & Barang Rusak](/sop/dead-stock).
+Cara umum menangani barang write off dibahas di [SOP Write Off & Barang Rusak](/sop/dead-stock).

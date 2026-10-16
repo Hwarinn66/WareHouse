@@ -58,14 +58,54 @@ import DaftarKartu from './DaftarKartu.vue'
   grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
   gap: 40px;
   align-items: center;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
   padding: 36px 40px;
   border-radius: 24px;
-  background: var(--bpi-steel-pale);
+  color: var(--bpi-putih);
+  background: linear-gradient(150deg, var(--bpi-navy) 0%, var(--bpi-navy-tua) 100%);
+}
+/* Hiasan lingkaran tipis di pojok kanan bawah */
+.sambut::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  right: -120px;
+  bottom: -160px;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: repeating-radial-gradient(circle, transparent 0 34px, rgba(255, 255, 255, 0.08) 34px 36px);
+  pointer-events: none;
+}
+.sambut::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 40px;
+  width: 64px;
+  height: 5px;
+  border-radius: 0 0 4px 4px;
+  background: var(--bpi-oranye);
 }
 .sapaan {
   margin: 0;
   font-weight: 600;
-  color: var(--vp-c-brand-1);
+  color: #ffb48c;
+}
+.sambut h1,
+.sambut .moto p {
+  color: var(--bpi-putih);
+}
+.sambut .pengantar,
+.sambut .moto figcaption,
+.sambut :deep(.contoh) {
+  color: rgba(255, 255, 255, 0.85);
+}
+.sambut :deep(.contoh button) {
+  border-color: transparent;
 }
 h1 {
   margin: 6px 0 0;
@@ -85,10 +125,10 @@ h1 {
 .sambut :deep(.kolom) {
   background: var(--vp-c-bg);
   border-color: transparent;
-  box-shadow: 0 2px 10px rgba(20, 50, 90, 0.08);
+  box-shadow: 0 2px 10px rgba(13, 27, 42, 0.08);
 }
 
-/* Moto dengan garis kuning seperti marka lantai gudang */
+/* Moto dengan garis tebal oranye */
 .moto {
   margin: 0;
   padding: 6px 0 6px 22px;
@@ -156,8 +196,9 @@ h1 {
   border-radius: 50%;
   display: grid;
   place-items: center;
-  background: var(--bpi-safety);
-  color: #2b2100;
+  background: var(--bpi-oranye);
+  color: var(--bpi-putih);
+  font-size: 1.15rem;
   font-weight: 800;
 }
 .awal .judul {

@@ -60,7 +60,7 @@ flowchart TD
 6. **Jika ada selisih, hitung ulang** sebaiknya oleh orang lain.
 7. **Telusuri penyebab** selisih yang tetap ada: transaksi yang belum dicatat, barang di lokasi lain, salah satuan, atau salah kode.
 8. **Laporkan** selisih dan penyebabnya. Catatan stok hanya disesuaikan setelah disetujui pihak berwenang.
-9. **Susun laporan opname**, termasuk temuan lain seperti barang rusak, label hilang, atau calon dead stock.
+9. **Susun laporan opname**, termasuk temuan lain seperti barang rusak, label hilang, atau calon barang write off.
 
 ## Potensi kesalahan
 

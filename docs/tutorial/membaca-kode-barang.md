@@ -35,7 +35,7 @@ kata_kunci: [tutorial, kode barang, spesifikasi, label, bearing, 6205-2RS, ident
 
 ![Placeholder: foto contoh label barang di rak](/images/placeholder/screenshot-placeholder.svg)
 
-<figcaption>Placeholder. Ganti dengan foto label barang di Gudang Teknik setelah mendapat izin pembimbing.</figcaption>
+<figcaption>Placeholder. Ganti dengan foto label barang di Gudang Teknik.</figcaption>
 </figure>
 
 ## Latihan

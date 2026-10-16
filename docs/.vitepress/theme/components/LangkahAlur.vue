@@ -112,7 +112,7 @@ const nn = (i: number) => String(i + 1).padStart(2, '0')
 }
 .kotak.cek {
   border-width: 2px;
-  border-color: color-mix(in srgb, var(--bpi-safety) 70%, #8a6400);
+  border-color: color-mix(in srgb, var(--bpi-safety) 55%, var(--bpi-safety-ink));
 }
 .isi {
   min-width: 0;

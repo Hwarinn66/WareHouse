@@ -69,7 +69,7 @@ Metode menghitung sebagian stok secara bergiliran dan berkala, bukan menghitung 
 ### Critical stock
 Material slow moving yang harus selalu tersedia (minimal 1 unit) karena dibutuhkan mendadak, misalnya suku cadang mesin penting.
 
-### Dead stock
+### Write off
 Persediaan yang sudah tidak terpakai, misalnya karena salah prediksi, mesinnya sudah tidak dipakai, atau barangnya kedaluwarsa.
 
 ### Overstock

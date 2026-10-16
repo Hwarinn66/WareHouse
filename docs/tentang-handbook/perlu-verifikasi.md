@@ -36,7 +36,7 @@ kata_kunci: [verifikasi, pertanyaan untuk pembimbing, data yang kurang, belum le
 
 ## Tentang SOP dan K3
 
-- [ ] Apakah ada **SOP resmi** untuk penyimpanan, stock opname, dan dead stock? Jika ada, judul dan nomornya.
+- [ ] Apakah ada **SOP resmi** untuk penyimpanan, stock opname, dan write off? Jika ada, judul dan nomornya.
 - [ ] Persetujuan pembimbing untuk **SOP Penerimaan dan Pengeluaran Barang** yang sudah disesuaikan dengan alur kerja.
 - [ ] **APD wajib** di setiap area gudang.
 - [ ] **Area terbatas** untuk peserta magang.
@@ -47,8 +47,8 @@ kata_kunci: [verifikasi, pertanyaan untuk pembimbing, data yang kurang, belum le
 
 - [ ] **Aturan jam kerja, absensi, dan izin** peserta magang.
 - [ ] **Izin penggunaan logo dan warna** perusahaan di website, termasuk file logo resmi dan kode warnanya.
-- [ ] **Izin publikasi**: apakah website boleh diakses publik, hanya jaringan internal, atau hanya dijalankan lokal.
-- [ ] **Foto dan screenshot** yang boleh dimuat.
+- [x] **Izin publikasi**: apakah website boleh diakses publik, hanya jaringan internal, atau hanya dijalankan lokal.
+- [x] **Foto dan screenshot** yang boleh dimuat.
 
 ## Rekap status semua halaman
 

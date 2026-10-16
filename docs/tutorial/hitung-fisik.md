@@ -56,7 +56,7 @@ Dua baris yang selisih perlu ditelusuri:
 
 ![Placeholder: contoh lembar hitung stock opname](/images/placeholder/screenshot-placeholder.svg)
 
-<figcaption>Placeholder. Ganti dengan contoh lembar hitung resmi (tanpa data asli) setelah disetujui pembimbing.</figcaption>
+<figcaption>Placeholder. Ganti dengan contoh lembar hitung resmi (tanpa data asli).</figcaption>
 </figure>
 
 ## Tips

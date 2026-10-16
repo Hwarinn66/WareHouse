@@ -24,7 +24,7 @@ kata_kunci: [SOP, prosedur, standar operasional, langkah kerja, checklist, kesel
 
 <DaftarKartu :items="[
   { judul: 'Keselamatan kerja (K3)', ket: 'Wajib dibaca sebelum menangani barang.', link: '/sop/k3-gudang', ikon: 'perisai' },
-  { judul: 'Barang rusak & dead stock', ket: 'Apa yang dilakukan jika menemukan barang rusak atau tidak terpakai.', link: '/sop/dead-stock', ikon: 'daftar' }
+  { judul: 'Barang rusak & write off', ket: 'Apa yang dilakukan jika menemukan barang rusak atau tidak terpakai.', link: '/sop/dead-stock', ikon: 'daftar' }
 ]" />
 
 ::: tip Kalau berbeda dengan arahan pembimbing

@@ -83,14 +83,14 @@ async function render() {
       themeVariables: {
         darkMode: isDark.value,
         fontSize: '14px',
-        primaryColor: isDark.value ? '#1f2a36' : '#eef3f8',
-        primaryBorderColor: warna('--bpi-steel', '#1f5fa8'),
-        primaryTextColor: warna('--vp-c-text-1', '#1f2d3b'),
-        lineColor: warna('--vp-c-text-2', '#555'),
-        background: warna('--vp-c-bg', '#ffffff'),
-        edgeLabelBackground: warna('--vp-c-bg', '#ffffff'),
-        clusterBkg: isDark.value ? '#19212a' : '#f4f7fb',
-        clusterBorder: warna('--bpi-rule', '#dde4ec')
+        primaryColor: warna('--bpi-steel-pale', isDark.value ? '#1b2a40' : '#e8ebe8'),
+        primaryBorderColor: warna('--bpi-steel', '#415a77'),
+        primaryTextColor: warna('--vp-c-text-1', '#1b263b'),
+        lineColor: warna('--vp-c-text-2', '#4a5568'),
+        background: warna('--vp-c-bg', '#fbf9f1'),
+        edgeLabelBackground: warna('--vp-c-bg', '#fbf9f1'),
+        clusterBkg: warna('--bpi-concrete', isDark.value ? '#112032' : '#f4f1de'),
+        clusterBorder: warna('--bpi-rule', '#e4dcc8')
       }
     })
     const isi = /^\s*(flowchart|graph)\b/.test(kode.value) ? `${kode.value}\n${classDefMermaid(isDark.value)}` : kode.value
@@ -241,7 +241,7 @@ watch(isDark, () => nextTick(render))
   color: var(--vp-c-text-1);
 }
 .layar::backdrop {
-  background: rgba(10, 16, 24, 0.6);
+  background: rgba(13, 27, 42, 0.6);
 }
 .layar[open] {
   display: flex;

@@ -1,6 +1,7 @@
 // Warna untuk setiap pihak (aktor) di flowchart dan daftar langkah alur kerja.
 // Dipakai bersama oleh MermaidDiagram (classDef), LangkahAlur, dan LegendaAlur
 // agar warna di diagram dan di daftar langkah selalu sama.
+// Nada warnanya diselaraskan dengan warna utama di custom.css (navy dan oranye).
 
 export interface Warna {
   isi: string // warna latar kotak
@@ -12,36 +13,36 @@ type Palet = Record<string, { terang: Warna; gelap: Warna }>
 
 export const WARNA_ALUR: Palet = {
   vendor: {
-    terang: { isi: '#fff1e6', garis: '#c2560c', teks: '#6f2c08' },
-    gelap: { isi: '#3a2416', garis: '#f59a52', teks: '#fde2c8' }
+    terang: { isi: '#fdf0e8', garis: '#d24600', teks: '#7a2e05' },
+    gelap: { isi: '#2f2219', garis: '#d9a07a', teks: '#f3dccb' }
   },
   staff: {
-    terang: { isi: '#e8f1fc', garis: '#1f5fa8', teks: '#123a66' },
-    gelap: { isi: '#172b42', garis: '#7fb2ec', teks: '#d8e8fb' }
+    terang: { isi: '#eef1f7', garis: '#1e3564', teks: '#1e3564' },
+    gelap: { isi: '#1b2a40', garis: '#a3b9d3', teks: '#dfe7f1' }
   },
   sistem: {
-    terang: { isi: '#f1ebfb', garis: '#6b48b5', teks: '#36206b' },
-    gelap: { isi: '#2a2142', garis: '#b59ded', teks: '#e8defb' }
+    terang: { isi: '#ece8f2', garis: '#6a5a8c', teks: '#33284d' },
+    gelap: { isi: '#251f36', garis: '#b3a6d4', teks: '#e6e0f3' }
   },
   divisi: {
-    terang: { isi: '#e5f5ec', garis: '#1f7a4a', teks: '#124a2c' },
-    gelap: { isi: '#16301f', garis: '#6cc795', teks: '#d4f1df' }
+    terang: { isi: '#e6ebe2', garis: '#5c7560', teks: '#2f4433' },
+    gelap: { isi: '#1b2b28', garis: '#9db3a0', teks: '#dbe7dc' }
   },
   dokumen: {
-    terang: { isi: '#eef1f5', garis: '#56636f', teks: '#1f2933' },
-    gelap: { isi: '#222a33', garis: '#9aa6b2', teks: '#e4e8ec' }
+    terang: { isi: '#eceef0', garis: '#6b7280', teks: '#1f2933' },
+    gelap: { isi: '#1f2a38', garis: '#9aa3b0', teks: '#e4e8ec' }
   },
   cek: {
-    terang: { isi: '#fff7d6', garis: '#b7860b', teks: '#4d3900' },
-    gelap: { isi: '#3a2f0c', garis: '#e5b93b', teks: '#f7e6ad' }
+    terang: { isi: '#f6ecd2', garis: '#a8822f', teks: '#4a3810' },
+    gelap: { isi: '#33291a', garis: '#dcb76a', teks: '#f4e4bd' }
   },
   tolak: {
-    terang: { isi: '#fdeceb', garis: '#b83a30', teks: '#6d1d17' },
-    gelap: { isi: '#3a1a17', garis: '#f0897d', teks: '#f9d5d0' }
+    terang: { isi: '#f6e4df', garis: '#9a3b32', teks: '#5a1f19' },
+    gelap: { isi: '#3a1f1d', garis: '#e8a79c', teks: '#f6d6d0' }
   },
   selesai: {
-    terang: { isi: '#1b2a3a', garis: '#1b2a3a', teks: '#ffffff' },
-    gelap: { isi: '#e6ebf0', garis: '#e6ebf0', teks: '#141a21' }
+    terang: { isi: '#1e3564', garis: '#1e3564', teks: '#ffffff' },
+    gelap: { isi: '#f4f1de', garis: '#f4f1de', teks: '#0d1b2a' }
   }
 }
 

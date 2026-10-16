@@ -70,4 +70,4 @@ Berlaku sejak barang selesai diterima sampai barang diambil untuk dikeluarkan, t
 
 - [Pengenalan Gudang Teknik](/divisi/)
 - [Layout Gudang](/alur-kerja/layout-gudang)
-- [Manajemen Inventory: dead stock dan FIFO](/divisi/manajemen-inventory#dead-stock)
+- [Manajemen Inventory: write off dan FIFO](/divisi/manajemen-inventory#write-off)
