@@ -67,7 +67,7 @@
     },
     {
       "judul": "Barang Keluar",
-      "ket": "Dari permintaan di ERP sampai barang diambil divisi.",
+      "ket": "Dari reservasi di ERP sampai barang diambil divisi.",
       "link": "/alur-kerja/barang-keluar",
       "ikon": "keluar"
     },
@@ -93,7 +93,7 @@
     },
     {
       "judul": "Dicek dan dicatat",
-      "ket": "Kondisi, jumlah, dan datanya diperiksa.",
+      "ket": "Diperiksa di area inspeksi, lalu dibuatkan STTB dan GRN.",
       "ikon": "opname",
       "link": "/alur-kerja/barang-masuk"
     },
@@ -104,14 +104,14 @@
       "link": "/alur-kerja/layout-gudang"
     },
     {
-      "judul": "Diminta lewat ERP",
-      "ket": "Divisi mengajukan permintaan barang.",
+      "judul": "Direservasi lewat ERP",
+      "ket": "Divisi membuat reservasi, disetujui atasannya.",
       "ikon": "daftar",
       "link": "/alur-kerja/barang-keluar"
     },
     {
       "judul": "Diserahkan",
-      "ket": "Barang diambil dan dicek oleh karyawan.",
+      "ket": "NIP pengambil dicocokkan, lalu barang diserahkan.",
       "ikon": "keluar",
       "link": "/alur-kerja/barang-keluar"
     }

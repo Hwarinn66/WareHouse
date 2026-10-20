@@ -2,34 +2,34 @@
 title: Alur Barang Masuk
 description: Langkah dari barang datang dari vendor sampai tersimpan di rak dan tercatat.
 status: ditinjau
-dasar: diagram presentasi Gudang Teknik dan catatan alur proses dari peserta magang
-diperbarui: 2026-10-13
+dasar: Instruksi Kerja Penerimaan Material dan Penempatan Material Gudang Teknik, dilengkapi diagram presentasi Gudang Teknik dan catatan alur proses
+diperbarui: 2026-10-20
 kategori: Alur Kerja
-sumber: [ppt-gudang-teknik, catatan-alur]
-kata_kunci: [barang masuk, penerimaan, receiving, vendor, supplier, surat tanda terima, database, OS/PPIC, PPIC, laporan, rak, catatan manual, dikembalikan, retur]
+sumber: [ik-gudang-teknik, ppt-gudang-teknik, catatan-alur]
+kata_kunci: [barang masuk, penerimaan, receiving, vendor, supplier, surat jalan, PO, area inspeksi, inspektor laboratorium, STTB, GRN, material reject, kartu stok, surat tanda terima, database, OS/PPIC, PPIC, laporan, rak, catatan manual, dikembalikan, retur]
 ---
 
 # Alur Barang Masuk
 
-<p class="lead">Alur ini dimulai saat vendor mengantar barang dan selesai saat barang tersimpan di rak. Ada dua kali pengecekan. Jika barang tidak lolos salah satunya, barang dikembalikan ke vendor.</p>
+<p class="lead">Alur ini dimulai saat vendor mengantar barang dan selesai saat barang tersimpan di rak. Urutannya mengikuti Instruksi Kerja Penerimaan Material Gudang Teknik. Ada dua kali pengecekan: dokumen dan pesanan saat barang datang, lalu hasil pemeriksaan material di area inspeksi.</p>
 
 ## Flowchart
 
 ```mermaid
 flowchart TD
   accTitle: Flowchart alur barang masuk
-  accDescr: 1 barang datang dari vendor, 2 dicek kesesuaiannya dengan pesanan, 3 dibawa masuk ke gudang, 4 diterima staff, 5 dicek kondisi dan jumlahnya, 6 surat tanda terima diberikan ke vendor, 7 data diinput ke database, 8 laporan dikirim ke OS/PPIC, 9 barang disimpan di rak, 10 dicatat di catatan manual rak. Barang yang tidak lolos pengecekan di langkah 2 atau 5 dikembalikan ke vendor.
-  L1(["1. Barang datang dari vendor / supplier"]):::vendor --> L2{"2. Barang sesuai dengan pesanan?"}:::cek
-  L2 -- Tidak --> T2["Barang dikembalikan ke vendor"]:::tolak
-  L2 -- Ya --> L3["3. Barang dibawa masuk ke dalam gudang"]:::staff
-  L3 --> L4["4. Staff menerima barang"]:::staff
-  L4 --> L5{"5. Kondisi baik dan jumlah sesuai?"}:::cek
-  L5 -- "Tidak: rusak atau kurang" --> T5["Barang dikembalikan ke vendor"]:::tolak
-  L5 -- Ya --> L6[/"6. Surat tanda terima diberikan ke vendor"/]:::dokumen
-  L6 --> L7[("7. Input database barang: jumlah, jenis, tipe, tanggal masuk")]:::sistem
-  L7 --> L8[/"8. Laporan barang masuk dikirim ke divisi OS/PPIC"/]:::dokumen
-  L8 --> L9["9. Barang disimpan di rak sesuai lokasi di database"]:::staff
-  L9 --> L10[/"10. Dicatat di catatan manual rak"/]:::dokumen
+  accDescr: 1 barang datang dengan surat jalan dan PO, 2 dokumen dan kesesuaian pesanan dicek, 3 barang dibawa ke area inspeksi, 4 material diperiksa oleh gudang, laboratorium, atau user, 5 hasil pemeriksaan dicocokkan dengan persyaratan, 6 STTB diberikan ke vendor, 7 STTB diinput ke database, 8 GRN terbit dan laporan diteruskan ke OS/PPIC, 9 barang disimpan sesuai klasifikasi, 10 dicatat di kartu stok. Barang yang tidak lolos di langkah 2 dikembalikan ke vendor, dan yang tidak lolos di langkah 5 diberi tanda Material Reject lalu diklaim ke vendor.
+  L1(["1. Barang datang dengan surat jalan dan PO"]):::vendor --> L2{"2. Dokumen lengkap dan<br/>barang sesuai pesanan?"}:::cek
+  L2 -- Tidak --> T2["Dikembalikan ke vendor"]:::tolak
+  L2 -- Ya --> L3["3. Barang dibawa ke area inspeksi"]:::staff
+  L3 --> L4["4. Pemeriksaan material oleh<br/>gudang, laboratorium, atau user"]:::staff
+  L4 --> L5{"5. Memenuhi syarat visual,<br/>spesifikasi, mutu, dan jumlah?"}:::cek
+  L5 -- Tidak --> T5["Material Reject,<br/>diklaim ke vendor"]:::tolak
+  L5 -- Ya --> L6[/"6. STTB diberikan ke vendor"/]:::dokumen
+  L6 --> L7[("7. Input STTB ke database")]:::sistem
+  L7 --> L8[/"8. GRN terbit,<br/>laporan diteruskan ke OS/PPIC"/]:::dokumen
+  L8 --> L9["9. Disimpan sesuai klasifikasi<br/>(FIFO dan FEFO)"]:::staff
+  L9 --> L10[/"10. Dicatat di kartu stok"/]:::dokumen
   L10 --> SELESAI(["Selesai: barang tersimpan di gudang"]):::selesai
 ```
 
@@ -43,9 +43,11 @@ Setiap kotak di flowchart punya kartu bernomor yang sama di bawah ini, lengkap d
 
 ## Hal yang sering terlewat
 
-- **Menerima barang tanpa mengecek.** Cek dulu sebelum surat tanda terima diberikan. Setelah surat diserahkan, kekurangan barang jadi sulit diklaim.
-- **Lupa input database.** Barang sudah ada di rak tetapi tidak tercatat, sehingga terlihat seperti stok kosong.
+- **Menerima barang tanpa mengecek.** Cek dulu sebelum STTB diberikan. Setelah STTB diserahkan, kekurangan barang jadi sulit diklaim.
+- **Memindahkan barang dari area inspeksi terlalu cepat.** Barang baru boleh dipindahkan setelah dinyatakan sesuai.
+- **Barang tidak sesuai tidak diberi tanda.** Barang yang ditolak harus dipisahkan dan diberi tanda Material Reject, supaya tidak tercampur dengan stok.
+- **Lupa input STTB ke database.** Barang sudah ada di rak tetapi tidak tercatat, sehingga terlihat seperti stok kosong.
 - **Lokasi rak tidak sesuai database.** Barang jadi sulit ditemukan saat ada permintaan.
-- **Lupa mengisi catatan manual di rak.** Catatan di rak dan database jadi tidak sama.
+- **Lupa mengisi kartu stok di rak.** Catatan di rak dan database jadi tidak sama.
 
 Langkah kerja yang lebih rinci ada di [SOP Penerimaan Barang](/sop/penerimaan-barang).

@@ -161,7 +161,7 @@ Alur ditampilkan sebagai flowchart (blok `mermaid` di `docs/alur-kerja/*.md`) da
 
 Setiap kotak di flowchart barang masuk (10 kotak) dan barang keluar (11 kotak), termasuk kotak "Tidak" (dikembalikan/ditukar), punya tempat foto. Selama fotonya belum ada, yang tampil adalah placeholder "Foto belum ada".
 
-1. Beri nama file: `barang-masuk-01.jpg` sampai `barang-masuk-10.jpg`, `barang-keluar-01.jpg` sampai `barang-keluar-11.jpg`. Untuk cabang "Tidak": `barang-masuk-02-tidak.jpg`, `barang-masuk-05-tidak.jpg`, dan `barang-keluar-11-tidak.jpg`. Format `.jpg`, `.jpeg`, `.png`, atau `.webp` bisa dipakai.
+1. Beri nama file: `barang-masuk-01.jpg` sampai `barang-masuk-10.jpg`, `barang-keluar-01.jpg` sampai `barang-keluar-11.jpg`. Untuk cabang "Tidak": `barang-masuk-02-tidak.jpg`, `barang-masuk-05-tidak.jpg`, `barang-keluar-09-tidak.jpg`, dan `barang-keluar-11-tidak.jpg`. Format `.jpg`, `.jpeg`, `.png`, atau `.webp` bisa dipakai.
 2. Taruh di `docs/public/images/alur/`.
 3. Jalankan `npm run dev` untuk mengecek, lalu commit dan push. Website online terbarui otomatis.
 

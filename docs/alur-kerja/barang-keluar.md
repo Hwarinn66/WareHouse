@@ -2,10 +2,10 @@
 title: Alur Barang Keluar
 description: Langkah dari permintaan barang lewat ERP sampai barang diambil karyawan divisi pemesan.
 status: ditinjau
-dasar: diagram presentasi Gudang Teknik dan catatan alur proses dari peserta magang
-diperbarui: 2026-10-13
+dasar: Instruksi Kerja Pelayanan Barang Gudang Teknik, dilengkapi diagram presentasi Gudang Teknik dan catatan alur proses
+diperbarui: 2026-10-20
 kategori: Alur Kerja
-sumber: [ppt-gudang-teknik, catatan-alur]
+sumber: [ik-gudang-teknik, ppt-gudang-teknik, catatan-alur]
 kata_kunci: [barang keluar, pengeluaran, permintaan, reservasi, order, ERP, WMS, material reservation list, NIP, notifikasi, persetujuan, 3 hari, laporan barang keluar, rak reservasi, catatan manual, tukar barang, divisi pemesan]
 ---
 
@@ -18,20 +18,21 @@ kata_kunci: [barang keluar, pengeluaran, permintaan, reservasi, order, ERP, WMS,
 ```mermaid
 flowchart TD
   accTitle: Flowchart alur barang keluar
-  accDescr: 1 divisi lain membuat reservasi di ERP yang disetujui Foreman atau Supervisornya, 2 reservasi muncul di Material Reservation List, 3 staff memproses reservasi dan memotong stok, 4 laporan barang keluar tercatat di ERP, 5 staff mencari barang, 6 mengambil barang, 7 mencatat di catatan manual rak, 8 menaruh barang di rak reservasi, 9 karyawan divisi pemesan datang dan NIP-nya dicocokkan, 10 staff menyerahkan barang, 11 karyawan mengecek barang. Jika tidak sesuai, barang ditukar lalu diserahkan lagi. Jika sesuai, karyawan membawa barang.
-  L1(["1. Divisi membuat reservasi di ERP,<br/>disetujui Foreman/Supervisor-nya"]):::divisi --> L2["2. Reservasi muncul di Material Reservation List"]:::sistem
-  L2 --> L3["3. Staff memproses reservasi dan memotong stok"]:::staff
-  L3 --> L4[("4. Laporan barang keluar tercatat di ERP")]:::sistem
-  L4 --> L5["5. Staff mencari barang sesuai orderan"]:::staff
-  L5 --> L6["6. Staff mengambil barang dari rak"]:::staff
+  accDescr: 1 divisi mengecek stok dan membuat reservasi di ERP/WMS, 2 reservasi disetujui Foreman atau Supervisor lalu masuk ke Material Reservation List, 3 stock keeper mengecek stok dan memotongnya di sistem, 4 reservasi dicetak, 5 barang dicari, 6 barang diambil dari rak, 7 stok dipotong di kartu stok, 8 barang ditaruh di rak reservasi paling lama 3 hari, 9 NIP pengambil dicocokkan dengan ID card, 10 barang diserahkan, 11 karyawan mengecek barang. Jika NIP tidak cocok, barang tidak diserahkan. Jika barang tidak sesuai, barang ditukar lalu diserahkan lagi. Jika sesuai, karyawan membawa barang dan stock level diperbarui.
+  L1(["1. Divisi cek stok dan membuat<br/>reservasi di ERP/WMS"]):::divisi --> L2["2. Disetujui Foreman/Supervisor,<br/>masuk Material Reservation List"]:::sistem
+  L2 --> L3["3. Stock keeper cek stok<br/>dan memotongnya di sistem"]:::staff
+  L3 --> L4[/"4. Cetak reservasi"/]:::dokumen
+  L4 --> L5["5. Cari barang sesuai reservasi"]:::staff
+  L5 --> L6["6. Ambil barang dari rak (FIFO)"]:::staff
   L6 --> L7[/"7. Potong stok di kartu stok rak"/]:::dokumen
   L7 --> L8["8. Barang ditaruh di rak reservasi<br/>(maksimal 3 hari)"]:::staff
-  L8 --> L9["9. Karyawan datang, NIP dicocokkan<br/>dengan ID card"]:::divisi
-  L9 --> L10["10. Staff menyerahkan barang ke karyawan"]:::staff
-  L10 --> L11{"11. Barang sesuai orderan?"}:::cek
-  L11 -- Tidak --> T11["Barang dikembalikan dan ditukar dengan yang sesuai"]:::tolak
+  L8 --> L9{"9. Karyawan datang:<br/>NIP cocok dengan reservasi?"}:::cek
+  L9 -- Tidak --> T9["Barang tidak diserahkan"]:::tolak
+  L9 -- Ya --> L10["10. Serahkan barang ke karyawan"]:::staff
+  L10 --> L11{"11. Barang sesuai reservasi?"}:::cek
+  L11 -- Tidak --> T11["Barang dikembalikan dan<br/>ditukar dengan yang sesuai"]:::tolak
   T11 --> L10
-  L11 -- Ya --> SELESAI(["Selesai: karyawan membawa barang"]):::selesai
+  L11 -- Ya --> SELESAI(["Selesai: barang dibawa,<br/>stock level diperbarui"]):::selesai
 ```
 
 <LegendaAlur />
@@ -44,9 +45,9 @@ Setiap kotak di flowchart punya kartu bernomor yang sama di bawah ini, lengkap d
 
 ## Hal yang sering terlewat
 
-- **Mengambil barang yang mirip tetapi beda tipe.** Selalu cocokkan kode dan spesifikasi dengan orderan di ERP.
-- **Lupa mencatat di catatan manual rak.** Jumlah di rak dan di ERP jadi tidak sama.
-- **Barang di rak reservasi tidak diberi keterangan.** Tandai untuk divisi atau orderan mana barang itu, agar tidak tertukar.
+- **Mengambil barang yang mirip tetapi beda tipe.** Selalu cocokkan nomor material dan deskripsinya dengan reservasi.
+- **Lupa memotong stok di kartu stok.** Jumlah di rak dan di ERP jadi tidak sama.
+- **Barang di rak reservasi tidak diberi keterangan.** Tandai untuk divisi atau nomor reservasi mana barang itu, agar tidak tertukar.
 - **Menyerahkan tanpa dicek bersama.** Minta karyawan mengecek barang saat itu juga, supaya kesalahan langsung ketahuan.
 - **Tidak mencocokkan NIP.** Barang hanya diserahkan ke karyawan yang NIP-nya tercantum di reservasi.
 - **Barang reservasi dibiarkan lebih dari 3 hari.** Reservasinya batal, dan barang harus dikembalikan ke stok.

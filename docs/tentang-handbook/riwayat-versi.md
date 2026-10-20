@@ -11,6 +11,14 @@ kata_kunci: [versi, riwayat, changelog, perubahan]
 
 <p class="lead">Setiap perubahan penting dicatat di sini. Nomor versi juga tercantum di menu atas dan di <code>package.json</code>.</p>
 
+## v0.3.1 (20 Oktober 2026)
+
+Alur kerja disamakan dengan instruksi kerja resmi dari perusahaan. Jumlah dan urutan langkah tetap, sehingga foto yang sudah ada tetap cocok.
+
+- **Alur barang masuk** mengikuti Instruksi Kerja Penerimaan Material: cek dokumen dan pesanan, area inspeksi, pemeriksaan oleh gudang, laboratorium, atau user, Material Reject, STTB, GRN, penyimpanan sesuai klasifikasi, dan kartu stok.
+- **Alur barang keluar** mengikuti Instruksi Kerja Pelayanan Barang: reservasi dan persetujuan Foreman/Supervisor, potong stok di sistem, cetak reservasi, batas 3 hari di rak reservasi, dan **verifikasi NIP** sebagai titik pengecekan baru (tempat foto baru `barang-keluar-09-tidak`).
+- Flowchart Alur Warehouse, nomor langkah SOP Penerimaan Barang, dan teks beranda ikut diselaraskan.
+
 ## v0.3.0 (20 Oktober 2026)
 
 Isi SOP dan materi Gudang Teknik diselaraskan dengan dokumen resmi: Kumpulan Instruksi Kerja & Standard Gudang Teknik dan Prosedur Penghapusbukuan Aktiva Tetap (Write Off) QP-4.3.3.

@@ -2,10 +2,10 @@
 title: Alur Warehouse
 description: Gambaran besar alur kerja Gudang Teknik, dari barang datang sampai barang diambil divisi pemesan.
 status: ditinjau
-dasar: diagram presentasi Gudang Teknik dan catatan alur proses dari peserta magang
-diperbarui: 2026-10-13
+dasar: Kumpulan Instruksi Kerja Gudang Teknik, dilengkapi diagram presentasi Gudang Teknik dan catatan alur proses
+diperbarui: 2026-10-20
 kategori: Alur Kerja
-sumber: [ppt-gudang-teknik, catatan-alur]
+sumber: [ik-gudang-teknik, ppt-gudang-teknik, catatan-alur]
 kata_kunci: [alur warehouse, alur kerja, flowchart, diagram, proses gudang, barang masuk, barang keluar, ERP, rak reservasi]
 ---
 
@@ -18,32 +18,33 @@ kata_kunci: [alur warehouse, alur kerja, flowchart, diagram, proses gudang, bara
 ```mermaid
 flowchart TD
   accTitle: Flowchart alur warehouse Gudang Teknik
-  accDescr: Barang masuk dari vendor dicek, diterima, dicatat di database, dilaporkan ke OS/PPIC, lalu disimpan di rak sebagai stok. Barang keluar dimulai dari reservasi divisi di ERP yang disetujui Foreman atau Supervisor divisi itu, diproses staff, diambil dari stok, ditaruh di rak reservasi, lalu diserahkan dan dicek oleh karyawan divisi pemesan.
+  accDescr: Barang masuk datang dengan surat jalan dan PO, dicek dokumen dan pesanannya, diperiksa di area inspeksi oleh gudang, laboratorium, atau user, lalu dibuatkan STTB, diinput ke database, diterbitkan GRN, dan disimpan sesuai klasifikasi serta dicatat di kartu stok. Barang keluar dimulai dari reservasi divisi di ERP/WMS yang disetujui Foreman atau Supervisor divisi itu, lalu stock keeper memotong stok, mencetak reservasi, menyiapkan barang di rak reservasi, mencocokkan NIP pengambil, dan menyerahkan barang.
   subgraph MASUK["Barang masuk"]
     direction TB
-    M1(["Vendor mengantar barang"]):::vendor --> M2{"Sesuai pesanan?"}:::cek
-    M2 -- Tidak --> MR["Dikembalikan ke vendor"]:::tolak
-    M2 -- Ya --> M3["Bawa masuk dan terima barang"]:::staff
-    M3 --> M4{"Kondisi baik dan jumlah sesuai?"}:::cek
+    M1(["Vendor mengantar barang<br/>dengan surat jalan dan PO"]):::vendor --> M2{"Dokumen dan<br/>pesanan sesuai?"}:::cek
+    M2 -- Tidak --> MR["Dikembalikan atau<br/>diklaim ke vendor"]:::tolak
+    M2 -- Ya --> M3["Pemeriksaan di area inspeksi<br/>(gudang, laboratorium, atau user)"]:::staff
+    M3 --> M4{"Memenuhi syarat?"}:::cek
     M4 -- Tidak --> MR
-    M4 -- Ya --> M5[/"Surat tanda terima ke vendor"/]:::dokumen
-    M5 --> M6[("Input database barang")]:::sistem
-    M6 --> M7[/"Laporan ke divisi OS/PPIC"/]:::dokumen
-    M7 --> M8["Simpan di rak dan catat di catatan manual"]:::staff
+    M4 -- Ya --> M5[/"STTB ke vendor,<br/>input ke database"/]:::dokumen
+    M5 --> M6[/"GRN terbit,<br/>laporan ke OS/PPIC"/]:::dokumen
+    M6 --> M7["Simpan sesuai klasifikasi,<br/>catat di kartu stok"]:::staff
   end
-  M8 --> S[("Stok Gudang Teknik")]:::sistem
+  M7 --> S[("Stok Gudang Teknik")]:::sistem
   subgraph KELUAR["Barang keluar"]
     direction TB
-    K1(["Divisi membuat reservasi di ERP,<br/>disetujui atasannya"]):::divisi --> K2["Staff memproses reservasi,<br/>laporan keluar tercatat di ERP"]:::staff
-    K2 --> K3["Cari dan ambil barang, catat di catatan manual"]:::staff
-    K3 --> K4["Taruh di rak reservasi"]:::staff
-    K4 --> K5["Serahkan ke karyawan divisi pemesan"]:::staff
-    K5 --> K6{"Sesuai orderan?"}:::cek
-    K6 -- Tidak --> K7["Tukar dengan barang yang sesuai"]:::tolak
-    K7 --> K5
-    K6 -- Ya --> K8(["Barang dibawa divisi pemesan"]):::selesai
+    K1(["Divisi membuat reservasi<br/>di ERP/WMS"]):::divisi --> K2["Disetujui Foreman/Supervisor<br/>divisi pemesan"]:::divisi
+    K2 --> K3["Stock keeper potong stok di sistem<br/>dan cetak reservasi"]:::staff
+    K3 --> K4["Siapkan barang, potong kartu stok,<br/>taruh di rak reservasi (maks. 3 hari)"]:::staff
+    K4 --> K5{"NIP pengambil cocok?"}:::cek
+    K5 -- Tidak --> K5T["Barang tidak diserahkan"]:::tolak
+    K5 -- Ya --> K6["Serahkan barang"]:::staff
+    K6 --> K7{"Sesuai reservasi?"}:::cek
+    K7 -- Tidak --> K8["Tukar dengan barang yang sesuai"]:::tolak
+    K8 --> K6
+    K7 -- Ya --> K9(["Barang dibawa,<br/>stock level diperbarui"]):::selesai
   end
-  S -- "siap dipesan" --> K1
+  S -- "siap direservasi" --> K1
 ```
 
 <LegendaAlur />
@@ -52,8 +53,8 @@ flowchart TD
 
 <DaftarKartu :items="[
   { judul: 'Alur barang masuk', ket: 'Dari vendor datang sampai barang tersimpan di rak.', link: '/alur-kerja/barang-masuk', ikon: 'masuk' },
-  { judul: 'Alur barang keluar', ket: 'Dari permintaan di ERP sampai barang diambil divisi.', link: '/alur-kerja/barang-keluar', ikon: 'keluar' },
-  { judul: 'Stock opname', ket: 'Menghitung stok fisik dan mencocokkannya dengan catatan.', link: '/alur-kerja/stock-opname', ikon: 'opname' },
+  { judul: 'Alur barang keluar', ket: 'Dari reservasi di ERP sampai barang diambil divisi.', link: '/alur-kerja/barang-keluar', ikon: 'keluar' },
+  { judul: 'Stock opname', ket: 'Menghitung stok fisik setiap hari secara bergilir.', link: '/alur-kerja/stock-opname', ikon: 'opname' },
   { judul: 'Layout gudang', ket: 'Denah area dan rak penyimpanan.', link: '/alur-kerja/layout-gudang', ikon: 'denah' }
 ]" />
 
@@ -61,6 +62,6 @@ flowchart TD
 
 Setiap barang yang bergerak meninggalkan jejak di tiga tempat. Ketiganya harus selalu cocok.
 
-1. **Database / ERP.** Barang masuk diinput ke database, dan barang keluar tercatat di ERP saat staff menyetujui permintaan.
-2. **Catatan manual di rak.** Setiap barang yang ditaruh atau diambil dari rak dicatat di catatan yang ada di rak itu.
-3. **Laporan.** Laporan barang masuk dikirim ke divisi OS/PPIC, sedangkan laporan barang keluar tersimpan di ERP.
+1. **Sistem ERP/WMS.** Barang masuk diinput lewat STTB, dan stok barang keluar dipotong di sistem saat reservasi diproses.
+2. **Kartu stok di rak.** Setiap barang yang ditaruh atau diambil dari rak dicatat di kartu stok (catatan manual) di rak itu, lengkap dengan saldo akhirnya.
+3. **Dokumen.** Barang masuk punya STTB dan GRN (laporannya juga diteruskan ke divisi OS/PPIC), sedangkan barang keluar punya reservasi yang dicetak.

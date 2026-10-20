@@ -59,14 +59,14 @@ Material part yang perlu dicek dimensi dan kekerasannya, misalnya U-ring seal at
    - ATK, consumable, dan material part langsung diperiksa bagian penerimaan, lalu form ceklis penerimaan barang diisi.
    - Material kelompok laboratorium diteruskan ke Inspektor Laboratorium.
    - Material non-stock item diteruskan ke user, yang lalu melengkapi administrasi pengebonan barang sementara.
-5. **Berikan Surat Tanda Terima Barang (STTB)** yang sudah ditandatangani kepada vendor.
-6. **Input STTB ke database** sesuai alur sistem penerimaan barang dari tim IT: jumlah, jenis barang, tipe barang, dan tanggal masuk.
-7. **Terbitkan Good Received Note (GRN)**, yaitu laporan penerimaan material, jika material sudah memenuhi syarat visual, spesifikasi, mutu, dan jumlah.
-8. **Kirim laporan ke divisi OS/PPIC** bahwa barang sudah masuk dan sesuai.
+5. **Pastikan material memenuhi syarat** visual, spesifikasi, mutu, dan jumlah. Kalau tidak, ikuti bagian [Kalau material tidak sesuai](#kalau-material-tidak-sesuai).
+6. **Berikan Surat Tanda Terima Barang (STTB)** yang sudah ditandatangani kepada vendor.
+7. **Input STTB ke database** sesuai alur sistem penerimaan barang dari tim IT: jumlah, jenis barang, tipe barang, dan tanggal masuk.
+8. **Terbitkan Good Received Note (GRN)**, yaitu laporan penerimaan material. Laporan barang masuk juga diteruskan ke divisi OS/PPIC.
 9. **Simpan barang** di lokasi yang tercatat di database, sesuai [SOP Penyimpanan Barang](./penyimpanan-barang).
 10. **Catat di kartu stok** di rak tempat barang disimpan.
 
-Flowchart-nya ada di [Alur Barang Masuk](/alur-kerja/barang-masuk).
+Nomor langkah di atas sama dengan nomor kotak di flowchart [Alur Barang Masuk](/alur-kerja/barang-masuk).
 
 ## Kalau material tidak sesuai
 
