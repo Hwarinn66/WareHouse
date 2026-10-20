@@ -2,6 +2,8 @@
 // Beranda. Semua teks diambil dari docs/data/beranda.json.
 // Bagian-bagian muncul perlahan saat digulir, ditambah animasi bergerak dan efek parallax
 // (gulir dan gerak mouse). Semua gerakan dimatikan jika pembaca memilih "kurangi gerak".
+// Jika halaman dibuka saat belum login, animasi menunggu transisi login (GerbangLogin.vue):
+//   "bpi-tampil" = isi website mulai terlihat, "bpi-masuk" = panel login mendarat di kotak sambutan.
 import { onMounted, onUnmounted, ref } from 'vue'
 import { withBase } from 'vitepress'
 import data from '../../../data/beranda.json'
@@ -69,9 +71,11 @@ function hitungNaik() {
   requestAnimationFrame(langkah)
 }
 
-onMounted(() => {
+let sudahMulai = false
+function mulaiAnimasi() {
   const el = akar.value
-  if (!el) return
+  if (!el || sudahMulai) return
+  sudahMulai = true
   el.classList.add('animasi')
   pengamat = new IntersectionObserver(
     (entri) => {
@@ -85,6 +89,31 @@ onMounted(() => {
     { threshold: 0.15 }
   )
   el.querySelectorAll('[data-muncul], [data-garis]').forEach((n) => pengamat!.observe(n))
+}
+
+// Isi website mulai terlihat di balik panel login: kartu-kartu mulai muncul,
+// tetapi animasi judul sambutan ditahan dulu.
+function saatTampil() {
+  mulaiAnimasi()
+  akar.value?.classList.remove('sambut-mulai')
+}
+// Panel login mendarat di kotak sambutan: judul naik kata demi kata.
+function saatMasuk() {
+  const el = akar.value
+  if (!el) return
+  void el.offsetWidth // mulai ulang animasi CSS
+  el.classList.add('sambut-mulai')
+}
+
+onMounted(() => {
+  const el = akar.value
+  if (!el) return
+  if (!document.documentElement.classList.contains('belum-masuk')) {
+    mulaiAnimasi()
+    el.classList.add('sambut-mulai')
+  }
+  window.addEventListener('bpi-tampil', saatTampil)
+  window.addEventListener('bpi-masuk', saatMasuk)
 
   if (pakaiGerak()) {
     el.classList.add('bergerak')
@@ -99,6 +128,8 @@ onMounted(() => {
 })
 onUnmounted(() => {
   pengamat?.disconnect()
+  window.removeEventListener('bpi-tampil', saatTampil)
+  window.removeEventListener('bpi-masuk', saatMasuk)
   window.removeEventListener('scroll', saatGulir)
   window.removeEventListener('resize', saatGulir)
   sambut.value?.removeEventListener('pointermove', saatMouse)
@@ -272,7 +303,12 @@ onUnmounted(() => {
     transform: none;
   }
 }
-.animasi .muncul-awal {
+/* Judul sambutan menunggu class "sambut-mulai" (langsung, atau setelah transisi login) */
+.animasi:not(.sambut-mulai) .muncul-awal,
+.animasi:not(.sambut-mulai) .kata {
+  opacity: 0;
+}
+.sambut-mulai .muncul-awal {
   animation: naik 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
   animation-delay: var(--tunda, 0s);
 }
@@ -369,6 +405,8 @@ h1 {
 }
 .animasi .sorot::after {
   transform: scaleX(0);
+}
+.sambut-mulai .sorot::after {
   animation: gambar-garis 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) 0.9s forwards;
 }
 @keyframes gambar-garis {
@@ -392,7 +430,7 @@ h1 {
 .kata {
   display: inline-block;
 }
-.animasi .kata {
+.sambut-mulai .kata {
   animation: kata-naik 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
   animation-delay: calc(0.15s + var(--i) * 0.12s);
 }

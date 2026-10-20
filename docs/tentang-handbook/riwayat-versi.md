@@ -15,6 +15,7 @@ kata_kunci: [versi, riwayat, changelog, perubahan]
 
 - **Login tampilan** tanpa backend: seluruh website terkunci sampai pengunjung masuk, browser mengingat login selama 7 hari, dan ada tombol **Keluar** di menu atas.
 - Akun diatur dengan `npm run atur-login`. Kata sandi disimpan sebagai hash, bukan teks asli.
+- **Transisi setelah login**: panel navy melebar menutup layar, lalu menyusut menjadi kotak sambutan beranda, dan animasi beranda menyambung. Di halaman lain, panel menyusut ke header.
 - Checklist Publikasi dan Cara Memperbarui Handbook menjelaskan batasan login ini.
 
 ## v0.3.2 (20 Oktober 2026)

@@ -5,6 +5,12 @@
 // isi website disembunyikan dan halaman ini yang tampil.
 // Akun diatur dengan "npm run atur-login" (docs/data/login.json).
 // Ingat: ini hanya pengunci tampilan, bukan pengaman data.
+//
+// Transisi setelah login (lihat transisiMasuk):
+//   1. panel navy melebar menutup layar, formulir memudar,
+//   2. isi website dibuka di balik panel (event "bpi-tampil"),
+//   3. panel menyusut tepat ke kotak sambutan beranda (atau ke header di halaman lain),
+//   4. panel memudar dan animasi beranda dimulai (event "bpi-masuk").
 import { onMounted, onUnmounted, ref } from 'vue'
 import { withBase } from 'vitepress'
 import dataLogin from '../../../data/login.json'
@@ -17,6 +23,84 @@ const lihatSandi = ref(false)
 const galat = ref('')
 const proses = ref(false)
 const inputNama = ref<HTMLInputElement | null>(null)
+const akar = ref<HTMLElement | null>(null)
+const merek = ref<HTMLElement | null>(null)
+const merekIsi = ref<HTMLElement | null>(null)
+const lapisPolos = ref<HTMLElement | null>(null)
+const bagianForm = ref<HTMLElement | null>(null)
+
+const umumkan = (nama: string) => window.dispatchEvent(new Event(nama))
+const duaBingkai = () => new Promise<void>((r) => requestAnimationFrame(() => requestAnimationFrame(() => r())))
+const px = (n: number) => `${Math.round(n)}px`
+
+async function transisiMasuk() {
+  const html = document.documentElement
+  const g = akar.value
+  const m = merek.value
+  const kurangiGerak = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  if (!g || !m || !m.animate || kurangiGerak) {
+    html.classList.remove('belum-masuk')
+    umumkan('bpi-tampil')
+    umumkan('bpi-masuk')
+    return
+  }
+
+  const animasi: Animation[] = []
+  const jalan = (el: Element | null, frames: Keyframe[], opsi: KeyframeAnimationOptions) => {
+    if (!el) return Promise.resolve()
+    const a = el.animate(frames, { fill: 'forwards', ...opsi })
+    animasi.push(a)
+    return a.finished.then(() => undefined)
+  }
+
+  // 1. Panel melebar menutup seluruh layar, formulir memudar.
+  const r = m.getBoundingClientRect()
+  const vw = window.innerWidth
+  const vh = window.innerHeight
+  g.classList.add('transisi')
+  Object.assign(m.style, { position: 'fixed', left: px(r.left), top: px(r.top), width: px(r.width), height: px(r.height), zIndex: '2', overflow: 'hidden' })
+  jalan(bagianForm.value, [{ opacity: 1, transform: 'none' }, { opacity: 0, transform: 'translateX(40px)' }], { duration: 380, easing: 'cubic-bezier(0.4, 0, 1, 1)' })
+  await jalan(
+    m,
+    [
+      { left: px(r.left), top: px(r.top), width: px(r.width), height: px(r.height) },
+      { left: '0px', top: '0px', width: px(vw), height: px(vh) }
+    ],
+    { duration: 720, easing: 'cubic-bezier(0.7, 0, 0.2, 1)' }
+  )
+
+  // 2. Isi panel memudar, lalu isi website dibuka di balik panel.
+  await jalan(merekIsi.value, [{ opacity: 1, transform: 'none' }, { opacity: 0, transform: 'translateY(-16px)' }], { duration: 260, easing: 'ease-in' })
+  g.classList.add('lepas')
+  html.classList.remove('belum-masuk')
+  window.scrollTo(0, 0)
+  umumkan('bpi-tampil')
+  await duaBingkai()
+
+  // 3. Panel menyusut ke kotak sambutan beranda, atau ke header di halaman lain.
+  const sasaran = document.querySelector<HTMLElement>('.beranda .sambut') ?? document.querySelector<HTMLElement>('.VPNav')
+  const t = sasaran ? sasaran.getBoundingClientRect() : { left: 0, top: 0, width: vw, height: 64 }
+  const sudut = sasaran ? getComputedStyle(sasaran).borderTopLeftRadius : '0px'
+  jalan(lapisPolos.value, [{ opacity: 0 }, { opacity: 1 }], { duration: 520, easing: 'ease-out' })
+  await jalan(
+    m,
+    [
+      { left: '0px', top: '0px', width: px(vw), height: px(vh), borderRadius: '0px' },
+      { left: px(t.left), top: px(t.top), width: px(t.width), height: px(t.height), borderRadius: sudut }
+    ],
+    { duration: 820, easing: 'cubic-bezier(0.65, 0, 0.25, 1)' }
+  )
+
+  // 4. Panel memudar, animasi beranda dimulai bersamaan.
+  umumkan('bpi-masuk')
+  await jalan(g, [{ opacity: 1 }, { opacity: 0 }], { duration: 420, easing: 'ease-out' })
+
+  // Bersihkan, agar halaman login siap dipakai lagi setelah keluar.
+  g.classList.remove('transisi', 'lepas')
+  m.removeAttribute('style')
+  m.style.setProperty('--foto', `url(${withBase('/images/beranda/gudang-dalam.jpg')})`)
+  animasi.forEach((a) => a.cancel())
+}
 
 async function hashSandi(teks: string) {
   const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(teks))
@@ -51,7 +135,7 @@ async function masuk() {
     } catch {}
     sandi.value = ''
     lihatSandi.value = false
-    document.documentElement.classList.remove('belum-masuk')
+    await transisiMasuk()
   } finally {
     proses.value = false
   }
@@ -75,15 +159,18 @@ onUnmounted(() => window.removeEventListener('bpi-keluar', saatKeluar))
 </script>
 
 <template>
-  <div class="gerbang">
-    <section class="merek" :style="{ '--foto': `url(${withBase('/images/beranda/gudang-dalam.jpg')})` }">
-      <img class="logo" :src="withBase('/images/logo-perusahaan.png')" alt="" width="42" height="52" />
-      <p class="nama-situs">Handbook<br /><span>Gudang Teknik</span></p>
-      <p class="perusahaan">PT Bakrie Pipe Industries</p>
-      <p class="moto">“A place for everything and everything in its place.”</p>
+  <div ref="akar" class="gerbang">
+    <section ref="merek" class="merek" :style="{ '--foto': `url(${withBase('/images/beranda/gudang-dalam.jpg')})` }">
+      <span ref="lapisPolos" class="lapis-polos" aria-hidden="true" />
+      <div ref="merekIsi" class="merek-isi">
+        <img class="logo" :src="withBase('/images/logo-perusahaan.png')" alt="" width="42" height="52" />
+        <p class="nama-situs">Handbook<br /><span>Gudang Teknik</span></p>
+        <p class="perusahaan">PT Bakrie Pipe Industries</p>
+        <p class="moto">“A place for everything and everything in its place.”</p>
+      </div>
     </section>
 
-    <section class="isi">
+    <section ref="bagianForm" class="isi">
       <form class="kartu" novalidate @submit.prevent="masuk">
         <p class="eyebrow">Masuk</p>
         <p class="judul">Selamat datang</p>
@@ -144,7 +231,8 @@ onUnmounted(() => window.removeEventListener('bpi-keluar', saatKeluar))
 .gerbang {
   display: none;
 }
-:global(html.belum-masuk .gerbang) {
+:global(html.belum-masuk .gerbang),
+.gerbang.transisi {
   position: fixed;
   inset: 0;
   z-index: 200;
@@ -167,6 +255,23 @@ onUnmounted(() => window.removeEventListener('bpi-keluar', saatKeluar))
     linear-gradient(160deg, rgba(30, 53, 100, 0.92) 0%, rgba(20, 38, 71, 0.96) 100%),
     var(--foto) center / cover no-repeat,
     var(--bpi-navy);
+}
+/* Selama transisi: tetap tampil walau class "belum-masuk" sudah dilepas */
+.gerbang.transisi {
+  overflow: hidden;
+}
+.gerbang.transisi.lepas {
+  background: transparent;
+  pointer-events: none;
+}
+/* Lapisan yang menyamakan warna panel dengan kotak sambutan beranda */
+.lapis-polos {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0;
+  pointer-events: none;
+  background: linear-gradient(140deg, #24407a 0%, var(--bpi-navy) 45%, var(--bpi-navy-tua) 100%);
 }
 .merek::after {
   content: '';
@@ -325,7 +430,8 @@ onUnmounted(() => window.removeEventListener('bpi-keluar', saatKeluar))
 }
 
 @media (max-width: 860px) {
-  :global(html.belum-masuk .gerbang) {
+  :global(html.belum-masuk .gerbang),
+  .gerbang.transisi {
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr;
   }
