@@ -67,7 +67,7 @@
         {
           "id": "setelah-barang-diterima",
           "tanya": "Setelah barang diterima, apa saja yang harus dicatat?",
-          "jawab": "Berikan Surat Tanda Terima Barang (STTB) ke vendor, input STTB ke database (jumlah, jenis, tipe, tanggal masuk), terbitkan Good Received Note (GRN), kirim laporan ke divisi OS/PPIC, lalu simpan barang di rak dan isi kartu stok: tanggal masuk, nomor PO, jumlah, dan saldo akhir.",
+          "jawab": "Berikan Surat Tanda Terima Barang (STTB) ke vendor, input STTB ke database (jumlah, jenis, tipe, tanggal masuk), terbitkan Good Received Note (GRN), lalu simpan barang di rak dan isi kartu stok: tanggal masuk, nomor PO, jumlah, dan saldo akhir.",
           "status": "terjawab"
         },
         {
@@ -116,12 +116,6 @@
           "id": "kenapa-catatan-manual",
           "tanya": "Kenapa masih ada catatan manual di rak kalau sudah ada ERP?",
           "jawab": "Catatan manual membantu mengecek isi rak langsung di tempat. Jumlah di catatan manual, di ERP, dan di rak harus selalu sama. Kalau berbeda, laporkan ke pembimbing.",
-          "status": "terjawab"
-        },
-        {
-          "id": "laporan-os-ppic",
-          "tanya": "Kenapa barang masuk dilaporkan ke OS/PPIC?",
-          "jawab": "Supaya divisi OS/PPIC tahu barang yang dipesan sudah masuk dan sesuai. PPIC (*Production Planning and Inventory Control*) adalah bagian yang merencanakan produksi dan persediaan.",
           "status": "terjawab"
         },
         {

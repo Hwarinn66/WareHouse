@@ -27,7 +27,7 @@ flowchart TD
     M3 --> M4{"Memenuhi syarat?"}:::cek
     M4 -- Tidak --> MR
     M4 -- Ya --> M5[/"STTB ke vendor,<br/>input ke database"/]:::dokumen
-    M5 --> M6[/"GRN terbit,<br/>laporan ke OS/PPIC"/]:::dokumen
+    M5 --> M6[/"GRN terbit"/]:::dokumen
     M6 --> M7["Simpan sesuai klasifikasi,<br/>catat di kartu stok"]:::staff
   end
   M7 --> S[("Stok Gudang Teknik")]:::sistem
@@ -64,4 +64,4 @@ Setiap barang yang bergerak meninggalkan jejak di tiga tempat. Ketiganya harus s
 
 1. **Sistem ERP/WMS.** Barang masuk diinput lewat STTB, dan stok barang keluar dipotong di sistem saat reservasi diproses.
 2. **Kartu stok di rak.** Setiap barang yang ditaruh atau diambil dari rak dicatat di kartu stok (catatan manual) di rak itu, lengkap dengan saldo akhirnya.
-3. **Dokumen.** Barang masuk punya STTB dan GRN (laporannya juga diteruskan ke divisi OS/PPIC), sedangkan barang keluar punya reservasi yang dicetak.
+3. **Dokumen.** Barang masuk punya STTB dan GRN, sedangkan barang keluar punya reservasi yang dicetak.

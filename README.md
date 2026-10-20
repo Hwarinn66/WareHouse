@@ -210,7 +210,7 @@ Daftar lengkap ada di `docs/tentang-handbook/perlu-verifikasi.md`. Ringkasnya:
 
 **Perusahaan:** visi & misi resmi · tahun berdiri & sejarah · apakah *Passion, Respect, Integrity, Discipline, Excellent* nilai resmi perusahaan atau moto unit · jenis/ukuran/standar produk · struktur organisasi · sertifikasi yang berlaku · alamat situs resmi.
 
-**Gudang Teknik:** denah layout gudang (slide 7) · kepanjangan "OS" pada OS/PPIC · format surat tanda terima dan laporan ke OS/PPIC · bagian ERP yang boleh diakses peserta magang · aturan pengodean barang · parameter stok min/maks/ROP · kategori material tanpa permintaan · jadwal stock opname · siapa yang memesan barang ke vendor.
+**Gudang Teknik:** denah layout gudang (slide 7) · format Surat Tanda Terima Barang (STTB) · bagian ERP yang boleh diakses peserta magang · aturan pengodean barang · parameter stok min/maks/ROP · kategori material tanpa permintaan · jadwal stock opname · siapa yang memesan barang ke vendor.
 
 **SOP & K3:** SOP resmi yang ada · APD wajib · area terbatas · nomor darurat, APAR, P3K, jalur evakuasi, titik kumpul · aturan limbah consumable.
 

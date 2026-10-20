@@ -11,6 +11,13 @@ kata_kunci: [versi, riwayat, changelog, perubahan]
 
 <p class="lead">Setiap perubahan penting dicatat di sini. Nomor versi juga tercantum di menu atas dan di <code>package.json</code>.</p>
 
+## v0.3.2 (20 Oktober 2026)
+
+- Laporan barang masuk ke divisi OS/PPIC dihapus dari alur, SOP, FAQ, dan Kamus Istilah, karena Gudang Teknik tidak melapor ke divisi tersebut.
+- Diagram "Dengan siapa gudang bekerja?" kini menampilkan laboratorium dan buyer procurement/purchasing.
+- Tabel catatan di halaman Pencatatan Stok disesuaikan dengan instruksi kerja (STTB, GRN, reservasi, kartu stok, dan stock opname harian).
+- Foto GRN ditambahkan di langkah 8 alur barang masuk dan sebagai contoh di SOP Penerimaan Barang.
+
 ## v0.3.1 (20 Oktober 2026)
 
 Alur kerja disamakan dengan instruksi kerja resmi dari perusahaan. Jumlah dan urutan langkah tetap, sehingga foto yang sudah ada tetap cocok.

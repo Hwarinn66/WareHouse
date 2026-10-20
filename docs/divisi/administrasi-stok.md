@@ -6,7 +6,7 @@ dasar: materi presentasi Gudang Teknik dan catatan alur proses
 diperbarui: 2026-10-13
 kategori: Gudang Teknik
 sumber: [ppt-gudang-teknik, catatan-alur]
-kata_kunci: [administrasi, pencatatan stok, kontrol stok, master material, database, ERP, catatan manual rak, laporan OS/PPIC, stock opname, laporan stok, mutasi, saldo, akurasi stok, selisih]
+kata_kunci: [administrasi, pencatatan stok, kontrol stok, master material, database, ERP, catatan manual rak, kartu stok, STTB, GRN, reservasi, stock opname, laporan stok, mutasi, saldo, akurasi stok, selisih]
 ---
 
 # Pencatatan Stok
@@ -17,11 +17,11 @@ kata_kunci: [administrasi, pencatatan stok, kontrol stok, master material, datab
 
 | Catatan | Isinya | Kapan diisi |
 | --- | --- | --- |
-| **Database barang** | Jumlah, jenis barang, tipe barang, tanggal masuk, dan lokasi rak | Saat barang masuk sudah diterima |
-| **ERP perusahaan** | Permintaan dari divisi lain dan laporan barang keluar | Saat staff menyetujui permintaan |
-| **Catatan manual di rak** | Barang yang ditaruh atau diambil dari rak itu | Setiap kali barang ditaruh atau diambil |
-| **Laporan ke OS/PPIC** | Barang sudah masuk dan sesuai | Setelah input database |
-| **Stock opname** | Hasil hitung fisik dibandingkan dengan catatan | Sesuai jadwal penghitungan |
+| **Database barang (ERP/WMS)** | Data STTB: jumlah, jenis barang, tipe barang, tanggal masuk, dan lokasi rak | Saat barang masuk sudah diterima |
+| **GRN** | Laporan penerimaan material: jumlah diterima, diterima sesuai, ditolak, dan mutunya | Setelah material dinyatakan sesuai |
+| **Reservasi di ERP/WMS** | Permintaan dari divisi lain dan pengeluaran barang | Saat reservasi diproses dan stok dipotong |
+| **Kartu stok di rak** | Barang yang ditaruh atau diambil dari rak itu, beserta saldo akhirnya | Setiap kali barang ditaruh atau diambil |
+| **Stock opname** | Hasil hitung fisik dibandingkan dengan catatan | Setiap hari, secara bergilir |
 | **Laporan stok** | Saldo, mutasi, dan stok minimum | Berkala, sebagai dasar keputusan |
 
 Semua data mengacu pada **master material**, yaitu daftar induk berisi kode, nama, spesifikasi, satuan, dan lokasi setiap barang.
@@ -35,7 +35,7 @@ Kalau hasil hitung di rak berbeda dengan angka di catatan, berarti ada barang ya
 ## Kebiasaan baik
 
 - **Catat saat itu juga.** Jangan menunda sampai akhir hari.
-- **Isi catatan manual di rak** setiap kali menaruh atau mengambil barang.
+- **Isi kartu stok di rak** setiap kali menaruh atau mengambil barang.
 - **Pakai kode barang, bukan nama.** Nama bisa ditulis berbeda-beda, kode tidak.
 - **Kembalikan barang ke rak yang benar**, sesuai lokasi di database.
 - **Laporkan selisih, jangan mengubah angka sendiri.** Perbaikan catatan harus disetujui.

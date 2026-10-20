@@ -28,9 +28,6 @@ Pihak luar yang menjual dan mengantar barang ke perusahaan.
 ### ERP / WMS
 *Enterprise Resource Planning*, yaitu sistem komputer perusahaan yang menghubungkan data antardivisi. WMS (*Warehouse Management System*) adalah bagian sistem untuk mengelola gudang. Di Gudang Teknik, sistem ini dipakai untuk reservasi barang, mencatat barang masuk dan keluar, dan menyimpan data material.
 
-### OS/PPIC
-Divisi yang menerima laporan bahwa barang sudah masuk dan sesuai. PPIC (*Production Planning and Inventory Control*) adalah bagian yang merencanakan produksi dan persediaan.
-
 ### Good Received
 Bagian penerimaan Gudang Teknik. Bertugas menerima, memeriksa, dan mendokumentasikan material yang datang, lalu menempatkannya di lokasi simpan.
 

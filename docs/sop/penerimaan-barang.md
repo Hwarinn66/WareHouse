@@ -10,7 +10,7 @@ pengesah: null
 diperbarui: 2026-10-20
 kategori: SOP
 sumber: [ik-gudang-teknik, ppt-gudang-teknik, catatan-alur]
-kata_kunci: [SOP, penerimaan barang, receiving, barang masuk, vendor, good received, surat jalan, PO, purchase order, STTB, surat tanda terima, GRN, good received note, inspektor laboratorium, material reject, CAR, non stock item, klaim, OS/PPIC, kartu stok]
+kata_kunci: [SOP, penerimaan barang, receiving, barang masuk, vendor, good received, surat jalan, PO, purchase order, STTB, surat tanda terima, GRN, good received note, inspektor laboratorium, material reject, CAR, non stock item, klaim, kartu stok]
 ---
 
 # SOP Penerimaan Barang
@@ -62,7 +62,7 @@ Material part yang perlu dicek dimensi dan kekerasannya, misalnya U-ring seal at
 5. **Pastikan material memenuhi syarat** visual, spesifikasi, mutu, dan jumlah. Kalau tidak, ikuti bagian [Kalau material tidak sesuai](#kalau-material-tidak-sesuai).
 6. **Berikan Surat Tanda Terima Barang (STTB)** yang sudah ditandatangani kepada vendor.
 7. **Input STTB ke database** sesuai alur sistem penerimaan barang dari tim IT: jumlah, jenis barang, tipe barang, dan tanggal masuk.
-8. **Terbitkan Good Received Note (GRN)**, yaitu laporan penerimaan material. Laporan barang masuk juga diteruskan ke divisi OS/PPIC.
+8. **Terbitkan Good Received Note (GRN)**, yaitu laporan penerimaan material.
 9. **Simpan barang** di lokasi yang tercatat di database, sesuai [SOP Penyimpanan Barang](./penyimpanan-barang).
 10. **Catat di kartu stok** di rak tempat barang disimpan.
 
@@ -107,7 +107,6 @@ Kalau ragu apakah barang sesuai, jangan memutuskan sendiri. Tanyakan ke Good Rec
 - [ ] Material sudah diperiksa oleh pihak yang tepat (penerimaan, laboratorium, atau user).
 - [ ] STTB sudah diberikan ke vendor dan diinput ke database.
 - [ ] GRN sudah terbit.
-- [ ] Laporan sudah dikirim ke OS/PPIC.
 - [ ] Barang ada di rak yang benar dan kartu stok sudah diisi.
 - [ ] Barang yang tidak sesuai sudah dipisahkan dan diberi tanda Material Reject.
 

@@ -25,8 +25,7 @@ kata_kunci: [verifikasi, pertanyaan untuk pembimbing, data yang kurang, belum le
 ## Tentang Gudang Teknik
 
 - [x] **Denah layout gudang.** Terjawab: denah Blok A lantai 2 dan Blok B lantai 1 (lihat [Layout Gudang](/alur-kerja/layout-gudang)).
-- [ ] **Kepanjangan "OS"** pada divisi OS/PPIC, supaya bisa dijelaskan di Kamus Istilah.
-- [ ] **Format surat tanda terima** dan laporan barang masuk ke OS/PPIC (boleh contoh kosong tanpa data asli).
+- [ ] **Format Surat Tanda Terima Barang (STTB)** (boleh contoh kosong tanpa data asli).
 - [ ] **Bagian ERP** yang boleh diakses peserta magang.
 - [x] **Aturan pengodean barang** resmi. Terjawab: nomor material 9 karakter sesuai standar cataloguing (lihat [Kode Barang](/divisi/kode-barang)).
 - [ ] **Parameter stok**: rumus atau cara gudang menetapkan stok minimum, maksimum, ROP, dan safety stock. Instruksi kerja hanya menyebut bahwa level stok ditentukan saat kode stock item dibuat.

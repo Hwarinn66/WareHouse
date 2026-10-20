@@ -6,7 +6,7 @@ dasar: materi presentasi Gudang Teknik
 diperbarui: 2026-10-13
 kategori: Gudang Teknik
 sumber: [ppt-gudang-teknik, catatan-alur]
-kata_kunci: [gudang teknik, warehouse, fungsi gudang, penyimpanan, pengendalian, pelayanan, 4 right, tanggung jawab, OS/PPIC, ERP, vendor]
+kata_kunci: [gudang teknik, warehouse, fungsi gudang, penyimpanan, pengendalian, pelayanan, 4 right, tanggung jawab, ERP, vendor, laboratorium, procurement]
 ---
 
 # Kenali Gudang Teknik
@@ -43,16 +43,18 @@ Setiap kali melayani permintaan, pastikan empat hal ini terpenuhi:
 ```mermaid
 flowchart LR
   accTitle: Pihak yang bekerja dengan Gudang Teknik
-  accDescr: Vendor mengantar barang ke Gudang Teknik. Gudang mengirim laporan barang masuk ke divisi OS/PPIC. Divisi lain memesan barang lewat ERP dan mengambilnya di gudang.
+  accDescr: Vendor mengantar barang ke Gudang Teknik. Material tertentu diperiksa laboratorium. Barang yang tidak sesuai diklaim ke vendor melalui buyer procurement atau purchasing. Divisi lain membuat reservasi lewat ERP dan mengambil barangnya di gudang.
   V(["Vendor / supplier"]):::vendor -- "antar barang" --> G["Gudang Teknik"]:::staff
-  G -- "laporan barang masuk" --> P["Divisi OS/PPIC"]:::dokumen
-  D(["Divisi lain"]):::divisi -- "pesan lewat ERP" --> G
+  G -- "material untuk diperiksa" --> L["Laboratorium"]:::dokumen
+  G -- "klaim barang tidak sesuai" --> B["Buyer procurement /<br/>purchasing"]:::dokumen
+  D(["Divisi lain"]):::divisi -- "reservasi lewat ERP" --> G
   G -- "serahkan barang" --> D
 ```
 
 - **Vendor / supplier** mengantar barang yang dipesan.
-- **Divisi OS/PPIC** menerima laporan bahwa barang sudah masuk dan sesuai.
-- **Divisi lain** memesan barang lewat ERP, lalu karyawannya datang mengambil barang di gudang.
+- **Laboratorium** memeriksa material tertentu yang datang, misalnya plastik, dop, varnish, cat, dan material coating.
+- **Buyer procurement/purchasing** meneruskan klaim ke vendor kalau barang yang datang tidak sesuai.
+- **Divisi lain** membuat reservasi barang lewat ERP, lalu karyawannya datang mengambil barang di gudang.
 
 Urutan lengkapnya ada di [Alur Warehouse](/alur-kerja/).
 
