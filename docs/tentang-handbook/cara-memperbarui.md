@@ -68,6 +68,24 @@ Buka `docs/data/faq.json`, lalu tambahkan objek di dalam `pertanyaan` pada kateg
 
 Jika belum ada jawaban resmi, isi `"jawab": ""` dan `"status": "menunggu-pembimbing"`. Pertanyaan seperti itu **tidak tampil** di website sampai jawabannya diisi dan statusnya diubah menjadi `terjawab`. FAQ yang tampil otomatis masuk ke pencarian.
 
+## Mengatur login
+
+Website memakai **login tampilan**: sebelum masuk, pengunjung hanya melihat halaman login. Akun disimpan di `docs/data/login.json`. Yang disimpan hanya bentuk acak (hash SHA-256) kata sandinya, bukan kata sandi aslinya.
+
+Jalankan perintah berikut di folder proyek:
+
+| Tujuan | Perintah |
+|---|---|
+| Melihat daftar akun | `npm run atur-login` |
+| Menambah akun, atau mengganti kata sandi akun yang sudah ada | `npm run atur-login -- nama katasandi` |
+| Menghapus akun | `npm run atur-login -- --hapus nama` |
+
+Kata sandi minimal 8 karakter. Setelah akun diubah, jalankan ulang `npm run dev`, lalu commit dan push. Setiap kali akun atau kata sandi diganti, semua orang harus login ulang. Browser mengingat login selama 7 hari (`ingatHari` di `login.json`).
+
+::: warning Login ini hanya mengunci tampilan
+Website tetap statis. File di dalamnya, termasuk gambar, foto, dan file JavaScript, masih bisa dibuka langsung oleh orang yang tahu alamatnya, dan login bisa dilewati oleh orang yang paham teknis. Jangan menaruh data yang benar-benar rahasia di website ini.
+:::
+
 ## Memperbarui profil perusahaan
 
 1. Tambahkan sumbernya di `docs/data/sumber.json`, lengkap dengan `id`, `judul`, `penerbit`, `url`, `tanggalTerbit`, dan `tanggalAkses`.

@@ -1,0 +1,16 @@
+{
+  "_catatan": [
+    "Akun login tampilan handbook. Jangan diedit manual: pakai \"npm run atur-login\".",
+    "hash = SHA-256 dari \"garam:nama:sandi\" (nama huruf kecil). Kata sandi aslinya tidak disimpan.",
+    "ingatHari = berapa hari browser mengingat login sebelum diminta masuk lagi.",
+    "Ini hanya pengunci tampilan: file website tetap bisa dibuka langsung lewat alamatnya."
+  ],
+  "garam": "3c3817677004fd6d4609c73d",
+  "ingatHari": 7,
+  "akun": [
+    {
+      "username": "magang",
+      "hash": "4834460992ed84761e054abf7373010f5334a1b5a81c0dcd2a1cfd0571c1bd56"
+    }
+  ]
+}

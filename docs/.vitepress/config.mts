@@ -1,5 +1,6 @@
 import { defineConfig, type DefaultTheme } from 'vitepress'
 import { existsSync, readFileSync } from 'node:fs'
+import { createHash } from 'node:crypto'
 import { fileURLToPath } from 'node:url'
 import { resolve, dirname } from 'node:path'
 import navigasi from '../data/navigasi.json'
@@ -16,6 +17,17 @@ const base = process.env.BASE_PATH || '/'
 // nama di bawah. Jika tidak ada, header hanya menampilkan judul teks.
 const kandidatLogo = ['logo-perusahaan.svg', 'logo-perusahaan.png', 'logo-perusahaan.webp']
 const fileLogo = kandidatLogo.find((f) => existsSync(resolve(root, '../public/images', f)))
+
+// Login tampilan (tanpa back end). Akun diatur dengan "npm run atur-login".
+// Kunci sesi berubah setiap kali akun atau kata sandi diganti, sehingga semua orang harus masuk lagi.
+const dataLogin = JSON.parse(readFileSync(resolve(root, '../data/login.json'), 'utf-8'))
+const kunciSesi = createHash('sha256')
+  .update(dataLogin.garam + '|' + dataLogin.akun.map((a: { username: string; hash: string }) => a.username + ':' + a.hash).join('|'))
+  .digest('hex')
+  .slice(0, 16)
+// Dijalankan sebelum halaman tampil: tanpa sesi yang sah, <html> diberi class "belum-masuk"
+// sehingga isi website disembunyikan dan halaman login yang tampil (lihat GerbangLogin.vue).
+const skripKunci = `(function(){var k='${kunciSesi}';window.__bpiSesi=k;try{var s=JSON.parse(localStorage.getItem('bpi-sesi')||'null');if(s&&s.k===k&&s.exp>Date.now())return}catch(e){}document.documentElement.classList.add('belum-masuk')})()`
 
 export default defineConfig({
   lang: 'id-ID',
@@ -37,7 +49,8 @@ export default defineConfig({
     ['link', { rel: 'icon', type: 'image/svg+xml', href: `${base}images/favicon.svg` }],
     ['meta', { name: 'theme-color', content: '#1e3564' }],
     // Handbook internal: minta mesin pencari tidak mengindeks selama belum disetujui publik.
-    ['meta', { name: 'robots', content: 'noindex, nofollow' }]
+    ['meta', { name: 'robots', content: 'noindex, nofollow' }],
+    ['script', {}, skripKunci]
   ],
 
   markdown: {

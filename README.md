@@ -167,6 +167,18 @@ Setiap kotak di flowchart barang masuk (10 kotak) dan barang keluar (11 kotak), 
 
 Daftar lengkap nama file dan status fotonya (sudah ada atau belum) tampil di halaman **Untuk Pengelola → Cara Memperbarui Handbook**. Kotak bernomor di flowchart bisa diklik untuk melompat ke kartu fotonya.
 
+### Mengatur login
+
+Website memakai login tampilan tanpa backend: skrip di `<head>` (dibuat di `config.mts`) menyembunyikan isi sampai pengunjung masuk lewat `GerbangLogin.vue`. Akun ada di `docs/data/login.json`, dan kata sandi disimpan sebagai hash SHA-256.
+
+```bash
+npm run atur-login                          # lihat daftar akun
+npm run atur-login -- nama katasandi        # tambah akun / ganti kata sandi
+npm run atur-login -- --hapus nama          # hapus akun
+```
+
+> Ini hanya pengunci tampilan. File statis (gambar, JS) tetap bisa dibuka langsung lewat alamatnya.
+
 ### Menambah diagram
 
 ````md

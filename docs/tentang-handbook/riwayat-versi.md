@@ -11,6 +11,12 @@ kata_kunci: [versi, riwayat, changelog, perubahan]
 
 <p class="lead">Setiap perubahan penting dicatat di sini. Nomor versi juga tercantum di menu atas dan di <code>package.json</code>.</p>
 
+## v0.4.0 (20 Oktober 2026)
+
+- **Login tampilan** tanpa backend: seluruh website terkunci sampai pengunjung masuk, browser mengingat login selama 7 hari, dan ada tombol **Keluar** di menu atas.
+- Akun diatur dengan `npm run atur-login`. Kata sandi disimpan sebagai hash, bukan teks asli.
+- Checklist Publikasi dan Cara Memperbarui Handbook menjelaskan batasan login ini.
+
 ## v0.3.2 (20 Oktober 2026)
 
 - Laporan barang masuk ke divisi OS/PPIC dihapus dari alur, SOP, FAQ, dan Kamus Istilah, karena Gudang Teknik tidak melapor ke divisi tersebut.

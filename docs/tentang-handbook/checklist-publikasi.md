@@ -3,14 +3,14 @@ title: Checklist Sebelum Publikasi
 description: Pemeriksaan dan persetujuan yang wajib selesai sebelum handbook dibuka untuk umum.
 status: ditinjau
 dasar: ketentuan keamanan informasi proyek handbook
-diperbarui: 2026-10-13
+diperbarui: 2026-10-20
 kategori: Tentang Handbook
 kata_kunci: [publikasi, deploy, checklist, persetujuan, keamanan informasi, data sensitif, rilis]
 ---
 
 # Checklist Sebelum Publikasi
 
-<p class="lead">Website ini statis dan tidak memakai login. Artinya, siapa pun yang tahu alamatnya bisa membuka semua halaman dan semua file di dalamnya. Tidak adanya backend <strong>tidak</strong> membuat website ini aman untuk data rahasia.</p>
+<p class="lead">Website ini statis dan hanya memakai <strong>login tampilan</strong> tanpa backend. Login menyembunyikan isi dari pengunjung biasa, tetapi siapa pun yang tahu alamat sebuah file (misalnya gambar) tetap bisa membukanya langsung. Login ini <strong>tidak</strong> membuat website aman untuk data rahasia.</p>
 
 ## Persetujuan
 

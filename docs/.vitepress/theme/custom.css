@@ -133,6 +133,18 @@
   }
 }
 
+/* ---------- Login tampilan ----------
+   Selama <html> punya class "belum-masuk" (diatur skrip di config.mts),
+   isi website disembunyikan dan halaman login (GerbangLogin.vue) yang tampil. */
+html.belum-masuk .Layout,
+html.belum-masuk .VPLocalSearchBox {
+  display: none !important;
+}
+
+html.belum-masuk body {
+  overflow: hidden;
+}
+
 /* ---------- Header navy (warna dominan) ---------- */
 
 .VPNav {
