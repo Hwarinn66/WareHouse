@@ -68,6 +68,28 @@ Material part yang perlu dicek dimensi dan kekerasannya, misalnya U-ring seal at
 
 Nomor langkah di atas sama dengan nomor kotak di flowchart [Alur Barang Masuk](/alur-kerja/barang-masuk).
 
+## Contoh GRN
+
+<figure>
+
+![Good Received Note nomor GRN/1026/255 untuk material RA3A00001 STEEL;STRAPPING;0.8x32mm;WITH;CERTIFICATE, diterima 6017 kg, diterima semua, mutu GOOD](/images/sop/contoh-grn.jpg)
+
+<figcaption>Contoh GRN dari Gudang Teknik. Sebanyak 6.017 kg steel strapping diterima, semuanya lolos (tidak ada yang ditolak), dengan mutu baik.</figcaption>
+</figure>
+
+| Bagian | Isinya |
+|---|---|
+| **Nomor GRN** | Contohnya `GRN/1026/255`. Angka `1026` tampaknya menunjukkan bulan dan tahun (Oktober 2026), sama seperti pada nomor reservasi `RSV/1026/…`. |
+| **To** | Nama dan alamat vendor yang mengirim barang. |
+| **Date** | Tanggal GRN diterbitkan. |
+| **PO Number dan PO Date** | Nomor dan tanggal PO yang dicocokkan dengan barang. |
+| **Prepared by dan Inspected by** | Petugas yang membuat GRN dan petugas yang memeriksa barang, lengkap dengan tanggal dan kode QR persetujuannya. |
+| **Material ID dan Material Name** | Nomor material dan deskripsinya, sesuai [standar cataloguing](/divisi/kode-barang). `RA3A00001` diawali `R`, artinya raw material atau material pendukung. |
+| **Uom** | Satuan barang, misalnya Kg. |
+| **Quantity: Received, Accepted, Rejected** | Jumlah yang datang, jumlah yang diterima karena sesuai, dan jumlah yang ditolak. |
+| **Quantity Info** | Keterangan jumlah, misalnya *SUFFICIENT* (cukup sesuai pesanan). |
+| **Quality Info** | Hasil pemeriksaan mutu, misalnya *GOOD*. |
+
 ## Kalau material tidak sesuai
 
 - Barang yang tidak sesuai **dipisahkan dan diberi tanda Material Reject**.
