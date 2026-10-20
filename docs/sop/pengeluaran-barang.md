@@ -1,51 +1,82 @@
 ---
 title: SOP Pengeluaran Barang
-description: Langkah melayani permintaan barang dari divisi lain lewat ERP sampai barang diambil.
+description: Langkah mengeluarkan material berdasarkan reservasi di ERP/WMS, mulai dari persetujuan dan verifikasi NIP sampai barang diserahkan.
 status: ditinjau
-dasar: alur barang keluar Gudang Teknik
+dasar: Instruksi Kerja Pelayanan Barang Gudang Teknik dan alur barang keluar Gudang Teknik
 nomor_dokumen: null
-versi: 0.2
+versi: 0.3
 pemilik: Gudang Teknik
 pengesah: null
-diperbarui: 2026-10-13
+diperbarui: 2026-10-20
 kategori: SOP
-sumber: [ppt-gudang-teknik, catatan-alur]
-kata_kunci: [SOP, pengeluaran barang, barang keluar, permintaan, ERP, persetujuan, laporan barang keluar, rak reservasi, catatan manual, FIFO, tukar barang]
+sumber: [ik-gudang-teknik, ppt-gudang-teknik, catatan-alur]
+kata_kunci: [SOP, pengeluaran barang, barang keluar, pelayanan barang, reservasi, good issue, ERP, WMS, material reservation list, NIP, ID card, stock keeper, foreman, supervisor, rak reservasi, 3 hari, material bekas, kartu stok, FIFO, tukar barang]
 ---
 
 # SOP Pengeluaran Barang
 
-<p class="lead">Dipakai setiap kali ada permintaan barang dari divisi lain melalui ERP.</p>
+<p class="lead">Dipakai setiap kali divisi lain mengambil material dari gudang. Pengeluaran barang di Gudang Teknik selalu berdasarkan reservasi (<em>good issue to reservation</em>). Isinya diringkas dari Instruksi Kerja Pelayanan Barang Gudang Teknik.</p>
 
 ## Tujuan
 
-Memastikan divisi pemesan menerima barang yang benar, dalam jumlah dan kondisi yang tepat, dan setiap pengeluaran tercatat di ERP dan di rak.
+Menjadi pedoman petugas Warehouse dalam mengeluarkan material berdasarkan reservasi, supaya barang yang diserahkan benar dan setiap pengeluaran tercatat, baik di sistem maupun di kartu stok.
+
+## Berlaku untuk
+
+Seluruh proses reservasi dan pengeluaran material, di sistem ERP/WMS (sesuai nomor reservasi) maupun secara fisik: mulai dari reservasi, persetujuan, verifikasi NIP pengambil, sampai material diserahkan kepada penerima (*recipient*).
+
+## Peran
+
+| Peran | Tanggung jawab |
+|---|---|
+| **User (divisi pemesan)** | Mengecek ketersediaan material dan membuat reservasi di ERP/WMS. |
+| **Foreman/Supervisor divisi pemesan** | Menunjuk karyawan yang ditugaskan mengambil barang, dan menyetujui reservasi di sistem. |
+| **Stock Keeper (petugas Warehouse)** | Mencocokkan identitas pengambil, jenis, dan jumlah material yang diserahkan, serta meminta material bekas atau rusak. |
 
 ## Yang perlu disiapkan
 
-- Akses ke ERP Warehouse Teknik.
-- Data lokasi barang di database.
+- Komputer, printer, dan sistem ERP/WMS.
+- Kartu stok di rak.
 - APD sesuai arahan pembimbing.
 
 ## Langkah-langkah
 
-1. **Buka notifikasi permintaan** di ERP Warehouse Teknik.
-2. **Setujui permintaan** dan buat laporan barang keluar. Laporan ini langsung tercatat di ERP.
-3. **Cari barang** sesuai orderan. Cocokkan kode dan spesifikasinya.
-4. **Ambil barang** dari rak. Dahulukan barang yang masuk lebih dulu (FIFO).
-5. **Isi catatan manual di rak** untuk barang yang diambil.
-6. **Taruh barang di rak reservasi** sampai diambil.
-7. **Serahkan barang** saat karyawan divisi pemesan datang.
-8. **Minta karyawan mengecek barang.** Kalau tidak sesuai orderan, terima kembali barangnya dan tukar dengan yang sesuai.
+### Di sisi divisi pemesan
+
+1. **Cek ketersediaan material** di ERP/WMS.
+2. **Buat reservasi** jika material tersedia, dengan mengisi:
+   - nomor material yang dibutuhkan,
+   - jumlah (*quantity*) sesuai kebutuhan,
+   - NIP (Nomor Induk Pegawai) karyawan yang ditugaskan mengambil barang.
+3. **Reservasi disetujui** di sistem, minimal oleh Foreman atau Supervisor divisi tersebut.
+
+### Di Gudang Teknik
+
+4. **Cek Material Reservation List** di ERP/WMS: reservasi yang sudah disetujui, beserta NIP pengambilnya.
+5. **Buka nomor reservasi dan cocokkan dengan stok.**
+   - Kalau stok ada, stok langsung dipotong di sistem.
+   - Kalau stok sudah habis, misalnya sudah direservasi user lain, item tersebut dibatalkan atau dicoret.
+6. **Cetak reservasi dan siapkan material** sesuai jenis dan jumlahnya. Ambil barang yang masuk lebih dulu (FIFO), lalu potong stoknya di kartu stok.
+7. **Taruh material di rak reservasi.** Batas waktu pengambilan adalah **3 hari**. Kalau lewat dari itu dan material tidak jadi dipakai, reservasi dianggap batal dan material dikembalikan ke stok.
+8. **Verifikasi pengambil.** Saat karyawan datang, cocokkan NIP di reservasi dengan ID card pengambil. Minta juga material bekas atau rusak yang diganti, jika ada.
+9. **Serahkan material** kalau hasil verifikasi cocok. Minta karyawan mengecek barangnya. Kalau tidak sesuai orderan, terima kembali barangnya dan tukar dengan yang sesuai.
+10. **Perbarui stock level** di kartu stok.
 
 Flowchart-nya ada di [Alur Barang Keluar](/alur-kerja/barang-keluar).
 
+## Setelah melayani
+
+Setiap hari, tim gudang menghitung jumlah fisik barang yang keluar dan masuk, lalu membandingkannya dengan saldo di sistem atau kartu stok. Kalau ada selisih, cari akar masalahnya, misalnya salah input, barang tidak ditaruh di tempatnya, atau barang yang diambil tidak sesuai. Caranya ada di [SOP Stock Opname](./stock-opname).
+
 ## Cek sebelum selesai
 
-- [ ] Permintaan sudah disetujui di ERP dan laporan barang keluar tercatat.
-- [ ] Kode dan spesifikasi barang sesuai orderan.
-- [ ] Catatan manual di rak sudah diisi.
+- [ ] Reservasi sudah disetujui Foreman/Supervisor divisi pemesan.
+- [ ] Stok sudah dipotong di sistem dan di kartu stok.
+- [ ] Kode dan spesifikasi barang sesuai reservasi.
+- [ ] NIP pengambil cocok dengan ID card.
+- [ ] Material bekas atau rusak sudah diminta, jika ada.
 - [ ] Barang sudah dicek karyawan dan dinyatakan sesuai.
+- [ ] Barang di rak reservasi yang lewat 3 hari sudah dikembalikan ke stok.
 
 ## Perhatian keselamatan
 

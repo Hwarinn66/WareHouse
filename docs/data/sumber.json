@@ -60,6 +60,26 @@
       "tanggalTerbit": "2026-10-13",
       "tanggalAkses": "2026-10-13",
       "dipakaiUntuk": "Urutan langkah, pengecekan, dan pencatatan pada alur barang masuk dan barang keluar (ERP, rak reservasi, catatan manual rak, laporan ke OS/PPIC)."
+    },
+    {
+      "id": "ik-gudang-teknik",
+      "judul": "Kumpulan Instruksi Kerja & Standard Gudang Teknik (Warehouse)",
+      "penerbit": "Gudang Teknik, PT Bakrie Pipe Industries",
+      "jenis": "internal",
+      "url": null,
+      "tanggalTerbit": null,
+      "tanggalAkses": "2026-10-20",
+      "dipakaiUntuk": "Instruksi kerja penerimaan material, penempatan material, inventory, pelayanan barang, stock opname harian, dan permintaan kode material baru, serta standar penomoran dan deskripsi material (cataloguing)."
+    },
+    {
+      "id": "qp-write-off",
+      "judul": "Prosedur Penghapusbukuan Aktiva Tetap (Write Off), No. QP-4.3.3 Rev. 0",
+      "penerbit": "PT Bakrie Pipe Industries",
+      "jenis": "internal",
+      "url": null,
+      "tanggalTerbit": "2016-03-30",
+      "tanggalAkses": "2026-10-20",
+      "dipakaiUntuk": "Pengertian write off, peran setiap pihak, langkah pengajuan sampai berita acara, dan format penomoran surat write off."
     }
   ]
 }

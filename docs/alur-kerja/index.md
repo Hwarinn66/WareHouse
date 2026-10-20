@@ -18,7 +18,7 @@ kata_kunci: [alur warehouse, alur kerja, flowchart, diagram, proses gudang, bara
 ```mermaid
 flowchart TD
   accTitle: Flowchart alur warehouse Gudang Teknik
-  accDescr: Barang masuk dari vendor dicek, diterima, dicatat di database, dilaporkan ke OS/PPIC, lalu disimpan di rak sebagai stok. Barang keluar dimulai dari permintaan divisi lewat ERP, disetujui staff, diambil dari stok, ditaruh di rak reservasi, lalu diserahkan dan dicek oleh karyawan divisi pemesan.
+  accDescr: Barang masuk dari vendor dicek, diterima, dicatat di database, dilaporkan ke OS/PPIC, lalu disimpan di rak sebagai stok. Barang keluar dimulai dari reservasi divisi di ERP yang disetujui Foreman atau Supervisor divisi itu, diproses staff, diambil dari stok, ditaruh di rak reservasi, lalu diserahkan dan dicek oleh karyawan divisi pemesan.
   subgraph MASUK["Barang masuk"]
     direction TB
     M1(["Vendor mengantar barang"]):::vendor --> M2{"Sesuai pesanan?"}:::cek
@@ -34,7 +34,7 @@ flowchart TD
   M8 --> S[("Stok Gudang Teknik")]:::sistem
   subgraph KELUAR["Barang keluar"]
     direction TB
-    K1(["Divisi memesan lewat ERP"]):::divisi --> K2["Staff menyetujui, laporan keluar tercatat di ERP"]:::staff
+    K1(["Divisi membuat reservasi di ERP,<br/>disetujui atasannya"]):::divisi --> K2["Staff memproses reservasi,<br/>laporan keluar tercatat di ERP"]:::staff
     K2 --> K3["Cari dan ambil barang, catat di catatan manual"]:::staff
     K3 --> K4["Taruh di rak reservasi"]:::staff
     K4 --> K5["Serahkan ke karyawan divisi pemesan"]:::staff

@@ -2,10 +2,10 @@
 title: Manajemen Stok
 description: Stock dan non-stock item, fast dan slow moving, critical stock, serta penyebab barang write off.
 status: ditinjau
-dasar: materi presentasi Gudang Teknik (slide 8–10)
-diperbarui: 2026-10-13
+dasar: materi presentasi Gudang Teknik (slide 8–10), Instruksi Kerja Inventory, dan Instruksi Kerja Permintaan Kode Material Baru
+diperbarui: 2026-10-20
 kategori: Gudang Teknik
-sumber: [ppt-gudang-teknik]
+sumber: [ppt-gudang-teknik, ik-gudang-teknik, qp-write-off]
 kata_kunci: [inventory, persediaan, stock item, non-stock item, fast moving, slow moving, cycle counting, critical stock, critical spare part, write off, dead stock, ROP, stok minimum, stok maksimum, FIFO, overstock]
 ---
 
@@ -36,6 +36,8 @@ Material yang **sering dibutuhkan** user. Pemakaiannya diamati dalam periode ter
 - **ROP** (*Reorder Point*): titik saat material harus dipesan kembali.
 
 Cara menghitungnya dijelaskan di tutorial [Menghitung Min, Maks & ROP](/tutorial/min-max-rop).
+
+Angka-angka ini ditentukan saat kode material stock item dibuat, bersama jumlah pesan, lead time, dan lokasi simpannya. Untuk mengajukan material baru sebagai stock item, user harus menyertakan analisa pemakaian 3 tahun ke belakang dan perkiraan pemakaian per bulan. Lihat [SOP Permintaan Kode Material Baru](/sop/kode-material-baru).
 
 ### Non-stock item
 
@@ -77,4 +79,19 @@ Persediaan yang **sudah tidak dipakai lagi**. Penyebabnya antara lain:
    - *Overstock*: terlalu lama disimpan sehingga mutunya turun.
    - Sistem FIFO belum diterapkan dengan benar.
 
-Cara umum menangani barang write off dibahas di [SOP Write Off & Barang Rusak](/sop/dead-stock).
+Secara resmi, **write off** di BPI adalah penghapusbukuan aktiva tetap: catatan aset dihapus dari pembukuan setelah melalui pengajuan, verifikasi data aset, dan berita acara yang disetujui CFO dan CEO. Prosedurnya ada di [SOP Write Off & Barang Rusak](/sop/dead-stock).
+
+## Tugas pengelolaan inventory
+
+Menurut Instruksi Kerja Inventory Gudang Teknik, pengelolaan inventory bertujuan menjaga stok tetap optimal: tidak berlebih dan tidak kurang, biaya penyimpanan efisien, produksi berjalan lancar, dan pesanan user terpenuhi tepat waktu. Cakupannya seluruh siklus barang, dari perencanaan, pengadaan, penyimpanan, sampai pelaporan.
+
+| Tugas | Yang dilakukan |
+|---|---|
+| **Memeriksa barang datang** | Mencocokkan fisik barang dengan PO atau surat jalan, serta memastikan mutu dan jumlahnya sesuai sebelum disimpan. Lihat [SOP Penerimaan Barang](/sop/penerimaan-barang). |
+| **Menata penyimpanan** | Menyimpan barang secara sistematis per kategori agar mudah ditemukan (*put-away*), menerapkan FIFO, dan menjaga suhu serta kelembapan sesuai kebutuhan barang. Lihat [SOP Penyimpanan Barang](/sop/penyimpanan-barang). |
+| **Mencatat keluar-masuk barang** | Mencatat setiap barang masuk dan keluar dengan akurat di sistem WMS. |
+| **Menghitung stok secara berkala** | Menjadwalkan penghitungan fisik dan mencocokkannya dengan sistem, supaya tidak ada barang hilang, rusak, atau selisih catatan (*stock discrepancy*). Lihat [SOP Stock Opname](/sop/stock-opname). |
+| **Mengawasi level stok** | Menjaga persediaan tetap di batas aman, yaitu di atas titik pemesanan ulang (ROP). |
+| **Menyiapkan barang untuk user** | Mempersiapkan barang yang akan diserahkan ke user. Lihat [SOP Pengeluaran Barang](/sop/pengeluaran-barang). |
+
+Barang datang yang tidak sesuai spesifikasi teknis dibuatkan laporan ketidaksesuaian untuk departemen procurement/purchasing, lalu dipisahkan dan diberi tanda.

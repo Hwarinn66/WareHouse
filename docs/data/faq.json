@@ -61,37 +61,43 @@
         {
           "id": "barang-datang-tidak-sesuai",
           "tanya": "Bagaimana kalau barang dari vendor tidak sesuai pesanan?",
-          "jawab": "Barang **dikembalikan ke vendor**. Ini juga berlaku kalau kondisinya buruk atau jumlahnya kurang dari pesanan. Lihat [Alur Barang Masuk](/alur-kerja/barang-masuk).",
+          "jawab": "Barang dipisahkan, diberi tanda **Material Reject**, lalu **dikembalikan ke vendor**. Good Received memberi tahu buyer procurement/purchasing, yang meneruskan klaimnya ke vendor. Ini juga berlaku kalau kondisinya buruk atau jumlahnya kurang dari pesanan. Lihat [SOP Penerimaan Barang](/sop/penerimaan-barang#kalau-material-tidak-sesuai).",
           "status": "terjawab"
         },
         {
           "id": "setelah-barang-diterima",
           "tanya": "Setelah barang diterima, apa saja yang harus dicatat?",
-          "jawab": "Berikan surat tanda terima ke vendor, input data ke database (jumlah, jenis, tipe, tanggal masuk), kirim laporan ke divisi OS/PPIC, lalu simpan barang di rak dan catat di catatan manual rak.",
+          "jawab": "Berikan Surat Tanda Terima Barang (STTB) ke vendor, input STTB ke database (jumlah, jenis, tipe, tanggal masuk), terbitkan Good Received Note (GRN), kirim laporan ke divisi OS/PPIC, lalu simpan barang di rak dan isi kartu stok: tanggal masuk, nomor PO, jumlah, dan saldo akhir.",
           "status": "terjawab"
         },
         {
           "id": "cara-divisi-meminta-barang",
           "tanya": "Bagaimana divisi lain meminta barang ke gudang?",
-          "jawab": "Lewat **ERP perusahaan**. Permintaannya muncul sebagai notifikasi di ERP Warehouse Teknik. Lihat [Alur Barang Keluar](/alur-kerja/barang-keluar).",
+          "jawab": "Lewat **reservasi di ERP/WMS**. User mengecek ketersediaan barang, lalu menginput nomor material, jumlah, dan NIP karyawan yang akan mengambil. Setelah disetujui, reservasi muncul di Material Reservation List Gudang Teknik. Lihat [SOP Pengeluaran Barang](/sop/pengeluaran-barang).",
           "status": "terjawab"
         },
         {
           "id": "siapa-menyetujui-permintaan",
           "tanya": "Siapa yang menyetujui permintaan barang keluar?",
-          "jawab": "Staff Warehouse Teknik menyetujui permintaan di ERP. Setelah disetujui, laporan barang keluar langsung tercatat di ERP.",
+          "jawab": "Reservasi disetujui di sistem, minimal oleh **Foreman atau Supervisor divisi pemesan**. Setelah itu, stock keeper Gudang Teknik memproses reservasinya: memotong stok, menyiapkan barang, dan mencatat laporan barang keluar di ERP.",
           "status": "terjawab"
         },
         {
           "id": "apa-itu-rak-reservasi",
           "tanya": "Apa itu rak reservasi?",
-          "jawab": "Rak khusus untuk barang yang sudah disiapkan untuk divisi pemesan. Barang menunggu di sana sampai karyawan divisi itu datang mengambilnya.",
+          "jawab": "Rak khusus untuk barang yang sudah disiapkan untuk divisi pemesan. Barang menunggu di sana sampai karyawan divisi itu datang mengambilnya, paling lambat **3 hari**. Lewat dari itu, reservasi dianggap batal dan barang dikembalikan ke stok.",
           "status": "terjawab"
         },
         {
           "id": "barang-salah-saat-diambil",
           "tanya": "Bagaimana kalau karyawan bilang barangnya tidak sesuai orderan?",
           "jawab": "Barang dikembalikan dan ditukar dengan barang yang sesuai orderan, lalu diserahkan lagi.",
+          "status": "terjawab"
+        },
+        {
+          "id": "kapan-stock-opname",
+          "tanya": "Kapan stock opname dilakukan?",
+          "jawab": "**Setiap hari, secara bergilir** (*cycle count*). Setiap hari dihitung kategori barang tertentu, terutama barang fast moving, barang bernilai tinggi, dan barang yang baru masuk atau keluar. Hasilnya divalidasi Supervisor atau Kepala Gudang. Lihat [SOP Stock Opname](/sop/stock-opname).",
           "status": "terjawab"
         }
       ]
@@ -103,7 +109,7 @@
         {
           "id": "aplikasi-pencatatan",
           "tanya": "Aplikasi apa yang dipakai untuk mencatat stok?",
-          "jawab": "**ERP perusahaan** dan database barang. Selain itu, setiap rak punya **catatan manual** yang diisi saat barang ditaruh atau diambil.",
+          "jawab": "**ERP/WMS perusahaan**. Selain itu, setiap rak punya **kartu stok** (catatan manual) yang diisi saat barang ditaruh atau diambil.",
           "status": "terjawab"
         },
         {
@@ -116,6 +122,18 @@
           "id": "laporan-os-ppic",
           "tanya": "Kenapa barang masuk dilaporkan ke OS/PPIC?",
           "jawab": "Supaya divisi OS/PPIC tahu barang yang dipesan sudah masuk dan sesuai. PPIC (*Production Planning and Inventory Control*) adalah bagian yang merencanakan produksi dan persediaan.",
+          "status": "terjawab"
+        },
+        {
+          "id": "membaca-nomor-material",
+          "tanya": "Bagaimana cara membaca nomor material seperti SA9A00098?",
+          "jawab": "Nomor material terdiri dari 9 karakter. Huruf pertama adalah material type (`S` = stationary & office supply), tiga karakter pertama adalah group (`SA9`), lima karakter pertama adalah sub group (`SA9A0`), dan empat digit terakhir adalah nomor urut (`0098`). Lihat [Kode Barang](/divisi/kode-barang).",
+          "status": "terjawab"
+        },
+        {
+          "id": "apa-itu-write-off",
+          "tanya": "Apa itu write off?",
+          "jawab": "Penghapusbukuan, yaitu menghapus catatan aktiva tetap (aset yang dibeli lewat CAPEX) dari pembukuan BPI karena barangnya rusak, tidak bisa diperbaiki, atau suku cadangnya sudah tidak ada. Prosesnya lewat surat pengajuan, verifikasi data aset oleh Dept. Accounting, dan berita acara yang disetujui CFO dan CEO. Lihat [SOP Write Off](/sop/dead-stock).",
           "status": "terjawab"
         }
       ]
@@ -135,6 +153,12 @@
           "tanya": "Barang tidak punya label atau kode. Bagaimana?",
           "jawab": "Pisahkan barangnya dan jangan menebak kodenya. Laporkan ke pembimbing supaya barang dikenali dari spesifikasinya lalu diberi label yang benar.",
           "status": "terjawab"
+        },
+        {
+          "id": "barang-belum-punya-kode",
+          "tanya": "Barang yang dibutuhkan belum punya kode di sistem. Bagaimana?",
+          "jawab": "Ajukan kode material baru. Pastikan dulu barangnya memang belum ada di WMS, lalu tentukan apakah akan dijadikan stock item atau non-stock item. Lihat [SOP Permintaan Kode Material Baru](/sop/kode-material-baru).",
+          "status": "terjawab"
         }
       ]
     },
@@ -151,8 +175,8 @@
         {
           "id": "apd-wajib",
           "tanya": "APD apa yang wajib dipakai di area gudang?",
-          "jawab": "",
-          "status": "menunggu-pembimbing"
+          "jawab": "Instruksi kerja penempatan material mencantumkan **safety helmet, kacamata pengaman, safety shoes, sarung tangan, back support, dan masker**, sesuai pekerjaannya. APD mana yang wajib di setiap area tetap tanyakan ke pembimbing. Lihat [K3 di Gudang](/sop/k3-gudang).",
+          "status": "terjawab"
         },
         {
           "id": "jam-kerja",

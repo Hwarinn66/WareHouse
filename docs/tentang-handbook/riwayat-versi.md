@@ -2,7 +2,7 @@
 title: Riwayat Versi
 description: Catatan perubahan handbook dari versi ke versi.
 status: ditinjau
-diperbarui: 2026-10-13
+diperbarui: 2026-10-20
 kategori: Tentang Handbook
 kata_kunci: [versi, riwayat, changelog, perubahan]
 ---
@@ -10,6 +10,18 @@ kata_kunci: [versi, riwayat, changelog, perubahan]
 # Riwayat Versi
 
 <p class="lead">Setiap perubahan penting dicatat di sini. Nomor versi juga tercantum di menu atas dan di <code>package.json</code>.</p>
+
+## v0.3.0 (20 Oktober 2026)
+
+Isi SOP dan materi Gudang Teknik diselaraskan dengan dokumen resmi: Kumpulan Instruksi Kerja & Standard Gudang Teknik dan Prosedur Penghapusbukuan Aktiva Tetap (Write Off) QP-4.3.3.
+
+- **SOP ditulis ulang dari instruksi kerja**: penerimaan (siapa memeriksa apa, STTB, GRN, Material Reject), penyimpanan (penempatan per klasifikasi, FIFO dan FEFO, Gudang B3), pengeluaran (reservasi, persetujuan Foreman/Supervisor, verifikasi NIP, batas 3 hari), dan stock opname harian bergilir.
+- **SOP baru: Permintaan Kode Material Baru** untuk stock item dan non-stock item.
+- **SOP Write Off** mengikuti prosedur QP-4.3.3, lengkap dengan alur, peran, dan format nomor surat.
+- **Kode Barang dan tutorialnya** memakai struktur nomor material resmi 9 karakter (material type, group, sub group, nomor urut) dan format deskripsi material.
+- Langkah flowchart barang masuk dan keluar, Manajemen Stok, Alur Stock Opname, K3 (APD dan Gudang B3), Kamus Istilah, FAQ, dan daftar sumber ikut diperbarui.
+
+Sejak v0.2.1 juga ada perubahan tampilan: tema navy, oranye, dan putih, logo BPI, beranda baru dengan animasi dan parallax, denah gudang, foto alur dan profil perusahaan, serta tampilan yang menyesuaikan monitor lebar.
 
 ## v0.2.1 (13 Oktober 2026)
 

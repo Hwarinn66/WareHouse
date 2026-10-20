@@ -1,6 +1,6 @@
 # Division Handbook — Gudang Teknik, PT Bakrie Pipe Industries
 
-Website dokumentasi statis untuk peserta magang/PKL di Gudang Teknik (Warehouse) PT Bakrie Pipe Industries. Isinya: profil perusahaan (dengan sumber), pengenalan Gudang Teknik, alur kerja, tutorial, SOP draf, FAQ, glosarium, dan referensi.
+Website dokumentasi statis untuk peserta magang/PKL di Gudang Teknik (Warehouse) PT Bakrie Pipe Industries. Isinya: profil perusahaan (dengan sumber), pengenalan Gudang Teknik, alur kerja, tutorial, SOP (diringkas dari instruksi kerja Gudang Teknik), FAQ, glosarium, dan referensi.
 
 > **Status: v0.2.1, sedang ditinjau pembimbing.** Alur barang masuk dan keluar sudah mengikuti alur asli Gudang Teknik. SOP selain penerimaan dan pengeluaran masih berupa panduan umum.
 >
@@ -79,7 +79,7 @@ division-handbook/
 │   ├── divisi/                    ← Pengenalan Gudang Teknik, material, inventory, glosarium
 │   ├── alur-kerja/                ← Barang masuk, barang keluar, stock opname, layout
 │   ├── tutorial/                  ← Tutorial langkah demi langkah
-│   ├── sop/                       ← SOP draf & K3
+│   ├── sop/                       ← SOP, write off, kode material baru & K3
 │   ├── tentang-handbook/          ← Cara memperbarui, verifikasi, checklist, riwayat versi
 │   ├── faq.md, referensi.md
 │   ├── data/                      ← DATA yang bisa diedit (JSON)

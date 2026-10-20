@@ -22,12 +22,12 @@
       {
         "aktor": "vendor",
         "judul": "Barang datang",
-        "teks": "Vendor atau supplier datang mengantarkan barang ke Gudang Teknik."
+        "teks": "Vendor atau supplier datang mengantarkan barang ke Gudang Teknik, disertai surat jalan dan dokumen pendukung seperti PO."
       },
       {
         "aktor": "staff",
         "judul": "Cek kesesuaian pesanan",
-        "teks": "Staff mengecek apakah barang yang datang sesuai dengan yang dipesan.",
+        "teks": "Staff mencocokkan barang yang datang dengan PO dan surat jalan.",
         "cek": {
           "tanya": "Barang sesuai dengan pesanan?",
           "ya": "Lanjut ke langkah 3.",
@@ -47,22 +47,22 @@
       {
         "aktor": "staff",
         "judul": "Cek kondisi dan jumlah",
-        "teks": "Staff mengecek kembali kondisi barang dan jumlahnya.",
+        "teks": "Staff mengecek kondisi, mutu, dan jumlah barang, lalu mengisi form ceklis penerimaan. Material tertentu (plastik, dop, varnish, zinc ingot, cat meni, material coating) diperiksa Inspektor Laboratorium, sedangkan material non-stock item diperiksa user paling lambat 3 hari kerja.",
         "cek": {
           "tanya": "Kondisi baik dan jumlah sesuai pesanan?",
           "ya": "Lanjut ke langkah 6.",
-          "tidak": "Jika kondisi buruk atau jumlahnya kurang, barang dikembalikan ke vendor."
+          "tidak": "Jika kondisi buruk atau jumlahnya kurang, barang dipisahkan dengan tanda Material Reject, lalu dikembalikan ke vendor melalui buyer procurement/purchasing."
         }
       },
       {
         "aktor": "dokumen",
         "judul": "Surat tanda terima",
-        "teks": "Staff mengisi dan menandatangani surat tanda terima, lalu memberikannya ke vendor atau supplier."
+        "teks": "Staff mengisi dan menandatangani Surat Tanda Terima Barang (STTB), lalu memberikannya ke vendor atau supplier."
       },
       {
         "aktor": "sistem",
         "judul": "Input database barang",
-        "teks": "Staff memasukkan data barang ke database: jumlah, jenis barang, tipe barang, dan tanggal masuk."
+        "teks": "Staff menginput STTB ke database: jumlah, jenis barang, tipe barang, dan tanggal masuk. Jika semua sesuai, terbit Good Received Note (GRN)."
       },
       {
         "aktor": "dokumen",
@@ -77,7 +77,7 @@
       {
         "aktor": "dokumen",
         "judul": "Catat di catatan manual rak",
-        "teks": "Staff mencatat barang di catatan manual yang ada di rak tempat barang disimpan."
+        "teks": "Staff mencatat barang di kartu stok (catatan manual) di rak: tanggal masuk, nomor PO, jumlah, dan saldo akhir."
       }
     ]
   },
@@ -86,18 +86,18 @@
     "langkah": [
       {
         "aktor": "divisi",
-        "judul": "Permintaan lewat ERP",
-        "teks": "Divisi lain membuat permintaan (order) barang melalui ERP perusahaan."
+        "judul": "Reservasi lewat ERP",
+        "teks": "Divisi lain membuat reservasi barang di ERP/WMS: nomor material, jumlah, dan NIP karyawan yang akan mengambil. Reservasi disetujui Foreman atau Supervisor divisi tersebut."
       },
       {
         "aktor": "sistem",
-        "judul": "Notifikasi masuk",
-        "teks": "Pemberitahuan permintaan muncul di ERP Warehouse Teknik."
+        "judul": "Reservasi masuk",
+        "teks": "Reservasi yang sudah disetujui muncul di Material Reservation List ERP Warehouse Teknik."
       },
       {
         "aktor": "staff",
-        "judul": "Setujui permintaan",
-        "teks": "Staff menyetujui permintaan di ERP."
+        "judul": "Proses reservasi",
+        "teks": "Staff memproses reservasi di ERP. Jika stok ada, stok langsung dipotong di sistem. Jika stok sudah habis, item tersebut dibatalkan."
       },
       {
         "aktor": "sistem",
@@ -117,17 +117,17 @@
       {
         "aktor": "dokumen",
         "judul": "Catat di catatan manual rak",
-        "teks": "Staff membuat catatan pengeluaran barang di catatan manual yang ada di rak."
+        "teks": "Staff memotong stok di kartu stok (catatan manual) yang ada di rak."
       },
       {
         "aktor": "staff",
         "judul": "Taruh di rak reservasi",
-        "teks": "Barang diletakkan di rak reservasi sampai diambil oleh divisi pemesan."
+        "teks": "Barang diletakkan di rak reservasi sampai diambil oleh divisi pemesan, paling lambat 3 hari. Lewat dari itu, reservasi batal dan barang dikembalikan ke stok."
       },
       {
         "aktor": "divisi",
         "judul": "Karyawan datang mengambil",
-        "teks": "Karyawan dari divisi yang memesan datang ke warehouse untuk mengambil barang."
+        "teks": "Karyawan dari divisi yang memesan datang ke warehouse. Staff mencocokkan NIP di reservasi dengan ID card-nya, dan meminta material bekas atau rusak jika ada."
       },
       {
         "aktor": "staff",

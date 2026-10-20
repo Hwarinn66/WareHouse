@@ -44,6 +44,7 @@
         { "text": "Penyimpanan Barang", "link": "/sop/penyimpanan-barang" },
         { "text": "Pengeluaran Barang", "link": "/sop/pengeluaran-barang" },
         { "text": "Stock Opname", "link": "/sop/stock-opname" },
+        { "text": "Kode Material Baru", "link": "/sop/kode-material-baru" },
         { "text": "Barang Rusak & Write Off", "link": "/sop/dead-stock" },
         { "text": "Keselamatan Kerja (K3)", "link": "/sop/k3-gudang" }
       ]

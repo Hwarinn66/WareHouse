@@ -1,27 +1,26 @@
 ---
 title: Alur Stock Opname
 description: Urutan kerja menghitung stok fisik, membandingkan dengan catatan, dan menangani selisih.
-status: draf
-dasar: praktik umum pergudangan dan materi Gudang Teknik tentang stock opname dan cycle counting
-catatan_status: Jadwal opname, siapa yang menghitung, dan siapa yang menyetujui penyesuaian stok perlu dikonfirmasi.
-diperbarui: 2026-10-13
+status: ditinjau
+dasar: Instruksi Kerja Stock Opname Harian Gudang Teknik dan materi Gudang Teknik tentang cycle counting
+diperbarui: 2026-10-20
 kategori: Alur Kerja
-sumber: [ppt-gudang-teknik]
-kata_kunci: [stock opname, hitung fisik, cycle counting, selisih, penyesuaian stok, adjustment, akurasi stok, cut-off]
+sumber: [ik-gudang-teknik, ppt-gudang-teknik]
+kata_kunci: [stock opname, stock opname harian, stock sheet, stock keeper, hitung fisik, cycle counting, selisih, penyesuaian stok, adjustment, akurasi stok, cut-off]
 ---
 
 # Alur Stock Opname
 
-<p class="lead">Stock opname membandingkan jumlah barang di rak dengan jumlah di catatan. Tujuannya menemukan selisih, mencari penyebabnya, lalu memperbaiki catatan secara sah.</p>
+<p class="lead">Stock opname membandingkan jumlah barang di rak dengan jumlah di catatan. Di Gudang Teknik, stock opname dilakukan setiap hari secara bergilir (<em>cycle count</em>). Tujuannya menemukan selisih, mencari penyebabnya, lalu memperbaiki catatan secara sah.</p>
 
 ## Ringkasan proses
 
 | | |
 | --- | --- |
 | **Tujuan** | Menjaga akurasi stok (stock accuracy) |
-| **Pemicu** | Jadwal opname rutin, cycle counting per kelompok, atau temuan selisih |
-| **Pihak yang terlibat** | Petugas penghitung, pemeriksa, pembimbing atau atasan gudang (penyetuju penyesuaian) |
-| **Input** | Daftar barang dan lokasi dari catatan, alat tulis atau lembar hitung |
+| **Pemicu** | Jadwal harian bergilir per kategori barang, terutama fast moving, barang bernilai tinggi, dan barang yang baru masuk atau keluar |
+| **Pihak yang terlibat** | Stock Keeper (menghitung) dan Supervisor atau Kepala Gudang (memvalidasi) |
+| **Input** | Stock sheet harian atau kartu stok, alat tulis, dan clipboard |
 | **Output** | Lembar hasil hitung, daftar selisih beserta penyebabnya, laporan opname |
 | **SOP terkait** | [Stock Opname](/sop/stock-opname) |
 
@@ -29,9 +28,9 @@ kata_kunci: [stock opname, hitung fisik, cycle counting, selisih, penyesuaian st
 
 ```mermaid
 flowchart TD
-  accTitle: Alur stock opname (draf)
-  accDescr: Tentukan cakupan, siapkan daftar, hentikan transaksi sementara, hitung fisik, lalu bandingkan dengan catatan. Selisih dihitung ulang, ditelusuri, dilaporkan, dan baru disesuaikan setelah disetujui.
-  A([Tentukan jadwal & cakupan]) --> B[Siapkan daftar barang<br/>per lokasi]
+  accTitle: Alur stock opname harian
+  accDescr: Siapkan stock sheet kategori hari ini, hentikan transaksi sementara, hitung fisik, lalu bandingkan dengan catatan. Selisih dihitung ulang, ditelusuri, dilaporkan, dan baru disesuaikan setelah disetujui.
+  A([Kategori barang hari ini]) --> B[Siapkan stock sheet<br/>atau kartu stok]
   B --> C[Hentikan sementara transaksi<br/>di area yang dihitung]
   C --> D[Hitung fisik per lokasi,<br/>tulis di lembar hitung]
   D --> E[Bandingkan dengan catatan]
@@ -42,7 +41,7 @@ flowchart TD
   H -- Tidak --> K
   H -- Ya --> I[Telusuri penyebab: transaksi belum<br/>dicatat, salah lokasi, salah satuan]
   I --> J[Laporkan selisih & penyebabnya]
-  J --> L{Penyesuaian<br/>disetujui?}
+  J --> L{Divalidasi Supervisor/<br/>Kepala Gudang?}
   L -- Ya --> M[(Sesuaikan catatan stok)]
   L -- Tidak --> I
   K --> N[Susun laporan opname]
@@ -52,14 +51,14 @@ flowchart TD
 
 ## Langkah tertulis
 
-1. **Tentukan jadwal dan cakupan.** Bisa seluruh gudang, atau sebagian secara bergiliran (*cycle counting*).
-2. **Siapkan daftar barang per lokasi** dari catatan.
+1. **Lihat jadwal hari ini.** Setiap hari, kategori barang yang berbeda dihitung secara bergiliran (*cycle count*), dengan fokus pada barang fast moving, barang bernilai tinggi, dan barang yang baru masuk atau keluar.
+2. **Siapkan stock sheet harian atau kartu stok** untuk kategori tersebut.
 3. **Hentikan sementara transaksi** di area yang dihitung. Jika tidak memungkinkan, catat waktu batasnya (*cut-off*) agar transaksi setelahnya tidak tercampur.
 4. **Hitung fisik per lokasi.** Tulis hasilnya apa adanya, termasuk barang rusak dan barang tanpa label.
 5. **Bandingkan** hasil hitung dengan catatan.
 6. **Jika ada selisih, hitung ulang** sebaiknya oleh orang lain.
 7. **Telusuri penyebab** selisih yang tetap ada: transaksi yang belum dicatat, barang di lokasi lain, salah satuan, atau salah kode.
-8. **Laporkan** selisih dan penyebabnya. Catatan stok hanya disesuaikan setelah disetujui pihak berwenang.
+8. **Laporkan** selisih dan penyebabnya ke Supervisor atau Kepala Gudang. Catatan stok hanya disesuaikan setelah hasilnya divalidasi.
 9. **Susun laporan opname**, termasuk temuan lain seperti barang rusak, label hilang, atau calon barang write off.
 
 ## Potensi kesalahan
