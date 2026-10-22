@@ -40,6 +40,13 @@ function keluar() {
   background: var(--bpi-oranye);
   color: var(--bpi-putih);
 }
+/* Di HP, tombol di header disembunyikan agar header tidak melebar keluar layar.
+   Tombol Keluar tetap ada di dalam menu ☰ (versi "layar" di bawah). */
+@media (max-width: 767px) {
+  .keluar:not(.layar) {
+    display: none;
+  }
+}
 /* Versi di menu layar kecil (latar putih) */
 .keluar.layar {
   margin: 24px 0 0;

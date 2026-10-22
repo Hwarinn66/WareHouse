@@ -180,8 +180,16 @@ const nn = (i: number) => String(i + 1).padStart(2, '0')
 }
 .cabang {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 8px;
   margin-top: 8px;
+}
+/* Kata panjang tanpa spasi (mis. "procurement/purchasing") boleh dipatahkan agar tidak melebar di HP kecil */
+.ya span,
+.tidak span,
+.tidak > div {
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 .ya,
 .tidak {

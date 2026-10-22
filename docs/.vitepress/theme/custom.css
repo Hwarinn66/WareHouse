@@ -158,9 +158,10 @@ html.belum-masuk body {
   --vp-c-bg-soft: rgba(255, 255, 255, 0.1);
 }
 
-/* Kotak menu turun di header tetap putih */
+/* Kotak menu turun di header dan menu layar penuh di HP (☰) tetap putih dengan teks navy */
 .VPNav .VPMenu,
-.VPNav .VPFlyout .menu {
+.VPNav .VPFlyout .menu,
+.VPNav .VPNavScreen {
   --vp-c-text-1: #1a2540;
   --vp-c-text-2: #4b5568;
   --vp-c-brand-1: var(--bpi-navy);
@@ -192,6 +193,23 @@ html.belum-masuk body {
 .VPNavBarTitle .logo {
   height: 34px;
   margin-right: 10px;
+}
+
+/* HP: judul dibuat dua baris kecil ("Handbook" / "Gudang Teknik") agar header
+   tidak lebih lebar dari layar, tanpa ada tulisan yang terpotong. */
+@media (max-width: 480px) {
+  .VPNavBarTitle .title {
+    font-size: 0.92rem;
+    line-height: 1.15;
+  }
+  .VPNavBarTitle .title span {
+    white-space: normal;
+    max-width: 7.6em;
+  }
+  .VPNavBarTitle .logo {
+    height: 30px;
+    margin-right: 8px;
+  }
 }
 
 /* Sidebar navy terang agar terpisah dari latar putih halaman.
