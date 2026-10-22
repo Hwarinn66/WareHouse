@@ -3,7 +3,7 @@ title: Yang Perlu Dikonfirmasi
 description: Daftar pertanyaan dan dokumen yang perlu diminta dari pembimbing magang.
 status: ditinjau
 dasar: hasil penyusunan handbook versi awal
-diperbarui: 2026-10-20
+diperbarui: 2026-10-22
 kategori: Tentang Handbook
 kata_kunci: [verifikasi, pertanyaan untuk pembimbing, data yang kurang, belum lengkap, to do]
 ---
@@ -25,7 +25,6 @@ kata_kunci: [verifikasi, pertanyaan untuk pembimbing, data yang kurang, belum le
 ## Tentang Gudang Teknik
 
 - [x] **Denah layout gudang.** Terjawab: denah Blok A lantai 2 dan Blok B lantai 1 (lihat [Layout Gudang](/alur-kerja/layout-gudang)).
-- [ ] **Format Surat Tanda Terima Barang (STTB)** (boleh contoh kosong tanpa data asli).
 - [ ] **Bagian ERP** yang boleh diakses peserta magang.
 - [x] **Aturan pengodean barang** resmi. Terjawab: nomor material 9 karakter sesuai standar cataloguing (lihat [Kode Barang](/divisi/kode-barang)).
 - [ ] **Parameter stok**: rumus atau cara gudang menetapkan stok minimum, maksimum, ROP, dan safety stock. Instruksi kerja hanya menyebut bahwa level stok ditentukan saat kode stock item dibuat.
@@ -49,6 +48,7 @@ kata_kunci: [verifikasi, pertanyaan untuk pembimbing, data yang kurang, belum le
 
 ## Tentang magang dan publikasi
 
+- [ ] **Jam dan tempat meeting hari Rabu dan kerja bakti hari Kamis**, serta kegiatan rutin lain jika ada. Isi di `docs/data/kegiatan.json`.
 - [ ] **Aturan jam kerja, absensi, dan izin** peserta magang.
 - [ ] **Izin penggunaan logo dan warna** perusahaan di website, termasuk file logo resmi dan kode warnanya.
 - [x] **Izin publikasi**: apakah website boleh diakses publik, hanya jaringan internal, atau hanya dijalankan lokal.

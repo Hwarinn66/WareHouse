@@ -67,7 +67,7 @@
         {
           "id": "setelah-barang-diterima",
           "tanya": "Setelah barang diterima, apa saja yang harus dicatat?",
-          "jawab": "Berikan Surat Tanda Terima Barang (STTB) ke vendor, input STTB ke database (jumlah, jenis, tipe, tanggal masuk), terbitkan Good Received Note (GRN), lalu simpan barang di rak dan isi kartu stok: tanggal masuk, nomor PO, jumlah, dan saldo akhir.",
+          "jawab": "Terbitkan Good Received Note (GRN), input data penerimaan ke database (jumlah, jenis, tipe, tanggal masuk), lalu simpan barang di rak dan isi kartu stok: tanggal masuk, nomor PO, jumlah, dan saldo akhir. STTB sudah tidak dipakai lagi.",
           "status": "terjawab"
         },
         {
@@ -160,6 +160,12 @@
       "id": "etika",
       "nama": "Sikap kerja",
       "pertanyaan": [
+        {
+          "id": "kegiatan-rutin",
+          "tanya": "Apakah ada kegiatan rutin setiap minggu?",
+          "jawab": "Ada. **Meeting mingguan setiap Rabu** dan **kerja bakti setiap Kamis**. Selain itu ada stock opname harian secara bergilir. Lihat jadwal dan persiapannya di [Kegiatan Rutin](/mulai/kegiatan).",
+          "status": "terjawab"
+        },
         {
           "id": "bertanya-ke-siapa",
           "tanya": "Kalau ragu, saya bertanya ke siapa?",

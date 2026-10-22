@@ -2,7 +2,7 @@
 title: Panduan Magang Baru
 description: Apa yang perlu dibaca dan disiapkan di minggu pertama magang di Gudang Teknik.
 status: ditinjau
-diperbarui: 2026-10-13
+diperbarui: 2026-10-22
 kategori: Mulai
 kata_kunci: [peserta baru, minggu pertama, orientasi, alur belajar, onboarding, magang, PKL]
 ---
@@ -27,7 +27,8 @@ kata_kunci: [peserta baru, minggu pertama, orientasi, alur belajar, onboarding, 
 - [ ] Sudah membaca [Keselamatan Kerja (K3)](/sop/k3-gudang) dan memakai APD yang diminta pembimbing.
 - [ ] Tahu area mana yang boleh dan tidak boleh dimasuki peserta magang.
 - [ ] Tahu cara membuka ERP Warehouse Teknik, atau siapa yang membukanya.
-- [ ] Tahu letak rak reservasi dan catatan manual di rak.
+- [ ] Tahu letak rak reservasi dan kartu stok di rak.
+- [ ] Tahu jadwal [kegiatan rutin](/mulai/kegiatan): meeting setiap Rabu dan kerja bakti setiap Kamis.
 
 ::: tip Kalau ragu, tanya dulu
 Jangan mengambil, memindahkan, atau mengubah catatan barang tanpa arahan. Satu kesalahan catat bisa membuat stok di ERP dan di rak tidak cocok.

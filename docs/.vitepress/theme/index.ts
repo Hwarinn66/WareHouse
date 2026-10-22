@@ -25,6 +25,7 @@ import LangkahAlur from './components/LangkahAlur.vue'
 import LegendaAlur from './components/LegendaAlur.vue'
 import DaftarKartu from './components/DaftarKartu.vue'
 import DaftarFotoAlur from './components/DaftarFotoAlur.vue'
+import JadwalMingguan from './components/JadwalMingguan.vue'
 
 export default {
   extends: DefaultTheme,
@@ -44,5 +45,6 @@ export default {
     app.component('LegendaAlur', LegendaAlur)
     app.component('DaftarKartu', DaftarKartu)
     app.component('DaftarFotoAlur', DaftarFotoAlur)
+    app.component('JadwalMingguan', JadwalMingguan)
   }
 } satisfies Theme

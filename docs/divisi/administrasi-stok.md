@@ -6,7 +6,7 @@ dasar: materi presentasi Gudang Teknik dan catatan alur proses
 diperbarui: 2026-10-13
 kategori: Gudang Teknik
 sumber: [ppt-gudang-teknik, catatan-alur]
-kata_kunci: [administrasi, pencatatan stok, kontrol stok, master material, database, ERP, catatan manual rak, kartu stok, STTB, GRN, reservasi, stock opname, laporan stok, mutasi, saldo, akurasi stok, selisih]
+kata_kunci: [administrasi, pencatatan stok, kontrol stok, master material, database, ERP, catatan manual rak, kartu stok, GRN, reservasi, stock opname, laporan stok, mutasi, saldo, akurasi stok, selisih]
 ---
 
 # Pencatatan Stok
@@ -17,7 +17,7 @@ kata_kunci: [administrasi, pencatatan stok, kontrol stok, master material, datab
 
 | Catatan | Isinya | Kapan diisi |
 | --- | --- | --- |
-| **Database barang (ERP/WMS)** | Data STTB: jumlah, jenis barang, tipe barang, tanggal masuk, dan lokasi rak | Saat barang masuk sudah diterima |
+| **Database barang (ERP/WMS)** | Data penerimaan: jumlah, jenis barang, tipe barang, tanggal masuk, dan lokasi rak | Setelah GRN terbit |
 | **GRN** | Laporan penerimaan material: jumlah diterima, diterima sesuai, ditolak, dan mutunya | Setelah material dinyatakan sesuai |
 | **Reservasi di ERP/WMS** | Permintaan dari divisi lain dan pengeluaran barang | Saat reservasi diproses dan stok dipotong |
 | **Kartu stok di rak** | Barang yang ditaruh atau diambil dari rak itu, beserta saldo akhirnya | Setiap kali barang ditaruh atau diambil |

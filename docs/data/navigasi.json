@@ -12,6 +12,7 @@
       "items": [
         { "text": "Beranda", "link": "/" },
         { "text": "Panduan Magang Baru", "link": "/mulai/" },
+        { "text": "Kegiatan Rutin", "link": "/mulai/kegiatan" },
         { "text": "Profil Perusahaan", "link": "/perusahaan/" }
       ]
     },

@@ -1,16 +1,16 @@
 ---
 title: SOP Penerimaan Barang
-description: Langkah menerima material dari vendor, mulai dari cek dokumen dan inspeksi, STTB dan GRN, sampai barang tersimpan dan tercatat.
+description: Langkah menerima material dari vendor, mulai dari cek dokumen dan inspeksi, penerbitan GRN, sampai barang tersimpan dan tercatat.
 status: ditinjau
 dasar: Instruksi Kerja Penerimaan Material Gudang Teknik dan alur barang masuk Gudang Teknik
 nomor_dokumen: null
 versi: 0.3
 pemilik: Gudang Teknik
 pengesah: null
-diperbarui: 2026-10-20
+diperbarui: 2026-10-22
 kategori: SOP
 sumber: [ik-gudang-teknik, ppt-gudang-teknik, catatan-alur]
-kata_kunci: [SOP, penerimaan barang, receiving, barang masuk, vendor, good received, surat jalan, PO, purchase order, STTB, surat tanda terima, GRN, good received note, inspektor laboratorium, material reject, CAR, non stock item, klaim, kartu stok]
+kata_kunci: [SOP, penerimaan barang, receiving, barang masuk, vendor, good received, surat jalan, PO, purchase order, GRN, good received note, inspektor laboratorium, material reject, CAR, non stock item, klaim, kartu stok]
 ---
 
 # SOP Penerimaan Barang
@@ -60,11 +60,14 @@ Material part yang perlu dicek dimensi dan kekerasannya, misalnya U-ring seal at
    - Material kelompok laboratorium diteruskan ke Inspektor Laboratorium.
    - Material non-stock item diteruskan ke user, yang lalu melengkapi administrasi pengebonan barang sementara.
 5. **Pastikan material memenuhi syarat** visual, spesifikasi, mutu, dan jumlah. Kalau tidak, ikuti bagian [Kalau material tidak sesuai](#kalau-material-tidak-sesuai).
-6. **Berikan Surat Tanda Terima Barang (STTB)** yang sudah ditandatangani kepada vendor.
-7. **Input STTB ke database** sesuai alur sistem penerimaan barang dari tim IT: jumlah, jenis barang, tipe barang, dan tanggal masuk.
-8. **Terbitkan Good Received Note (GRN)**, yaitu laporan penerimaan material.
-9. **Simpan barang** di lokasi yang tercatat di database, sesuai [SOP Penyimpanan Barang](./penyimpanan-barang).
-10. **Catat di kartu stok** di rak tempat barang disimpan.
+6. **Terbitkan Good Received Note (GRN)**, yaitu laporan penerimaan material yang ditujukan kepada vendor. Lihat [contohnya](#contoh-grn).
+7. **Input data penerimaan ke database** sesuai alur sistem penerimaan barang dari tim IT: jumlah, jenis barang, tipe barang, dan tanggal masuk.
+8. **Simpan barang** di lokasi yang tercatat di database, sesuai [SOP Penyimpanan Barang](./penyimpanan-barang).
+9. **Catat di kartu stok** di rak tempat barang disimpan.
+
+::: info STTB tidak dipakai lagi
+Dulu penerimaan barang memakai Surat Tanda Terima Barang (STTB). Sekarang STTB sudah tidak digunakan, dan bukti penerimaan barang memakai **GRN**.
+:::
 
 Nomor langkah di atas sama dengan nomor kotak di flowchart [Alur Barang Masuk](/alur-kerja/barang-masuk).
 
@@ -105,8 +108,8 @@ Kalau ragu apakah barang sesuai, jangan memutuskan sendiri. Tanyakan ke Good Rec
 - [ ] Surat jalan dan PO sudah dicek.
 - [ ] Barang sesuai pesanan, kondisinya baik, dan jumlahnya lengkap.
 - [ ] Material sudah diperiksa oleh pihak yang tepat (penerimaan, laboratorium, atau user).
-- [ ] STTB sudah diberikan ke vendor dan diinput ke database.
 - [ ] GRN sudah terbit.
+- [ ] Data penerimaan sudah diinput ke database.
 - [ ] Barang ada di rak yang benar dan kartu stok sudah diisi.
 - [ ] Barang yang tidak sesuai sudah dipisahkan dan diberi tanda Material Reject.
 

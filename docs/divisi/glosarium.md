@@ -40,8 +40,8 @@ Bagian pembelian yang memesan barang ke vendor. Ketidaksesuaian barang dan klaim
 ### NIP
 Nomor Induk Pegawai. Saat barang diambil, NIP di reservasi dicocokkan dengan ID card karyawan yang mengambil.
 
-### Surat tanda terima (STTB)
-Surat Tanda Terima Barang. Ditandatangani staff gudang dan diberikan ke vendor sebagai bukti barang sudah diterima dalam kondisi dan jumlah yang sesuai, lalu diinput ke database.
+### STTB (Surat Tanda Terima Barang)
+Bukti penerimaan barang yang dulu dipakai Gudang Teknik. Sekarang **sudah tidak digunakan** dan digantikan oleh GRN.
 
 ### Rak reservasi
 Rak khusus tempat barang yang sudah disiapkan untuk divisi pemesan, sampai karyawan divisi itu datang mengambilnya.
@@ -135,7 +135,7 @@ Dokumen pesanan pembelian dari perusahaan ke vendor. Barang yang datang dicocokk
 Permintaan pembelian dari dalam perusahaan, yang menjadi dasar dibuatnya PO.
 
 ### GRN (Good Received Note)
-Laporan penerimaan material. Diterbitkan setelah material dinyatakan sesuai secara visual, spesifikasi, mutu, dan jumlah.
+Laporan penerimaan material yang ditujukan kepada vendor, sekaligus bukti bahwa barang sudah diterima. Diterbitkan setelah material dinyatakan sesuai secara visual, spesifikasi, mutu, dan jumlah. GRN menggantikan STTB.
 
 ### Material Reject
 Tanda untuk material yang tidak sesuai saat diterima. Material ini dipisahkan dan diklaim ke vendor.

@@ -36,7 +36,7 @@
       "hitung": true
     },
     {
-      "nilai": 21,
+      "nilai": 20,
       "label": "Langkah alur barang masuk dan keluar, lengkap dengan foto",
       "hitung": true
     },
@@ -93,7 +93,7 @@
     },
     {
       "judul": "Dicek dan dicatat",
-      "ket": "Diperiksa di area inspeksi, lalu dibuatkan STTB dan GRN.",
+      "ket": "Diperiksa di area inspeksi, lalu diterbitkan GRN.",
       "ikon": "opname",
       "link": "/alur-kerja/barang-masuk"
     },

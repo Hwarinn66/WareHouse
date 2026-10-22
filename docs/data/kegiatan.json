@@ -1,0 +1,65 @@
+{
+  "_catatan": [
+    "Kegiatan rutin Gudang Teknik, ditampilkan sebagai linimasa satu minggu oleh komponen <JadwalMingguan /> di halaman Kegiatan Rutin.",
+    "hariKerja: urutan hari yang tampil di linimasa.",
+    "hari: senin | selasa | rabu | kamis | jumat | sabtu | minggu | setiap-hari.",
+    "jam dan tempat: isi teks (misalnya \"09.00–10.00\" atau \"Kantor gudang B.07\"). Biarkan null jika belum tahu; yang tampil adalah \"tanyakan ke pembimbing\".",
+    "ikon memakai nama dari komponen Ikon.vue, misalnya rapat, sapu, opname, kalender.",
+    "foto: jumlah slot foto di kartu kegiatan. File ditaruh di docs/public/images/kegiatan/ dengan nama <id>-<nomor>.jpg, misalnya meeting-rabu-1.jpg. Format .jpg, .jpeg, .png, atau .webp."
+  ],
+  "hariKerja": [
+    "senin",
+    "selasa",
+    "rabu",
+    "kamis",
+    "jumat"
+  ],
+  "kegiatan": [
+    {
+      "id": "meeting-rabu",
+      "hari": "rabu",
+      "judul": "Meeting mingguan",
+      "ikon": "rapat",
+      "ket": "Pertemuan rutin tim Gudang Teknik setiap hari Rabu untuk membahas pekerjaan dan kendala selama seminggu.",
+      "jam": null,
+      "tempat": null,
+      "foto": 3,
+      "persiapan": [
+        "Catatan singkat pekerjaan yang sudah kamu lakukan minggu ini.",
+        "Kendala atau pertanyaan yang belum terjawab.",
+        "Alat tulis untuk mencatat arahan dan tugas berikutnya."
+      ]
+    },
+    {
+      "id": "kerja-bakti-kamis",
+      "hari": "kamis",
+      "judul": "Kerja bakti",
+      "ikon": "sapu",
+      "ket": "Membersihkan dan merapikan area gudang bersama-sama setiap hari Kamis, sesuai moto Gudang Teknik: a place for everything and everything in its place.",
+      "jam": null,
+      "tempat": null,
+      "foto": 3,
+      "persiapan": [
+        "Pakai APD sesuai arahan, terutama sarung tangan dan safety shoes.",
+        "Rapikan barang kembali ke lokasi yang tercatat, jangan dipindah ke rak lain.",
+        "Bersihkan jalur jalan, jalur forklift, dan area di depan APAR serta pintu darurat.",
+        "Laporkan barang rusak, label hilang, atau rak yang miring kepada pembimbing."
+      ]
+    },
+    {
+      "id": "stock-opname-harian",
+      "hari": "setiap-hari",
+      "judul": "Stock opname harian",
+      "ikon": "opname",
+      "ket": "Menghitung sebagian stok secara bergilir (cycle count), terutama barang fast moving, barang bernilai tinggi, dan barang yang baru masuk atau keluar.",
+      "jam": null,
+      "tempat": null,
+      "foto": 2,
+      "tautan": "/sop/stock-opname",
+      "persiapan": [
+        "Stock sheet harian atau kartu stok kategori hari itu.",
+        "Pulpen, pensil, dan clipboard."
+      ]
+    }
+  ]
+}

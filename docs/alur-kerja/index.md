@@ -3,7 +3,7 @@ title: Alur Warehouse
 description: Gambaran besar alur kerja Gudang Teknik, dari barang datang sampai barang diambil divisi pemesan.
 status: ditinjau
 dasar: Kumpulan Instruksi Kerja Gudang Teknik, dilengkapi diagram presentasi Gudang Teknik dan catatan alur proses
-diperbarui: 2026-10-20
+diperbarui: 2026-10-22
 kategori: Alur Kerja
 sumber: [ik-gudang-teknik, ppt-gudang-teknik, catatan-alur]
 kata_kunci: [alur warehouse, alur kerja, flowchart, diagram, proses gudang, barang masuk, barang keluar, ERP, rak reservasi]
@@ -18,7 +18,7 @@ kata_kunci: [alur warehouse, alur kerja, flowchart, diagram, proses gudang, bara
 ```mermaid
 flowchart TD
   accTitle: Flowchart alur warehouse Gudang Teknik
-  accDescr: Barang masuk datang dengan surat jalan dan PO, dicek dokumen dan pesanannya, diperiksa di area inspeksi oleh gudang, laboratorium, atau user, lalu dibuatkan STTB, diinput ke database, diterbitkan GRN, dan disimpan sesuai klasifikasi serta dicatat di kartu stok. Barang keluar dimulai dari reservasi divisi di ERP/WMS yang disetujui Foreman atau Supervisor divisi itu, lalu stock keeper memotong stok, mencetak reservasi, menyiapkan barang di rak reservasi, mencocokkan NIP pengambil, dan menyerahkan barang.
+  accDescr: Barang masuk datang dengan surat jalan dan PO, dicek dokumen dan pesanannya, diperiksa di area inspeksi oleh gudang, laboratorium, atau user, lalu diterbitkan GRN, diinput ke database, dan disimpan sesuai klasifikasi serta dicatat di kartu stok. Barang keluar dimulai dari reservasi divisi di ERP/WMS yang disetujui Foreman atau Supervisor divisi itu, lalu stock keeper memotong stok, mencetak reservasi, menyiapkan barang di rak reservasi, mencocokkan NIP pengambil, dan menyerahkan barang.
   subgraph MASUK["Barang masuk"]
     direction TB
     M1(["Vendor mengantar barang<br/>dengan surat jalan dan PO"]):::vendor --> M2{"Dokumen dan<br/>pesanan sesuai?"}:::cek
@@ -26,8 +26,8 @@ flowchart TD
     M2 -- Ya --> M3["Pemeriksaan di area inspeksi<br/>(gudang, laboratorium, atau user)"]:::staff
     M3 --> M4{"Memenuhi syarat?"}:::cek
     M4 -- Tidak --> MR
-    M4 -- Ya --> M5[/"STTB ke vendor,<br/>input ke database"/]:::dokumen
-    M5 --> M6[/"GRN terbit"/]:::dokumen
+    M4 -- Ya --> M5[/"GRN terbit"/]:::dokumen
+    M5 --> M6[("Input ke database")]:::sistem
     M6 --> M7["Simpan sesuai klasifikasi,<br/>catat di kartu stok"]:::staff
   end
   M7 --> S[("Stok Gudang Teknik")]:::sistem
@@ -62,6 +62,6 @@ flowchart TD
 
 Setiap barang yang bergerak meninggalkan jejak di tiga tempat. Ketiganya harus selalu cocok.
 
-1. **Sistem ERP/WMS.** Barang masuk diinput lewat STTB, dan stok barang keluar dipotong di sistem saat reservasi diproses.
+1. **Sistem ERP/WMS.** Data barang masuk diinput setelah GRN terbit, dan stok barang keluar dipotong di sistem saat reservasi diproses.
 2. **Kartu stok di rak.** Setiap barang yang ditaruh atau diambil dari rak dicatat di kartu stok (catatan manual) di rak itu, lengkap dengan saldo akhirnya.
-3. **Dokumen.** Barang masuk punya STTB dan GRN, sedangkan barang keluar punya reservasi yang dicetak.
+3. **Dokumen.** Barang masuk punya GRN, sedangkan barang keluar punya reservasi yang dicetak.

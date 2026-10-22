@@ -1,15 +1,19 @@
 <script setup lang="ts">
-// Tempat foto untuk satu kotak flowchart.
-// Jika file docs/public/images/alur/<kunci>.jpg (atau .jpeg/.png/.webp) ada, fotonya tampil.
+// Tempat foto untuk satu kotak flowchart atau kartu kegiatan.
+// Jika file docs/public/images/<folder>/<kunci>.jpg (atau .jpeg/.png/.webp) ada, fotonya tampil.
 // Jika belum ada, yang tampil adalah placeholder berisi nama file yang diharapkan.
+// folder: 'alur' (bawaan) untuk flowchart, 'kegiatan' untuk halaman Kegiatan Rutin.
 import { computed } from 'vue'
 import { withBase } from 'vitepress'
 import { data as fotoAlur } from '../fotoAlur.data'
+import { data as fotoKegiatan } from '../fotoKegiatan.data'
 
-const props = defineProps<{ kunci: string; alt: string; kecil?: boolean }>()
+const props = defineProps<{ kunci: string; alt: string; kecil?: boolean; folder?: 'alur' | 'kegiatan' }>()
 
-const file = computed(() => fotoAlur[props.kunci.toLowerCase()] ?? null)
-const src = computed(() => (file.value ? withBase(`/images/alur/${file.value}`) : null))
+const folder = computed(() => props.folder ?? 'alur')
+const peta = computed(() => (folder.value === 'kegiatan' ? fotoKegiatan : fotoAlur))
+const file = computed(() => peta.value[props.kunci.toLowerCase()] ?? null)
+const src = computed(() => (file.value ? withBase(`/images/${folder.value}/${file.value}`) : null))
 </script>
 
 <template>
@@ -70,6 +74,10 @@ const src = computed(() => (file.value ? withBase(`/images/alur/${file.value}`) 
   border-radius: inherit;
   color: var(--vp-c-text-3);
   text-align: center;
+}
+/* Ikon kamera tidak ikut mengecil walau nama file panjang */
+.kosong svg {
+  flex: none;
 }
 .teks {
   font-size: 0.85rem;

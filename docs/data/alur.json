@@ -56,18 +56,13 @@
       },
       {
         "aktor": "dokumen",
-        "judul": "Surat Tanda Terima Barang",
-        "teks": "Good Received mengisi dan menandatangani Surat Tanda Terima Barang (STTB), lalu memberikannya ke vendor atau supplier."
+        "judul": "Terbitkan GRN",
+        "teks": "Good Received menerbitkan Good Received Note (GRN), yaitu laporan penerimaan material yang ditujukan kepada vendor. GRN diterbitkan karena material sudah memenuhi syarat, dan mencatat jumlah yang diterima, diterima sesuai, dan ditolak."
       },
       {
         "aktor": "sistem",
-        "judul": "Input STTB ke database",
-        "teks": "STTB diinput ke database sesuai alur sistem penerimaan barang dari tim IT: jumlah, jenis barang, tipe barang, dan tanggal masuk."
-      },
-      {
-        "aktor": "dokumen",
-        "judul": "Terbitkan GRN",
-        "teks": "Good Received Note (GRN), yaitu laporan penerimaan material, diterbitkan karena material sudah memenuhi syarat."
+        "judul": "Input ke database",
+        "teks": "Data penerimaan diinput ke database sesuai alur sistem penerimaan barang dari tim IT: jumlah, jenis barang, tipe barang, dan tanggal masuk."
       },
       {
         "aktor": "staff",

@@ -86,6 +86,30 @@ Kata sandi minimal 8 karakter. Setelah akun diubah, jalankan ulang `npm run dev`
 Website tetap statis. File di dalamnya, termasuk gambar, foto, dan file JavaScript, masih bisa dibuka langsung oleh orang yang tahu alamatnya, dan login bisa dilewati oleh orang yang paham teknis. Jangan menaruh data yang benar-benar rahasia di website ini.
 :::
 
+## Mengubah jadwal kegiatan rutin
+
+Jadwal di halaman [Kegiatan Rutin](/mulai/kegiatan) tampil sebagai linimasa Senin sampai Jumat, diambil dari `docs/data/kegiatan.json`. Urutan hari diatur lewat `hariKerja`. Setiap kegiatan berisi:
+
+| Isian | Contoh |
+|---|---|
+| `hari` | `rabu`, `kamis`, atau `setiap-hari` |
+| `judul` | `Meeting mingguan` |
+| `jam` | `"09.00–10.00"`, atau `null` jika belum tahu |
+| `tempat` | `"Kantor gudang B.07"`, atau `null` jika belum tahu |
+| `persiapan` | Daftar hal yang perlu disiapkan peserta |
+
+Untuk menambah kegiatan baru, salin satu blok kegiatan, beri `id` yang unik, lalu ubah isinya.
+
+**Foto kegiatan.** Setiap kartu kegiatan punya slot foto. Jumlahnya diatur lewat isian `foto`. Taruh fotonya di `docs/public/images/kegiatan/` dengan nama `<id>-<nomor>.jpg`:
+
+| Kegiatan | Nama file |
+|---|---|
+| Meeting mingguan | `meeting-rabu-1.jpg` sampai `meeting-rabu-3.jpg` |
+| Kerja bakti | `kerja-bakti-kamis-1.jpg` sampai `kerja-bakti-kamis-3.jpg` |
+| Stock opname harian | `stock-opname-harian-1.jpg` dan `stock-opname-harian-2.jpg` |
+
+Format `.jpg`, `.jpeg`, `.png`, atau `.webp` bisa dipakai. Selama fotonya belum ada, yang tampil adalah kotak "Foto belum ada" beserta nama file yang diharapkan.
+
 ## Memperbarui profil perusahaan
 
 1. Tambahkan sumbernya di `docs/data/sumber.json`, lengkap dengan `id`, `judul`, `penerbit`, `url`, `tanggalTerbit`, dan `tanggalAkses`.

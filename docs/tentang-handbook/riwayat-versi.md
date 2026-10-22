@@ -11,6 +11,16 @@ kata_kunci: [versi, riwayat, changelog, perubahan]
 
 <p class="lead">Setiap perubahan penting dicatat di sini. Nomor versi juga tercantum di menu atas dan di <code>package.json</code>.</p>
 
+## v0.4.1 (22 Oktober 2026)
+
+- **STTB tidak dipakai lagi.** Langkah "STTB diberikan ke vendor" dihapus dari alur barang masuk, lalu urutannya menjadi GRN terbit (langkah 6) dan input ke database (langkah 7). Alur barang masuk sekarang 9 langkah. Foto flowchart ikut digeser ke nomor barunya.
+- SOP Penerimaan Barang, flowchart Alur Warehouse, Kamus Istilah, Pencatatan Stok, FAQ, dan beranda ikut disesuaikan.
+
+- **Halaman baru: Kegiatan Rutin** di menu Mulai. Isinya linimasa satu minggu kerja (Senin sampai Jumat) dengan penanda "Hari ini": meeting setiap Rabu, kerja bakti setiap Kamis, dan stock opname harian, lengkap dengan hal yang perlu disiapkan.
+- Jadwal diatur lewat `docs/data/kegiatan.json`. Jam dan tempat masih menunggu konfirmasi pembimbing.
+- Setiap kartu kegiatan punya slot foto (3 untuk meeting dan kerja bakti, 2 untuk stock opname harian). Fotonya ditaruh di `docs/public/images/kegiatan/`.
+- Panduan Magang Baru, FAQ, Yang Perlu Dikonfirmasi, dan Cara Memperbarui Handbook ikut diperbarui.
+
 ## v0.4.0 (20 Oktober 2026)
 
 - **Login tampilan** tanpa backend: seluruh website terkunci sampai pengunjung masuk, browser mengingat login selama 7 hari, dan ada tombol **Keluar** di menu atas.

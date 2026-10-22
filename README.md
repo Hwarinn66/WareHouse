@@ -159,9 +159,9 @@ Alur ditampilkan sebagai flowchart (blok `mermaid` di `docs/alur-kerja/*.md`) da
 
 ### Menambahkan foto alur barang masuk / keluar
 
-Setiap kotak di flowchart barang masuk (10 kotak) dan barang keluar (11 kotak), termasuk kotak "Tidak" (dikembalikan/ditukar), punya tempat foto. Selama fotonya belum ada, yang tampil adalah placeholder "Foto belum ada".
+Setiap kotak di flowchart barang masuk (9 kotak) dan barang keluar (11 kotak), termasuk kotak "Tidak" (dikembalikan/ditukar), punya tempat foto. Selama fotonya belum ada, yang tampil adalah placeholder "Foto belum ada".
 
-1. Beri nama file: `barang-masuk-01.jpg` sampai `barang-masuk-10.jpg`, `barang-keluar-01.jpg` sampai `barang-keluar-11.jpg`. Untuk cabang "Tidak": `barang-masuk-02-tidak.jpg`, `barang-masuk-05-tidak.jpg`, `barang-keluar-09-tidak.jpg`, dan `barang-keluar-11-tidak.jpg`. Format `.jpg`, `.jpeg`, `.png`, atau `.webp` bisa dipakai.
+1. Beri nama file: `barang-masuk-01.jpg` sampai `barang-masuk-09.jpg`, `barang-keluar-01.jpg` sampai `barang-keluar-11.jpg`. Untuk cabang "Tidak": `barang-masuk-02-tidak.jpg`, `barang-masuk-05-tidak.jpg`, `barang-keluar-09-tidak.jpg`, dan `barang-keluar-11-tidak.jpg`. Format `.jpg`, `.jpeg`, `.png`, atau `.webp` bisa dipakai.
 2. Taruh di `docs/public/images/alur/`.
 3. Jalankan `npm run dev` untuk mengecek, lalu commit dan push. Website online terbarui otomatis.
 
@@ -222,7 +222,7 @@ Daftar lengkap ada di `docs/tentang-handbook/perlu-verifikasi.md`. Ringkasnya:
 
 **Perusahaan:** visi & misi resmi · tahun berdiri & sejarah · apakah *Passion, Respect, Integrity, Discipline, Excellent* nilai resmi perusahaan atau moto unit · jenis/ukuran/standar produk · struktur organisasi · sertifikasi yang berlaku · alamat situs resmi.
 
-**Gudang Teknik:** denah layout gudang (slide 7) · format Surat Tanda Terima Barang (STTB) · bagian ERP yang boleh diakses peserta magang · aturan pengodean barang · parameter stok min/maks/ROP · kategori material tanpa permintaan · jadwal stock opname · siapa yang memesan barang ke vendor.
+**Gudang Teknik:** denah layout gudang (slide 7) · bagian ERP yang boleh diakses peserta magang · aturan pengodean barang · parameter stok min/maks/ROP · kategori material tanpa permintaan · jadwal stock opname · siapa yang memesan barang ke vendor.
 
 **SOP & K3:** SOP resmi yang ada · APD wajib · area terbatas · nomor darurat, APAR, P3K, jalur evakuasi, titik kumpul · aturan limbah consumable.
 
@@ -252,7 +252,7 @@ Pengujian yang **benar-benar dijalankan** pada versi 0.2.0 (13 Oktober 2026), me
 | Semua halaman sidebar + halaman 404 di lebar 1440, 1024, 768, dan 375 px (132 kombinasi) | Tidak ada scroll horizontal, gambar gagal, error console, request gagal, atau flowchart gagal. Setiap halaman punya tepat satu `<h1>` |
 | Flowchart (alur warehouse, barang masuk, barang keluar, dll.) | Semua tampil di mode terang dan gelap. Tombol "Lihat ukuran besar" membuka dan menutup (Esc) |
 | Flowchart bergambar | Barang masuk 10 kartu dan barang keluar 11 kartu, masing-masing dengan tempat foto. Kotak flowchart bernomor bisa diklik untuk melompat ke kartunya. Foto uji yang ditaruh di `images/alur/` tampil otomatis, lalu dihapus lagi |
-| Pencarian lokal | "rak reservasi", "ERP", "surat tanda terima", dan "bearing" menemukan hasil yang relevan. Kata acak menampilkan pesan "Belum ketemu" beserta saran kata |
+| Pencarian lokal | "rak reservasi", "ERP", "GRN", dan "bearing" menemukan hasil yang relevan. Kata acak menampilkan pesan "Belum ketemu" beserta saran kata |
 | Beranda | Tombol "Coba cari" mengisi kata kunci, kartu topik membuka halaman tujuan |
 | FAQ | 18 pertanyaan tampil, yang belum terjawab tersembunyi. Buka/tutup dengan klik dan Enter, terbuka otomatis dari tautan `#id` |
 | Profil perusahaan | Data yang belum terverifikasi tidak tampil |
