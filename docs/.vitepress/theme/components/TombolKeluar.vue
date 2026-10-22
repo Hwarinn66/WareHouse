@@ -1,14 +1,22 @@
 <script setup lang="ts">
-// Tombol "Keluar" di menu atas: menghapus sesi login tampilan dan mengunci website lagi.
+// Tombol "Keluar" di menu atas: menghapus sesi login tampilan, mengunci website lagi,
+// lalu kembali ke Beranda di balik halaman login. Jadi siapa pun yang login berikutnya
+// selalu mulai dari Beranda, dari halaman mana pun tombol ini ditekan.
+import { useRouter, withBase } from 'vitepress'
+
 defineProps<{ layar?: boolean }>()
+
+const router = useRouter()
 
 function keluar() {
   try {
     localStorage.removeItem('bpi-sesi')
   } catch {}
   document.documentElement.classList.add('belum-masuk')
-  window.scrollTo(0, 0)
   window.dispatchEvent(new Event('bpi-keluar'))
+  const beranda = withBase('/')
+  if (router.route.path !== beranda) router.go(beranda)
+  else window.scrollTo(0, 0)
 }
 </script>
 

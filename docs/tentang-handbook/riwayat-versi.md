@@ -15,6 +15,7 @@ kata_kunci: [versi, riwayat, changelog, perubahan]
 
 - **STTB tidak dipakai lagi.** Langkah "STTB diberikan ke vendor" dihapus dari alur barang masuk, lalu urutannya menjadi GRN terbit (langkah 6) dan input ke database (langkah 7). Alur barang masuk sekarang 9 langkah. Foto flowchart ikut digeser ke nomor barunya.
 - SOP Penerimaan Barang, flowchart Alur Warehouse, Kamus Istilah, Pencatatan Stok, FAQ, dan beranda ikut disesuaikan.
+- **Keluar selalu kembali ke Beranda.** Setelah menekan Keluar dari halaman mana pun, website kembali ke Beranda di balik layar login, sehingga login berikutnya selalu dimulai dari Beranda.
 - **Tampilan HP diperbaiki.** Header tidak lagi lebih lebar dari layar (sisi kanan tidak kosong lagi dan halaman tidak bisa di-zoom out melebihi layar): judul dibuat dua baris di HP, dan tombol Keluar pindah ke menu ☰. Tautan di menu ☰ yang sebelumnya putih di atas putih kini terbaca, dan kata panjang di kotak "Tidak" pada flowchart boleh dipatahkan. Semua halaman diperiksa di lebar 320, 360, 375, 390, dan 412 px.
 
 - **Halaman baru: Kegiatan Rutin** di menu Mulai. Isinya linimasa satu minggu kerja (Senin sampai Jumat) dengan penanda "Hari ini": meeting setiap Rabu, kerja bakti setiap Kamis, dan stock opname harian, lengkap dengan hal yang perlu disiapkan.
