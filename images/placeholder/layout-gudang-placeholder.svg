@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-labelledby="t d">
+  <title id="t">Placeholder denah layout gudang</title>
+  <desc id="d">Denah layout Gudang Teknik belum tersedia. Ganti dengan gambar dari presentasi Gudang Teknik slide 7 setelah disetujui pembimbing.</desc>
+  <rect width="800" height="450" fill="#f3f5f7"/>
+  <rect x="12" y="12" width="776" height="426" fill="none" stroke="#9aa7b4" stroke-width="3" stroke-dasharray="14 10"/>
+  <text x="400" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#5b6875">PLACEHOLDER</text>
+  <text x="400" y="243" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#5b6875">Denah layout gudang belum tersedia</text>
+  <text x="400" y="277" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" fill="#7a8794">Sumber yang diharapkan: presentasi Gudang Teknik, slide 7</text>
+</svg>
